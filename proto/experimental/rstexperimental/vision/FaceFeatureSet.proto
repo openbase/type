@@ -2,9 +2,9 @@ package rstexperimental.vision;
 
 import "rst/vision/Face.proto";
 
-option java_outer_classname = "FaceFeaturesType";
+option java_outer_classname = "FaceFeatureSetType";
 
-message FaceFeatures {
+message FaceFeatureSet {
 
     optional rst.vision.Face face = 1;
 
