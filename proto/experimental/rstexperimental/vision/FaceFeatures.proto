@@ -1,0 +1,60 @@
+package rstexperimental.vision;
+
+import "rst/vision/Face.proto";
+
+option java_outer_classname = "FaceFeaturesType";
+
+message FaceFeatures {
+
+    optional rst.vision.Face face = 1;
+
+    /**
+     * TODO.
+     */
+    optional bool is_mutual_gaze = 3;
+
+    /**
+     * TODO.
+     */
+    optional bool is_lid_close = 4;
+
+    /**
+     * TODO.
+     */
+    // @unit(TODO)
+    optional double eye_lid_classification = 5;
+
+    /**
+     * TODO.
+     */
+    // @unit(TODO)
+    optional double mutual_gaze_classification = 6;
+
+    /**
+     * TODO.
+     */
+    // @unit(TODO)
+    optional double horizontal_gaze_estimation = 7;
+
+    /**
+     * TODO.
+     */
+    // @unit(TODO)
+    optional double vertical_gaze_estimation = 8;
+
+    /**
+     * Distances of points on the inner lips.
+     * These are distances bewteen points on the upper and lower lip:
+     *   1. right of the centre
+     *   2. at the centre
+     *   3. left of the centre
+     * and the distance between the right and left corner (4)
+     *
+     * All these are scaled by the distance between the left and right
+     * eye to get a normalized size.
+     *
+     */
+    // @unit(TODO)
+    repeated double normalised_inner_lips_distances = 9;
+
+}
