@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>rsb</groupId>
+    <artifactId>rst-experimental</artifactId>
+    <version>@RST_MVN_VERSION@</version>
+    <packaging>jar</packaging>
+
+    <name>Robotic System Types - Experimental</name>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.0</version>
+                <extensions>false</extensions>
+                <inherited>true</inherited>
+                <configuration>
+                    <classifier>protobuf@PROTOBUF_PROTOC_VERSION@</classifier>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>[@PROTOBUF_PROTOC_VERSION@]</version>
+        </dependency>
+        <dependency>
+            <groupId>rsb</groupId>
+            <artifactId>rst</artifactId>
+            <version>@RST_MVN_UPSTREAM_VERSION@</version>
+        </dependency>
+    </dependencies>
+
+</project>

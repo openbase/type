@@ -1,0 +1,10 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: Robotics Systems Types - Experimental
+Description: Type specifications for Robotics and Cognitive Systems specified in Google Protocol Buffer's IDL format.
+Version: @RST_EXPERIMENTAL_VERSION@
+Requires: protobuf rst@VERSION_SUFFIX@
+Libs: -L${libdir} -l@EXPERIMENTAL_LIBRARY_NAME@
+Cflags: -I${includedir}/@INSTALL_PREFIX@/experimental
