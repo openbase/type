@@ -1,0 +1,90 @@
+package rstexperimental.bayesnetwork;
+
+option java_outer_classname = "BayesVariableType";
+
+/**
+ * Variable for use in a @ref .BayesNetwork describing possible
+ * outcomes.
+ *
+ * @author Viktor Richter <vrichter@techfak.uni-bielefeld.de>
+ */
+message BayesVariable {
+
+    /**
+     * The type of a variable.
+     */
+    enum Type {
+
+        /**
+         * A simple variable in the @ref .BayesNetwork representing a
+         * world state.
+         */
+        NATURE = 1;
+
+        /**
+         * Represents an action to choose from.
+         */
+        DECISION = 2;
+
+        /**
+         * Represents the quality or benefit of a decision.
+         */
+        UTILITY = 3;
+
+    }
+
+    /**
+     * The name of the variable.
+     *
+     * This has to be unique in a @ref .BayesNetwork.
+     */
+    optional string name = 1;
+
+    /**
+     * The type of the variable.
+     */
+    optional Type type = 2;
+
+    /**
+     * The possible outcomes (states) of the variables.
+     */
+    repeated string outcomes = 3;
+
+    /**
+     * Arbitrary properties associated with the variable.
+     */
+    repeated string property = 4;
+
+    /**
+     * Names of the variables on which this variable depends.
+     */
+    repeated string parents = 5;
+
+    /**
+     * The conditional probability table (cpt) describing the
+     * probability of each outcome of this variable for each
+     * combination of the parents states.
+     *
+     * The cpt holds the probability values for the variable outcomes
+     * in the order :math:`$ v_1, \dots, v_n, v_0` with the value
+     * permutation from right to left.
+     *
+     * An example with three binary variables would look the following
+     * way:
+     *
+     * ======= ======= ======== =================
+     * parent1 parent2 variable position in table
+     * ======= ======= ======== =================
+     *    0       0        0            0
+     *    0       0        1            1
+     *    0       1        0            2
+     *    0       1        1            3
+     *    1       0        0            4
+     *    1       0        1            5
+     *    1       1        0            6
+     *    1       1        1            7
+     * ======= ======= ======== =================
+     */
+    repeated double probabilities = 6 [packed=true];
+
+}
