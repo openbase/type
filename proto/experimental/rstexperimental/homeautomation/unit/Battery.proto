@@ -1,0 +1,30 @@
+package rstexperimental.homeautomation.unit;
+
+import "rstexperimental/homeautomation/state/BatteryState.proto";
+
+option java_outer_classname = "BatteryType";
+
+
+/**
+ * Generic description of a battery.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message Battery {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Field which represents the energy of the battery.
+     */
+    optional .rstexperimental.homeautomation.state.BatteryState battery_state = 200;
+
+    /**
+     * Label of the battery. Used to build the scope.
+     */
+    optional string label = 300;
+}
+

@@ -1,0 +1,128 @@
+package rstexperimental.homeautomation.device;
+
+import "rstexperimental/homeautomation/unit/AmbientLight.proto";
+import "rstexperimental/homeautomation/unit/Battery.proto";
+import "rstexperimental/homeautomation/unit/BrightnessSensor.proto";
+import "rstexperimental/homeautomation/unit/Button.proto";
+import "rstexperimental/homeautomation/unit/Dimmer.proto";
+import "rstexperimental/homeautomation/unit/HandleSensor.proto";
+import "rstexperimental/homeautomation/unit/Light.proto";
+import "rstexperimental/homeautomation/unit/MotionSensor.proto";
+import "rstexperimental/homeautomation/unit/PowerConsumptionSensor.proto";
+import "rstexperimental/homeautomation/unit/PowerPlug.proto";
+import "rstexperimental/homeautomation/unit/ReedSwitch.proto";
+import "rstexperimental/homeautomation/unit/Rollershutter.proto";
+import "rstexperimental/homeautomation/unit/Screen.proto";
+import "rstexperimental/homeautomation/unit/SmokeDetector.proto";
+import "rstexperimental/homeautomation/unit/TamperSwitch.proto";
+import "rstexperimental/homeautomation/unit/Television.proto";
+import "rstexperimental/homeautomation/unit/TemperatureController.proto";
+import "rstexperimental/homeautomation/unit/TemperatureSensor.proto";
+import "rstexperimental/homeautomation/device/DeviceConfig.proto";
+
+option java_outer_classname = "GenericDeviceType";
+
+
+/**
+ * Description of a generic device.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message GenericDevice {
+
+    /**
+     * The device configuration.
+     */
+    optional .rstexperimental.homeautomation.device.DeviceConfig config = 100;
+
+    /**
+     * The ambient light units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.AmbientLight unit_ambient_light= 200;
+
+    /**
+     * The battery units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.Battery unit_battery = 300;
+
+    /**
+     * The brightness sensor units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.BrightnessSensor unit_brightness_sensor = 400;
+
+    /**
+     * The button units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.Button unit_button = 500;
+
+    /**
+     * The dimmer units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.Dimmer unit_dimmer = 600;
+
+    /**
+     * The handle sensor units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.HandleSensor unit_handle_sensor = 700;
+
+    /**
+     * The light units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.Light unit_light = 800;
+
+    /**
+     * The motion sensor units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.MotionSensor unit_motion_sensor = 900;
+
+    /**
+     * The power consumption sensor units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.PowerConsumptionSensor unit_power_consumption_sensor = 1000;
+
+    /**
+     * The power plug units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.PowerPlug unit_power_plug = 1100;
+
+    /**
+     * The reed switch units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.ReedSwitch unit_reed_switch = 1200;
+
+    /**
+     * The rollershutter units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.Rollershutter unit_rollershutter = 1300;
+
+    /**
+     * The screen units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.Screen unit_screen = 1400;
+
+    /**
+     * The smoke detector units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.SmokeDetector unit_smoke_detector = 1500;
+
+    /**
+     * The tamper switch units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.TamperSwitch unit_tamper_switch = 1600;
+
+    /**
+     * The television units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.Television unit_television = 1700;
+
+    /**
+     * The temperature controller units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.TemperatureController unit_temperature_controller = 1800;
+
+    /**
+     * The temperature sensor units of this device.
+     */
+    repeated .rstexperimental.homeautomation.unit.TemperatureSensor unit_temperature_sensor = 1900;
+}
+

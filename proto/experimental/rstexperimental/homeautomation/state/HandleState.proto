@@ -1,0 +1,45 @@
+package rstexperimental.homeautomation.state;
+
+option java_outer_classname = "HandleStateType";
+
+
+/**
+ * Basic sensor or object state.
+ * Used by objects like windows or by sensors like the handle sensor.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message HandleState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknown state.
+         */
+        UNKNOWN = 100;
+
+        /**
+         * Open state.
+         */
+        OPEN = 200;
+
+        /**
+         * Closed state.
+         */
+        CLOSED = 300;
+
+        /**
+         * Tilted state.
+         */
+        TILTED = 400;
+    }
+
+    /**
+     * The open, closed or tilted state.
+     */
+    required State value = 100;
+}
+

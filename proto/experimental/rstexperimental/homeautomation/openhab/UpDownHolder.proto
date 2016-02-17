@@ -1,0 +1,36 @@
+package rstexperimental.homeautomation.openhab;
+
+option java_outer_classname = "UpDownHolderType";
+
+
+/**
+ * Basic UpDown type used by openhab.
+ * Used by objects like rollershutters.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UpDownHolder {
+
+    /**
+     * The state definitions.
+     */
+    enum UpDown {
+
+        /**
+         * Up state.
+         */
+        UP = 100;
+
+        /**
+         * Down state.
+         */
+        DOWN = 200;
+    }
+
+    /**
+     * The up or down state.
+     */
+    required UpDown state = 100;
+
+}
+

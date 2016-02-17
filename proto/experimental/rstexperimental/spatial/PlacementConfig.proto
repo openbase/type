@@ -1,0 +1,36 @@
+package rstexperimental.spatial;
+
+option java_outer_classname = "PlacementConfigType";
+
+import "rst/math/Vec3DFloat.proto";
+import "rst/geometry/Pose.proto";
+import "rstexperimental/spatial/Shape.proto";
+
+/**
+ * Description of a placement.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message PlacementConfig {
+
+    /**
+     * The id of the location.
+     */
+    optional string location_id = 100;
+
+    /**
+     * The id of the location.
+     */
+    optional string transformation_frame_id = 150;
+
+    /**
+     * The position.
+     */
+    optional .rst.geometry.Pose position = 200;
+
+    /**
+     * The shape of the placement.
+     */
+    optional .rstexperimental.spatial.Shape shape = 300;
+}
+

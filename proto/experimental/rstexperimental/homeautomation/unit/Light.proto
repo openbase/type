@@ -1,0 +1,30 @@
+package rstexperimental.homeautomation.unit;
+
+import "rstexperimental/homeautomation/state/PowerState.proto";
+
+option java_outer_classname = "LightType";
+
+
+/**
+ * Generic description of a light.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message Light {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Field which represents the state of the light.
+     */
+    optional .rstexperimental.homeautomation.state.PowerState power_state = 200;
+
+    /**
+     * Label of the light. Used to build the scope.
+     */
+    optional string label = 300;
+}
+

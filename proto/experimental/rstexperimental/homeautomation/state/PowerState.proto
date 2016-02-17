@@ -1,0 +1,38 @@
+package rstexperimental.homeautomation.state;
+
+option java_outer_classname = "PowerStateType";
+
+/**
+ * Basic object state used by power
+ * consuming objects like lamps.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message PowerState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknwon state.
+         */
+        UNKNOWN = 1;
+
+        /**
+         * On state.
+         */
+        ON = 2;
+
+        /**
+         * Off state.
+         */
+        OFF = 3;
+    }
+
+    /**
+     * The power state.
+     */
+    required State value = 1;
+}

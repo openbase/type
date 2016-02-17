@@ -1,0 +1,52 @@
+package rstexperimental.homeautomation.unit;
+
+option java_outer_classname = "UnitGroupConfigType";
+
+import "rstexperimental/homeautomation/unit/UnitTemplate.proto";
+import "rstexperimental/homeautomation/service/ServiceTemplate.proto";
+import "rstexperimental/configuration/MetaConfig.proto";
+import "rstexperimental/rsb/Scope.proto";
+
+/**
+ * Type for a group of units.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UnitGroupConfig {
+
+    /**
+     * The id of the unit group.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of the unit group.
+     */
+    optional string label = 200;
+
+    /**
+     * The ids of the units which are members of this group.
+     */
+    repeated string member_id = 300;
+
+    /**
+     * The unit type of the grouped units. This field is optional but when set
+     * defines the service types.
+     */
+    optional .rstexperimental.homeautomation.unit.UnitTemplate.UnitType unit_type = 400;
+
+    /**
+     * The service types of the grouped units.
+     */
+    repeated .rstexperimental.homeautomation.service.ServiceTemplate.ServiceType service_type = 500;
+    /**
+     * Field for storing meta configurations.
+     */
+    optional .rstexperimental.configuration.MetaConfig meta_config = 600;
+
+    /**
+     * The scope of the unit group.
+     */
+    optional .rstexperimental.rsb.Scope scope = 700;
+}
+

@@ -1,0 +1,174 @@
+package rstexperimental.homeautomation.unit;
+
+option java_outer_classname = "UnitTemplateType";
+
+import "rstexperimental/homeautomation/service/ServiceTemplate.proto";
+import "rstexperimental/configuration/MetaConfig.proto";
+
+/**
+ * Template for units. Contains the unit type and according service types.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UnitTemplate {
+
+    enum UnitType {
+
+        /**
+         * The unknown type.
+         */
+        UNKNOWN = 10;
+
+        /**
+         * The ambient light type.
+         */
+        AMBIENT_LIGHT = 20;
+
+        /**
+         * The battery type.
+         */
+        BATTERY = 30;
+
+        /**
+         * The brightness sensor type.
+         */
+        BRIGHTNESS_SENSOR = 40;
+
+        /**
+         * The button type.
+         */
+        BUTTON = 50;
+
+        /**
+         * The dimmer type.
+         */
+        DIMMER = 60;
+
+        /**
+         * The handle sensor type.
+         */
+        HANDLE_SENSOR = 70;
+
+        /**
+         * The light type.
+         */
+        LIGHT = 80;
+
+        /**
+         * The motion sensor type.
+         */
+        MOTION_SENSOR = 90;
+
+        /**
+         * The power consumption sensor type.
+         */
+        POWER_CONSUMPTION_SENSOR = 100;
+
+        /**
+         * The power plug type.
+         */
+        POWER_PLUG = 110;
+        /**
+         * The reed switch type.
+         */
+        REED_SWITCH = 120;
+
+        /**
+         * The smoke detector type.
+         */
+        SMOKE_DETECTOR = 125;
+
+        /**
+         * The tamper switch type.
+         */
+        TAMPER_SWITCH = 130;
+
+        /**
+         * The temperature controller type.
+         */
+        TEMPERATURE_CONTROLLER = 140;
+
+        /**
+         * The temperature sensor type.
+         */
+        TEMPERATURE_SENSOR = 150;
+
+        /**
+         * The rollershutter type.
+         */
+        ROLLERSHUTTER = 160;
+
+        /**
+         * The screen type.
+         */
+        SCREEN = 170;
+
+        /**
+         * The television type.
+         */
+        TELEVISION = 180;
+
+        /**
+         * The scene type.
+         */
+        SCENE = 190;
+
+        /**
+         * The scene type.
+         */
+        AGENT = 200;
+
+        /**
+         * The scene type.
+         */
+        APP = 210;
+
+        /**
+         * Unit type for an audio source like a microphone.
+         */
+        AUDIO_SOURCE = 220;
+
+        /**
+         * Unit type for an audio sink like a speaker.
+         */
+        AUDIO_SINK = 225;
+
+        /**
+         * Unit type for a camera with an rgb picture.
+         */
+        RGB_CAMERA = 230;
+
+        /**
+         * Unit type for a camera with a depth picture.
+         */
+        DEPTH_CAMERA = 240;
+
+}
+
+    /**
+     * The id of the unit template
+     */
+    optional string id = 50;
+
+    /**
+     * The unit type.
+     */
+    optional UnitType type = 100;
+
+    /**
+     * A list of unit types uncluded by the type of this unit template.
+     * For example an ambient light inludes a dimmer and a light.
+     */
+    repeated UnitType included_type = 150;
+
+    /**
+     * The service types.
+     */
+    repeated .rstexperimental.homeautomation.service.ServiceTemplate.ServiceType service_type = 200;
+
+    /**
+     * A field storing meta unit template configurations.
+     */
+    optional .rstexperimental.configuration.MetaConfig meta_config = 300;
+}
+

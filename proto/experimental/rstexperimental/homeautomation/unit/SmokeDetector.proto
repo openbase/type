@@ -1,0 +1,36 @@
+package rstexperimental.homeautomation.unit;
+
+import "rstexperimental/homeautomation/state/AlarmState.proto";
+import "rstexperimental/homeautomation/state/SmokeState.proto";
+
+option java_outer_classname = "SmokeDetectorType";
+
+/**
+ * Generic description of a smoke detector.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message SmokeDetector {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the temperature sensor. Used to build the scope.
+     */
+    optional string label = 200;
+
+    /**
+     * State to indicate wether this sensor has sent an alarm.
+     */
+    optional .rstexperimental.homeautomation.state.AlarmState smoke_alarm_state = 300;
+
+    /**
+     * State which represents the smoke level.
+     */
+    optional .rstexperimental.homeautomation.state.SmokeState smoke_state = 400;
+}
+

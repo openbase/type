@@ -1,0 +1,34 @@
+package rstexperimental.homeautomation.unit;
+
+import "rstexperimental/homeautomation/state/AlarmState.proto";
+
+option java_outer_classname = "TemperatureSensorType";
+
+/**
+ * Generic description of a temperature sensor.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message TemperatureSensor {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * The value which represents temperature.
+     */
+    optional double temperature = 200;
+
+    /**
+     * Label of the temperature sensor. Used to build the scope.
+     */
+    optional string label = 300;
+
+    /**
+     * State to indicate wether this sensor has sent an alarm.
+     */
+    optional .rstexperimental.homeautomation.state.AlarmState temperature_alarm_state = 400;
+}
+

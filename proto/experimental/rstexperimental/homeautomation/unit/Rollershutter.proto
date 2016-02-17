@@ -1,0 +1,36 @@
+package rstexperimental.homeautomation.unit;
+
+import "rstexperimental/homeautomation/state/ShutterState.proto";
+
+option java_outer_classname = "RollershutterType";
+
+
+/**
+ * Generic description of a rollershutter.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message Rollershutter {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Field which represents the shutter state of the rollershutter.
+     */
+    optional .rstexperimental.homeautomation.state.ShutterState shutter_state = 200;
+
+    /**
+     * The value which represents the height of the rollershutter in percent. Range [0..100].
+     * If this value is 100 the rollershutter is at the very top.
+     */
+    optional double opening_ratio = 300;
+
+    /**
+     * Label of the rollershutter. Used to build the scope.
+     */
+    optional string label = 400;
+}
+

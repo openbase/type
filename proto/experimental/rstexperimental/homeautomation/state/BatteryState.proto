@@ -1,0 +1,48 @@
+package rstexperimental.homeautomation.state;
+
+option java_outer_classname = "BatteryStateType";
+
+/**
+ * Basic object state used by battery devices
+ * to display their energy level.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message BatteryState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknwon state.
+         */
+        UNKNOWN = 1;
+
+        /**
+         * Ok state.
+         */
+        OK = 2;
+
+        /**
+         * Critical state.
+         */
+        CRITICAL = 3;
+
+        /**
+         * Insufficient energy state.
+         */
+        INSUFFICIENT = 4;
+    }
+
+    /**
+     * The energy state.
+     */
+    optional State value = 100;
+
+    /**
+     * The energy level. Range: [1..100].
+     */
+    optional double level = 200;
+}

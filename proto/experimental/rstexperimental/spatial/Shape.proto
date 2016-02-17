@@ -1,0 +1,19 @@
+package rstexperimental.spatial;
+
+option java_outer_classname = "ShapeType";
+
+import "rst/math/Vec3DDouble.proto";
+
+/**
+ * Description of a Shape.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message Shape {
+
+    /**
+     * Floor polygon of the shape.
+     */
+    repeated .rst.math.Vec3DDouble floor = 50;
+}
+

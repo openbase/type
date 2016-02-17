@@ -1,0 +1,35 @@
+package rstexperimental.homeautomation.unit;
+
+option java_outer_classname = "UnitTemplateConfigType";
+
+import "rstexperimental/homeautomation/service/ServiceTemplate.proto";
+import "rstexperimental/homeautomation/unit/UnitTemplate.proto";
+
+/**
+ * Template for units. Contains the unit type and according service types.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UnitTemplateConfig {
+
+    /**
+     * The id of the unit template configuration.
+     */
+    optional string id = 50;
+
+    /**
+     * The label of the unit tempalte configuration.
+     */
+    optional string label = 70;
+
+    /**
+     * The unit type.
+     */
+    optional .rstexperimental.homeautomation.unit.UnitTemplate.UnitType type = 100;
+
+    /**
+     * The service templates.
+     */
+    repeated .rstexperimental.homeautomation.service.ServiceTemplate service_template = 200;
+}
+

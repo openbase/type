@@ -1,0 +1,29 @@
+package rstexperimental.homeautomation.control.agent;
+
+option java_outer_classname = "AgentRegistryType";
+
+import "rstexperimental/homeautomation/control/agent/AgentConfig.proto";
+
+/**
+ * Description of a agent registry.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AgentRegistry {
+
+    /**
+     * The label of the agent registry.
+     */
+    optional string label = 100;
+
+    /**
+     * The list of registerd agent configurations.
+     */
+    repeated .rstexperimental.homeautomation.control.agent.AgentConfig agent_config = 200;
+
+    /**
+     * Read only flag for the agent config registry.
+     */
+    optional bool agent_config_registry_read_only = 300;
+}
+
