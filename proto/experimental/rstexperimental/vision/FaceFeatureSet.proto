@@ -1,12 +1,18 @@
 package rstexperimental.vision;
 
 import "rst/vision/Face.proto";
+import "rstexperimental/vision/FaceLandmarks.proto";
 
 option java_outer_classname = "FaceFeatureSetType";
 
 message FaceFeatureSet {
 
     optional rst.vision.Face face = 1;
+
+    /**
+     * Landmarks on this face.
+     */
+    optional rstexperimental.vision.FaceLandmarks landmarks = 2;
 
     /**
      * TODO.
