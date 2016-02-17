@@ -14,6 +14,8 @@ option java_outer_classname = "FaceLandmarksType";
  * For readability the 68 face landmarks are split into points of
  * different face parts. The point order is preserved.
  *
+ * @author Viktor Richter <vrichter@techfak.uni-bielefeld.de>
+ *
  */
 message FaceLandmarks {
 
