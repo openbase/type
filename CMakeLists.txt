@@ -100,7 +100,8 @@ IF(BUILD_PYTHON)
     ADD_SUBDIRECTORY(python)
 ENDIF()
 
-add_custom_target(do_always ALL COMMAND ../project/codeCheck.py)
+add_custom_target(do_always  ALL COMMAND ../project/codeCheck.py)
+add_custom_target(do_always2 ALL COMMAND ../project/checkAmbiguities.sh "${PROJECT_SOURCE_DIR}" "${RST_DIR}")
 
 PRINT_ENABLED_FEATURES()
 
