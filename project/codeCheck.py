@@ -64,7 +64,7 @@ class CheckPackageMatchFolder(Check):
             
             
         #check whether package is starting with rstexperimental to avoid collisions with official RST
-        packageEnforcedStart = "rstexperimental"
+        packageEnforcedStart = "rst"
         if packagePathParts[0] != packageEnforcedStart:
             self.errorHandler.addError(description="Declared package %s does not start with %s. This is not allowed in this project." % (declaredPackages[0], packageEnforcedStart))
 
