@@ -3,11 +3,12 @@ import pkgutil
 
 import rst
 import rstsandbox
+import rstexperimental
 import logging
 
-logger = logging.getLogger("rstsandbox")
+logger = logging.getLogger("rstexperimental")
 
-def addSandboxToRST():
+def addExperimentalToRst():
     def importIt(designator, error = True):
         logger.debug("importIt called with '%s'" % designator)
         if hasattr(designator, '__iter__'):
@@ -21,12 +22,12 @@ def addSandboxToRST():
             if error:
                 raise e
 
-    # Find two things within the sandbox:
-    # + All Modules (since there should be no duplicates between rst
-    #   and rstsandbox)
+    # Find two things within experimental:
+    # + All Modules (since there should be no duplicates between rst,
+    #   rstsandbox and rstexperimental)
     # + Packages which do not have a corresponding package relative to
     #   the rst package.
-    #   E.g. rstsandbox.communicationpatterns when there is no
+    #   E.g. rstexperimental.communicationpatterns when there is no
     #   rst.communicationpatterns
     # We record errors caused by dependency problems so the caller can
     # trigger additional iterations to resolve dependencies.
@@ -65,7 +66,7 @@ def addSandboxToRST():
     #   particular package under the parent package in the stable
     #   section.
     # + Add to sys.modules
-    modules, errors = findModules(rstsandbox)
+    modules, errors = findModules(rstexperimental)
     logger.debug("Found modules %s and errors %s" % (modules, errors))
     for module in modules:
 
@@ -88,10 +89,10 @@ def addSandboxToRST():
 # fail to load but succeed later, after their dependencies have been
 # loaded.
 logger.debug("---- ITERATION ----")
-_, initial = addSandboxToRST()
+_, initial = addExperimentalToRst()
 while len(initial) > 0:
     logger.debug("---- ITERATION ----")
-    _, new = addSandboxToRST()
+    _, new = addExperimentalToRst()
     if len(new) == len(initial):
         raise RuntimeError, "Unable to install modules/packages in rst namespace:\n%s" \
             % '\n'.join([("%s - %s" % (e[0], e[1])) for e in new])
