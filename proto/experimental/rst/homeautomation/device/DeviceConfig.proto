@@ -1,0 +1,67 @@
+package rst.homeautomation.device;
+
+option java_outer_classname = "DeviceConfigType";
+
+import "rst/spatial/PlacementConfig.proto";
+import "rst/rsb/Scope.proto";
+import "rst/homeautomation/state/InventoryState.proto";
+import "rst/homeautomation/unit/UnitConfig.proto";
+import "rst/configuration/MetaConfig.proto";
+
+/**
+ * Description of a device configuration.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message DeviceConfig {
+
+    /**
+     * Id of the device configurated.
+     */
+    optional string id = 50;
+
+    /**
+     * The label of the device.
+     */
+    optional string label = 100;
+
+    /**
+     * The placement of the device.
+     */
+    optional .rst.spatial.PlacementConfig placement_config = 200;
+
+    /**
+     * The scope of the device.
+     */
+    optional .rst.rsb.Scope scope = 300;
+
+    /**
+     * The serial number of the device.
+     */
+    optional string serial_number = 400;
+
+    /**
+     * The description of the device.
+     */
+    optional string description = 500;
+
+    /**
+     * The inventory state of the device.
+     */
+    optional .rst.homeautomation.state.InventoryState inventory_state = 600;
+
+    /**
+     * The id of the device class of the device.
+     */
+    optional string device_class_id = 700;
+
+    /**
+     * A list of unit configurations.
+     */
+    repeated .rst.homeautomation.unit.UnitConfig unit_config = 800;
+
+    /**
+     * A field for storing meta device configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 900;
+}

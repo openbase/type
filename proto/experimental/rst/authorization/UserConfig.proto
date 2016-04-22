@@ -1,0 +1,40 @@
+package rst.authorization;
+
+option java_outer_classname = "UserConfigType";
+
+import "rst/configuration/MetaConfig.proto";
+
+/**
+ * Generic description of a person.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ * @author Marian Pohling <mpohling@techfak.uni-bielefeld.de>
+ */
+message UserConfig {
+
+    /**
+     * A unique identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * The first name of the person.
+     */
+    optional string first_name = 200;
+
+    /**
+     * The last name of the person.
+     */
+    optional string last_name = 300;
+
+    /**
+     * The user name of the person.
+     */
+    optional string user_name = 400;
+
+    /**
+     * Field for storing meta configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 500;
+}
+

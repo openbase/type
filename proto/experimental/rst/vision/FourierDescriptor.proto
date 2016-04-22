@@ -1,0 +1,20 @@
+package rst.vision;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "FourierDescriptorType";
+
+/**
+ * Fourier Descriptors derived by the algorithm descibed in
+ * 'Elliptic Fourier features of a closed contour'.
+ *
+ * @author Michael Goerlich <mgoerlic@techfak.uni-bielefeld.de
+ */
+message FourierDescriptor {
+    required rst.timing.Timestamp time = 1;
+    repeated double a = 2;
+    repeated double b = 3;
+    repeated double c = 4;
+    repeated double d = 5;
+
+}

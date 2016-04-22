@@ -1,0 +1,51 @@
+package rst.homeautomation.control.app;
+
+option java_outer_classname = "AppConfigType";
+
+import "rst/rsb/Scope.proto";
+import "rst/configuration/MetaConfig.proto";
+import "rst/homeautomation/state/ActivationState.proto";
+
+/**
+ * Description of a app configuration.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AppConfig {
+
+    /**
+     * The id of the app.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of the app.
+     */
+    optional string label = 200;
+
+    /**
+     * The location of the app.
+     */
+    optional string location_id = 300;
+
+    /**
+     * The scope of the app.
+     */
+    optional .rst.rsb.Scope scope = 400;
+
+    /**
+     * The description of the app.
+     */
+    optional string description = 500;
+
+    /**
+     * A field for storing meta app configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 600;
+
+    /**
+     * The activation state of this app.
+     */
+    optional .rst.homeautomation.state.ActivationState activation_state = 700;
+}
+

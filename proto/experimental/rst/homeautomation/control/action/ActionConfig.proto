@@ -1,0 +1,67 @@
+package rst.homeautomation.control.action;
+
+option java_outer_classname = "ActionConfigType";
+
+import "rst/rsb/Scope.proto";
+import "rst/configuration/MetaConfig.proto";
+import "rst/homeautomation/state/ActivationState.proto";
+import "rst/homeautomation/service/ServiceTemplate.proto";
+
+/**
+ * Description of a action configuration.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ActionConfig {
+
+    /**
+     * The id of the action.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of the action.
+     */
+    optional string label = 200;
+
+    /**
+     * The location of the action.
+     */
+    optional string location_id = 300;
+
+    /**
+     * The scope of the action.
+     */
+    optional .rst.rsb.Scope scope = 400;
+
+    /**
+     * The description of the action.
+     */
+    optional string description = 500;
+
+    /**
+     * A field for storing meta action configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 600;
+
+    /**
+     * The activation state of this action.
+     */
+    optional .rst.homeautomation.state.ActivationState activation_state = 700;
+
+    /**
+     * The id of the unit containing the service executed.
+     */
+    optional string unit_id = 800;
+
+    /**
+     * The type of the service executed.
+     */
+    optional .rst.homeautomation.service.ServiceTemplate.ServiceType service_type = 850;
+
+    /**
+     * The attribute with which the service will be executed.
+     */
+    optional string service_attribute = 900;
+}
+

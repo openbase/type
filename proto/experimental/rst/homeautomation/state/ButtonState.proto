@@ -1,0 +1,52 @@
+package rst.homeautomation.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "ButtonStateType";
+
+
+/**
+ * Basic click state.
+ * Can be used for buttons.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message ButtonState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknown state.
+         */
+        UNKNOWN = 100;
+
+        /**
+         * Clicked once.
+         */
+        CLICKED = 200;
+
+        /**
+         * Clicked twice.
+         */
+        DOUBLE_CLICKED = 300;
+
+        /**
+         * Released state.
+         */
+        RELEASED = 400;
+    }
+
+    /*
+     * The click state.
+     */
+    required State value = 100;
+
+    /*
+     * Last clicked timestemp.
+     */
+    optional .rst.timing.Timestamp last_clicked = 200;
+}
+

@@ -1,0 +1,29 @@
+package rst.homeautomation.control.action;
+
+option java_outer_classname = "ActionRegistryType";
+
+import "rst/homeautomation/control/action/ActionConfig.proto";
+
+/**
+ * Description of a action registry.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ActionRegistry {
+
+    /**
+     * The label of the action registry.
+     */
+    optional string label = 100;
+
+    /**
+     * The list of registerd action configurations.
+     */
+    repeated .rst.homeautomation.control.action.ActionConfig action_config = 200;
+
+    /**
+     * Read only flag for the action config registry.
+     */
+    optional bool action_config_registry_read_only = 300;
+}
+

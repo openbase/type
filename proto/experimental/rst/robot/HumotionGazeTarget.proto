@@ -1,0 +1,43 @@
+package rst.robot;
+
+option java_outer_classname = "HumotionGazeTargetType";
+import "rst/timing/Timestamp.proto";
+
+/**
+ * Gaze Target fpor robotic head
+ *
+ * three angles describing a gaze target in pan/tilt/roll angle (degrees)
+ *
+ * @author Simon Schulz <sschulz@techfak.uni-bielefeld.de>
+ */
+message HumotionGazeTarget {
+
+    /**
+     * Target angles (http://www.conitec.net/manual_d/aentity-pan.htm)
+     */
+    required float pan  = 1;  //pan  angle (left/right)
+    required float tilt = 2; //tilt angle (up/down)
+    required float roll = 3; //roll angle (sideway movement)
+    required float vergence = 4; //vergence angle (angle difference from straight view, defaults to 0.0 for straight)
+
+    enum typeEnum {
+        ABSOLUTE = 1;
+        RELATIVE = 2;
+    }
+    required typeEnum gaze_type = 5; //type of gaze (rel or abs)
+    required timing.Timestamp gaze_timestamp = 6; //in case of relative gaze, this is the timestamp when the image was grabbed
+
+    required float pan_offset  = 7; //pan offset
+    required float tilt_offset = 8; //tilt offset
+    required float roll_offset = 9; //roll offset
+
+    required float eyelid_opening_upper = 10;
+    required float eyelid_opening_lower = 11;
+
+    required float eyebrow_left = 12;
+    required float eyebrow_right = 13;
+
+    required int32 eyeblink_request_left = 14;
+    required int32 eyeblink_request_right = 15;
+
+}

@@ -1,0 +1,111 @@
+package rst.hri;
+
+import "rst/hri/PersonHypothesis.proto";
+
+option java_outer_classname = "DemandType";
+
+/**
+ * A demand requested by a user or agents.
+ *
+ * @author Kai Frederic Engelmann <kengelma@techfak.uni-bielefeld.de>
+ */
+message Demand {
+
+    /**
+     * Determines which result you expect.
+     */
+    enum ActionType {
+        OTHER              = 0;
+        LIGHT_OFF          = 10;
+        LIGHT_ON           = 11;
+        LIGHT_SWITCH       = 12;
+        HANDLE_LIGHT       = 13;
+        LIGHT_BRIGHTNESS   = 14;
+        LIGHT_COLOR        = 15;
+        LIGHT_SITUATION    = 16;
+        ROLLERSHUTTER_UP   = 20;
+        ROLLERSHUTTER_DOWN = 21;
+        ROLLERSHUTTER_HALF = 22;
+        RADIO_OFF          = 30;
+        RADIO_ON           = 31;
+        RADIO_PLAY_FILE    = 32;
+        FEEDBACK           = 40;
+        FEEDBACK_TIME      = 41;
+        FEEDBACK_MAIL      = 42;
+        FEEDBACK_CALL      = 43;
+        FEEDBACK_WELCOME   = 44;
+        TEMPERATURE_CHANGE = 50;
+        TV_OFF             = 61;
+        TV_ON              = 62;
+        DOOR_CLOSE         = 70;
+        DOOR_OPEN          = 71;
+        DOOR_LOCK          = 72;
+        WINDOW_CLOSE       = 80;
+        WINDOW_OPEN        = 81;
+        WINDOW_TILTED      = 82;
+        SCENARIO_STOPP     = 90;
+        SCENARIO_START     = 91;
+    }
+
+    /**
+     * Determines where do you expect the result.
+     */
+    enum FilterType {
+        ANY              = 0;
+        HERE             = 1;
+        WITH_MOVEMENT    = 2;
+        WITHOUT_MOVEMENT = 3;
+        PARTICULAR       = 4;
+        PARTICULAR_ROOM  = 5;
+        SOME             = 6;
+        SOME_ROOM        = 7;
+    }
+
+    /**
+     * Types of addressees of a demand.
+     */
+    enum AddresseeType {
+        NONE              = 0;
+        APARTMENT         = 1;
+        ROBOTER           = 2;
+        PERSON            = 3;
+    }
+
+    /**
+     * The type of the action of this demand.
+     */
+    required ActionType type = 1;
+
+    /**
+     * An optional param for the action.
+     * For a speech interface this could be a string.
+     */
+    optional bytes param = 11;
+
+    /**
+     * The requested location of this demand.
+     */
+    optional FilterType filter = 100;
+
+    /**
+     * An optional param for the filter.
+     * For example the room if the type is PARTICULAR_ROOM.
+     */
+    optional bytes filterparam = 101;
+
+    /**
+     * A human readable description of this demand.
+     */
+    optional string description = 200;
+
+    /**
+     * The person who created this demand.
+     */
+    optional PersonHypothesis demander = 300;
+
+    /**
+     * Who is addressed by this demand.
+     */
+    optional AddresseeType addressee = 320;
+
+}

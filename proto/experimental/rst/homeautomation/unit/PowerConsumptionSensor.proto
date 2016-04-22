@@ -1,0 +1,29 @@
+package rst.homeautomation.unit;
+
+import "rst/homeautomation/state/PowerConsumptionState.proto";
+
+option java_outer_classname = "PowerConsumptionSensorType";
+
+/**
+ * Generic description of a power consumption sensor.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message PowerConsumptionSensor {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * The the power consumption state.
+     */
+    optional .rst.homeautomation.state.PowerConsumptionState power_consumption_state = 200;
+
+    /**
+     * Label of the power consumption sensor. Used to build the scope.
+     */
+    optional string label = 300;
+}
+

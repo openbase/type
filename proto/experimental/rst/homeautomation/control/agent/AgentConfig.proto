@@ -1,0 +1,104 @@
+package rst.homeautomation.control.agent;
+
+option java_outer_classname = "AgentConfigType";
+
+import "rst/rsb/Scope.proto";
+import "rst/configuration/MetaConfig.proto";
+import "rst/homeautomation/state/ActivationState.proto";
+
+/**
+ * Description of a agent configuration.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AgentConfig {
+
+    enum AgentType {
+
+        /**
+         * The unknown type.
+         */
+        UNKNOWN = 10;
+
+        /**
+         * Agent that provides light where person are.
+         */
+        PERSON_LIGHT_PROVIDER = 20;
+
+        /**
+         * Agent that keeps a nice sleeping atmosphere.
+         */
+        SLEEP_ATMOSPHERE_KEEPER = 30;
+
+        /**
+         * Agent that handles fire alarms.
+         */
+        FIRE_ALARM_RESCUER = 40;
+
+        /**
+         * Agent that handles incursions.
+         */
+        INCURSION_HANDLER = 50;
+
+        /**
+         * Agent that tries to use less energy.
+         */
+        ENERGY_SAVER = 60;
+
+        /**
+         * Agent that tries to synchronise the power state of two power plugs.
+         */
+        POWER_STATE_SYNCHRONISER = 70;
+
+        /**
+         *
+         */
+        AMBIENT_COLOR = 80;
+
+        /**
+         *
+         */
+        SOUND_SCAPE = 90;
+    }
+
+    /**
+     * The id of the agent.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of the agent.
+     */
+    optional string label = 200;
+
+    /**
+     * The location of the agent.
+     */
+    optional string location_id = 300;
+
+    /**
+     * The scope of the agent.
+     */
+    optional .rst.rsb.Scope scope = 400;
+
+    /**
+     * The description of the agent.
+     */
+    optional string description = 500;
+
+    /**
+     * A field for storing meta agent configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 600;
+
+    /**
+     * The activation state of this agent.
+     */
+    optional .rst.homeautomation.state.ActivationState activation_state = 700;
+
+    /**
+     * The type of the agent.
+     */
+    optional AgentType type = 800;
+}
+

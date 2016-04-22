@@ -1,0 +1,29 @@
+package rst.homeautomation.control.app;
+
+option java_outer_classname = "AppRegistryType";
+
+import "rst/homeautomation/control/app/AppConfig.proto";
+
+/**
+ * Description of a app registry.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AppRegistry {
+
+    /**
+     * The label of the app registry.
+     */
+    optional string label = 100;
+
+    /**
+     * The list of registerd app configurations.
+     */
+    repeated .rst.homeautomation.control.app.AppConfig app_config = 200;
+
+    /**
+     * Read only flag for the app config registry.
+     */
+    optional bool app_config_registry_read_only = 300;
+}
+

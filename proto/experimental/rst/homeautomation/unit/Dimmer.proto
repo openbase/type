@@ -1,0 +1,35 @@
+package rst.homeautomation.unit;
+
+import "rst/homeautomation/state/PowerState.proto";
+
+option java_outer_classname = "DimmerType";
+
+
+/**
+ * Generic description of a dimmer.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message Dimmer {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Field which represents the power state of the dimmer.
+     */
+    optional .rst.homeautomation.state.PowerState power_state = 200;
+
+    /**
+     * The value describing the dimming. Range [0..100]
+     */
+    optional double value = 300;
+
+    /**
+     * Label of the dimmer. Used to build the scope.
+     */
+    optional string label = 400;
+}
+

@@ -1,0 +1,123 @@
+package rst.communicationpatterns;
+
+option java_outer_classname = "ResourceAllocationType";
+
+import "rst/spatial/LocationConfig.proto";
+import "rst/timing/Duration.proto";
+import "rst/homeautomation/unit/UnitTemplate.proto";
+import "rst/homeautomation/service/ServiceTemplate.proto";
+
+/**
+ *
+ * Data type to allocate resources for exclusive access with a certain priority
+ * and estimated duration. Resources can be allocated by specifiyng one or a
+ * combination of: resource id (single device), unit or service type
+ * (functionality based), or location id.
+ * Optionally, an initiator (human or system) and a short description can be
+ * specified.
+ * @author Patrick Holthaus <patrick.holthaus@uni-bielefeld.de>
+ */
+message ResourceAllocation {
+
+    /**
+     * Priority ranking scheme for resource allocation when interacting with
+     * humans
+     */
+    enum Priority {
+
+        /**
+         * No priority or unspecified; may be dismissed or cancelled at any
+         * time; dismiss if resource busy.
+         */
+        NO = 0;
+
+        /**
+         * Interaction not affected or no user interaction; allowed to begin at
+         * later times.
+         */
+        LOW = 1;
+
+        /**
+         * Interaction affected non-critically; subsequent interactions only
+         * affected marginally; should start immediately
+         */
+        NORMAL = 2;
+
+        /**
+         * Interaction severely affected; has to be be completed to ensure
+         * intact communication and common conceptions; start immediately.
+         */
+        HIGH = 3;
+
+        /**
+         * Required for continued interaction or system operation; start
+         * immediately
+         */
+        URGENT = 4;
+
+        /**
+         * Human or hardware safety threatened;
+         * Begin immediately; divert resources as necessary;
+         * overtime may be authorized.
+         */
+        EMERGENCY = 5;
+    }
+
+    /**
+     * Specifies the request's initiator
+     */
+    enum Initiator {
+
+        /**
+         * Resource required by a system component
+         */
+        SYSTEM = 0;
+
+        /**
+         * Resource required by a human interaction partner
+         */
+        HUMAN = 10;
+    }
+
+
+    /**
+     * Priority of resource allocation
+     */
+    required Priority priority = 1;
+
+    /**
+     * Expected duration of resource allocation
+     */
+    required .rst.timing.Duration duration = 2;
+
+    /**
+     * Priority of resource allocation
+     */
+    optional Initiator initiator = 3;
+
+    /**
+     * A description or reason for allocating resources
+     */
+    repeated string resource_ids = 10;
+
+    /**
+     * Required/allocated resource locations
+     */
+    repeated string location_ids = 11;
+
+    /**
+     * Required/allocated unit types
+     */
+    repeated .rst.homeautomation.unit.UnitTemplate.UnitType unit_types = 12;
+
+    /**
+     * Required/allocated service types
+     */
+    repeated .rst.homeautomation.service.ServiceTemplate.ServiceType service_types = 13;
+
+    /**
+     * A description or reason for allocating resources
+     */
+    optional string description = 20;
+}
+

@@ -1,0 +1,40 @@
+package rst.spatial;
+
+option java_outer_classname = "LocationRegistryType";
+
+import "rst/spatial/LocationConfig.proto";
+import "rst/spatial/ConnectionConfig.proto";
+
+/**
+ * Description of a location registry.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message LocationRegistry {
+
+    /**
+     * The label of the location registry.
+     */
+    optional string label = 100;
+
+    /**
+     * The list of registered location configurations.
+     */
+    repeated .rst.spatial.LocationConfig location_config = 200;
+
+    /**
+     * The list of registered connection configurations.
+     */
+    repeated .rst.spatial.ConnectionConfig connection_config = 250;
+
+    /**
+     * Read only flag for the location config registry.
+     */
+    optional bool location_config_registry_read_only = 300;
+
+    /**
+     * Read only flag for the connection config registry.
+     */
+    optional bool connection_config_registry_read_only = 400;
+}
+

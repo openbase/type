@@ -1,0 +1,19 @@
+package rst.configuration;
+
+option java_outer_classname = "MetaConfigType";
+
+import "rst/configuration/Entry.proto";
+
+/**
+ * A collection of meta config entries to support a key value configuration structure.
+ *
+ * @author Marian Pohling <divinethreepwood@gmail.com>
+ */
+message MetaConfig {
+
+    /**
+     * iId of the location.
+     */
+    repeated Entry entry = 100;
+}
+

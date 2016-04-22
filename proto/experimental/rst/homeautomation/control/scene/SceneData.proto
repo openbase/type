@@ -1,0 +1,30 @@
+package rst.homeautomation.control.scene;
+
+import "rst/homeautomation/state/ActivationState.proto";
+
+option java_outer_classname = "SceneDataType";
+
+
+/**
+ * Generic description of an scene data type.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message SceneData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the related scene.
+     */
+    optional string label = 200;
+
+    /**
+     * The activation state of this scene.
+     */
+    optional .rst.homeautomation.state.ActivationState activation_state = 300;
+}
+

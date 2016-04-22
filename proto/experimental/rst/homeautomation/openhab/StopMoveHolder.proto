@@ -1,0 +1,36 @@
+package rst.homeautomation.openhab;
+
+option java_outer_classname = "StopMoveHolderType";
+
+
+/**
+ * Basic StopMove type used by openhab.
+ * Used by objects like rollershutters.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message StopMoveHolder {
+
+    /**
+     * The state definitions.
+     */
+    enum StopMove {
+
+        /**
+         * Stop state.
+         */
+        STOP = 100;
+
+        /**
+         * Move state.
+         */
+        MOVE = 200;
+    }
+
+    /**
+     * The stop or move state.
+     */
+    required StopMove state = 100;
+
+}
+

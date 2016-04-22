@@ -1,0 +1,36 @@
+package rst.geometry;
+
+option java_outer_classname = "FrameTransformType";
+
+import "rst/geometry/Pose.proto";
+import "rst/timing/Timestamp.proto";
+
+/**
+ * This is a container for rct frame transformation data,
+ * used in rct (a tf2 transformation lib wrapper).
+ *
+ * @author Norman Koester <nkoester@techfak.uni-bielefeld.de>
+ * @author Leon Ziegler <lziegler@techfak.uni-bielefeld.de>
+ */
+message FrameTransform {
+
+    /**
+     * The pose at the target frame.
+     */
+    optional        .rst.geometry.Pose    transform     = 1;
+
+    /**
+     * The name of the rct parent frame.
+     */
+    required        string               frame_parent  = 2;
+
+    /**
+     * The name of the rct child frame.
+     */
+    required        string               frame_child   = 3;
+
+    /**
+     * The time of the available transformation.
+     */
+    optional        .rst.timing.Timestamp time          = 4;
+}

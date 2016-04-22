@@ -1,0 +1,35 @@
+package rst.authorization;
+
+option java_outer_classname = "UserGroupConfigType";
+
+import "rst/configuration/MetaConfig.proto";
+
+/**
+ * Generic description of a person.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ * @author Marian Pohling <mpohling@techfak.uni-bielefeld.de>
+ */
+message UserGroupConfig {
+
+    /**
+     * A unique identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of the group.
+     */
+    optional string label = 200;
+
+    /**
+     * A collection of all users which are assigned to this group.
+     */
+    repeated string member_id = 300;
+
+    /**
+     * Field for storing meta configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 400;
+}
+

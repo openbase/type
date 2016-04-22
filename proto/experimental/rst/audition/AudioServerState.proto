@@ -1,0 +1,20 @@
+package rst.audition;
+import "rst/audition/NamedChannel.proto";
+import "rst/audition/NamedScope.proto";
+option java_outer_classname = "AudioServerStateType";
+
+/**
+ * Internal state of the Hookah audio server to restore
+ * an older state. Currently the list of input/output channels
+ * and the scopes associated with them.
+ *
+ * @author Christian Mertes <cmertes@techfak.uni-bielefeld.de>
+ */
+
+message AudioServerState {
+    repeated NamedChannel inputs = 1;
+    repeated NamedChannel outputs = 2;
+    repeated NamedScope external_inputs = 3;
+    repeated NamedScope external_outputs = 4;
+    repeated NamedScope informers = 5;
+}

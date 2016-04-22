@@ -1,0 +1,52 @@
+package rst.homeautomation.unit;
+
+option java_outer_classname = "UnitGroupConfigType";
+
+import "rst/homeautomation/unit/UnitTemplate.proto";
+import "rst/homeautomation/service/ServiceTemplate.proto";
+import "rst/configuration/MetaConfig.proto";
+import "rst/rsb/Scope.proto";
+
+/**
+ * Type for a group of units.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UnitGroupConfig {
+
+    /**
+     * The id of the unit group.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of the unit group.
+     */
+    optional string label = 200;
+
+    /**
+     * The ids of the units which are members of this group.
+     */
+    repeated string member_id = 300;
+
+    /**
+     * The unit type of the grouped units. This field is optional but when set
+     * defines the service types.
+     */
+    optional .rst.homeautomation.unit.UnitTemplate.UnitType unit_type = 400;
+
+    /**
+     * The service types of the grouped units.
+     */
+    repeated .rst.homeautomation.service.ServiceTemplate.ServiceType service_type = 500;
+    /**
+     * Field for storing meta configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 600;
+
+    /**
+     * The scope of the unit group.
+     */
+    optional .rst.rsb.Scope scope = 700;
+}
+

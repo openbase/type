@@ -1,0 +1,48 @@
+package rst.homeautomation.binding;
+
+option java_outer_classname = "BindingTypeHolderType";
+
+/**
+ * Enum of binding types.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message BindingTypeHolder {
+
+    /**
+     * The binding type.
+     */
+    enum BindingType {
+
+        /**
+         * The unknown type.
+         */
+        UNKNOWN = 1;
+
+        /**
+         * The openhab binding.
+         */
+        OPENHAB = 2;
+
+        /**
+         * The miele@home binding.
+         */
+        MIELE_AT_HOME = 3;
+
+        /**
+         * The sinact binding.
+         */
+        SINACT = 4;
+
+        /**
+         * The handles binding.
+         */
+        HANDLES = 5;
+
+        /**
+         * The floor base binding
+         */
+        FLOOR_BASE = 6;
+    }
+}
+
