@@ -1,0 +1,26 @@
+package rst.vision;
+
+import "rst/vision/FaceFeatureSet.proto";
+
+option java_outer_classname = "FaceFeatureSetsType";
+
+message FaceFeatureSets {
+
+    /**
+     * List of face feature sets.
+     */
+    repeated FaceFeatureSet faces = 1;
+
+    /**
+     * Width of the source image.
+     */
+    // @unit(pixel)
+    required uint32 width = 2;
+
+    /**
+     * Height of the source image.
+     */
+    // @unit(pixel)
+    required uint32 height = 3;
+
+}
