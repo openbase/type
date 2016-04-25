@@ -2,10 +2,7 @@ package rst.communicationpatterns;
 
 option java_outer_classname = "ResourceAllocationType";
 
-import "rst/spatial/LocationConfig.proto";
-import "rst/timing/Duration.proto";
-import "rst/homeautomation/unit/UnitTemplate.proto";
-import "rst/homeautomation/service/ServiceTemplate.proto";
+import "rst/timing/Interval.proto";
 
 /**
  *
@@ -79,6 +76,26 @@ message ResourceAllocation {
         HUMAN = 10;
     }
 
+    /**
+      * Specifies the requests conflict resolution policy
+      */
+    enum Policy {
+
+        /**
+          * Only execute immediately
+          */
+        IMMEDIATE = 0;
+
+        /**
+          * If a conflict occurs, allocate the requested time afterwards
+          */
+        APPEND = 10;
+
+        /**
+          * If a conflict occurs, allocate the resource for the remaining time only
+          */
+        DIFF = 20;
+    }
 
     /**
      * Priority of resource allocation
@@ -86,34 +103,25 @@ message ResourceAllocation {
     required Priority priority = 1;
 
     /**
-     * Expected duration of resource allocation
+     * Expected starting point and end of resource allocation
      */
-    required .rst.timing.Duration duration = 2;
+    required .rst.timing.Interval timeframe = 2;
 
     /**
      * Priority of resource allocation
      */
     optional Initiator initiator = 3;
 
+
+    /**
+      * The policy
+      */
+    required Policy policy = 4;
+
     /**
      * A description or reason for allocating resources
      */
     repeated string resource_ids = 10;
-
-    /**
-     * Required/allocated resource locations
-     */
-    repeated string location_ids = 11;
-
-    /**
-     * Required/allocated unit types
-     */
-    repeated .rst.homeautomation.unit.UnitTemplate.UnitType unit_types = 12;
-
-    /**
-     * Required/allocated service types
-     */
-    repeated .rst.homeautomation.service.ServiceTemplate.ServiceType service_types = 13;
 
     /**
      * A description or reason for allocating resources
