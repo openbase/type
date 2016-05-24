@@ -17,6 +17,51 @@ import "rst/timing/Interval.proto";
 message ResourceAllocation {
 
     /**
+      * The state describes the life cycle of a single allocation attempt
+      */
+    enum State {
+
+        /**
+          * Resource requested for allocation in by a client component
+          */
+        REQUESTED = 10;
+
+        /**
+          * Resource allocation scheduled by the server component
+          */
+        SCHEDULED = 20;
+
+        /**
+          * Resource allocation rejected by the server component
+          */
+        REJECTED = 30;
+
+        /**
+          * Resource allocation cancelled (before allocation)
+          * by either server or client
+          */
+        CANCELLED = 40;
+
+        /**
+          * Resource is now allocated for the client at the server
+          */
+        ALLOCATED = 50;
+
+        /**
+          * Resource allocation aborted abnormally (during allocation)
+          * by either server or client
+          */
+        ABORTED = 60;
+
+        /**
+          * Resource released normally (after allocation)
+          * by either server or client
+          */
+        RELEASED = 70;
+
+    }
+
+    /**
      * Priority ranking scheme for resource allocation when interacting with
      * humans
      */
@@ -82,50 +127,65 @@ message ResourceAllocation {
     enum Policy {
 
         /**
-          * Only execute immediately
+          * Only allocate as a a single, unmodified interval
           */
-        IMMEDIATE = 0;
+        PRESERVE = 0;
 
         /**
-          * If a conflict occurs, allocate the requested time afterwards
+          * Allocate maximum amount of time available, shrink interval if needed
           */
-        APPEND = 10;
+        MAXIMUM = 10;
 
         /**
-          * If a conflict occurs, allocate the resource for the remaining time only
+          * Allocate the first time slot available, shrink interval if needed
           */
-        DIFF = 20;
+        FIRST = 20;
+
     }
 
     /**
-     * Priority of resource allocation
+     * Identifier of the current resource allocation attempt
      */
-    required Priority priority = 1;
-
-    /**
-     * Expected starting point and end of resource allocation
-     */
-    required .rst.timing.Interval timeframe = 2;
+    required string id = 10;
 
     /**
      * Priority of resource allocation
      */
-    optional Initiator initiator = 3;
+    required State state = 20;
 
+    /**
+     * Priority of resource allocation
+     */
+    required Priority priority = 30;
+
+    /**
+     * Initiator of resource allocation
+     */
+    required Initiator initiator = 40;
 
     /**
       * The policy
       */
-    required Policy policy = 4;
+    required Policy policy = 50;
+
+    /**
+     * Expected starting point and end of resource allocation
+     */
+    required .rst.timing.Interval slot = 60;
+
+    /**
+     * Expected starting point and end of resource allocation
+     */
+    optional .rst.timing.Interval constraints = 70;
 
     /**
      * A description or reason for allocating resources
      */
-    repeated string resource_ids = 10;
+    repeated string resource_ids = 80;
 
     /**
      * A description or reason for allocating resources
      */
-    optional string description = 20;
+    optional string description = 90;
 }
 
