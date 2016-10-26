@@ -1,0 +1,27 @@
+package rst.domotic.state;
+
+import "rst/vision/Color.proto";
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "ColorStateType";
+
+
+/**
+ * Basic sensor or object state.
+ * Used by units like a colorable light.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message ColorState {
+
+    /**
+     * The generic color value.
+     */
+    optional .rst.vision.Color color = 100;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 300;
+}
+

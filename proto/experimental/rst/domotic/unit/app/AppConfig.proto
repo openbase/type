@@ -1,0 +1,22 @@
+package rst.domotic.unit.app;
+
+option java_outer_classname = "AppConfigType";
+
+/**
+ * Description of a app configuration.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AppConfig {
+
+    /**
+     * The class of this app.
+     */
+    optional string app_class_id = 250;
+
+    /**
+     * A list of ids of units introduced by this app.
+     */
+    repeated string unit_id = 310;
+}
+

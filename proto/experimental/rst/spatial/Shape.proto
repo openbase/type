@@ -2,7 +2,9 @@ package rst.spatial;
 
 option java_outer_classname = "ShapeType";
 
+import "rst/geometry/AxisAlignedBoundingBox3DFloat.proto";
 import "rst/math/Vec3DDouble.proto";
+
 
 /**
  * Description of a Shape.
@@ -12,8 +14,13 @@ import "rst/math/Vec3DDouble.proto";
 message Shape {
 
     /**
+     * The bounding box of this shape.
+     */
+    optional .rst.geometry.AxisAlignedBoundingBox3DFloat bounding_box = 10;
+
+    /**
      * Floor polygon of the shape.
      */
-    repeated math.Vec3DDouble floor = 50;
+    repeated .rst.math.Vec3DDouble floor = 50;
 }
 

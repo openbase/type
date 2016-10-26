@@ -1,0 +1,70 @@
+package rst.domotic.state;
+
+option java_outer_classname = "InventoryStateType";
+
+import "rst/timing/Timestamp.proto";
+
+/**
+ * The inventory state of a device.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message InventoryState {
+
+    /**
+     * The inventory status definitions.
+     */
+    enum State {
+
+        /**
+         * The unknown status.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * The ordered status.
+         */
+        ORDERED = 1;
+
+        /**
+         * The installed status.
+         */
+        INSTALLED = 2;
+
+        /**
+         * The in stock status.
+         */
+        IN_STOCK = 3;
+
+        /**
+         * The borrowed status.
+         */
+        BORROWED = 4;
+
+        /**
+         * The lost status.
+         */
+        LOST = 5;
+    }
+
+    /**
+     * The name of the location.
+     */
+    optional State value = 100 [default = INSTALLED];
+
+    /**
+     * The id of the current location of the device.
+     */
+    optional string location_id = 200;
+
+    /**
+     * Last change of the inventory status.
+     */
+    optional .rst.timing.Timestamp timestamp = 300;
+
+    /**
+     * The id of the current owner of the device.
+     */
+    optional string owner_id = 400;
+}
+

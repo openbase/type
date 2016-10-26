@@ -1,0 +1,36 @@
+package rst.domotic.unit.dal;
+
+import "rst/domotic/state/PowerState.proto";
+import "rst/domotic/state/IntensityState.proto";
+
+option java_outer_classname = "DimmerDataType";
+
+
+/**
+ * Generic description of a dimmer.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message DimmerData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the dimmer. Used to build the scope.
+     */
+    optional string label = 200;
+
+    /**
+     * Field which represents the power state of the dimmer.
+     */
+    optional .rst.domotic.state.PowerState power_state = 300;
+
+    /**
+     * The dimming describing the dimming.
+     */
+    optional .rst.domotic.state.IntensityState intensity_state = 400;
+}
+

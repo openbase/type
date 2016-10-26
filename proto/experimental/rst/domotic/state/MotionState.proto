@@ -1,0 +1,52 @@
+package rst.domotic.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "MotionStateType";
+
+
+/**
+ * Basic motion state used by devices
+ * like motion detectors.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message MotionState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknown state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * No movement/motion detected.
+         */
+        NO_MOTION = 1;
+
+        /**
+         * Movement/motion detected.
+         */
+        MOTION = 2;
+    }
+
+    /*
+     * The motion state.
+     */
+    optional State value = 100;
+
+    /*
+     * Last motion timestemp.
+     */
+    optional .rst.timing.Timestamp last_motion = 200;
+
+    /*
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 300;
+}
+

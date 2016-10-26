@@ -1,0 +1,24 @@
+package rst.homeautomation.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "RFIDStateType";
+
+
+/**
+ * Basic object state used by RFIDs.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message RFIDState {
+
+    /**
+     * The data two write to or read from the RFID as a byte array.
+     */
+    optional bytes data = 100;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 200;
+}

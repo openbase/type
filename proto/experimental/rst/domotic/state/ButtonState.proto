@@ -1,0 +1,56 @@
+package rst.domotic.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "ButtonStateType";
+
+
+/**
+ * Basic button state.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message ButtonState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknown state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Released state.
+         */
+        RELEASED = 1;
+
+        /**
+         * Pressed once.
+         */
+        PRESSED = 2;
+
+        /**
+         * Clicked twice like a mouse button.
+         */
+        DOUBLE_PRESSED = 3;
+    }
+
+    /**
+     * The button state.
+     */
+    optional State value = 100;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 200;
+
+    /**
+     * Timestamp of the last time the button was pressed.
+     */
+    optional .rst.timing.Timestamp last_pressed = 300;
+}
+

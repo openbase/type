@@ -1,0 +1,24 @@
+package rst.hri;
+
+import "rst/geometry/BoundingBox3DFloat.proto";
+
+option java_outer_classname = "HeadType";
+
+/**
+ * Geometric properties of a person's head (e.g. in a person-tracking
+ * system).
+ *
+ * @author Leon Ziegler <lziegler@techfak.uni-bielefeld.de>
+ * @author Rene Zorn <rzorn@techfak.uni-bielefeld.de>
+ */
+message Head {
+
+    /**
+     * Bounding box around the whole head.
+     *
+     * This is not necessarily aligned to location and
+     * orientation. Mainly used for tracking purposes.
+     */
+    optional geometry.BoundingBox3DFloat shape = 30;
+
+}

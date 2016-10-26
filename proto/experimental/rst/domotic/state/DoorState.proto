@@ -1,0 +1,52 @@
+package rst.domotic.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "DoorStateType";
+
+
+/**
+ * State describing the state of a door.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message DoorState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknown state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Closed state.
+         */
+        CLOSED = 1;
+
+        /*
+         * In between state.
+         */
+        IN_BETWEEN = 2;
+
+        /**
+         * Open state.
+         */
+        OPEN = 3;
+
+    }
+
+    /**
+     * The open or closed state.
+     */
+    optional State value = 100;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 300;
+}
+

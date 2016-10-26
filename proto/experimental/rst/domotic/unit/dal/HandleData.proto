@@ -1,0 +1,30 @@
+package rst.domotic.unit.dal;
+
+import "rst/domotic/state/HandleState.proto";
+
+option java_outer_classname = "HandleDataType";
+
+
+/**
+ * Description of a generic handle.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message HandleData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the handle sensor. Used to build the scope.
+     */
+    optional string label = 200;
+
+    /**
+     * Field which represents the state of the handle.
+     */
+    optional .rst.domotic.state.HandleState handle_state = 300;
+}
+

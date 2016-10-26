@@ -1,0 +1,28 @@
+package rst.domotic.unit.user;
+
+option java_outer_classname = "UserConfigType";
+
+/**
+ * Generic description of a person.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ * @author Marian Pohling <mpohling@techfak.uni-bielefeld.de>
+ */
+message UserConfig {
+
+    /**
+     * The first name of the person.
+     */
+    optional string first_name = 200;
+
+    /**
+     * The last name of the person.
+     */
+    optional string last_name = 300;
+
+    /**
+     * The user name of the person.
+     */
+    optional string user_name = 400;
+}
+

@@ -1,0 +1,36 @@
+package rst.domotic.action;
+
+option java_outer_classname = "ActionAuthorityType";
+
+
+/**
+ * A type which defines the authority which is responsible for an action execution.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ActionAuthority {
+
+    enum Authority {
+
+        /**
+         * Unknown authority.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * System authority.
+         */
+        SYSTEM = 1;
+
+        /**
+         * User authority.
+         */
+        USER = 2;
+    }
+
+    /**
+     * The authority which is responsible for the execution.
+     */
+    optional Authority authority = 100 [default = SYSTEM];
+}
+

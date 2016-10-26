@@ -1,0 +1,13 @@
+package rst.domotic.binding.openhab;
+
+option java_outer_classname = "OpenhabStateType";
+
+
+/**
+ * Dummy type for the communication with the openHAB rsb binding.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message OpenhabState {
+
+}

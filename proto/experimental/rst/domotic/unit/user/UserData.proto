@@ -1,0 +1,35 @@
+package rst.domotic.unit.user;
+
+option java_outer_classname = "UserDataType";
+
+import "rst/domotic/state/UserActivityState.proto";
+import "rst/domotic/state/UserPresenceState.proto";
+
+/**
+ * Description of an user data type.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message UserData {
+
+    /**
+     * A unique user identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * The user name of the person.
+     */
+    optional string user_name = 200;
+
+    /**
+     * The current user activity.
+     */
+    optional .rst.domotic.state.UserActivityState user_activity_state = 300;
+
+    /**
+     * The presence state of the user.
+     */
+    optional .rst.domotic.state.UserPresenceState user_presence_state = 400;
+}
+

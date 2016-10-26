@@ -1,0 +1,22 @@
+package rst.domotic.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "PassageStateType";
+
+
+/**
+ * State describing the state of a passage.
+ *
+ * TODO: what states belong to a passage?
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message PassageState {
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 300;
+}
+

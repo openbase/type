@@ -1,0 +1,107 @@
+package rst.domotic.unit.unitgroup;
+
+import "rst/domotic/state/AlarmState.proto";
+import "rst/domotic/state/BlindState.proto";
+import "rst/domotic/state/BrightnessState.proto";
+import "rst/domotic/state/ColorState.proto";
+import "rst/domotic/state/IntensityState.proto";
+import "rst/domotic/state/MotionState.proto";
+import "rst/domotic/state/PowerConsumptionState.proto";
+import "rst/domotic/state/PowerState.proto";
+import "rst/domotic/state/SmokeState.proto";
+import "rst/domotic/state/StandbyState.proto";
+import "rst/domotic/state/TamperState.proto";
+import "rst/domotic/state/TemperatureState.proto";
+
+option java_outer_classname = "UnitGroupDataType";
+
+
+/**
+ * Description of a unitgroup data type.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message UnitGroupData {
+
+    /**
+     * A unique UnitGroup identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the related UnitGroup.
+     */
+    optional string label = 200;
+
+    /**
+     * The smoke alarm state of the UnitGroup.
+     */
+    optional .rst.domotic.state.AlarmState smoke_alarm_state = 1200;
+
+    /**
+     * The temperature alarm state of the UnitGroup.
+     */
+    optional .rst.domotic.state.AlarmState temperature_alarm_state = 1500;
+
+    /**
+     * The blind state of the UnitGroup.
+     */
+    optional .rst.domotic.state.BlindState blind_state = 800;
+
+    /**
+     * The brightness state of the UnitGroup.
+     */
+    optional .rst.domotic.state.BrightnessState brightness_state = 300;
+
+    /**
+     * The color state of the UnitGroup.
+     */
+    optional .rst.domotic.state.ColorState color_state = 400;
+
+    /**
+     * The intensity state of the UnitGroup.
+     */
+    optional .rst.domotic.state.IntensityState intensity_state = 500;
+
+    /**
+     * The motion state of the UnitGroup.
+     */
+    optional .rst.domotic.state.MotionState motion_state = 1100;
+
+    /**
+     * The power consumption state of the UnitGroup.
+     */
+    optional .rst.domotic.state.PowerConsumptionState power_consumption_state = 1600;
+
+    /**
+     * The power state of the UnitGroup.
+     */
+    optional .rst.domotic.state.PowerState power_state = 700;
+
+    /**
+     * The smoke state of the UnitGroup.
+     */
+    optional .rst.domotic.state.SmokeState smoke_state = 1300;
+
+    /**
+     * The standby state of the UnitGroup.
+     */
+    optional .rst.domotic.state.StandbyState standby_state = 900;
+
+    /**
+     * The tamper state of the UnitGroup.
+     */
+    optional .rst.domotic.state.TamperState tamper_state = 1700;
+
+    /**
+     * The target temperature state of the UnitGroup.
+     */
+    optional .rst.domotic.state.TemperatureState target_temperature_state= 1000;
+
+    /**
+     * The actual temperature state of the UnitGroup.
+     */
+    optional .rst.domotic.state.TemperatureState acutal_temperature_state= 1400;
+
+}
+

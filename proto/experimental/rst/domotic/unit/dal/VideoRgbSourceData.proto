@@ -1,0 +1,23 @@
+package rst.domotic.unit.dal;
+
+option java_outer_classname = "VideoRgbSourceDataType";
+
+
+/**
+ * Generic description of a video rgb source.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message VideoRgbSourceData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the video rgb source. Used to build the scope.
+     */
+    optional string label = 200;
+}
+

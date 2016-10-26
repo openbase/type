@@ -1,0 +1,35 @@
+package rst.domotic.registry;
+
+option java_outer_classname = "SceneRegistryDataType";
+
+import "rst/domotic/unit/UnitConfig.proto";
+
+/**
+ * Description of a scene registry.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message SceneRegistryData {
+
+    /**
+     * The label of the scene registry.
+     */
+    optional string label = 100;
+
+    /**
+     * The list of registerd scene configurations.
+     */
+    repeated .rst.domotic.unit.UnitConfig scene_unit_config = 200;
+
+    /**
+     * Read only flag for the scene config registry.
+     */
+    optional bool scene_unit_config_registry_read_only = 300;
+
+    /**
+     * Consistent flag for the scene config registry.
+     */
+    optional bool scene_unit_config_registry_consistent = 400;
+
+}
+

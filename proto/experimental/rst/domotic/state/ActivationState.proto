@@ -1,0 +1,46 @@
+package rst.domotic.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "ActivationStateType";
+
+
+/**
+ * Basic state that indicates if an application is currently active or inactive.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ActivationState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknown state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Deactive state.
+         */
+        DEACTIVE = 1;
+
+        /**
+         * Active state.
+         */
+        ACTIVE = 2;
+    }
+
+    /**
+     * The current state value.
+     */
+    optional State value = 100;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 200;
+}
+

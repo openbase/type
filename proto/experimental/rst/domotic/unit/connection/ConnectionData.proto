@@ -1,0 +1,41 @@
+package rst.domotic.unit.connection;
+
+import "rst/domotic/state/DoorState.proto";
+import "rst/domotic/state/WindowState.proto";
+import "rst/domotic/state/PassageState.proto";
+
+option java_outer_classname = "ConnectionDataType";
+
+/**
+ * Description of a connection data type.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ConnectionData {
+
+    /**
+     * A unique connection identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the related connection.
+     */
+    optional string label = 200;
+
+    /**
+     * If this connection is a door the door state is represented by this field.
+     */
+    optional .rst.domotic.state.DoorState door_state = 300;
+
+    /**
+     * If this connection is a window the window state is repesented by this field.
+     */
+    optional .rst.domotic.state.WindowState window_state = 400;
+
+    /**
+     * If this connection is a passage the passage state is represented by this field.
+     */
+    optional .rst.domotic.state.PassageState passage_state = 500;
+}
+

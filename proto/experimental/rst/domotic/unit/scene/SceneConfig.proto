@@ -1,0 +1,19 @@
+package rst.domotic.unit.scene;
+
+option java_outer_classname = "SceneConfigType";
+
+import "rst/domotic/action/ActionConfig.proto";
+
+/**
+ * Description of a scene configuration.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message SceneConfig {
+
+    /**
+     * A list of actions executed for this scene.
+     */
+    repeated .rst.domotic.action.ActionConfig action_config = 800;
+}
+

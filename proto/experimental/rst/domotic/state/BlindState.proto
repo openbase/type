@@ -1,0 +1,59 @@
+package rst.domotic.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "BlindStateType";
+
+
+/**
+ * Basic sensor or object state.
+ * Used by objects like rollershutters.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message BlindState {
+
+    /**
+     * The state definitions.
+     */
+    enum MovementState {
+
+        /**
+         * Unknown state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Down state.
+         */
+        DOWN = 1;
+
+        /**
+         * Stop state.
+         */
+        STOP = 2;
+
+        /**
+         * Up state.
+         */
+        UP = 3;
+    }
+
+    /**
+     * The movement state of the blind state.
+     */
+    optional MovementState movement_state = 100;
+
+    /**
+     * The value which represents the height of the blind in percent. Range [0..100].
+     * If this value is 100 than the rollershutter is at the very top.
+     */
+    optional double opening_ratio = 200;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 300;
+}
+
+

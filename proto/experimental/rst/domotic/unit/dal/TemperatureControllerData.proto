@@ -1,0 +1,41 @@
+package rst.domotic.unit.dal;
+
+import "rst/domotic/state/TemperatureState.proto";
+import "rst/domotic/state/AlarmState.proto";
+
+option java_outer_classname = "TemperatureControllerDataType";
+
+
+/**
+ * Generic description of a temperature controller.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message TemperatureControllerData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the temperature controller. Used to build the scope.
+     */
+    optional string label = 200;
+
+    /**
+     * The state which represents the actual temperature.
+     */
+    optional .rst.domotic.state.TemperatureState actual_temperature_state = 300;
+
+    /**
+     * The state which represents the target temperature.
+     */
+    optional .rst.domotic.state.TemperatureState target_temperature_state = 400;
+
+    /**
+     * The temperature alarm state.
+     */
+    optional .rst.domotic.state.AlarmState temperature_alarm_state = 500;
+}
+

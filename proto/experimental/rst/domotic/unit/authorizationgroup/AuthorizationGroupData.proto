@@ -1,0 +1,29 @@
+package rst.domotic.unit.authorizationgroup;
+
+option java_outer_classname = "AuthorizationGroupDataType";
+
+import "rst/domotic/state/UserPresenceState.proto";
+
+/**
+ * Description of an authorization group data type.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AuthorizationGroupData {
+
+    /**
+     * A unique authorization group identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of this authorization group.
+     */
+    optional string label = 200;
+
+    /**
+     * The presence state of this authorization group.
+     */
+    optional .rst.domotic.state.UserPresenceState user_presence_state = 400;
+}
+

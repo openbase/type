@@ -1,0 +1,37 @@
+package rst.tracking;
+
+import "rst/geometry/Ray3DFloat.proto";
+
+option java_outer_classname = "PointingRay3DFloatType";
+
+/**
+ * Pointing Ray including certainty and type.
+ *
+ * @author Thoren Huppke <thuppke@techfak.uni-bielefeld.de>
+ */
+// @create_collection
+message PointingRay3DFloat {
+
+    /**
+     * The ray.
+     */
+    optional geometry.Ray3DFloat ray = 1;
+    /**
+     * The certainty of the ray belonging to a pointing gesture.
+     */
+    optional float certainty = 2;
+
+    enum PointingType {
+        FOREARM = 0;
+        HAND = 1;
+        HEAD_HAND = 2;
+        HEAD_FINGERTIP = 3;
+        SHOULDER_HAND = 4;
+    }
+    /**
+     * Type of the pointing gesture the ray belongs to.
+     */
+    optional PointingType type = 3;
+
+}
+

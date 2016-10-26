@@ -1,0 +1,34 @@
+package rst.domotic.unit.agent;
+
+option java_outer_classname = "AgentClassType";
+
+import "rst/configuration/MetaConfig.proto";
+
+/**
+ * Description of an agent class.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AgentClass {
+
+    /**
+     * The id of the agent class.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of the agent class.
+     */
+    optional string label = 200;
+
+    /**
+     * The description of the agent class.
+     */
+    optional string description = 500;
+
+    /**
+     * A field for storing meta agent configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 600;
+}
+

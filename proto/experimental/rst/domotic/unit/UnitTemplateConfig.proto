@@ -1,0 +1,41 @@
+package rst.domotic.unit;
+
+option java_outer_classname = "UnitTemplateConfigType";
+
+import "rst/domotic/service/ServiceTemplateConfig.proto";
+import "rst/domotic/unit/UnitTemplate.proto";
+import "rst/configuration/MetaConfig.proto";
+
+/**
+ * Template for units. Contains the unit type and according service types.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UnitTemplateConfig {
+
+    /**
+     * The id of the unit template configuration.
+     */
+    optional string id = 50;
+
+    /**
+     * The label of the unit tempalte configuration.
+     */
+    optional string label = 70;
+
+    /**
+     * The unit type.
+     */
+    optional .rst.domotic.unit.UnitTemplate.UnitType type = 100;
+
+    /**
+     * The service templates.
+     */
+    repeated .rst.domotic.service.ServiceTemplateConfig service_template_config = 200;
+
+    /**
+     * Meta configuration for the unit template config.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 300;
+}
+

@@ -1,0 +1,47 @@
+package rst.domotic.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "IntensityStateType";
+
+
+/**
+ * Basic sensor or object state.
+ * Used by units like the dimmer or earthquake sensors.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message IntensityState {
+
+    /**
+     * The data unit of the intensity value.
+     */
+    enum DataUnit {
+
+        /**
+         * Unknown data unit.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * If the intensity is given in percent e.g. for the dimmer.
+         */
+        PERCENT = 1;
+    }
+
+    /**
+     * The intensity in range of [0..100].
+     */
+    optional double intensity = 100;
+
+    /**
+     * The data unit of the given intensity value.
+     */
+    optional DataUnit intensity_data_unit = 200;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 300;
+}
+

@@ -1,0 +1,30 @@
+package rst.domotic.unit.dal;
+
+import "rst/domotic/state/BatteryState.proto";
+
+option java_outer_classname = "BatteryDataType";
+
+
+/**
+ * Generic description of a battery.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message BatteryData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the battery. Used to build the scope.
+     */
+    optional string label = 200;
+
+    /**
+     * Field which represents the energy of the battery.
+     */
+    optional .rst.domotic.state.BatteryState battery_state = 300;
+}
+

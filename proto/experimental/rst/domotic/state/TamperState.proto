@@ -1,0 +1,52 @@
+package rst.domotic.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "TamperStateType";
+
+
+/**
+ * Basic sensor or object state.
+ * Used by devices that have a tamper function.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message TamperState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknown state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * No tamper-proof.
+         */
+        NO_TAMPER = 1;
+
+        /**
+         * Tamper-proof.
+         */
+        TAMPER = 2;
+    }
+
+    /**
+     * The tamper state.
+     */
+    optional State value = 100;
+
+    /**
+     * Last tamper detected timestamp.
+     */
+    optional .rst.timing.Timestamp last_detection = 200;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 300;
+}
+

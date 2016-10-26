@@ -1,0 +1,26 @@
+package rst.domotic.service;
+
+import "rst/domotic/service/ServiceTemplate.proto";
+import "rst/configuration/MetaConfig.proto";
+
+option java_outer_classname = "ServiceTemplateConfigType";
+
+
+/**
+ * Description of service template config.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ServiceTemplateConfig {
+
+    /**
+     * The service type of the config.
+     */
+    optional .rst.domotic.service.ServiceTemplate.ServiceType service_type = 100;
+
+    /**
+     * A field for storing meta service template configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 200;
+}
+

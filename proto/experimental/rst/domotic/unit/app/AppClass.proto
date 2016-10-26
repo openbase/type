@@ -1,0 +1,46 @@
+package rst.domotic.unit.app;
+
+option java_outer_classname = "AppClassType";
+
+import "rst/configuration/MetaConfig.proto";
+import "rst/domotic/binding/BindingConfig.proto";
+import "rst/domotic/unit/UnitTemplateConfig.proto";
+
+/**
+ * Description of an app class.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AppClass {
+
+    /**
+     * The id of the app class.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of the app class.
+     */
+    optional string label = 200;
+
+    /**
+     * The description of the app class.
+     */
+    optional string description = 300;
+
+    /**
+     * A field for storing meta app class configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 400;
+
+    /**
+     * The binding configuration of the device class.
+     */
+    optional .rst.domotic.binding.BindingConfig binding_config = 500;
+
+    /**
+     * A list of unit template configs.
+     */
+    repeated .rst.domotic.unit.UnitTemplateConfig unit_template_config = 600;
+}
+

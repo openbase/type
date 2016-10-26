@@ -1,0 +1,17 @@
+package rst.domotic.unit.agent;
+
+option java_outer_classname = "AgentConfigType";
+
+/**
+ * Description of a agent configuration.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AgentConfig {
+
+    /**
+     * The type of the agent.
+     */
+    optional string agent_class_id = 250;
+}
+

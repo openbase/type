@@ -1,0 +1,30 @@
+package rst.domotic.unit.dal;
+
+import "rst/domotic/state/ContactState.proto";
+
+option java_outer_classname = "ReedContactDataType";
+
+
+/**
+ * Generic description of a reed contact.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ReedContactData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the reed switch. Used to build the scope.
+     */
+    optional string label = 200;
+
+    /**
+     * Field which represents the contact state of the reed contact.
+     */
+    optional .rst.domotic.state.ContactState contact_state = 300;
+}
+

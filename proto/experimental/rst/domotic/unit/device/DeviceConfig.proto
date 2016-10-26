@@ -1,0 +1,33 @@
+package rst.domotic.unit.device;
+
+option java_outer_classname = "DeviceConfigType";
+
+import "rst/domotic/state/InventoryState.proto";
+
+/**
+ * Description of a device configuration.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message DeviceConfig {
+
+    /**
+     * The serial number of the device.
+     */
+    optional string serial_number = 400;
+
+    /**
+     * The inventory state of the device.
+     */
+    optional .rst.domotic.state.InventoryState inventory_state = 600;
+
+    /**
+     * The id of the device class of the device.
+     */
+    optional string device_class_id = 700;
+
+    /**
+     * A list of ids of unit introduced by this device.
+     */
+    repeated string unit_id = 800;
+}

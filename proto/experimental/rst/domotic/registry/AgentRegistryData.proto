@@ -1,0 +1,51 @@
+package rst.domotic.registry;
+
+option java_outer_classname = "AgentRegistryDataType";
+
+import "rst/domotic/unit/UnitConfig.proto";
+import "rst/domotic/unit/agent/AgentClass.proto";
+
+/**
+ * Description of a agent registry.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AgentRegistryData {
+
+    /**
+     * The label of the agent registry.
+     */
+    optional string label = 100;
+
+    /**
+     * The list of registerd agent configurations.
+     */
+    repeated .rst.domotic.unit.UnitConfig agent_unit_config = 200;
+
+    /**
+     * Read only flag for the agent config registry.
+     */
+    optional bool agent_unit_config_registry_read_only = 300;
+
+    /**
+     * The list of registerd agent classes.
+     */
+    repeated .rst.domotic.unit.agent.AgentClass agent_class = 400;
+
+    /**
+     * Read only flag for the agent class registry.
+     */
+    optional bool agent_class_registry_read_only = 500;
+
+    /**
+     * Consistent flag for the agent config registry.
+     */
+    optional bool agent_unit_config_registry_consistent = 600;
+
+    /**
+     * Consistent flag for the agent class registry.
+     */
+    optional bool agent_class_registry_consistent = 700;
+
+}
+

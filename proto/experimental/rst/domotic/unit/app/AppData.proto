@@ -1,0 +1,30 @@
+package rst.domotic.unit.app;
+
+import "rst/domotic/state/ActivationState.proto";
+
+option java_outer_classname = "AppDataType";
+
+
+/**
+ * Generic description of an app data type.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AppData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the related app.
+     */
+    optional string label = 200;
+
+    /**
+     * The activation state of this app.
+     */
+    optional .rst.domotic.state.ActivationState activation_state = 300;
+}
+

@@ -1,0 +1,30 @@
+package rst.homeautomation.unit;
+
+import "rst/homeautomation/state/RFIDState.proto";
+
+option java_outer_classname = "RFIDDataType";
+
+
+/**
+ * Generic description of an RFID.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message RFIDData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Field which represents the state of the RFID.
+     */
+    optional .rst.homeautomation.state.RFIDState rfid_state = 200;
+
+    /**
+     * Label of the RFID. Used to build the scope.
+     */
+    optional string label = 300;
+}
+

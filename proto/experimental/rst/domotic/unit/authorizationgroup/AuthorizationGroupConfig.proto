@@ -1,0 +1,18 @@
+package rst.domotic.unit.authorizationgroup;
+
+option java_outer_classname = "AuthorizationGroupConfigType";
+
+/**
+ * Generic description of an authorization group.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ * @author Marian Pohling <mpohling@techfak.uni-bielefeld.de>
+ */
+message AuthorizationGroupConfig {
+
+    /**
+     * A collection of all users which are assigned to this group.
+     */
+    repeated string member_id = 300;
+}
+

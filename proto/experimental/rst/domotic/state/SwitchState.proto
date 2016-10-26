@@ -1,0 +1,26 @@
+package rst.domotic.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "SwitchStateType";
+
+
+/**
+ * Basic switch state used by switches.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message SwitchState {
+
+    /**
+     * The position of the switch. A switch with two states could
+     * for example use the positions 0 for off and 1 for on.
+     */
+    optional uint32 position = 100;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 300;
+}
+

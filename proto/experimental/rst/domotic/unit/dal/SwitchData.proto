@@ -1,0 +1,29 @@
+package rst.domotic.unit.dal;
+
+import "rst/domotic/state/SwitchState.proto";
+
+option java_outer_classname = "SwitchDataType";
+
+/**
+ * Generic description of a switch.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message SwitchData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the switch. Used to build the scope.
+     */
+    optional string label = 200;
+
+    /**
+     * Field which represents the state of the switch.
+     */
+    optional .rst.domotic.state.SwitchState switch_state = 300;
+}
+

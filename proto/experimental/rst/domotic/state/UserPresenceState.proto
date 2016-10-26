@@ -1,0 +1,35 @@
+package rst.domotic.state;
+
+option java_outer_classname = "UserPresenceStateType";
+
+
+/**
+ * Description of an user presence state.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message UserPresenceState {
+
+    /**
+     * The user presence state.
+     */
+    enum State {
+
+        /**
+         * Unknwon presence state.
+         */
+        UNKNOWN = 0;
+        SOON_AWAY = 1;
+        SHORT_AWAY = 2;
+        AWAY = 3;
+        SOON_AT_HOME = 4;
+        SHORT_AT_HOME = 5;
+        AT_HOME = 6;
+    }
+
+    /**
+     * The presence state value.
+     */
+    optional State value = 100;
+}
+

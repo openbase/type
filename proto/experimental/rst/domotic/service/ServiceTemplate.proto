@@ -1,0 +1,207 @@
+package rst.domotic.service;
+
+option java_outer_classname = "ServiceTemplateType";
+
+import "rst/configuration/MetaConfig.proto";
+
+/**
+ * Description of service template.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ServiceTemplate {
+
+    /**
+     * The service pattern defines what kind of service it is.
+     */
+    enum ServicePattern {
+
+        /**
+         * Provides data for the given service type.
+         */
+        PROVIDER = 0;
+
+        /**
+         * Allows control/operate of the given service type.
+         */
+        OPERATION = 1;
+
+        /**
+         * Consumes the data of a given service type to control its own value.
+         */
+        CONSUMER = 2;
+
+    }
+
+    /**
+     * The service type defines the kind of data this service deals with.
+     */
+    enum ServiceType {
+
+        /**
+         * Unknown service type.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Battery provider.
+         */
+        BATTERY_STATE_SERVICE = 10;
+
+        /**
+         * Brightness service.
+         */
+        BRIGHTNESS_STATE_SERVICE = 20;
+
+        /**
+         * Intensity service.
+         */
+        INTENSITY_STATE_SERVICE = 30;
+
+        /**
+         * Button service.
+         */
+        BUTTON_STATE_SERVICE = 40;
+
+        /**
+         * Switch service.
+         */
+        SWITCH_STATE_SERVICE = 50;
+
+        /**
+         * Color service.
+         */
+        COLOR_STATE_SERVICE = 60;
+
+        /**
+         * Handle service.
+         */
+        HANDLE_STATE_SERVICE = 70;
+
+        /**
+         * Motion service.
+         */
+        MOTION_STATE_SERVICE = 80;
+
+        /**
+         * Power-Comsunption service.
+         */
+        POWER_CONSUMPTION_STATE_SERVICE = 90;
+
+        /**
+         * Power service.
+         */
+        POWER_STATE_SERVICE = 100;
+
+        /**
+         * Contanct service.
+         */
+        CONTACT_STATE_SERVICE = 110;
+
+        /**
+         * Blind Service.
+         */
+        BLIND_STATE_SERVICE = 120;
+
+        /**
+         * Tamper service.
+         */
+        TAMPER_STATE_SERVICE = 130;
+
+        /**
+         * Target temperature service.
+         */
+        TARGET_TEMPERATURE_STATE_SERVICE = 140;
+
+        /**
+         * Temperature service.
+         */
+        TEMPERATURE_STATE_SERVICE = 150;
+
+        /**
+         * Standby service.
+         */
+        STANDBY_STATE_SERVICE = 160;
+
+        /**
+         * Smoke Alarm state service.
+         */
+        SMOKE_ALARM_STATE_SERVICE = 170;
+
+        /**
+         * Temperature alarm state service.
+         */
+        TEMPERATURE_ALARM_STATE_SERVICE = 180;
+
+        /**
+         * Smoke state service.
+         */
+        SMOKE_STATE_SERVICE = 190;
+
+        /**
+         * Water alarm state service.
+         */
+        WATER_ALARM_STATE_SERVICE = 200;
+
+        /**
+         * Fire alarm state service.
+         */
+        FIRE_ALARM_STATE_SERVICE = 210;
+
+        /**
+         * Tempest alarm state service.
+         */
+        TEMPEST_ALARM_STATE_SERVICE = 220;
+
+        /**
+         * Earthquake alarm state service.
+         */
+        EARTHQUAKE_ALARM_STATE_SERVICE = 230;
+
+        /**
+         * Intrusion alarm state service.
+         */
+        INTRUSION_ALARM_STATE_SERVICE = 240;
+
+        /**
+         * Medial emergency alarm state service.
+         */
+        MEDICAL_EMERGENCY_ALARM_STATE_SERVICE = 250;
+
+        /**
+         * Door state service.
+         */
+        DOOR_STATE_SERVICE = 260;
+
+        /**
+         * Window state service.
+         */
+        WINDOW_STATE_SERVICE = 270;
+
+        /**
+         * Passage state service.
+         */
+        PASSAGE_STATE_SERVICE = 280;
+
+        /**
+         * Service used by RFIDs.
+         */
+        RFID_STATE_SERVICE = 290;
+    }
+
+    /**
+     * The related Service type.
+     */
+    optional ServiceType type = 100;
+
+    /**
+     * The related Service pattern.
+     */
+    optional ServicePattern pattern = 200;
+
+    /**
+     * A field for storing meta service template configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 300;
+}
+

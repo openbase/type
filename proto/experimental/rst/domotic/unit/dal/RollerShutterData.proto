@@ -1,0 +1,32 @@
+package rst.domotic.unit.dal;
+
+import "rst/domotic/state/BlindState.proto";
+
+option java_outer_classname = "RollerShutterDataType";
+
+
+/**
+ * Generic description of a roller shutter.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message RollerShutterData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the roller shutter. Used to build the scope.
+     */
+    optional string label = 200;
+
+    /**
+     * Field which represents the state of the roller shutter.
+     */
+    optional .rst.domotic.state.BlindState blind_state = 300;
+
+
+}
+

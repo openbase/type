@@ -1,0 +1,47 @@
+package rst.domotic.unit.location;
+
+option java_outer_classname = "TileConfigType";
+
+import "rst/configuration/MetaConfig.proto";
+
+/**
+ * Description of a tile.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message TileConfig {
+
+    enum TileType {
+
+        /**
+         * Unknown.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Type for outdoor.
+         */
+        OUTDOOR = 1;
+
+        /**
+         * Type for a room.
+         */
+        INDOOR = 2;
+    }
+
+    /**
+     * The type of the tile.
+     */
+    optional TileType type = 100;
+
+    /**
+     * A list of connections connecting this tile with others.
+     */
+    repeated string connection_id = 200;
+
+    /**
+     * A field for storing meta unit configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 300;
+}
+

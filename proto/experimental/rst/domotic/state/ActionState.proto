@@ -1,0 +1,84 @@
+package rst.domotic.state;
+
+option java_outer_classname = "ActionStateType";
+
+
+/**
+ * This type represents the current action state.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ActionState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * The action state is unknown.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Action is propertly configured and ready for initiation.
+         */
+        INITIALIZED = 1;
+
+        /**
+         * Action is scheduled for a specific initiation time.
+         */
+        SCHEDULED = 2;
+
+        /**
+         * Action is allocating the resources which are needed for execution.
+         */
+        INITIATING = 3;
+
+        /**
+         * Action is currently performing the defined assigned action.
+         */
+        EXECUTING = 4;
+
+        /**
+         * An error occured during action execution.
+         */
+        EXECUTION_FAILED = 5;
+
+        /**
+         * Action is successfully executed and releasing all allocated resources.
+         */
+        FINISHING = 6;
+
+        /**
+         * Execution is successfully executed and now finished.
+         */
+        FINISHED = 7;
+
+        /**
+         * Action was externaly canceled and is now aborting the execution phrase.
+         */
+        ABORTING = 8;
+
+        /**
+         * Action is successfully abordted.
+         */
+        ABORTED = 9;
+
+        /**
+         * Action Abording failed and execution will continued.
+         */
+        ABORTING_FAILED = 10;
+
+        /**
+         * Action could not be initiated because some resources are not available.
+         */
+        REJECTED = 11;
+    }
+
+    /*
+     * The current state value.
+     */
+    optional State value = 100;
+}
+

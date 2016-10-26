@@ -1,0 +1,25 @@
+package rst.domotic.action;
+
+option java_outer_classname = "SnapshotType";
+
+import "rst/domotic/action/ActionConfig.proto";
+import "rst/timing/Timestamp.proto";
+
+/**
+ * A snapshot is a list of actions persisting a subset of unit states.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message Snapshot {
+
+    /*
+     * Last time when the snapshot was recorded.
+     */
+    optional .rst.timing.Timestamp record_time = 100;
+
+    /**
+     * A list of recorded actions which can be executed to restore the snapshot.
+     */
+    repeated .rst.domotic.action.ActionConfig action_config = 200;
+}
+

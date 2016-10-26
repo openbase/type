@@ -1,0 +1,30 @@
+package rst.domotic.unit.dal;
+
+import "rst/domotic/state/MotionState.proto";
+
+option java_outer_classname = "MotionDetectorDataType";
+
+
+/**
+ * Generic description of a motion detector.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message MotionDetectorData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the motion sensor. Used to build the scope.
+     */
+    optional string label = 200;
+
+    /**
+     * Field which represents the state of the motion.
+     */
+    optional .rst.domotic.state.MotionState motion_state = 300;
+}
+

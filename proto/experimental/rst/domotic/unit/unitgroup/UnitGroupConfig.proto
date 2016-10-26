@@ -1,0 +1,31 @@
+package rst.domotic.unit.unitgroup;
+
+option java_outer_classname = "UnitGroupConfigType";
+
+import "rst/domotic/unit/UnitTemplate.proto";
+import "rst/domotic/service/ServiceTemplate.proto";
+
+/**
+ * Type for a group of units.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UnitGroupConfig {
+
+    /**
+     * The ids of the units which are members of this group.
+     */
+    repeated string member_id = 300;
+
+    /**
+     * The unit type of the grouped units. This field is optional but when set
+     * defines the service types.
+     */
+    optional .rst.domotic.unit.UnitTemplate.UnitType unit_type = 400;
+
+    /**
+     * The service templates of the grouped units.
+     */
+    repeated .rst.domotic.service.ServiceTemplate service_template = 500;
+}
+

@@ -1,0 +1,45 @@
+package rst.domotic.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "AlarmStateType";
+
+
+/**
+ * State used by many sensors to indicate an alarming state.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message AlarmState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknwon state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * No alarm.
+         */
+        NO_ALARM = 1;
+
+        /**
+         * Alarm.
+         */
+        ALARM = 2;
+    }
+
+    /**
+     * The alarm state.
+     */
+    optional State value = 100;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 200;
+}
