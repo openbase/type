@@ -17,46 +17,46 @@ import "rst/timing/Interval.proto";
 message ResourceAllocation {
 
     /**
-     * The state describes the life cycle of a single allocation attempt
-     */
+      * The state describes the life cycle of a single allocation attempt
+      */
     enum State {
 
         /**
-         * Resource requested for allocation in by a client component
-         */
+          * Resource requested for allocation in by a client component
+          */
         REQUESTED = 10;
 
         /**
-         * Resource allocation scheduled by the server component
-         */
+          * Resource allocation scheduled by the server component
+          */
         SCHEDULED = 20;
 
         /**
-         * Resource allocation rejected by the server component
-         */
+          * Resource allocation rejected by the server component
+          */
         REJECTED = 30;
 
         /**
-         * Resource allocation cancelled (before allocation)
-         * by either server or client
-         */
+          * Resource allocation cancelled (before allocation)
+          * by either server or client
+          */
         CANCELLED = 40;
 
         /**
-         * Resource is now allocated for the client at the server
-         */
+          * Resource is now allocated for the client at the server
+          */
         ALLOCATED = 50;
 
         /**
-         * Resource allocation aborted abnormally (during allocation)
-         * by either server or client
-         */
+          * Resource allocation aborted abnormally (during allocation)
+          * by either server or client
+          */
         ABORTED = 60;
 
         /**
-         * Resource released normally (after allocation)
-         * by either server or client
-         */
+          * Resource released normally (after allocation)
+          * by either server or client
+          */
         RELEASED = 70;
 
     }
@@ -122,23 +122,23 @@ message ResourceAllocation {
     }
 
     /**
-     * Specifies the requests conflict resolution policy
-     */
+      * Specifies the requests conflict resolution policy
+      */
     enum Policy {
 
         /**
-         * Only allocate as a a single, unmodified interval
-         */
+          * Only allocate as a a single, unmodified interval
+          */
         PRESERVE = 0;
 
         /**
-         * Allocate maximum amount of time available, shrink interval if needed
-         */
+          * Allocate maximum amount of time available, shrink interval if needed
+          */
         MAXIMUM = 10;
 
         /**
-         * Allocate the first time slot available, shrink interval if needed
-         */
+          * Allocate the first time slot available, shrink interval if needed
+          */
         FIRST = 20;
 
     }
@@ -164,8 +164,8 @@ message ResourceAllocation {
     required Initiator initiator = 40;
 
     /**
-     * The policy
-     */
+      * The policy
+      */
     required Policy policy = 50;
 
     /**
