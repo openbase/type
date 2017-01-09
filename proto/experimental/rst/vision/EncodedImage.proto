@@ -1,0 +1,37 @@
+package rst.vision;
+
+option java_outer_classname = "EncodedImageType";
+
+/**
+ * An image encoded in a certain format.
+ *
+ * @author Viktor Richter <vrichter@techfak.uni-bielefeld.de>
+ */
+message EncodedImage {
+
+    /**
+     * Identifies an image encoding format.
+     */
+    enum Encoding {
+        BMP = 0;
+        PPM = 1;
+        PNG = 2;
+        JPG = 3;
+        JP2 = 4;
+        TIFF = 5;
+    }
+
+    /**
+     * The encoding used to encode an image into binary data.
+     */
+    required Encoding encoding = 2;
+
+    /**
+     * Holds the binary image data.
+     *
+     * Can be decoded using the provided encoding information.
+     */
+    required bytes data = 1;
+
+
+}
