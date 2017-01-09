@@ -15,8 +15,15 @@ message AppConfig {
     optional string app_class_id = 250;
 
     /**
+     * Flag can be set true to initiate an app auto start after the application is launched.
+     */
+    optional bool autostart = 300;
+
+    /**
      * A list of ids of units introduced by this app.
      */
     repeated string unit_id = 310;
+
+
 }
 

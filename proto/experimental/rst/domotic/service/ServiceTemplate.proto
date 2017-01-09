@@ -44,7 +44,12 @@ message ServiceTemplate {
         UNKNOWN = 0;
 
         /**
-         * Battery provider.
+         * Activation service type.
+         */
+        ACTIVATION_STATE_SERVICE = 5;
+
+        /**
+         * Battery service type..
          */
         BATTERY_STATE_SERVICE = 10;
 
@@ -187,6 +192,11 @@ message ServiceTemplate {
          * Service used by RFIDs.
          */
         RFID_STATE_SERVICE = 290;
+
+        /**
+         * Presence state e.g. used for locations to give feedback about human presence.
+         */
+        PRESENCE_STATE_SERVICE = 300;
     }
 
     /**

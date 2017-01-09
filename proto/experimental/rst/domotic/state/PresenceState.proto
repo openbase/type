@@ -1,0 +1,50 @@
+package rst.domotic.state;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "PresenceStateType";
+
+/**
+ * State to repesent human or animal presense in smart environments.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message PresenceState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknown state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * No human / animal was detected.
+         */
+        ABSENT = 1;
+
+        /**
+         * Human or animal detected.
+         */
+        PRESENT = 2;
+    }
+
+    /*
+     * The presence state.
+     */
+    optional State value = 100;
+
+    /*
+     * Last presence timestemp.
+     */
+    optional .rst.timing.Timestamp last_presence = 200;
+
+    /*
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 300;
+}
+

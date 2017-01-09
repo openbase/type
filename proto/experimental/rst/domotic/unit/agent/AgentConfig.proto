@@ -13,5 +13,10 @@ message AgentConfig {
      * The type of the agent.
      */
     optional string agent_class_id = 250;
+
+    /**
+     * Flag can be set true to initiate an app auto start after the application is launche.
+     */
+    optional bool autostart = 300;
 }
 

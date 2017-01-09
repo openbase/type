@@ -43,6 +43,8 @@ message Demand {
         WINDOW_CLOSE       = 80;
         WINDOW_OPEN        = 81;
         WINDOW_TILTED      = 82;
+        SCENARIO_STOPP     = 90;
+        SCENARIO_START     = 91;
     }
 
     /**
