@@ -3,7 +3,7 @@
 # config
 RST_MASTER="https://code.cor-lab.de/git/rst.git.proto.git"
 RST_CSRA="https://projects.cit-ec.uni-bielefeld.de/git/lsp-csra.rst-csra.git"
-MASTER_BRANCH="0.14"
+MASTER_BRANCH="0.15"
 CSRA_BRANCH="$MASTER_BRANCH"
 DESTINATION="$(pwd)"
 TMPDIR=${TMPDIR-/tmp}
