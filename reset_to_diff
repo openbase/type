@@ -56,8 +56,8 @@ fi
 
 cd "$DESTINATION"
 shopt -s globstar
-echo git add proto/**/proto
-echo git commit -m "Reset to diff btw master=${MASTER_REV} and fork=${FORK_REV}."
+git add proto/**proto
+git commit -m "Reset to diff btw master=${MASTER_REV} and fork=${FORK_REV}."
 
 rm -rf "$TMP"
 
