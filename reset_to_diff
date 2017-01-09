@@ -3,7 +3,7 @@
 # config
 RST_MASTER="https://code.cor-lab.de/git/rst.git.proto.git"
 RST_CSRA="https://projects.cit-ec.uni-bielefeld.de/git/lsp-csra.rst-csra.git"
-MASTER_BRANCH="0.15"
+MASTER_BRANCH="0.14"
 CSRA_BRANCH="$MASTER_BRANCH"
 DESTINATION="$(pwd)"
 TMPDIR=${TMPDIR-/tmp}
@@ -21,7 +21,7 @@ git remote add csra "$RST_CSRA"
 git fetch --all
 git checkout "csra/$CSRA_BRANCH"
 
-MASTER_REV="$(git rev-parse master/0.15 | cut -b1-8)"
+MASTER_REV="$(git rev-parse master/$MASTER_BRANCH | cut -b1-8)"
 FORK_REV="$(git rev-parse HEAD | cut -b1-8)"
 
 echo "Deleting all files from proto:"
