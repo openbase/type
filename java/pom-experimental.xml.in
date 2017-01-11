@@ -4,7 +4,7 @@
 
     <groupId>rsb</groupId>
     <artifactId>rst-experimental</artifactId>
-    <version>@RST_MVN_VERSION@</version>
+    <version>@RST_EXPERIMENTAL_MVN_VERSION@</version>
     <packaging>jar</packaging>
 
     <name>Robotic System Types - Experimental</name>
