@@ -8,7 +8,6 @@ SET(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS TRUE)
 SET(VERSION_MAJOR "0" CACHE STRING "Major project version part")
 SET(VERSION_MINOR "15" CACHE STRING "Minor project version part")
 
-SET(RST_IS_RELEASE true)
 # --- user options ---
 
 OPTION(BUILD_CPP "Decide whether to build the CPP bindings." ON)
