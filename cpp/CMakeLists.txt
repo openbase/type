@@ -79,7 +79,9 @@ FUNCTION(BUILD_CPP_DOMAIN)
     ENDFOREACH()
     TARGET_LINK_LIBRARIES(${${MY_NAME_UPPER}_LIBRARY_NAME}
                           ${PROTOBUF_LIBRARIES}
-                          ${CMAKE_THREAD_LIBS_INIT})
+                          ${CMAKE_THREAD_LIBS_INIT}
+                          ${RST_LIBRARIES})
+
     SET_TARGET_PROPERTIES(${${MY_NAME_UPPER}_LIBRARY_NAME}
                           PROPERTIES
                           VERSION ${SO_VERSION})
