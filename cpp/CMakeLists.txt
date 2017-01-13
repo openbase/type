@@ -38,9 +38,9 @@ FUNCTION(BUILD_CPP_DOMAIN)
 
     # get export symbols right
     IF(WIN32)
-        ADD_DEFINITIONS("/D${CMAKE_PROJECT_NAME}${MY_NAME_UPPER}_EXPORT=__declspec(dllexport)")
+        ADD_DEFINITIONS("/D${CMAKE_PROJECT_NAME}_rEXPORT=__declspec(dllexport)")
     ELSE()
-        ADD_DEFINITIONS("-D${CMAKE_PROJECT_NAME}${MY_NAME_UPPER}_EXPORT=")
+        ADD_DEFINITIONS("-D${CMAKE_PROJECT_NAME}_EXPORT=")
     ENDIF()
     FOREACH(DOMAIN ${USE_DOMAINS_UPPER})
         IF(WIN32)
@@ -50,6 +50,7 @@ FUNCTION(BUILD_CPP_DOMAIN)
         ENDIF()
     ENDFOREACH()
 
+    
     # generate the protocol
     SET(INCLUDE_ARG)
     SET(UPSTREAM_DOMAIN_TARGETS)
@@ -68,7 +69,7 @@ FUNCTION(BUILD_CPP_DOMAIN)
     ENDFOREACH()
 
     PROTOBUF_GENERATE(CPP CPP_SOURCES CPP_HEADERS
-                      EXPORT_MACRO "${CMAKE_PROJECT_NAME}${MY_NAME_UPPER}_EXPORT"
+                      EXPORT_MACRO "${CMAKE_PROJECT_NAME}_EXPORT"
                       PROTOFILES ${${MY_NAME_UPPER}_PROTOS}
                       PROTOROOT ${${MY_NAME_UPPER}_ROOT}
                       ${INCLUDE_ARG}
