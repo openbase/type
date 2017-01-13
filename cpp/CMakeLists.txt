@@ -38,7 +38,7 @@ FUNCTION(BUILD_CPP_DOMAIN)
 
     # get export symbols right
     IF(WIN32)
-        ADD_DEFINITIONS("/D${CMAKE_PROJECT_NAME}_rEXPORT=__declspec(dllexport)")
+        ADD_DEFINITIONS("/D${CMAKE_PROJECT_NAME}_EXPORT=__declspec(dllexport)")
     ELSE()
         ADD_DEFINITIONS("-D${CMAKE_PROJECT_NAME}_EXPORT=")
     ENDIF()
