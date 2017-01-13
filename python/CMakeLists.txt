@@ -2,7 +2,7 @@ FIND_PACKAGE(PythonInterp)
 
 # also check that setuptools is available
 IF(PYTHONINTERP_FOUND AND ((NOT PYTHON_VERSION_MAJOR) OR (PYTHON_VERSION_MAJOR EQUAL 2)) AND NOT SETUPTOOLS_FOUND)
-    MESSAGE(STATUS "Checking wether setuptools for python is available")
+    MESSAGE(STATUS "Checking whether setuptools for python is available")
     EXECUTE_PROCESS(COMMAND ${PYTHON_EXECUTABLE} -c "import setuptools" RESULT_VARIABLE SETUPTOOLS_RESULT)
     IF(SETUPTOOLS_RESULT EQUAL 0)
         SET(SETUPTOOLS_FOUND TRUE CACHE BOOL "Indicates wether python can run setuptools" FORCE)
@@ -50,11 +50,14 @@ FUNCTION(BUILD_PYTHON_DOMAIN)
 
     # generate the protocol
     SET(INCLUDE_ARG)
+    SET(UPSTREAM_DOMAIN_TARGETS)
     LIST(LENGTH USE_DOMAINS_UPPER HAS_USE_DOMAINS)
     IF(${HAS_USE_DOMAINS} GREATER 0)
         SET(INCLUDE_ARG "INCLUDES")
         FOREACH(DOMAIN ${USE_DOMAINS_UPPER})
             LIST(APPEND INCLUDE_ARG ${${DOMAIN}_ROOT})
+            STRING(TOLOWER "${DOMAIN}" LOWER_DOMAIN)
+            LIST(APPEND UPSTREAM_DOMAIN_TARGETS "${LOWER_DOMAIN}_protos")
         ENDFOREACH()
     ENDIF()
     FOREACH(DOMAIN STABLE SANDBOX DEPRECATED)
@@ -64,6 +67,7 @@ FUNCTION(BUILD_PYTHON_DOMAIN)
                       PROTOFILES ${${MY_NAME_UPPER}_PROTOS}
                       PROTOROOT ${${MY_NAME_UPPER}_ROOT}
                       ${INCLUDE_ARG}
+                      DEPENDS "${MY_NAME_LOWER}_protos" ${UPSTREAM_DOMAIN_TARGETS}
                       OUTPATH "${CMAKE_CURRENT_BINARY_DIR}/${MY_NAME_LOWER}")
 
     # find out the name of the egg file that is going to be generated
@@ -141,7 +145,7 @@ IF(PYTHONINTERP_FOUND AND
     MESSAGE(STATUS "Python egg install folder: ${EGG_INSTALL_FOLDER}")
 
     BUILD_PYTHON_DOMAIN("experimental"
-                        USE_DOMAINS "stable"
+                        USE_DOMAINS "experimental"
                         NAME_OUTPUT EXPERIMENTAL_EGG
                         INIT_HACK)
 
