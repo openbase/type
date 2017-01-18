@@ -7,4 +7,5 @@ Description: Type specifications for Robotics and Cognitive Systems specified in
 Version: @RST_EXPERIMENTAL_VERSION@
 Requires: protobuf rst@VERSION_SUFFIX@
 Libs: -L${libdir} -l@EXPERIMENTAL_LIBRARY_NAME@
-Cflags: -I${includedir}/@INSTALL_PREFIX@/experimental
+Cflags: -I${includedir}/@INSTALL_PREFIX@/experimental @RST_EXPERIMENTAL_CFLAGS@
+
