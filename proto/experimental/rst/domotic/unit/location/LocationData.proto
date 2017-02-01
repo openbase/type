@@ -107,7 +107,14 @@ message LocationData {
     /**
      * The actual temperature state of the location.
      */
-    optional .rst.domotic.state.TemperatureState acutal_temperature_state= 1400;
+    optional .rst.domotic.state.TemperatureState acutal_temperature_state= 1401 [deprecated=true];
+    optional .rst.domotic.state.TemperatureState temperature_state= 1400;
+
+
+
+
+
+
 
 }
 
