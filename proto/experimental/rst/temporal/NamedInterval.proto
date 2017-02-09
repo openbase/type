@@ -1,0 +1,34 @@
+package rst.temporal;
+
+import "rst/timing/Timestamp.proto";
+
+option java_outer_classname = "NamedIntervalType";
+
+/**
+ * Temporal Interval
+ *
+ * @author Lars Schillingmann <lschilli@cit-ec.uni-bielefeld.de>
+ */
+message NamedInterval {
+
+    /*
+     * begin timestamp
+     */
+    optional .rst.timing.Timestamp begin = 100;
+
+    /*
+     * end timestamp
+     */
+    optional .rst.timing.Timestamp center = 200;
+
+    /*
+     * center timestamp
+     */
+    optional .rst.timing.Timestamp end = 300;
+
+    /*
+     * label
+     */
+    required string label = 400;
+
+}
