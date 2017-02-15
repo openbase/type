@@ -17,12 +17,12 @@ message NamedInterval {
     optional .rst.timing.Timestamp begin = 100;
 
     /*
-     * end timestamp
+     * center timestamp
      */
     optional .rst.timing.Timestamp center = 200;
 
     /*
-     * center timestamp
+     * end timestamp
      */
     optional .rst.timing.Timestamp end = 300;
 
