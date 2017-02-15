@@ -1,0 +1,23 @@
+package rst.domotic.unit.dal;
+
+option java_outer_classname = "VideoDepthSourceDataType";
+
+
+/**
+ * Generic description of a video depth source.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message VideoDepthSourceData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the video depth source. Used to build the scope.
+     */
+    optional string label = 200;
+}
+

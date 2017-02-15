@@ -22,6 +22,8 @@ import "rst/domotic/unit/dal/TelevisionData.proto";
 import "rst/domotic/unit/dal/TemperatureControllerData.proto";
 import "rst/domotic/unit/dal/TemperatureSensorData.proto";
 import "rst/domotic/unit/dal/VideoRgbSourceData.proto";
+import "rst/domotic/unit/dal/VideoDepthSourceData.proto";
+import "rst/domotic/unit/dal/AudioSourceData.proto";
 import "rst/domotic/unit/dal/RFIDData.proto";
 
 option java_outer_classname = "DeviceDataType";
@@ -158,5 +160,15 @@ message DeviceData {
      * The RFID unit data of this device.
      */
     repeated .rst.domotic.unit.dal.RFIDData unit_rfid_data = 2220;
+
+    /**
+     * The video depth source unit data of this device.
+     */
+    repeated .rst.domotic.unit.dal.VideoDepthSourceData unit_video_depth_source_data = 2230;
+
+    /**
+     * The audio source unit data of this device.
+     */
+    repeated .rst.domotic.unit.dal.AudioSourceData unit_audio_source_data = 2240;
 }
 
