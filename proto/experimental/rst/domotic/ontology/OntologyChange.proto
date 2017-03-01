@@ -1,0 +1,43 @@
+package rst.domotic.ontology;
+
+option java_outer_classname = "OntologyChangeType";
+
+
+import "rst/domotic/unit/UnitTemplate.proto";
+import "rst/domotic/service/ServiceTemplate.proto";
+
+/**
+ * Tpye descripts an ontlogy change and its properties.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message OntologyChange {
+
+    /**
+     * The change category definition.
+     */
+    enum Category {
+
+        /**
+         * Unknown change.
+         */
+        UNKNOWN = 0;
+
+    }
+
+    /**
+     * The categories of this ontology change.
+     */
+    repeated Category category = 100;
+
+    /**
+     * The list of potentially changed units represented as unit type list.
+     */
+    repeated .rst.domotic.unit.UnitTemplate.UnitType unit_type = 200;
+
+    /**
+     * The list of potentially affected services represented as service type.
+     */
+    repeated .rst.domotic.service.ServiceTemplate.ServiceType service_type = 300;
+}
+
