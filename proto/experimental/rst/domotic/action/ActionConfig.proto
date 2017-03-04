@@ -22,7 +22,7 @@ message ActionConfig {
     optional string label = 200;
 
     /**
-     * The location of the action.
+     * The instance which initiates this action.
      */
     optional string origin_id = 300;
 
