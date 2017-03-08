@@ -1,0 +1,29 @@
+package rst.domotic.unit.dal;
+
+import "rst/domotic/state/IlluminanceState.proto";
+
+option java_outer_classname = "LightSensorDataType";
+
+/**
+ * Generic Description of a light sensor.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message LightSensorData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the light sensor. Used to build the scope.
+     */
+    optional string label = 200;
+
+    /**
+     * The light measured as illuminance.
+     */
+    optional .rst.domotic.state.IlluminanceState illuminance_state = 300;
+}
+
