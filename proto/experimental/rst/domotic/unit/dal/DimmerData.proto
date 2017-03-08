@@ -31,6 +31,11 @@ message DimmerData {
     /**
      * The dimming describing the dimming.
      */
-    optional .rst.domotic.state.IntensityState intensity_state = 400;
+    optional .rst.domotic.state.IntensityState intensity_state = 400 [deprecated=true];
+
+    /**
+     * The brightness descibing the dimming.
+     */
+    optional .rst.domotic.state.BrightnessState brightness_state = 401;
 }
 

@@ -32,16 +32,16 @@ message IntensityState {
     /**
      * The intensity in range of [0..100].
      */
-    optional double intensity = 100;
+    optional double intensity = 100 [deprecated=true];
 
     /**
      * The data unit of the given intensity value.
      */
-    optional DataUnit intensity_data_unit = 200;
+    optional DataUnit intensity_data_unit = 200 [deprecated=true];
 
     /**
      * Timestamp of the occurency of this event.
      */
-    optional .rst.timing.Timestamp timestamp = 300;
+    optional .rst.timing.Timestamp timestamp = 300 [deprecated=true];
 }
 
