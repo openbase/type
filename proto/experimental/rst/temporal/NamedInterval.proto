@@ -31,4 +31,9 @@ message NamedInterval {
      */
     required string label = 400;
 
+    /*
+     * subintervals
+     */
+    repeated NamedInterval subintervals = 500;
+
 }

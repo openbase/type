@@ -1,0 +1,13 @@
+package rst.audition;
+option java_outer_classname = "KeywordDefinitionType";
+
+/**
+ * An association of a keyword with a phonetic sequence.
+ *
+ * @author Lars Schillingmann <lschilli@techfak.uni-bielefeld.de>
+ */
+
+message KeywordDefinition {
+    required string keyword = 1;
+    required string phonemes = 2;
+}
