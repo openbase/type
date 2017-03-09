@@ -2,6 +2,7 @@ package rst.domotic.unit.dal;
 
 import "rst/domotic/state/PowerState.proto";
 import "rst/domotic/state/ColorState.proto";
+import "rst/domotic/state/BrightnessState.proto";
 
 option java_outer_classname = "ColorableLightDataType";
 
@@ -32,5 +33,10 @@ message ColorableLightData {
      * Field which repesents the color of the light which contains the brighntess.
      */
     optional .rst.domotic.state.ColorState color_state = 400;
+
+    /**
+     * Field which contains the brightness. Is synced with the brightness of the color state.
+     */
+    optional .rst.domotic.state.BrightnessState brightness_state = 500;
 }
 
