@@ -2,19 +2,19 @@ package rst.domotic.state;
 
 import "rst/timing/Timestamp.proto";
 
-option java_outer_classname = "BrightnessStateType";
+option java_outer_classname = "IlluminanceStateType";
 
 
 /**
  * Basic sensor or object state.
- * Used by units like the dimmable light or the dimmer.
+ * Used by units like sensors which measure the brightness.
  *
  * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
  */
-message BrightnessState {
+message IlluminanceState {
 
     /**
-     * The date unit of the brighntess value.
+     * The date unit of the illuminance value.
      */
     enum DataUnit {
 
@@ -24,20 +24,20 @@ message BrightnessState {
         UNKNOWN = 0;
 
         /**
-         * If the brighntess is given in percent e. g. for dimmable lights.
+         * Physical unit lux.
          */
-        PERCENT = 2;
+        LUX = 1;
     }
 
     /**
-     * The brightness of a light source in the range of [0..100].
+     * The measured brighntess in lux for sensors.
      */
-    optional double brightness = 100;
+    optional double illuminance = 100;
 
     /**
      * The data unit of the give brightness value.
      */
-    optional DataUnit brightness_data_unit = 200 [default = PERCENT];
+    optional DataUnit illuminance_data_unit = 200 [default = LUX];
 
     /**
      * Timestamp of the occurency of this event.

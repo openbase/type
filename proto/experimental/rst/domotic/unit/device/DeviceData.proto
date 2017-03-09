@@ -8,6 +8,7 @@ import "rst/domotic/unit/dal/DimmerData.proto";
 import "rst/domotic/unit/dal/DimmableLightData.proto";
 import "rst/domotic/unit/dal/HandleData.proto";
 import "rst/domotic/unit/dal/LightData.proto";
+import "rst/domotic/unit/dal/LightSensorData.proto";
 import "rst/domotic/unit/dal/MotionDetectorData.proto";
 import "rst/domotic/unit/dal/PowerConsumptionSensorData.proto";
 import "rst/domotic/unit/dal/PowerSwitchData.proto";
@@ -170,5 +171,10 @@ message DeviceData {
      * The audio source unit data of this device.
      */
     repeated .rst.domotic.unit.dal.AudioSourceData unit_audio_source_data = 2240;
+
+    /**
+     * The light sensor unit data of this device.
+     */
+    repeated .rst.domotic.unit.dal.LightSensorData unit_light_sensor_data = 2250;
 }
 

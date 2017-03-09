@@ -4,6 +4,7 @@ import "rst/domotic/state/AlarmState.proto";
 import "rst/domotic/state/BlindState.proto";
 import "rst/domotic/state/BrightnessState.proto";
 import "rst/domotic/state/ColorState.proto";
+import "rst/domotic/state/IlluminanceState.proto";
 import "rst/domotic/state/IntensityState.proto";
 import "rst/domotic/state/PowerConsumptionState.proto";
 import "rst/domotic/state/PresenceState.proto";
@@ -60,9 +61,14 @@ message LocationData {
     optional .rst.domotic.state.ColorState color_state = 400;
 
     /**
+     * The illuminance of the location.
+     */
+    optional .rst.domotic.state.IlluminanceState illuminance_state = 501;
+
+    /**
      * The intensity state of the location.
      */
-    optional .rst.domotic.state.IntensityState intensity_state = 500;
+    optional .rst.domotic.state.IntensityState intensity_state = 500 [deprecated = true];
 
     /**
      * State represence if there is any humand or animal presece detected in this location.

@@ -197,6 +197,11 @@ message ServiceTemplate {
          * Presence state e.g. used for locations to give feedback about human presence.
          */
         PRESENCE_STATE_SERVICE = 300;
+
+        /**
+         * Illuminance state for measurements of the brightness.
+         */
+        ILLUMINANCE_STATE_SERVICE = 310;
     }
 
     /**

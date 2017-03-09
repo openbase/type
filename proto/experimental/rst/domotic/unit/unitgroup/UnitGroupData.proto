@@ -61,7 +61,7 @@ message UnitGroupData {
     /**
      * The intensity state of the UnitGroup.
      */
-    optional .rst.domotic.state.IntensityState intensity_state = 500;
+    optional .rst.domotic.state.IntensityState intensity_state = 500 [deprecated=true];
 
     /**
      * The motion state of the UnitGroup.

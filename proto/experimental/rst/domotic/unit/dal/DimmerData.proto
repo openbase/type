@@ -2,6 +2,7 @@ package rst.domotic.unit.dal;
 
 import "rst/domotic/state/PowerState.proto";
 import "rst/domotic/state/IntensityState.proto";
+import "rst/domotic/state/BrightnessState.proto";
 
 option java_outer_classname = "DimmerDataType";
 
@@ -31,6 +32,11 @@ message DimmerData {
     /**
      * The dimming describing the dimming.
      */
-    optional .rst.domotic.state.IntensityState intensity_state = 400;
+    optional .rst.domotic.state.IntensityState intensity_state = 400 [deprecated=true];
+
+    /**
+     * The brightness descibing the dimming.
+     */
+    optional .rst.domotic.state.BrightnessState brightness_state = 401;
 }
 

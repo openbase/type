@@ -65,6 +65,11 @@ message UnitTemplate {
         LIGHT = 90;
 
         /**
+         * A light sensor.
+         */
+        LIGHT_SENSOR = 95;
+
+        /**
          * A motion detector.
          */
         MOTION_DETECTOR = 100;
