@@ -7,6 +7,7 @@ import "rst/domotic/binding/openhab/OpenClosedHolder.proto";
 import "rst/domotic/binding/openhab/Percent.proto";
 import "rst/domotic/binding/openhab/StopMoveHolder.proto";
 import "rst/domotic/binding/openhab/UpDownHolder.proto";
+import "rst/timing/Timestamp.proto";
 
 option java_outer_classname = "OpenhabCommandType";
 
@@ -108,5 +109,10 @@ message OpenhabCommand {
      * The up or down type.
      */
     optional .rst.domotic.binding.openhab.UpDownHolder up_down = 110;
+
+    /**
+     * The timestamp of the command.
+     */
+    optional .rst.timing.Timestamp timestamp = 200;
 }
 
