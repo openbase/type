@@ -1,0 +1,52 @@
+package rst.domotic.action;
+
+option java_outer_classname = "ActionParameterType";
+
+import "rst/communicationpatterns/ResourceAllocation.proto";
+import "rst/domotic/action/ActionDescription.proto";
+import "rst/calendar/DateTime.proto";
+import "rst/domotic/unit/UnitTemplate.proto";
+
+/**
+ * Description of paramters which are optional for an action because they have default values.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message ActionParameter {
+
+    /**
+     * The action that triggered this action. In the default case this field is empty and
+     * this action does not have an initiator.
+     */
+    optional .rst.domotic.action.ActionDescription initiator = 10;
+
+    /**
+     * The priority with which the resources for this action are allocated. Default is NORMAL.
+     */
+    optional .rst.communicationpatterns.ResourceAllocation.Priority priority  = 20;
+
+    /**
+     * The time in ms how long the state invoked by this action should be preserved. Default is 0.
+     */
+    optional uint64 execution_time_period = 30;
+
+    /**
+     * The validity of this action.
+     * The action will be canceled or never triggered after the validity time expired.
+     * Default should be one hour after creation of this type.
+     */
+    optional .rst.calendar.DateTime execution_validity = 40;
+
+    /**
+     * The policy with which the resources for this action are allocated. Default is FIRST.
+     */
+    optional .rst.communicationpatterns.ResourceAllocation.Policy policy = 50;
+
+    /**
+     * The unit type for which this action is restricted. Default is UNKOWN which means
+     * no restriction.
+     */
+    optional .rst.domotic.unit.UnitTemplate.UnitType unit_type = 60;
+}
+
