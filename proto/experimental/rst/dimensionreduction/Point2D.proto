@@ -1,0 +1,21 @@
+package rst.dimensionreduction;
+
+option java_outer_classname = "Point2DType";
+
+
+/**
+ * Description of a 2D Point from the dimensionreduction.
+ *
+ * @author Joris Jensen <jjensen@techfak.uni-bielefeld.de>
+ */
+message Point2D {
+
+    /**
+     * x coordinate
+     */
+    required double x = 1;
+    /**
+     * y coordinate
+     */
+    required double y = 2;
+}
