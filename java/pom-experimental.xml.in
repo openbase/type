@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>rsb</groupId>
-    <artifactId>rst-experimental-feature-bco-service-type-to-state-mapping</artifactId>
+    <artifactId>rst-experimental</artifactId>
     <version>@RST_EXPERIMENTAL_MVN_VERSION@</version>
     <packaging>jar</packaging>
 
