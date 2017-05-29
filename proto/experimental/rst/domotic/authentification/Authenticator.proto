@@ -19,6 +19,6 @@ message Authenticator {
     /**
      * Timestamp, used to check if the request is valid.
      */
-    optional .rst.timing.Timestamp = 2;
+    optional .rst.timing.Timestamp timestamp = 2;
 }
 

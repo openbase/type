@@ -12,6 +12,23 @@ import "rst/domotic/authentification/Permission.proto";
 message PermissionConfig {
 
     /**
+     * Map entry for a mapping from group id to permission. Used because
+     * the map feature does not seem to work.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The id of the group.
+         */
+        optional string group_id = 1;
+
+        /**
+         * The permission for the group given by the group id.
+         */
+        optional .rst.domotic.authentification.Permission permission = 2;
+    }
+
+    /**
      * ID of the user owning the unit.
      */
     optional string owner_id = 100;
@@ -28,9 +45,8 @@ message PermissionConfig {
 
     /**
      * Permissions for selected groups.
-     * Every group with permissions different from "other" has an entry,
-     * with the group ID being the key.
+     * Every group with permissions different from "other" has an entry.
      */
-    optional map<string, .rst.domotic.authentification.Permission> group_permission = 400;
+    repeated MapFieldEntry group_permission = 400;
 }
 
