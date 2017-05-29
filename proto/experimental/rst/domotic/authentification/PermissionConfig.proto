@@ -1,0 +1,36 @@
+package rst.domotic.authentification;
+
+option java_outer_classname = "PermissionConfigType";
+
+import "rst/domotic/authentification/Permission.proto";
+
+/**
+ * Description of a permission configuration.
+ *
+ * @author Constantin Romankiewicz <cromankiewicz@techfak.uni-bielefeld.de>
+ */
+message PermissionConfig {
+
+    /**
+     * ID of the user owning the unit.
+     */
+    optional string owner_id = 100;
+
+    /**
+     * Permissions for the user set by owner_id.
+     */
+    optional .rst.domotic.authentification.Permission owner_permission = 200;
+
+    /**
+     * Permissions for everyone, without respect to authorization or user groups.
+     */
+    optional .rst.domotic.authentification.Permission other_permission = 300;
+
+    /**
+     * Permissions for selected groups.
+     * Every group with permissions different from "other" has an entry,
+     * with the group ID being the key.
+     */
+    optional map<string, .rst.domotic.authentification.Permission> group_permission = 400;
+}
+
