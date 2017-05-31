@@ -3,6 +3,7 @@ package rst.domotic.service;
 option java_outer_classname = "ServiceTemplateType";
 
 import "rst/configuration/MetaConfig.proto";
+import "rst/domotic/service/ServiceCommunicationType.proto";
 
 /**
  * Description of service template.
@@ -215,9 +216,9 @@ message ServiceTemplate {
     optional ServiceType type = 100;
 
     /**
-     * The name of the state that is used by this service.
+     * The enum representing the state that is used by this service.
      */
-    optional string communication_type = 250;
+    optional .rst.domotic.service.ServiceCommunicationType.CommunicationType communication_type = 250;
 
     /**
      * A field for storing meta service template configurations.
