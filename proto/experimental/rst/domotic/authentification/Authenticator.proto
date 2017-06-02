@@ -1,0 +1,24 @@
+package rst.domotic.authentification;
+
+option java_outer_classname = "AuthenticatorType";
+
+import "rst/timing/Timestamp.proto";
+
+/**
+ * Authenticator used for the Kerberos authentification, sent with every request.
+ *
+ * @author Constantin Romankiewicz <cromankiewicz@techfak.uni-bielefeld.de>
+ */
+message Authenticator {
+
+    /**
+     * Unique client ID.
+     */
+    optional string client_id = 1;
+
+    /**
+     * Timestamp, used to check if the request is valid.
+     */
+    optional .rst.timing.Timestamp timestamp = 2;
+}
+

@@ -1,0 +1,22 @@
+package rst.domotic.authentification;
+
+option java_outer_classname = "AuthenticatorTicketType";
+
+/**
+ * Wrapper class for encrypted Authenticator and Ticket objects.
+ *
+ * @author Constantin Romankiewicz <cromankiewicz@techfak.uni-bielefeld.de>
+ */
+message AuthenticatorTicket {
+
+    /**
+     * Ticket object, encrypted with the server's private key.
+     */
+    optional bytes ticket = 1;
+
+    /**
+     * Authenticator object, encrypted with the session key.
+     */
+    optional bytes authenticator = 2;
+}
+
