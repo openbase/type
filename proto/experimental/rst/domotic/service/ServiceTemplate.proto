@@ -205,11 +205,6 @@ message ServiceTemplate {
     }
 
     /**
-     * The id of the service template.
-     */
-    optional string id = 50;
-
-    /**
      * The related Service type.
      */
     optional ServiceType type = 100;

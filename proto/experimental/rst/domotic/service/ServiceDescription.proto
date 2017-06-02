@@ -13,14 +13,9 @@ import "rst/configuration/MetaConfig.proto";
 message ServiceDescription {
 
     /**
-     * The related service id.
-     */
-    optional string id = 50;
-
-    /**
      * The related Service type.
      */
-    optional .rst.domotic.service.ServiceTemplate.ServiceType type = 100 [deprecated=true];
+    optional .rst.domotic.service.ServiceTemplate.ServiceType type = 100;
 
     /**
      * The related Service pattern.
