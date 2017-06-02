@@ -13,9 +13,9 @@ import "rst/configuration/MetaConfig.proto";
 message ServiceDescription {
 
     /**
-     * The related service template id.
+     * The related service id.
      */
-    optional string service_template_id = 50;
+    optional string id = 50;
 
     /**
      * The related Service type.

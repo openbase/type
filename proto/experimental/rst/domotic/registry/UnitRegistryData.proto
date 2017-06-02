@@ -4,7 +4,6 @@ option java_outer_classname = "UnitRegistryDataType";
 
 import "rst/domotic/unit/UnitConfig.proto";
 import "rst/domotic/unit/UnitTemplate.proto";
-import "rst/domotic/service/ServiceTemplate.proto";
 
 /**
  * Description of a unit registry.
@@ -74,11 +73,6 @@ message UnitRegistryData {
     repeated .rst.domotic.unit.UnitConfig connection_unit_config = 1200;
 
     /**
-     * The list of registered scene templates.
-     */
-    repeated .rst.domotic.service.ServiceTemplate service_template = 1250;
-
-    /**
      * Read only flag for the dal unit config registry.
      */
     optional bool dal_unit_config_registry_read_only = 1300;
@@ -132,11 +126,6 @@ message UnitRegistryData {
      * Read only flag for the unit template registry.
      */
     optional bool unit_template_registry_read_only = 2300;
-
-    /**
-     * Read only flag for the service template registry.
-     */
-    optional bool service_template_registry_read_only = 2350;
 
     /**
      * Global read-only flag for the unit config registry.
@@ -197,11 +186,6 @@ message UnitRegistryData {
      * Consistent flag for the unit template registry.
      */
     optional bool unit_template_registry_consistent = 3400;
-
-    /**
-     * Consistent flag for the service template registry.
-     */
-    optional bool service_template_registry_consistent = 3450;
 
     /**
      * Global consistent flag for the unit config registry.
