@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>rsb</groupId>
-    <artifactId>rst-experimental-feature-bco-resource-allocation</artifactId>
+    <artifactId>rst-experimental</artifactId>
     <version>@RST_EXPERIMENTAL_MVN_VERSION@</version>
     <packaging>jar</packaging>
 
