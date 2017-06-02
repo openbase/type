@@ -2,7 +2,7 @@ package rst.domotic.service;
 
 option java_outer_classname = "ServiceConfigType";
 
-import "rst/domotic/service/ServiceDescription.proto";
+import "rst/domotic/service/ServiceTemplate.proto";
 import "rst/domotic/binding/BindingConfig.proto";
 import "rst/configuration/MetaConfig.proto";
 
@@ -24,9 +24,9 @@ message ServiceConfig {
     optional string unit_id = 200;
 
     /**
-     * The service description.
+     * The service template.
      */
-    optional .rst.domotic.service.ServiceDescription service_description = 300;
+    optional .rst.domotic.service.ServiceTemplate service_template = 300;
 
     /**
      * A field for storing meta service configurations.
