@@ -210,9 +210,9 @@ message ServiceTemplate {
     optional ServiceType type = 100;
 
     /**
-     * The name of the state that is used by this service.
+     * The related Service pattern.
      */
-    optional string communication_type = 250;
+    optional ServicePattern pattern = 200;
 
     /**
      * A field for storing meta service template configurations.
