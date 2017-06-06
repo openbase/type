@@ -7,7 +7,7 @@ import "rst/rsb/Scope.proto";
 import "rst/domotic/service/ServiceConfig.proto";
 import "rst/domotic/unit/UnitTemplate.proto";
 import "rst/configuration/MetaConfig.proto";
-import "rst/domotic/authentification/PermissionConfig.proto";
+import "rst/domotic/authentication/PermissionConfig.proto";
 import "rst/domotic/state/EnablingState.proto";
 import "rst/domotic/unit/scene/SceneConfig.proto";
 import "rst/domotic/unit/agent/AgentConfig.proto";
@@ -136,6 +136,6 @@ message UnitConfig {
     /**
      * Permission configuration for setting user rights for the unit.
      */
-    optional .rst.domotic.authentification.PermissionConfig permission_config = 1700;
+    optional .rst.domotic.authentication.PermissionConfig permission_config = 1700;
 }
 

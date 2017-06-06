@@ -1,4 +1,4 @@
-package rst.domotic.authentification;
+package rst.domotic.authentication;
 
 option java_outer_classname = "TicketType";
 
@@ -6,7 +6,7 @@ import "rst/timing/Interval.proto";
 
 /**
  * Type for both Ticket Granting Ticket and Client Server Ticket,
- * used for the Kerberos authentification.
+ * used for the Kerberos authentication.
  *
  * @author Constantin Romankiewicz <cromankiewicz@techfak.uni-bielefeld.de>
  */

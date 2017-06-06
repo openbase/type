@@ -1,13 +1,13 @@
-package rst.domotic.authentification;
+package rst.domotic.authentication;
 
-option java_outer_classname = "LoginResponseType";
+option java_outer_classname = "TicketSessionKeyWrapperType";
 
 /**
  * Wrapper class for encrypted Ticket object and session key.
  *
  * @author Constantin Romankiewicz <cromankiewicz@techfak.uni-bielefeld.de>
  */
-message LoginResponse {
+message TicketSessionKeyWrapper {
 
     /**
      * Ticket object, encrypted with the server's private key.
