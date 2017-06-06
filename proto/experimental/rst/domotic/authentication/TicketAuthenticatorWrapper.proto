@@ -7,7 +7,7 @@ option java_outer_classname = "TicketAuthenticatorWrapperType";
  *
  * @author Constantin Romankiewicz <cromankiewicz@techfak.uni-bielefeld.de>
  */
-message TicketAuthenticatorWrapperType {
+message TicketAuthenticatorWrapper {
 
     /**
      * Ticket object, encrypted with the server's private key.
