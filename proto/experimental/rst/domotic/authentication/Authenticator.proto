@@ -1,11 +1,11 @@
-package rst.domotic.authentification;
+package rst.domotic.authentication;
 
 option java_outer_classname = "AuthenticatorType";
 
 import "rst/timing/Timestamp.proto";
 
 /**
- * Authenticator used for the Kerberos authentification, sent with every request.
+ * Authenticator used for the Kerberos authentication, sent with every request.
  *
  * @author Constantin Romankiewicz <cromankiewicz@techfak.uni-bielefeld.de>
  */

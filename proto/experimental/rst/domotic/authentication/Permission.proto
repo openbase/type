@@ -1,4 +1,4 @@
-package rst.domotic.authentification;
+package rst.domotic.authentication;
 
 option java_outer_classname = "PermissionType";
 
