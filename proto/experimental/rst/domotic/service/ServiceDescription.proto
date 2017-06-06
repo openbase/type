@@ -1,0 +1,30 @@
+package rst.domotic.service;
+
+option java_outer_classname = "ServiceDescriptionType";
+
+import "rst/domotic/service/ServiceTemplate.proto";
+import "rst/configuration/MetaConfig.proto";
+
+/**
+ * ServiceDescription is a combination of service type and service pattern.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ServiceDescription {
+
+    /**
+     * The related Service type.
+     */
+    optional .rst.domotic.service.ServiceTemplate.ServiceType type = 100;
+
+    /**
+     * The related Service pattern.
+     */
+    optional .rst.domotic.service.ServiceTemplate.ServicePattern pattern = 200;
+
+    /**
+     * A field for storing meta service template configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 300;
+}
+
