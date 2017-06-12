@@ -24,5 +24,10 @@ message UserConfig {
      * The user name of the person.
      */
     optional string user_name = 400;
+
+    /**
+     * Hashed password.
+     */
+    optional bytes password = 500;
 }
 
