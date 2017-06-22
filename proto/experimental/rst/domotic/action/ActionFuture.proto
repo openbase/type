@@ -1,0 +1,18 @@
+package rst.domotic.action;
+
+option java_outer_classname = "ActionFutureType";
+
+import "rst/domotic/authentication/TicketAuthenticatorWrapper.proto";
+
+/**
+ * A type which is put in a server response and holds all kinds of information that should be sent back to the client
+ *
+ * @author Sebastian Fast <sfast@techfak.uni-bielefeld.de>
+ */
+message ActionFuture {
+
+    /**
+     * A TicketAuthenticatorWrapper that is sent within the response for the authentication of the authority (client/user) in a following request
+     */
+    optional TicketAuthenticatorWrapper ticket_authenticator_wrapper = 100;
+}
