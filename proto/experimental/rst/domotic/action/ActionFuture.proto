@@ -14,5 +14,5 @@ message ActionFuture {
     /**
      * A TicketAuthenticatorWrapper that is sent within the response for the authentication of the authority (client/user) in a following request
      */
-    optional TicketAuthenticatorWrapper ticket_authenticator_wrapper = 100;
+    optional .rst.domotic.authentication.TicketAuthenticatorWrapper ticket_authenticator_wrapper = 100;
 }
