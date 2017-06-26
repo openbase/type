@@ -37,5 +37,5 @@ message ActionAuthority {
     /**
      * A TicketAuthenticatorWrapper that is sent within the request for the authentication of the authority (user)
      */
-    optional TicketAuthenticatorWrapper ticket_authenticator_wrapper = 200;
+    optional .rst.domotic.authentication.TicketAuthenticatorWrapper ticket_authenticator_wrapper = 200;
 }
