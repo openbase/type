@@ -7,6 +7,7 @@ import "rst/domotic/authentication/TicketAuthenticatorWrapper.proto";
 /**
  * A type which defines the authority which is responsible for an action execution.
  *
+ * @auther Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
  * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
  */
 message ActionAuthority {
