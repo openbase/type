@@ -26,8 +26,24 @@ message UserConfig {
     optional string user_name = 400;
 
     /**
-     * Hashed password.
+     * Hashed password used for authorization.
      */
     optional bytes password = 500;
+
+    /**
+     * This flag defines if this user is an occupant of the smart environment.
+     * If not they will automatically handled as guest.
+     */
+    optional bool occupant = 600;
+
+    /**
+     * The email address of the user.
+     */
+    optional string email = 700;
+
+    /**
+     * The mobile phone number of the user.
+     */
+    optional string mobile_phone_number = 800;
 }
 
