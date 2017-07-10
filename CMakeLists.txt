@@ -6,7 +6,7 @@ STRING(TOLOWER ${CMAKE_PROJECT_NAME} PROJECT_NAME_LOWERCASE)
 SET(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS TRUE)
 
 SET(VERSION_MAJOR "0" CACHE STRING "Major project version part")
-SET(VERSION_MINOR "17" CACHE STRING "Minor project version part")
+SET(VERSION_MINOR "16" CACHE STRING "Minor project version part")
 
 # --- user options ---
 
