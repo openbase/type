@@ -40,3 +40,4 @@ message ActionAuthority {
      */
     optional .rst.domotic.authentication.TicketAuthenticatorWrapper ticket_authenticator_wrapper = 200;
 }
+
