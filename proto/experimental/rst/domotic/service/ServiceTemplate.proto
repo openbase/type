@@ -32,6 +32,10 @@ message ServiceTemplate {
          */
         CONSUMER = 2;
 
+        /**
+         * Streams the data of a given service type to support continuous data streams.
+         */
+        STREAM = 3;
     }
 
     /**
