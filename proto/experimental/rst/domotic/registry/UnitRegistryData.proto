@@ -2,6 +2,7 @@ package rst.domotic.registry;
 
 option java_outer_classname = "UnitRegistryDataType";
 
+import "rst/domotic/authentication/PermissionConfig.proto";
 import "rst/domotic/unit/UnitConfig.proto";
 import "rst/domotic/unit/UnitTemplate.proto";
 import "rst/domotic/service/ServiceTemplate.proto";
@@ -207,5 +208,10 @@ message UnitRegistryData {
      * Global consistent flag for the unit config registry.
      */
     optional bool unit_config_registry_consistent = 3500;
+
+    /**
+     * Global permission config for the unit config registry.
+     */
+    optional .rst.domotic.authentication.PermissionConfig permission_config = 3700;
 }
 
