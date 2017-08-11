@@ -27,11 +27,16 @@ message PointingRay3DFloat {
         HEAD_HAND = 2;
         HEAD_FINGERTIP = 3;
         SHOULDER_HAND = 4;
+        OTHER = 5;
     }
     /**
      * Type of the pointing gesture the ray belongs to.
      */
     optional PointingType type = 3;
+    /**
+     * True, if the pointing hand is the right hand, otherwise left.
+     */
+    optional bool right_hand_pointing = 4;
 
 }
 

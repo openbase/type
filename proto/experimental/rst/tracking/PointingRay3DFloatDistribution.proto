@@ -1,0 +1,18 @@
+package rst.tracking;
+
+import "rst/tracking/PointingRay3DFloat.proto";
+
+option java_outer_classname = "PointingRay3DFloatDistributionType";
+
+/**
+ * Pointing Ray distribution including pointing rays of a single person or even a single hand.
+ *
+ * @author Thoren Huppke <thuppke@techfak.uni-bielefeld.de>
+ */
+// @create_collection
+message PointingRay3DFloatDistribution {
+    /**
+     * Distribution of pointing rays.
+     */
+    repeated PointingRay3DFloat ray = 1;
+}
