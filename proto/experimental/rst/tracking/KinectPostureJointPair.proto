@@ -1,0 +1,23 @@
+package rst.tracking;
+
+import "rst/tracking/KinectPostureJoint.proto";
+
+option java_outer_classname = "KinectPostureJointPairType";
+
+
+/**
+ * Two joints tracked by the Kinect.
+ *
+ * @author Thoren Huppke <thuppke@techfak.uni-bielefeld.de>
+ */
+message KinectPostureJointPair {
+    /**
+     * The first joint.
+     */
+    optional KinectPostureJoint first = 1;
+    /**
+     * The second joint.
+     */
+    optional KinectPostureJoint second = 2;
+}
+
