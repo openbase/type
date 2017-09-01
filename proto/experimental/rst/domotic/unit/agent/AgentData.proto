@@ -1,5 +1,6 @@
 package rst.domotic.unit.agent;
 
+import "rst/domotic/state/EmphasisState.proto";
 import "rst/domotic/state/ActivationState.proto";
 
 option java_outer_classname = "AgentDataType";
@@ -26,5 +27,10 @@ message AgentData {
      * The activation state of this agent.
      */
     optional .rst.domotic.state.ActivationState activation_state = 300;
+
+    /**
+     * The emphasis state of this agent.
+     */
+    optional .rst.domotic.state.EmphasisState emphasis_state = 400;
 }
 
