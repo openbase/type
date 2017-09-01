@@ -147,6 +147,11 @@ message ServiceCommunicationType {
          * Type representing the user window state.
          */
         WINDOW_STATE = 250;
+
+        /**
+         * Emphasis state for configuration of dimensions (comfort,energy,security)
+         */
+        EMPHASIS_STATE = 260;
     }
 }
 
