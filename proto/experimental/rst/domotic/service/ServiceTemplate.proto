@@ -207,6 +207,16 @@ message ServiceTemplate {
          * Illuminance state for measurements of the brightness.
          */
         ILLUMINANCE_STATE_SERVICE = 310;
+
+        /**
+         * User presence state for different kinds of user presence.
+         */
+        USER_PRESENCE_STATE_SERVICE = 320;
+
+        /**
+         * User activity state for different kinds of activities a user does.
+         */
+        USER_ACTIVITY_STATE_SERVICE = 330;
     }
 
     /**
