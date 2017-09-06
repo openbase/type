@@ -26,6 +26,7 @@ message ActivationState {
          * Deactive state.
          */
         DEACTIVE = 1;
+        INACTIVE = 1;
 
         /**
          * Active state.
