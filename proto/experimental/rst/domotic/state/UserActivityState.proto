@@ -39,7 +39,7 @@ message UserActivityState {
     optional Activity current_activity = 200;
 
     /**
-     * The nexted planed user activity.
+     * The next planned user activity.
      */
     optional Activity next_activity = 300;
 }
