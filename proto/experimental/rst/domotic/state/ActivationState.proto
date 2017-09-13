@@ -16,7 +16,7 @@ message ActivationState {
      * The state definitions.
      */
     enum State {
-        option allow_alias = true;
+option allow_alias = true;
         /**
          * Unknown state.
          */
