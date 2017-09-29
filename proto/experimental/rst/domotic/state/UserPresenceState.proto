@@ -31,5 +31,10 @@ message UserPresenceState {
      * The presence state value.
      */
     optional State value = 100;
+
+    /**
+     * Id of the transaction which caused this state.
+     */
+    optional uint64 transaction_id = 300;
 }
 

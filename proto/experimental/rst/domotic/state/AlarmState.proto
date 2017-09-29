@@ -42,4 +42,9 @@ message AlarmState {
      * Timestamp of the occurency of this event.
      */
     optional .rst.timing.Timestamp timestamp = 200;
+
+    /**
+     * Id of the transaction which caused this state.
+     */
+    optional uint64 transaction_id = 300;
 }

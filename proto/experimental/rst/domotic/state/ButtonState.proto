@@ -52,5 +52,10 @@ message ButtonState {
      * Timestamp of the last time the button was pressed.
      */
     optional .rst.timing.Timestamp last_pressed = 300;
+
+    /**
+     * Id of the transaction which caused this state.
+     */
+    optional uint64 transaction_id = 400;
 }
 

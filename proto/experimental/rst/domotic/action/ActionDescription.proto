@@ -75,5 +75,11 @@ message ActionDescription {
      * Strategy defining how the allocation of multiple resources should be treated.
      */
     optional .rst.domotic.action.MultiResourceAllocationStrategy multi_resource_allocation_strategy = 110;
+
+    /**
+     * An id set by the service which executes this action. This id increases with every transaction
+     * and can be used by the remote that triggered the action to check if its change has been applied.
+     */
+    optional uint64 transaction_id = 120;
 }
 
