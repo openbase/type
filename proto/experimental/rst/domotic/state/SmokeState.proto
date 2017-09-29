@@ -52,4 +52,9 @@ message SmokeState {
      * Timestamp of the occurency of this event.
      */
     optional .rst.timing.Timestamp timestamp = 300;
+
+    /**
+     * Id of the transaction which caused this state.
+     */
+    optional uint64 transaction_id = 400;
 }
