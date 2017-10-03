@@ -29,13 +29,28 @@ message ConnectionData {
     optional .rst.domotic.state.DoorState door_state = 300;
 
     /**
+     * If this connection is a door the last door state is represented by this field.
+     */
+    optional .rst.domotic.state.DoorState door_state_last = 310;
+
+    /**
      * If this connection is a window the window state is repesented by this field.
      */
     optional .rst.domotic.state.WindowState window_state = 400;
 
     /**
+     * If this connection is a window the last window state is repesented by this field.
+     */
+    optional .rst.domotic.state.WindowState window_state_last = 410;
+
+    /**
      * If this connection is a passage the passage state is represented by this field.
      */
     optional .rst.domotic.state.PassageState passage_state = 500;
+
+    /**
+     * If this connection is a passage the last passage state is represented by this field.
+     */
+    optional .rst.domotic.state.PassageState passage_state_last = 510;
 }
 

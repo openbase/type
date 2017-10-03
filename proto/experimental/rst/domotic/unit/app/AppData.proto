@@ -26,5 +26,15 @@ message AppData {
      * The activation state of this app.
      */
     optional .rst.domotic.state.ActivationState activation_state = 300;
+
+    /**
+     * The last activation state of this app.
+     */
+    optional .rst.domotic.state.ActivationState activation_state_last = 310;
+
+    /**
+     * The requested activation state of this app.
+     */
+    optional .rst.domotic.state.ActivationState activation_state_requested = 320;
 }
 

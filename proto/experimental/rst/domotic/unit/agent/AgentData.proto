@@ -29,8 +29,28 @@ message AgentData {
     optional .rst.domotic.state.ActivationState activation_state = 300;
 
     /**
+     * The last activation state of this agent.
+     */
+    optional .rst.domotic.state.ActivationState activation_state_last = 310;
+
+    /**
+     * The requested activation state of this agent.
+     */
+    optional .rst.domotic.state.ActivationState activation_state_requested = 320;
+
+    /**
      * The emphasis state of this agent.
      */
     optional .rst.domotic.state.EmphasisState emphasis_state = 400;
+
+    /**
+     * The last emphasis state of this agent.
+     */
+    optional .rst.domotic.state.EmphasisState emphasis_state_last = 410;
+
+    /**
+     * The requested emphasis state of this agent.
+     */
+    optional .rst.domotic.state.EmphasisState emphasis_state_requested = 420;
 }
 

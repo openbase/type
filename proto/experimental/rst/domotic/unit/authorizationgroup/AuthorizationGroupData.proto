@@ -24,6 +24,6 @@ message AuthorizationGroupData {
     /**
      * The presence state of this authorization group.
      */
-    optional .rst.domotic.state.UserPresenceState user_presence_state = 400;
+    optional .rst.domotic.state.UserPresenceState user_presence_state = 400 [deprecated=true];
 }
 

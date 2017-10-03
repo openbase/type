@@ -28,8 +28,23 @@ message UserData {
     optional .rst.domotic.state.UserActivityState user_activity_state = 300;
 
     /**
+     * The last user activity.
+     */
+    optional .rst.domotic.state.UserActivityState user_activity_state_last = 310;
+
+    /**
+     * The requested current user activity.
+     */
+    optional .rst.domotic.state.UserActivityState user_activity_state_requested = 320;
+
+    /**
      * The presence state of the user.
      */
     optional .rst.domotic.state.UserPresenceState user_presence_state = 400;
+
+    /**
+     * The last presence state of the user.
+     */
+    optional .rst.domotic.state.UserPresenceState user_presence_state_last = 410;
 }
 
