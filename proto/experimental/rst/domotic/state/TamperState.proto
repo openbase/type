@@ -1,6 +1,8 @@
 package rst.domotic.state;
 
 import "rst/timing/Timestamp.proto";
+import "rst/domotic/action/ActionDescription.proto";
+
 
 option java_outer_classname = "TamperStateType";
 
@@ -42,7 +44,7 @@ message TamperState {
     /**
      * Last tamper detected timestamp.
      */
-    optional .rst.timing.Timestamp last_detection = 200;
+    optional .rst.timing.Timestamp last_detection = 200 [deprecated=true];
 
     /**
      * Timestamp of the occurency of this event.
@@ -50,8 +52,8 @@ message TamperState {
     optional .rst.timing.Timestamp timestamp = 300;
 
     /**
-     * Id of the transaction which caused this state.
+     * This field contains the description of the action which is responsible for this service state.
      */
-    optional uint64 transaction_id = 400;
+    optional .rst.domotic.action.ActionDescription responsible_action = 400;
 }
 

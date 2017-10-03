@@ -23,8 +23,13 @@ message ReedContactData {
     optional string label = 200;
 
     /**
-     * Field which represents the contact state of the reed contact.
+     * Field which represents the current contact state of the reed contact.
      */
     optional .rst.domotic.state.ContactState contact_state = 300;
+
+    /**
+     * Field which represents the last contact state of the reed contact.
+     */
+    optional .rst.domotic.state.ContactState contact_state_last = 310;
 }
 

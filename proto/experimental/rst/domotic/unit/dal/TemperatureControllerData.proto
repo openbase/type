@@ -24,9 +24,19 @@ message TemperatureControllerData {
     optional string label = 200;
 
     /**
-     * The state which represents the actual temperature.
+     * The state which represents current the actual temperature.
      */
     optional .rst.domotic.state.TemperatureState temperature_state = 300;
+
+    /**
+     * The state which represents the last actual temperature.
+     */
+    optional .rst.domotic.state.TemperatureState temperature_state_last = 310;
+
+    /**
+     * The state which represents the requested actual temperature.
+     */
+    optional .rst.domotic.state.TemperatureState temperature_state_requested = 320;
 
     /**
      * The state which represents the actual temperature.
@@ -34,13 +44,33 @@ message TemperatureControllerData {
     optional .rst.domotic.state.TemperatureState actual_temperature_state = 301 [deprecated=true] ;
 
     /**
-     * The state which represents the target temperature.
+     * The state which represents the current target temperature.
      */
     optional .rst.domotic.state.TemperatureState target_temperature_state = 400;
 
     /**
-     * The temperature alarm state.
+     * The state which represents the last target temperature.
+     */
+    optional .rst.domotic.state.TemperatureState target_temperature_state_last = 410;
+
+    /**
+     * The state which represents the requested target temperature.
+     */
+    optional .rst.domotic.state.TemperatureState target_temperature_state_requested = 420;
+
+    /**
+     * The current temperature alarm state.
      */
     optional .rst.domotic.state.AlarmState temperature_alarm_state = 500;
+
+    /**
+     * The last temperature alarm state.
+     */
+    optional .rst.domotic.state.AlarmState temperature_alarm_state_last = 510;
+
+    /**
+     * The requested temperature alarm state.
+     */
+    optional .rst.domotic.state.AlarmState temperature_alarm_state_requested = 520;
 }
 

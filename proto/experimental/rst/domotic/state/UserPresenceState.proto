@@ -1,5 +1,8 @@
 package rst.domotic.state;
 
+import "rst/timing/Timestamp.proto";
+import "rst/domotic/action/ActionDescription.proto";
+
 option java_outer_classname = "UserPresenceStateType";
 
 
@@ -33,8 +36,13 @@ message UserPresenceState {
     optional State value = 100;
 
     /**
-     * Id of the transaction which caused this state.
+     * Timestamp of the occurency of this event.
      */
-    optional uint64 transaction_id = 300;
+    optional .rst.timing.Timestamp timestamp = 300;
+
+    /**
+     * This field contains the description of the action which is responsible for this service state.
+     */
+    optional .rst.domotic.action.ActionDescription responsible_action = 400;
 }
 

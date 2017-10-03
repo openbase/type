@@ -1,5 +1,8 @@
 package rst.domotic.state;
 
+import "rst/timing/Timestamp.proto";
+import "rst/domotic/action/ActionDescription.proto";
+
 option java_outer_classname = "UserActivityStateType";
 
 
@@ -16,7 +19,7 @@ message UserActivityState {
     enum Activity {
 
         /**
-         * Unknwon user activity.
+         * Unknown user activity.
          */
         UNKNOWN = 0;
         RELAXING = 1;
@@ -29,23 +32,33 @@ message UserActivityState {
     }
 
     /**
+     * The current user activity.
+     */
+    optional Activity value= 200;
+
+    /**
      * The last and already finished user activity.
      */
-    optional Activity last_activity = 100;
+    optional Activity last_activity = 100 [deprecated=true];
 
     /**
      * The current user activity.
      */
-    optional Activity current_activity = 200;
+    optional Activity current_activity = 500 [deprecated=true];
 
     /**
      * The next planned user activity.
      */
-    optional Activity next_activity = 300;
+    optional Activity next_activity = 300 [deprecated=true];
 
     /**
-     * Id of the transaction which caused this state.
+     * Timestamp of the occurency of this event.
      */
-    optional uint64 transaction_id = 400;
+    optional .rst.timing.Timestamp timestamp = 350;
+
+    /**
+     * This field contains the description of the action which is responsible for this service state.
+     */
+    optional .rst.domotic.action.ActionDescription responsible_action = 400;
 }
 

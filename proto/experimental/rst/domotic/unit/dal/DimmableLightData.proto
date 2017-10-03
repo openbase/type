@@ -29,8 +29,28 @@ message DimmableLightData {
     optional .rst.domotic.state.PowerState power_state = 300;
 
     /**
+     * Field which represents the power state of the dimmer.
+     */
+    optional .rst.domotic.state.PowerState power_state_last = 310;
+
+    /**
+     * Field which represents the power state of the dimmer.
+     */
+    optional .rst.domotic.state.PowerState power_state_requested = 320;
+
+    /**
      * The brighntess state of the light.
      */
     optional .rst.domotic.state.BrightnessState brightness_state = 400;
+
+    /**
+     * The brighntess state of the light.
+     */
+    optional .rst.domotic.state.BrightnessState brightness_state_last = 410;
+
+    /**
+     * The brighntess state of the light.
+     */
+    optional .rst.domotic.state.BrightnessState brightness_state_requested = 420;
 }
 

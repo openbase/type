@@ -29,8 +29,18 @@ message SmokeDetectorData {
     optional .rst.domotic.state.AlarmState smoke_alarm_state = 300;
 
     /**
-     * State which represents the smoke level.
+     * State to indicate wether this sensor has last sent an alarm.
+     */
+    optional .rst.domotic.state.AlarmState smoke_alarm_state_last = 310;
+
+    /**
+     * State which represents the current smoke level.
      */
     optional .rst.domotic.state.SmokeState smoke_state = 400;
+
+    /**
+     * State which represents the last smoke level.
+     */
+    optional .rst.domotic.state.SmokeState smoke_state_last = 410;
 }
 

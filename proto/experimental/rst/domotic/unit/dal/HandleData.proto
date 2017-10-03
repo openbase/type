@@ -23,8 +23,18 @@ message HandleData {
     optional string label = 200;
 
     /**
-     * Field which represents the state of the handle.
+     * Field which represents current the state of the handle.
      */
     optional .rst.domotic.state.HandleState handle_state = 300;
+
+    /**
+     * Field which represents the last state of the handle.
+     */
+    optional .rst.domotic.state.HandleState handle_state_last = 310;
+
+    /**
+     * Field which represents the requested state of the handle.
+     */
+    optional .rst.domotic.state.HandleState handle_state_requested = 320;
 }
 

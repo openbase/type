@@ -1,6 +1,8 @@
 package rst.domotic.state;
 
 import "rst/timing/Timestamp.proto";
+import "rst/domotic/action/ActionDescription.proto";
+
 
 option java_outer_classname = "EnablingStateType";
 
@@ -42,5 +44,10 @@ message EnablingState {
      * Timestamp of the occurency of this event.
      */
     optional .rst.timing.Timestamp timestamp = 300;
+
+    /**
+     * This field contains the description of the action which is responsible for this service state.
+     */
+    optional .rst.domotic.action.ActionDescription responsible_action = 400;
 }
 

@@ -22,8 +22,18 @@ message LightSensorData {
     optional string label = 200;
 
     /**
-     * The light measured as illuminance.
+     * The current light measured as illuminance.
      */
     optional .rst.domotic.state.IlluminanceState illuminance_state = 300;
+
+    /**
+     * The last light measured as illuminance.
+     */
+    optional .rst.domotic.state.IlluminanceState illuminance_state_last = 310;
+
+    /**
+     * The requested light measured as illuminance.
+     */
+    optional .rst.domotic.state.IlluminanceState illuminance_state_requested = 320;
 }
 

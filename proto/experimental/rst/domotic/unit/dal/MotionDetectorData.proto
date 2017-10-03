@@ -23,8 +23,13 @@ message MotionDetectorData {
     optional string label = 200;
 
     /**
-     * Field which represents the state of the motion.
+     * Field which represents the current state of the motion.
      */
     optional .rst.domotic.state.MotionState motion_state = 300;
+
+    /**
+     * Field which represents the last state of the motion.
+     */
+    optional .rst.domotic.state.MotionState motion_state_last = 310;
 }
 

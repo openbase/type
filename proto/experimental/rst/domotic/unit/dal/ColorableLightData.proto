@@ -25,18 +25,48 @@ message ColorableLightData {
     optional string label = 200;
 
     /**
-     * Field which repesents the power state of the light.
+     * Field which repesents the current power state of the light.
      */
     optional .rst.domotic.state.PowerState power_state = 300;
 
     /**
-     * Field which repesents the color of the light which contains the brighntess.
+     * Field which repesents the last power state of the light.
+     */
+    optional .rst.domotic.state.PowerState power_state_last = 320;
+
+    /**
+     * Field which repesents the requested power state of the light.
+     */
+    optional .rst.domotic.state.PowerState power_state_requested = 330;
+
+    /**
+     * Field which repesents the current color of the light which contains the brighntess.
      */
     optional .rst.domotic.state.ColorState color_state = 400;
+
+    /**
+     * Field which repesents the last color of the light which contains the brighntess.
+     */
+    optional .rst.domotic.state.ColorState color_state_last = 410;
+
+    /**
+     * Field which repesents the requested color of the light which contains the brighntess.
+     */
+    optional .rst.domotic.state.ColorState color_state_requested = 420;
 
     /**
      * Field which contains the brightness. Is synced with the brightness of the color state.
      */
     optional .rst.domotic.state.BrightnessState brightness_state = 500;
+
+    /**
+     * Field which contains the last brightness. Is synced with the brightness of the color state.
+     */
+    optional .rst.domotic.state.BrightnessState brightness_state_last = 510;
+
+    /**
+     * Field which contains the requested brightness. Is synced with the brightness of the color state.
+     */
+    optional .rst.domotic.state.BrightnessState brightness_state_requested = 520;
 }
 

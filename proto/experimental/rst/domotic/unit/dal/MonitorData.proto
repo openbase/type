@@ -24,14 +24,34 @@ message MonitorData {
     optional string label = 200;
 
     /**
-     * Field which repesents the power state of the monitor.
+     * Field which repesents the current power state of the monitor.
      */
     optional .rst.domotic.state.PowerState power_state = 300;
 
     /**
-     * Field which repesents the standby state of the monitor.
+     * Field which repesents the last power state of the monitor.
+     */
+    optional .rst.domotic.state.PowerState power_state_last = 310;
+
+    /**
+     * Field which repesents the requested power state of the monitor.
+     */
+    optional .rst.domotic.state.PowerState power_state_requested = 320;
+
+    /**
+     * Field which repesents the current standby state of the monitor.
      */
     optional .rst.domotic.state.StandbyState standby_state = 400;
+
+    /**
+     * Field which repesents the last standby state of the monitor.
+     */
+    optional .rst.domotic.state.StandbyState standby_state_last = 410;
+
+    /**
+     * Field which repesents the requested standby state of the monitor.
+     */
+    optional .rst.domotic.state.StandbyState standby_state_requested = 420;
 
 
 }

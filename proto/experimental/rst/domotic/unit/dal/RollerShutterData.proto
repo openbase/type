@@ -23,9 +23,14 @@ message RollerShutterData {
     optional string label = 200;
 
     /**
-     * Field which represents the state of the roller shutter.
+     * Field which represents the current state of the roller shutter.
      */
     optional .rst.domotic.state.BlindState blind_state = 300;
+
+    /**
+     * Field which represents the last state of the roller shutter.
+     */
+    optional .rst.domotic.state.BlindState blind_state_last = 310;
 
 
 }

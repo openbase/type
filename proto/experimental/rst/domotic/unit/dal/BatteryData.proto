@@ -23,8 +23,13 @@ message BatteryData {
     optional string label = 200;
 
     /**
-     * Field which represents the energy of the battery.
+     * Field which represents the current energy of the battery.
      */
     optional .rst.domotic.state.BatteryState battery_state = 300;
+
+    /**
+     * Field which represents the last energy of the battery.
+     */
+    optional .rst.domotic.state.BatteryState battery_state_last = 310;
 }
 

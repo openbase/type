@@ -9,6 +9,8 @@ option java_outer_classname = "BrightnessSensorDataType";
 /**
  * Generic Description of a brightness sensor.
  *
+ * This type is deprecated and was replaced by LightSensorData
+ *
  * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
  */
 message BrightnessSensorData {
@@ -16,12 +18,12 @@ message BrightnessSensorData {
     /**
      * A unique object identifier.
      */
-    optional string id = 100;
+    optional string id = 100 [deprecated=true];
 
     /**
      * Label of the brightness sensor. Used to build the scope.
      */
-    optional string label = 200;
+    optional string label = 200 [deprecated=true];
 
     /**
      * The brightness state of the sensor.
@@ -29,8 +31,8 @@ message BrightnessSensorData {
     optional .rst.domotic.state.BrightnessState brightness_state = 300 [deprecated=true];
 
     /**
-     * The brightness measured as illuminance.
+     * The current brightness measured as illuminance.
      */
-    optional .rst.domotic.state.IlluminanceState illuminance_state = 301;
+    optional .rst.domotic.state.IlluminanceState illuminance_state = 301 [deprecated=true];
 }
 

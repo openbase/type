@@ -1,6 +1,7 @@
 package rst.domotic.state;
 
 import "rst/timing/Timestamp.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "ButtonStateType";
 
@@ -51,11 +52,11 @@ message ButtonState {
     /**
      * Timestamp of the last time the button was pressed.
      */
-    optional .rst.timing.Timestamp last_pressed = 300;
+    optional .rst.timing.Timestamp last_pressed = 300 [deprecated=true];
 
     /**
-     * Id of the transaction which caused this state.
+     * This field contains the description of the action which is responsible for this service state.
      */
-    optional uint64 transaction_id = 400;
+    optional .rst.domotic.action.ActionDescription responsible_action = 400;
 }
 

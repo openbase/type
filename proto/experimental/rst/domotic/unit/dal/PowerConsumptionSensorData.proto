@@ -25,5 +25,10 @@ message PowerConsumptionSensorData {
      * The the power consumption state.
      */
     optional .rst.domotic.state.PowerConsumptionState power_consumption_state = 300;
+
+    /**
+     * The the last power consumption state.
+     */
+    optional .rst.domotic.state.PowerConsumptionState power_consumption_state_last = 310;
 }
 

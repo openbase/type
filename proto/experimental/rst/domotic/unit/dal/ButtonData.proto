@@ -23,10 +23,14 @@ message ButtonData {
     optional string label = 200;
 
     /**
-     * Field which represents the state of the button.
+     * Field which represents the current state of the button.
      */
     optional .rst.domotic.state.ButtonState button_state = 300;
 
+    /**
+     * Field which represents the last state of the button.
+     */
+    optional .rst.domotic.state.ButtonState button_state_last = 310;
 
 }
 
