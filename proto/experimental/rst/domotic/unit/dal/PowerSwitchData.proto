@@ -31,5 +31,11 @@ message PowerSwitchData {
      * Field which represents the last state of the power plug.
      */
     optional .rst.domotic.state.PowerState power_state_last = 310;
+
+    /**
+     * Field which represents the requested state of the power plug.
+     */
+    optional .rst.domotic.state.PowerState power_state_requested = 320;
+
 }
 

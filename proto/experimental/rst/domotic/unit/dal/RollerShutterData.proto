@@ -32,6 +32,9 @@ message RollerShutterData {
      */
     optional .rst.domotic.state.BlindState blind_state_last = 310;
 
-
+    /**
+     * Field which represents the requested state of the roller shutter.
+     */
+    optional .rst.domotic.state.BlindState blind_state_requested = 320;
 }
 
