@@ -3,7 +3,6 @@ package rst.domotic.state;
 option java_outer_classname = "InventoryStateType";
 
 import "rst/timing/Timestamp.proto";
-import "rst/domotic/action/ActionDescription.proto";
 
 
 /**
@@ -68,10 +67,5 @@ message InventoryState {
      * The id of the current owner of the device.
      */
     optional string owner_id = 400;
-
-    /**
-     * This field contains the description of the action which is responsible for this service state.
-     */
-    optional .rst.domotic.action.ActionDescription responsible_action = 500;
 }
 
