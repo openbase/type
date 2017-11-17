@@ -46,5 +46,10 @@ message UserData {
      * The last presence state of the user.
      */
     optional .rst.domotic.state.UserPresenceState user_presence_state_last = 410;
+
+    /**
+     * The requested presence state of the user.
+     */
+    optional .rst.domotic.state.UserPresenceState user_presence_state_requested = 420;
 }
 
