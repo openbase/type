@@ -14,42 +14,9 @@ option java_outer_classname = "UserActivityStateType";
 message UserActivityState {
 
     /**
-     * The user activity categories.
+     * The id of the current user activity.
      */
-    enum Activity {
-
-        /**
-         * Unknown user activity.
-         */
-        UNKNOWN = 0;
-        RELAXING = 1;
-        SLEEPING = 2;
-        WORKING = 3;
-        EATING = 4;
-        COOKING = 5;
-        CLEANING = 6;
-        CELEBRATING = 7;
-    }
-
-    /**
-     * The current user activity.
-     */
-    optional Activity value= 200;
-
-    /**
-     * The last and already finished user activity.
-     */
-    optional Activity last_activity = 100 [deprecated=true];
-
-    /**
-     * The current user activity.
-     */
-    optional Activity current_activity = 500 [deprecated=true];
-
-    /**
-     * The next planned user activity.
-     */
-    optional Activity next_activity = 300 [deprecated=true];
+    optional string activity_id = 100;
 
     /**
      * Timestamp of the occurency of this event.

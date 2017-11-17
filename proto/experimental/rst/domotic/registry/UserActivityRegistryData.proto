@@ -1,0 +1,52 @@
+package rst.domotic.registry;
+
+option java_outer_classname = "UserActivityRegistryDataType";
+
+import "rst/domotic/activity/UserActivityConfig.proto";
+import "rst/domotic/activity/UserActivityClass.proto";
+
+/**
+ * Description of the user activity registry.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ * @author Marian Pohling <mpohling@techfak.uni-bielefeld.de>
+ */
+message UserActivityRegistryData {
+
+    /**
+     * The label for the registry.
+     */
+    optional string label = 100;
+
+    /**
+     * The list of registered user activity classes.
+     */
+    repeated .rst.domotic.activity.UserActivityClass user_activity_class = 200;
+
+    /**
+     * The list of registered user activity configurations.
+     */
+    repeated .rst.domotic.activity.UserActivityConfig user_activity_config = 300;
+
+    /**
+     * Read only flag for the user activity class registry.
+     */
+    optional bool user_activity_class_registry_read_only = 500;
+
+    /**
+     * Read only flag for the user activity config registry.
+     */
+    optional bool user_activity_config_registry_read_only = 600;
+
+    /**
+     * Consistent flag for the user activity class registry.
+     */
+    optional bool user_activity_class_registry_consistent = 700;
+
+    /**
+     * Consistent flag for the user activity config registry.
+     */
+    optional bool user_activity_config_registry_consistent = 800;
+
+}
+

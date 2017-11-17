@@ -1,0 +1,58 @@
+package rst.domotic.activity;
+
+option java_outer_classname = "UserActivityClassType";
+
+import "rst/configuration/MetaConfig.proto";
+
+/**
+ * Class for user activities.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UserActivityClass {
+
+    /**
+     * The user activity categories.
+     */
+    enum UserActivityType {
+
+        /**
+         * Unknown user activity.
+         */
+        UNKNOWN = 0;
+        OTHER = 1;
+        RELAXING = 2;
+        SLEEPING = 3;
+        WORKING = 4;
+        EATING = 5;
+        COOKING = 6;
+        CLEANING = 7;
+        CELEBRATING = 8;
+    }
+
+    /**
+     * The id of the user activity class.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of the user activity class.
+     */
+    optional string label = 200;
+
+    /**
+     * The type of the user activity class.
+     */
+    optional UserActivityType type = 300;
+
+    /**
+     * A field storing meta configurations.
+     */
+    optional .rst.configuration.MetaConfig meta_config = 400;
+
+    /**
+     * A description of the user activity class.
+     */
+    optional string description = 500;
+}
+
