@@ -23,7 +23,7 @@ message UnitTemplate {
          * A generic unit type to represent non smart objects as units.
          */
         OBJECT = 1;
-    
+
         /**
          * A light which is dimmable and colorable.
          */
