@@ -20,6 +20,11 @@ message UnitTemplate {
         UNKNOWN = 0;
 
         /**
+         * A generic unit type to represent non smart objects as units.
+         */
+        OBJECT = 1;
+    
+        /**
          * A light which is dimmable and colorable.
          */
         COLORABLE_LIGHT = 10;
