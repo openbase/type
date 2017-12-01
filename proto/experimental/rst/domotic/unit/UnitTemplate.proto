@@ -20,7 +20,7 @@ message UnitTemplate {
         UNKNOWN = 0;
 
         /**
-         * The unknown type.
+         * A generic unit type to represent non smart objects as units.
          */
         OBJECT = 1;
     
