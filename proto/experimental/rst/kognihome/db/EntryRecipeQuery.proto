@@ -1,0 +1,11 @@
+package rst.kognihome.db;
+
+option java_outer_classname = "EntryRecipeQueryType";
+
+message EntryRecipeQuery {
+
+    required int32 entry_id = 1;
+    required int32 recipe_id = 2;
+    optional int32 sort = 3;
+
+}

@@ -1,0 +1,40 @@
+package rst.kognihome;
+
+
+option java_outer_classname = "WardrobeStatusType";
+
+/**
+ * Current status of the KogniHome automatic wardrobe.
+ * @author Alexander Neumann <alneuman@techfak.uni-bielefeld.de>
+ * @author Gerhard Götz <Gerhard_Goetz@de.hettich.com>
+ */
+message WardrobeStatus {
+
+    enum Status {
+        UNKNOWN = 0;
+        CLOSED = 1;
+        OPEN_EMPTY = 2;
+        OPEN_FULL = 3;
+        BUSY = 4;
+        ERROR = 5;
+    }
+
+    enum ErrorCode {
+        UNKNOWN_ERROR = 0;
+        HANGER_MISSING = 1;
+    }
+
+    /**
+     * System status.
+     */
+    required Status status = 1;
+
+    /**
+     * An error code is only passed if the status is set to Error.
+     */
+    optional ErrorCode error_code = 8;
+    /**
+     * A detailed error description if required.
+     */
+    optional string error_message = 9;
+}

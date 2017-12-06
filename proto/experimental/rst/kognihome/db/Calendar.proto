@@ -1,0 +1,11 @@
+package rst.kognihome.db;
+
+option java_outer_classname = "CalendarType";
+
+message Calendar {
+
+    required int32 id = 1;
+    required string title = 2;
+    optional string description = 3;
+
+}

@@ -1,0 +1,10 @@
+package rst.kognihome.db;
+
+option java_outer_classname = "VitalDataResultType";
+
+message VitalDataResult {
+    required int32 userid = 1;
+    required int32 height = 2;
+    required int32 resting_heart_rate = 3;
+    required int32 resting_respiratory_rate = 4;
+}

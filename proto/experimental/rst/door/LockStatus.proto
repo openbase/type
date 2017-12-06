@@ -1,0 +1,32 @@
+package rst.door;
+
+option java_outer_classname = "LockStatusType";
+
+/**
+ * Represents the status of a controllable lock targeted at door locks such
+ * as the DORMA SVP series.
+ * @author Alexander Neumann <alneuman@techfak.uni-bielefeld.de>
+ * Erweitert: author Britta Kemper <britta.kemper@dwmschwarze.de>
+ **/
+message LockStatus {
+
+    enum Status {
+    UNKNOWN = 0;
+    LOCKED = 1;
+    UNLOCKED = 2;
+    PERMANENTLY_UNLOCKED = 3;
+    ERROR = 4;
+    }
+
+    /**
+     * Lock status. UNKNOWN represents (sever) operational issues and instabilities
+     * while ERROR might also indicate attempts to breach the lock.
+     */
+    required Status status = 1;
+
+    /**
+     * indicates of the handle is currently pushed or not.
+     */
+    optional bool handle_pushed = 8;
+    optional bool nose_pushed = 9;
+}

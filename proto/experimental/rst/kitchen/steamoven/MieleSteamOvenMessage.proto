@@ -1,0 +1,40 @@
+package rst.kitchen.steamoven;
+
+option java_outer_classname = "MieleSteamOvenMessageType";
+
+/************************************************************************************************************
+ *                                                                                                          *
+ * USE BY AUTHORIZED PERSONAL ONLY!!!                                                                       *
+ *                                                                                                          *
+ * DataObject for interfacing the Miele DG6800 enhanced with external touchinjection                        *
+ * WARNING: The Miele Device with external control are manipulated laboratory devices and not safe!         *
+ *                                                                                                          *
+ * USE BY AUTHORIZED PERSONAL ONLY!!!                                                                       *
+ *                                                                                                          *
+ * @author Stefan Rüther                                                                                    *
+ *    stefan.ruether@miele.de                                                                               *
+ *                                                                                                          *
+ ************************************************************************************************************
+ */
+
+
+
+message MieleSteamOvenMessage {
+    enum SteamOvenCommand {
+        NONE = 0;
+        POWERBUTTON = 1;
+        RETURNBUTTON = 2;
+        ABORT = 4;
+
+        SET100DEGREE35MIN = 10;
+        SET100DEGREE50MIN = 11;
+
+        SET95DEGREE35MIN = 21;
+        SET95DEGREE50MIN = 22;
+
+        CHANGETIME35MIN = 50; // Zeit auf 35Min ändern, das Geräte muss dazu bereits laufen
+        CHANGETIME45MIN = 51; // Zeit auf 35Min ändern, das Geräte muss dazu bereits laufen
+        CHANGETIME50MIN = 52; // Zeit auf 35Min ändern, das Geräte muss dazu bereits laufen
+    }
+    required SteamOvenCommand command = 1 [default = NONE];
+}

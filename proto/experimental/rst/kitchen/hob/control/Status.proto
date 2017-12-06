@@ -1,0 +1,30 @@
+package rst.kitchen.hob.control;
+
+import "rst/kitchen/hob/control/Task.proto";
+import "rst/kitchen/hob/control/Target.proto";
+
+
+/* @author Christof Elbrechter [celbrech@techfak.uni-bielefeld.de] */
+
+
+option java_outer_classname = "StatusType";
+message Status {
+    message PlateInfo{
+        enum PanDetectionState{
+            PanDetected = 1;
+            PanNotDetected = 2;
+            Unknown = 3;
+        }
+        required PanDetectionState panDetectionState = 1;
+        required int32 currentPowerLevel = 2;   // 0: off 1: max
+        optional int32 currentTargetIndex = 3;  // index in the parent Status' activeTargets list
+    }
+
+    required PlateInfo upperLeft = 1;
+    required PlateInfo upperRight = 2;
+    required PlateInfo lowerLeft = 3;
+    required PlateInfo lowerRight = 4;
+
+    repeated Target activeTargets = 5;
+    required int64 timestamp = 6;
+}

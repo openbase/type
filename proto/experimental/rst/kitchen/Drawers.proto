@@ -1,0 +1,17 @@
+package rst.kitchen;
+
+import "rst/kitchen/Drawer.proto";
+
+option java_outer_classname = "DrawersType";
+
+/**
+ * A list of Drawers
+ * @author Andre Ueckermann <aueckerm@techfak.uni-bielefeld.de>
+ */
+message Drawers {
+
+    /**
+     * List of tracked objects
+     */
+    repeated Drawer drawers = 1;
+}

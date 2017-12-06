@@ -1,0 +1,43 @@
+package rst.kitchen;
+
+
+option java_outer_classname = "HeatTaskType";
+
+
+/**
+ * Represents information for heat task
+ * container e.g. Topf,  temperature in Celcius optional ingredient name
+ *
+ * @author Nadine Pfeiffer-Lessmann <nlessman@techfak.uni-bielefeld.de>
+ */
+
+message HeatTask {
+    /**
+     * Container name
+     */
+    required string container = 1;
+
+    /**
+     * Target temperature in celcius
+     */
+    optional float temperature = 2;
+
+    /**
+     * specifies whether the temperature controler should hold the specified temperature
+     * true: temperature shoud be kept
+     * false: ingredient is heated until temperature is reached and then temperature control is turned off
+     */
+    required bool keep_temperature = 3 [default = false];
+    optional float duration = 4;
+
+    /**
+     * Abort task
+     */
+    required bool abort = 5 [default = false];
+
+    /**
+     * Content/Ingredient to be heated
+     *
+     */
+    optional string ingredient = 10;
+}

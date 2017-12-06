@@ -1,0 +1,13 @@
+package rst.kognihome.db;
+
+import "rst/kognihome/db/Entry.proto";
+
+option java_outer_classname = "UserEntryType";
+
+message UserEntry {
+
+    required int32 user_id = 1;
+    repeated Entry entry = 2;
+    required string user_rights = 3;
+
+}

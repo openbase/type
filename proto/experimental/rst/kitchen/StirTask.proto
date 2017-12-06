@@ -1,0 +1,45 @@
+package rst.kitchen;
+
+
+option java_outer_classname = "StirTaskType";
+
+
+/**
+ * Represents information for stir task
+ * containor e.g. Topf,  temperature in Celcius optional ingredient name
+ *
+ * @author Nadine Pfeiffer-Lessmann <nlessman@techfak.uni-bielefeld.de>
+ */
+
+message StirTask {
+    enum Location {
+        SCALE = 0;
+        HOB = 1;
+    }
+
+    /**
+     * Pattern name (eight, circle)
+     */
+    required string pattern = 1;
+
+    /**
+     * Target duration in sec
+     */
+    optional float duration = 2;
+
+    /**
+     * Maximal pause without stirring in sec
+     */
+    optional float max_stirring_pause = 3;
+
+    /**
+     * at which place to detect stirring: scale/hob
+     */
+    required Location location = 4;
+
+    /**
+     * Abort task
+     */
+    required bool abort = 5 [default = false];
+
+}

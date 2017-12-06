@@ -1,0 +1,32 @@
+package rst.kognihome;
+
+option java_outer_classname = "SystemNotificationType";
+
+/**
+ * A notification similar to dmesg which should be used to log the system
+ * behaviour and report issues of components for easier bug tracking.
+ * @author Alexander Neumann <alneuman@techfak.uni-bielefeld.de>
+ **/
+message SystemNotification {
+    enum Level {
+    ERROR = 0;
+    WARNING = 1;
+    INFO = 2;
+    DEBUG = 3;
+    }
+
+    /**
+     * Severity of the notification reason
+     */
+    required Level level = 1 [default = INFO];
+
+    /**
+     * Component URI to identify the source of the notification.
+     */
+    required string uri = 2;
+
+    /**
+     * Description of the issue which is reported.
+     **/
+    required string message = 3;
+}

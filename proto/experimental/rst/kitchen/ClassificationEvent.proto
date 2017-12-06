@@ -1,0 +1,27 @@
+package rst.kitchen;
+
+option java_outer_classname = "ClassificationEventType";
+
+/**
+ * Represents classifitcation results of controller
+ *
+ * @author Nadine Pfeiffer-Leßmann <nlessman@techfak.uni-bielefeld.de>
+ */
+
+message ClassificationEvent {
+
+    /**
+     * Event type
+     */
+    required string type = 1;
+
+    /**
+     *
+     */
+    optional string target = 2;
+
+    /**
+     *
+     */
+    optional string  result = 3;
+}

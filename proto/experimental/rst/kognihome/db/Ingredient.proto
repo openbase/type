@@ -1,0 +1,13 @@
+package rst.kognihome.db;
+
+option java_outer_classname = "IngredientType";
+
+message Ingredient {
+
+    required int32 id = 1;
+    required string name = 2;
+    required string property = 3;
+    required string amount = 4;
+    required string unit = 5;
+
+}

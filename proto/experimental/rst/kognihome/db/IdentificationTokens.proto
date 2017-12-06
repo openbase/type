@@ -1,0 +1,16 @@
+package rst.kognihome.db;
+
+import "rst/kognihome/db/UserInfo.proto";
+
+option java_outer_classname = "IdentificationTokensType";
+
+message IdentificationTokens {
+
+    message KeyValue {
+        required string category = 1;
+        required string value = 2;
+    }
+
+    required UserInfo user_info = 1;
+    repeated KeyValue tokens = 8;
+}

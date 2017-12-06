@@ -1,0 +1,26 @@
+package rst.kognihome.vision;
+
+option java_outer_classname = "ImageServerControlMessageType";
+
+import "rst/geometry/BoundingBox.proto";
+
+/**
+ *    A control message type that can be used to
+ *    configure image server instances
+ *    @author aueckerm@techfak.uni-bielefeld.de
+ */
+
+message ImageServerControlMessage {
+    enum State {
+        PowerOff = 1;
+        PowerOn = 2;
+    }
+    enum ColorMode {
+        RGB  = 1;
+        Gray = 2;
+    }
+    optional State state = 1;
+    optional rst.geometry.BoundingBox roi = 2;
+    optional float maxFPS = 3;
+    optional ColorMode colorMode = 4;
+}

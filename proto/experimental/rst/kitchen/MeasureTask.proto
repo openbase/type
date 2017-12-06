@@ -1,0 +1,46 @@
+package rst.kitchen;
+
+
+option java_outer_classname = "MeasureTaskType";
+
+
+/**
+ * Represents information for measure task
+ * container e.g. Topf, quantity in g or ml, ingredient name
+ *
+ * @author Nadine Pfeiffer-Lessmann <nlessman@techfak.uni-bielefeld.de>
+ */
+
+message MeasureTask {
+
+    /**
+     * Container name
+     */
+    required string container = 1;
+
+    /**
+     * Target volume;
+     */
+    optional float quantity = 2;
+
+    /**
+     * Target unit
+     */
+    optional string unit = 3;
+
+    /**
+     * Scale name (Hob or Scale)
+     */
+    optional string location = 4;
+
+    /**
+     * Abort task
+     */
+    required bool abort = 5 [default = false];
+
+    /**
+     * Content/Ingredient to be filled in or other information related to the
+     * filling process
+     */
+    optional string ingredient = 10;
+}

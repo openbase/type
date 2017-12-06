@@ -1,0 +1,39 @@
+package rst.kognihome.db;
+
+import "rst/kognihome/db/Ingredient.proto";
+
+option java_outer_classname = "RecipeType";
+
+message Recipe {
+
+    message Step {
+    required int32 id = 1;
+    required string text = 2;
+    required string imagefile = 3;
+    repeated Ingredient ingredients = 4;
+    }
+
+    required int32 id = 1;
+    required int32 cookbook_id = 2;
+    required string name = 3;
+    required string type = 4;
+    repeated Step step = 5;
+    required int32 portions = 6;
+    optional int32 preparation_time = 7;
+    optional int32 cooking_time = 8;
+    optional int32 resting_time = 9;
+    optional string difficulty = 10;
+    optional float kcal = 11;
+    optional float fat = 12;
+    optional float protein = 13;
+    optional float carbohydrate = 14;
+    optional string createTime = 15;
+    optional string tags = 16;
+    optional int32 ratings = 17;
+    optional float rating = 18;
+    optional string imagefile = 19;
+    optional string xmlfile = 20;
+    repeated Ingredient ingredients = 21;
+    required int32 sort = 22;
+
+}

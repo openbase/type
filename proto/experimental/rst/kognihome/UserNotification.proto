@@ -1,0 +1,74 @@
+package rst.kognihome;
+
+option java_outer_classname = "UserNotificationType";
+
+/**
+ * A notification intended to be sent to a user of a system
+ * and presented in a appropriate (multi-)modal way.
+ * @author Alexander Neumann <alneuman@techfak.uni-bielefeld.de>
+ **/
+message UserNotification {
+    enum Type {
+    INFO = 0;
+    SUCCESS = 1;
+    WARNING = 2;
+    ERROR = 3;
+    STATUS = 4;
+    }
+
+    enum DisplayType{
+        POPUP = 0;
+        NOTIFICATION = 1;
+        CANCEL_POPUP = 2;
+    }
+
+    enum DeviceType{
+        DEFAULT = 0;
+        OVEN = 1;
+        STEAMOVEN = 2;
+        HOB = 3;
+    }
+
+    /**
+     * Severity of the notification reason
+     */
+    required Type type = 1 [default = INFO];
+
+    /**
+     * specifies whether notification is displayed overlayed or as popup
+     */
+    required DisplayType display_type = 2;
+
+    /**
+     * specifies the device type associated with a notification
+     */
+    required DeviceType device_type = 3 [default = DEFAULT];
+
+    /**
+     * The notification content. Depending on the modality this
+     * might be a text message to be shown but also some kind of
+     * hint for an audio message or tactile interface.
+     **/
+    required string content = 4;
+
+    /**
+     * A topic for visual notifications. Also usable as another hint
+     * for non-visual displays.
+     **/
+    optional string topic = 5;
+
+    /**
+     * If a response is expected, this identifier will be used to
+     * allow identification of the response.
+     **/
+    optional string responseID = 6;
+
+    /**
+     * If provided, these will be the possible choices for the user.
+     * They will be ignored if no responseID was set.
+     * Default options are "Accept/Okay/Yes" and "Reject/Cancel/No"
+     **/
+    repeated string responses = 7;
+
+
+}
