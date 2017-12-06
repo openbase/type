@@ -61,8 +61,8 @@ class CheckPackageMatchFolder(Check):
 
         if packagePathParts != fileNameParts:
             self.errorHandler.addError(description="Declared package %s does not match file name and location" % declaredPackages[0])
-            
-            
+
+
         #check whether package is starting with rstexperimental to avoid collisions with official RST
         packageEnforcedStart = "rst"
         if packagePathParts[0] != packageEnforcedStart:
@@ -268,20 +268,20 @@ class FileErrorHandler(object):
     def addError(self, line=None, description=None):
         print("[ERROR] %s(%s): %s" % (self.__fileName, line, description))
         self.__parent.countError()
-        
+
     def done(self):
         pass
 
 class ErrorHandler(object):
     def __init__(self):
         self.__count = 0;
-          
+
     def errorCount(self):
         return self.__count
-      
+
     def countError(self):
         self.__count  += 1
-      
+
     def createFileErrorHandler(self, fileName):
         return FileErrorHandler(fileName, self)
 
@@ -359,16 +359,19 @@ def checkFile(file, root, errorHandler, additionalCheckClasses=[]):
 
     fileErrorHandler.done()
 
-def checkFilesInFolder(folder, errorHandler, additionalCheckClasses=[]):
+def checkFilesInFolder(folder, errorHandler, additionalCheckClasses=[], exclude_types=[]):
 
     logger.info("Checking all files in folder %s", folder)
 
     protoFiles = getProtoFilesRecursive(folder)
     for f in protoFiles:
-        if not os.path.split(f)[-1].startswith('__'):
+        # convert path/to/experimental/rst/folder/type to rst/folder/type
+        # -6 removes the ending '.proto' from the filename.
+        type_path = f[len(folder)+1:-6]
+        if not os.path.split(f)[-1].startswith('__') and type_path not in exclude_types:
             checkFile(f, folder, errorHandler, additionalCheckClasses)
 
-def checkFilesInMultipleRoots(rootFolder, errorHandler, exclude=[]):
+def checkFilesInMultipleRoots(rootFolder, errorHandler, exclude=[], exclude_types=[]):
 
     logger.info("Searching for RST roots in %s", rootFolder)
 
@@ -381,7 +384,7 @@ def checkFilesInMultipleRoots(rootFolder, errorHandler, exclude=[]):
     logger.info("Found RST roots %s", roots)
 
     for root in roots:
-        checkFilesInFolder(os.path.abspath(root), errorHandler)
+        checkFilesInFolder(os.path.abspath(root), errorHandler, exclude_types=exclude_types)
 
 if __name__ == '__main__':
 
@@ -399,8 +402,15 @@ if __name__ == '__main__':
     parser.add_option("-e", "--deprecated", dest="deprecated", default=False,
                       action="store_true",
                       help="Include the deprecated domain")
+    parser.add_option("-i", "--ignore", dest="ignore_filename", help="Load types to be ignored from file",
+                      default="./codeCheckIgnore.txt")
 
     (options, args) = parser.parse_args()
+
+    exclude_types = []
+    if os.path.exists(options.ignore_filename):
+        with open(options.ignore_filename) as f:
+            exclude_types = [l.strip() for l in f.readlines()]
 
     if options.debug:
         logging.basicConfig(level=logging.DEBUG)
@@ -416,7 +426,7 @@ if __name__ == '__main__':
     if options.deprecated:
         exclude = []
     checkFilesInMultipleRoots(options.root, errorHandler,
-                              exclude=exclude)
+                              exclude=exclude, exclude_types=exclude_types)
 
     errorHandler.done()
     sys.exit(-1 if errorHandler.errorCount() else 0);
