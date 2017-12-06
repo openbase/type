@@ -1,0 +1,17 @@
+package rst.door;
+
+option java_outer_classname = "SpeakerStatusType";
+
+/**
+ * Represents the speaker
+ * @ author Britta Kemper <britta.kemper@dwmschwarze.de>
+ **/
+
+
+
+
+
+message SpeakerStatus
+{
+	required int32 volume = 1;
+}

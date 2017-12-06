@@ -1,0 +1,10 @@
+package rst.kognihome.db;
+
+option java_outer_classname = "UserLoginQueryType";
+
+message UserLoginQuery {
+
+  required string username = 1;
+  required string password = 2;
+
+}

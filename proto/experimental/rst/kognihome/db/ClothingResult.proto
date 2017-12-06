@@ -1,0 +1,13 @@
+package rst.kognihome.db;
+
+option java_outer_classname = "ClothingResultType";
+
+message ClothingResult {
+  message Garment {
+    required string name = 1;
+    required int32 slot = 2;
+    optional int32 matches = 7;
+    repeated string tags = 8;
+  }
+  repeated Garment garments = 1;
+}

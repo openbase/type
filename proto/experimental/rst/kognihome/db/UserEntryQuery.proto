@@ -1,0 +1,11 @@
+package rst.kognihome.db;
+
+option java_outer_classname = "UserEntryQueryType";
+
+message UserEntryQuery {
+
+    required int32 user_id = 1;
+    required int32 entry_id = 2;
+    required string user_rights = 3;
+
+}

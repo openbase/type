@@ -1,0 +1,81 @@
+package rst.kitchen;
+
+import "rst/tracking/ObjectReference.proto";
+
+option java_outer_classname = "StirDataType";
+
+/**
+ * Data to represent stirring in a cooking process.
+ * @author Alexander Neumann <alneuman@techfak.uni-bielefeld.de>
+ */
+message StirData {
+
+    enum Pattern {
+      STOP = 0;
+      UNKNOWN = 1;
+      CIRCLE = 2;
+      EIGHT = 3;
+      SPIRAL = 4;
+    }
+
+    enum Direction {
+      CLOCKWISE = 0;
+      COUNTERCLOCKWISE = 1;
+    }
+
+    /**
+     * Unique reference representing the object or location where stirring
+     * takes place.
+     */
+    required rst.tracking.ObjectReference object_reference = 1;
+
+    /**
+     * detected stirring pattern
+     */
+    required Pattern pattern = 2;
+
+    /**
+     * stirring speed
+     */
+    required float speed = 3;
+
+    /**
+    * time stamp of stirring event
+    */
+    required uint64 time_stamp = 4;
+
+    /**
+     * whether stirring is active or if stirring just ended
+     */
+    optional bool active = 10;
+
+    /**
+     * remaining stirring time in seconds
+     */
+    optional int32 remaining_stirring_time = 11;
+
+    /**
+     * directon of stirring movement
+     */
+    optional Direction direction = 12;
+
+    /**
+    * progress from 0 (no stirring) to 1 (required stirring done) if required
+    */
+    optional double relative_progress = 13;
+
+    /**
+    * accuracy of circle pattern from 0 (no circle) to 1 (perfect circle)
+    */
+   optional double accuracy_circle = 14;
+
+    /**
+    * accuracy of eight pattern from 0 (no circle) to 1 (perfect eight)
+    */
+   optional double accuracy_eight = 15;
+
+   /**
+    * accuracy of spiral pattern from 0 (no circle) to 1 (perfect spiral)
+    */
+   optional double accuracy_spiral = 16;
+}

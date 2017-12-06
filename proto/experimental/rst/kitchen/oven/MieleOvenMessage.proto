@@ -1,0 +1,50 @@
+package rst.kitchen.oven;
+
+option java_outer_classname = "MieleOvenMessageType";
+//option java_package = "rst.kitchen.mieleappliances.MieleOvenMessageType";
+//option java_package = "de.miele.kognihome.mieleappliances.devices.oven";
+
+/************************************************************************************************************
+ * 																											*
+ * USE BY AUTHORIZED PERSONAL ONLY!!! 																		*
+ *																											*
+ * DataObject for interfacing the Miele oven H6800BP enhanced with external touchinjection					*
+ * WARNING: The Miele Device with external control are manipulated laboratory devices and not safe! 		*
+ *																											*
+ * USE BY AUTHORIZED PERSONAL ONLY!!! 																		*
+ * 																											*
+ * @author Stefan Rüther																					*
+ *	stefan.ruether@miele.de																					*
+ *																											*
+ ************************************************************************************************************
+ */
+ 
+// Hinweis: auf dem Backofen werden entsprechende Touchinjection Scripte aufgerufen
+ 
+message MieleOvenMessage {
+
+  enum OvenCommand {
+  	NONE = 0;
+    POWERBUTTON = 1; // Ein Taste Drücken
+    RETURNBUTTON = 2; //zurücktaste
+    ABORT = 3; //Programm abrechen und ausschalten
+    
+    SETH180DEGREE35MIN = 10; //Heissluft 180Grad, 35 Min
+	SETH180DEGREE45MIN = 11; //Heissluft 180Grad, 45 Min
+    
+    SETH200DEGREE35MIN = 20; //Heissluft 200Grad, 35 Min
+    SETH200DEGREE45MIN = 21; //Heissluft 200Grad, 45 Min
+    
+    SETOU80DEG8MIN = 30; //Heissluft 80 Grad 8 Minuten
+    
+    
+    SETKLIMA180DEG25MINDS5DS12 = 40; //Klima garen: 180 Grad, 25 Minuten, 1. Dampfstoß bei 5Min, 2. Dampfstoß bei 12 Min. 
+    //Achtung: erfordert das einfüllen von Wasser am Gerät!
+    
+    CHANGETIME35MIN = 50; // Zeit auf 35Min ändern, das Geräte muss dazu bereits laufen        
+    CHANGETIME45MIN = 51; // Zeit auf 35Min ändern, das Geräte muss dazu bereits laufen
+    CHANGETIME50MIN = 52; // Zeit auf 35Min ändern, das Geräte muss dazu bereits laufen
+    
+   }
+   required OvenCommand command = 1 [default = NONE];  
+}

@@ -1,0 +1,11 @@
+package rst.kognihome.db;
+
+option java_outer_classname = "EntriesWeekQueryType";
+
+message EntriesWeekQuery {
+
+    required int32 calendar_id = 1;
+    required string startdate = 2;
+    required string enddate = 3;
+
+}

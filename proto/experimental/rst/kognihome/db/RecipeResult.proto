@@ -1,0 +1,31 @@
+package rst.kognihome.db;
+
+option java_outer_classname = "RecipeResultType";
+
+message RecipeResult {
+
+    message Recipe {
+        required int32 id = 1;
+        required int32 cookbook_id = 2;
+        required string name = 3;
+        required string type = 4;
+        required int32 portions = 5;
+        optional int32 preparation_time = 6;
+        optional int32 cooking_time = 7;
+        optional int32 resting_time = 8;
+        optional string difficulty = 9;
+        optional float kcal = 10;
+        optional float fat = 11;
+        optional float protein = 12;
+        optional float carbohydrate = 13;
+        optional string createTime = 14;
+        optional string tags = 15;
+        optional int32 ratings = 16;
+        optional float rating = 17;
+        optional string imagefile = 18;
+        optional string xmlfile = 19;
+    }
+
+    repeated Recipe recipe = 1;
+}
+

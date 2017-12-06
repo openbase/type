@@ -1,0 +1,17 @@
+package rst.door;
+
+option java_outer_classname = "RadarStatusType";
+
+/**
+ * Represents the status of Radar used as movement detection 
+ * @ author Britta Kemper <britta.kemper@dwmschwarze.de>
+ **/
+
+
+message RadarStatus
+{
+	required bool Bewegung = 1;
+	optional int32 Schwellwert = 2;
+	optional int32 Breite = 3;
+	optional int32 direction = 4;
+}

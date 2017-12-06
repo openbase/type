@@ -1,0 +1,39 @@
+package rst.kitchen.hob.control;
+
+/* @author Christof Elbrechter [celbrech@techfak.uni-bielefeld.de] */
+
+option java_outer_classname = "TargetType"; 
+
+message Target{
+        message Spec{
+             required string objectName = 1;
+             required float temperatureCelsius = 2;
+        } 
+
+        enum State{
+              NotInitialized = 1;
+              ObjectNotFound = 2;
+              ObjectFoundMultipleTimes = 3;
+              ObjectFoundButNotOnHob = 4;         
+              HobDoesNotDetectObject = 5;
+              TwoObjectsOnOneHobDetected = 6;
+              ObjectFound = 7;
+        }        
+
+        enum PlateID{
+             UpperLeft = 1;
+             UpperRight = 2;
+             LowerLeft = 3;
+             LowerRight = 4;
+             None = 5;
+        }
+
+        message Info{  
+                 required float currentTemperature = 1;  
+                 required State state = 2;
+                 required PlateID plateID = 3;
+        }               
+
+        required Spec spec  = 1;
+        optional Info info  = 2;
+}

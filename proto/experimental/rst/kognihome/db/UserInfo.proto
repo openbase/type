@@ -1,0 +1,22 @@
+package rst.kognihome.db;
+
+option java_outer_classname = "UserInfoType";
+
+message UserInfo {
+
+  required int32 id = 1;
+  required string first_name = 2;
+  required string last_name = 3;
+  required string role = 4;
+  optional int32 age = 5;
+  optional string address = 6;
+  optional string city = 7;
+  optional string state = 8;
+  optional string usercolor = 9;
+  optional string gender = 10;
+  optional string graduation = 11;
+  optional int32 zip = 12;
+  required string username = 13;
+  required string password = 14;
+
+}

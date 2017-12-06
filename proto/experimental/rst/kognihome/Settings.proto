@@ -1,0 +1,42 @@
+package rst.kognihome;
+
+option java_outer_classname = "SettingsType";
+
+message Settings {
+
+	message General {
+		required bool buttonSound = 1;
+		required bool sounds = 2;
+		required int32 volume = 3;
+		required int32 fontSize = 4;
+		required bool speech = 5;
+		required bool useGoogleASR = 6;
+		required bool timeSec = 7;
+	}
+
+	message KogniChef {
+		required bool gestures = 1;
+		required bool objectDetection = 2;
+		required bool localisation = 3;
+		required bool assistance = 4;
+		required bool cabinet = 5;
+		required bool showCheckedIngredients = 6;
+	}
+
+	message Menu {
+		required bool notification = 1;
+		required bool animation = 2;
+	}
+
+	message Calendar {
+		required bool notification = 1;
+		required bool userColor = 2;
+		required bool showImage = 3;
+	}
+
+	required General general = 1;
+	required KogniChef kognichef = 2;
+	required Menu menu = 3;
+	required Calendar calendar = 4;
+
+}
