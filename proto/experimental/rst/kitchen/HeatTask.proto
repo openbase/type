@@ -12,36 +12,32 @@ option java_outer_classname = "HeatTaskType";
  */
 
 message HeatTask {
-
     /**
-     * Container name 
+     * Container name
      */
     required string container = 1;
 
     /**
      * Target temperature in celcius
      */
-     optional float temperature = 2;
+    optional float temperature = 2;
 
-     /**
-      * specifies whether the temperature controler should hold the specified temperature
-      * true: temperature shoud be kept
-      * false: ingredient is heated until temperature is reached and then temperature control is turned off
-      */
-     required bool keep_temperature = 3 [default = false];	
+    /**
+     * specifies whether the temperature controler should hold the specified temperature
+     * true: temperature shoud be kept
+     * false: ingredient is heated until temperature is reached and then temperature control is turned off
+     */
+    required bool keep_temperature = 3 [default = false];
+    optional float duration = 4;
 
-     optional float duration = 4;
-     /**
+    /**
      * Abort task
      */
-      required bool abort = 5 [default = false];
+    required bool abort = 5 [default = false];
 
-
-     /**
-      * Content/Ingredient to be heated 
-      * 
-      **/
-      optional string ingredient = 10;
-
-
+    /**
+     * Content/Ingredient to be heated
+     *
+     */
+    optional string ingredient = 10;
 }

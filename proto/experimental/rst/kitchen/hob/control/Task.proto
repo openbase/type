@@ -5,14 +5,13 @@ import "rst/kitchen/hob/control/Target.proto";
 /* @author Christof Elbrechter [celbrech@techfak.uni-bielefeld.de] */
 
 option java_outer_classname = "TaskType";
-message Task{
-        enum Type{
-             Start=1;
-             Adapt=2;
-             Stop=3;
-	     StopAll=4;
-        }      
-        required Type type = 1;
-        required Target.Spec targetSpec = 2;
+message Task {
+    enum Type{
+        Start=1;
+        Adapt=2;
+        Stop=3;
+        StopAll=4;
+    }
+    required Type type = 1;
+    required Target.Spec targetSpec = 2;
 }
-

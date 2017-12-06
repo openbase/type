@@ -10,8 +10,8 @@ option java_outer_classname = "LEDStripType";
 message LEDStrip {
 
     /**
-    * Indicates light mode (on/off, pulsing,...)
-    */
+     * Indicates light mode (on/off, pulsing,...)
+     */
     enum Mode {
         OFF = 0;
         ON = 1;
@@ -22,8 +22,8 @@ message LEDStrip {
     required Mode mode = 1;
 
     /**
-    * value ranges from 0 to 255
-    */
+     * value ranges from 0 to 255
+     */
     required int32 red = 2;
     required int32 green = 3;
     required int32 blue = 4;

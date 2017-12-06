@@ -10,41 +10,41 @@ option java_outer_classname = "WorkspaceStatusType";
  */
 message WorkspaceStatus {
 
-  enum Status {
-    UNKNOWN = 0;
-    STANDBY = 1;
-    NO_CLEARANCE = 2;
-    BUSY = 3;
-    STOPPED = 4;
-    ERROR = 5;
-  }
+    enum Status {
+        UNKNOWN = 0;
+        STANDBY = 1;
+        NO_CLEARANCE = 2;
+        BUSY = 3;
+        STOPPED = 4;
+        ERROR = 5;
+    }
 
-  enum ErrorCode {
-    UNKNOWN_ERROR = 0;
-    UNREACHABLE = 1;
-    OBSTACLE_BELOW = 2;
-    OVERLOAD = 3;
-  }
+    enum ErrorCode {
+        UNKNOWN_ERROR = 0;
+        UNREACHABLE = 1;
+        OBSTACLE_BELOW = 2;
+        OVERLOAD = 3;
+    }
 
-  /**
-  * Status of the bridge connection as well as current status of the whole
-  *
-  */
-  required Status status = 1;
+    /**
+     * Status of the bridge connection as well as current status of the whole
+     *
+     */
+    required Status status = 1;
 
-  /**
-   * Desired height. Expected in mm.
-   * Values should range from 740 mm to 1140 mm (Default height is 940 mm) 
-   */
-  required int32 height = 2;
+    /**
+     * Desired height. Expected in mm.
+     * Values should range from 740 mm to 1140 mm (Default height is 940 mm)
+     */
+    required int32 height = 2;
 
-  /**
-   * An error code is only passed if the status is set to Error.
-   */
-  optional ErrorCode error_code = 8;
-  /**
-   * A detailed error description if required.
-   */
-  optional string error_message = 9;
+    /**
+     * An error code is only passed if the status is set to Error.
+     */
+    optional ErrorCode error_code = 8;
 
+    /**
+     * A detailed error description if required.
+     */
+    optional string error_message = 9;
 }

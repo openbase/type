@@ -10,7 +10,6 @@ option java_outer_classname = "TemperatureStateType";
  * @author Alexander Neumann <alneuman@techfak.uni-bielefeld.de>
  */
 message TemperatureState {
-
     /**
      * Unique object reference.
      * Even though an ObjectReference allows unlabeled objects or static
@@ -26,5 +25,5 @@ message TemperatureState {
     /**
      * Flag to show if temperature state is controlled by automatic TemperatureControler
      */
-     optional bool controlled = 3;
+    optional bool controlled = 3;
 }

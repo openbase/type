@@ -7,10 +7,9 @@ option java_outer_classname = "KnockStatusType";
  * @ author Britta Kemper <britta.kemper@dwmschwarze.de>
  **/
 
-message KnockStatus
-{
-	required bool Geklopft = 1;
-	optional int32 Empfindlichkeit = 2;
-	optional int32 Offset = 3;
-	optional int32 Knock_Anzahl = 4;
+message KnockStatus {
+    required bool Geklopft = 1;
+    optional int32 Empfindlichkeit = 2;
+    optional int32 Offset = 3;
+    optional int32 Knock_Anzahl = 4;
 }

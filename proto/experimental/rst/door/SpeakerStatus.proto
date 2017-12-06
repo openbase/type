@@ -7,11 +7,6 @@ option java_outer_classname = "SpeakerStatusType";
  * @ author Britta Kemper <britta.kemper@dwmschwarze.de>
  **/
 
-
-
-
-
-message SpeakerStatus
-{
-	required int32 volume = 1;
+message SpeakerStatus {
+    required int32 volume = 1;
 }

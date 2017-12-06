@@ -12,11 +12,10 @@ option java_outer_classname = "StirTaskType";
  */
 
 message StirTask {
-   enum Location {
-      SCALE = 0;
-      HOB = 1;
+    enum Location {
+        SCALE = 0;
+        HOB = 1;
     }
-
 
     /**
      * Pattern name (eight, circle)
@@ -26,21 +25,21 @@ message StirTask {
     /**
      * Target duration in sec
      */
-     optional float duration = 2;
+    optional float duration = 2;
 
     /**
      * Maximal pause without stirring in sec
      */
-     optional float max_stirring_pause = 3;
+    optional float max_stirring_pause = 3;
 
-     /**
+    /**
      * at which place to detect stirring: scale/hob
      */
-     required Location location = 4;
+    required Location location = 4;
 
-     /**
+    /**
      * Abort task
      */
-      required bool abort = 5 [default = false];
+    required bool abort = 5 [default = false];
 
 }

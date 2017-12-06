@@ -10,17 +10,17 @@ option java_outer_classname = "ColorType";
 message Color {
 
     enum Mode {
-      RGB = 0;
-      RGBA = 1;
-      HSL = 2;
-      HSV = 3;
+        RGB = 0;
+        RGBA = 1;
+        HSL = 2;
+        HSV = 3;
     }
 
     required Mode mode = 1;
 
     /**
-    * Ranges between 0 and 1 recommended.
-    */
+     * Ranges between 0 and 1 recommended.
+     */
     optional double r = 2;
     optional double g = 3;
     optional double b = 4;

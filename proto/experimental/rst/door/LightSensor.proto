@@ -5,16 +5,14 @@ option java_outer_classname = "LightSensorType";
  * @author Michael Adams <madams@techfak.uni-bielefeld.de>
  * @date    2017-01-30
  * DESIGNED FOR TSL25911 LightSensor
- **/
+ */
 
 message LightSensor {
-
     /**
-    * value ranges from 0 to 255
-    */
+     * value ranges from 0 to 255
+     */
     required int32 luminosity = 1;
     required int32 lux = 2;
     required int32 ir = 3;
     required int32 visible = 4;
 }
-

@@ -4,224 +4,219 @@ option java_outer_classname = "MieleDeviceStateMessageType";
 //option java_package = "rst.kitchen.mieleappliances.MieleDeviceStateMessageType";
 
 message MieleDeviceStateMessage {
-	optional DeviceType			deviceType = 1;
-	optional DeviceStatus		status = 2;
-	optional bool				doorOpen = 3;
+    optional DeviceType      deviceType = 1;
+    optional DeviceStatus    status = 2;
+    optional bool        doorOpen = 3;
 
-	//Depending on the Device OvenProgram or SteamOvenProgram is used
-	optional OvenProgram		programOven = 4;
-	optional SteamOvenProgram	programSteamoven = 5;
-	
-	optional ProgramPhase			programPhase = 6;
-	optional ProgramPhaseExtended	programPhaseExtended = 7;
-	optional ProgramType			programType = 8;
-	
-	optional Information		information = 9;		
-	
-	optional int32				targetTemperature = 10;
-	optional int32				currentTemperature = 11;
-	optional int32				currentCoreTemperature = 12;
-	
-	//format is "HH:MM"
-	optional string				startTime = 13;
-	optional string				elapsedTime = 14;
-	optional string				remainingTime = 15;	
+    //Depending on the Device OvenProgram or SteamOvenProgram is used
+    optional OvenProgram    programOven = 4;
+    optional SteamOvenProgram    programSteamoven = 5;
+
+    optional ProgramPhase      programPhase = 6;
+    optional ProgramPhaseExtended    programPhaseExtended = 7;
+    optional ProgramType      programType = 8;
+
+    optional Information    information = 9;
+
+    optional int32        targetTemperature = 10;
+    optional int32        currentTemperature = 11;
+    optional int32        currentCoreTemperature = 12;
+
+    //format is "HH:MM"
+    optional string        startTime = 13;
+    optional string        elapsedTime = 14;
+    optional string        remainingTime = 15;
 }
 
 // can be extended, see ExtendedStateDecoder.java
 enum DeviceType {
-	NICHT_DEFINIERTES_GERAET = 0;
-	GESCHIRRSPUELER_HAUSHALT = 7;
-	HERD_HAUSHALT = 10;
-	BACKOFEN_HAUSHALT = 12;
-	KOCHMULDE_KOCHFELD_HAUSHALT = 14;
-	DAMPFGARER_HAUSHALT = 15;
-	KAFFEEVOLLAUTOMAT_HAUSHALT = 17;
-	DUNSTABZUGSHAUBEN_HAUSHALT = 18;
+    NICHT_DEFINIERTES_GERAET = 0;
+    GESCHIRRSPUELER_HAUSHALT = 7;
+    HERD_HAUSHALT = 10;
+    BACKOFEN_HAUSHALT = 12;
+    KOCHMULDE_KOCHFELD_HAUSHALT = 14;
+    DAMPFGARER_HAUSHALT = 15;
+    KAFFEEVOLLAUTOMAT_HAUSHALT = 17;
+    DUNSTABZUGSHAUBEN_HAUSHALT = 18;
 }
 
 // Status of the Device (Rest Status)
 enum DeviceStatus {
-	ERROR						= 0;	// ungueltiger Hauptzustand
-	OFF							= 1;	// Geraet ist aus (ggf. ist die Uhrzeit zu sehen)
-  	STANDBY 					= 2; 	// Geraet ist im Menue und wartet auf Nutzereingabe
-  	PROGRAMMED					= 3;	// 
-  	PROGRAMMED_WAITING_TO_START	= 4;	// Programm ausgewaehlt und wartet auf Startzeitpunkt
-  	RUNNING 					= 5; 	// Programm laeuft
-  	PAUSE						= 6;	// Programm pausiert/wartet auf nutzereingabe
-  	END_PROGRAMMED				= 7;	//
-  	FAILURE 					= 8; 	//  
-  	PROGRAMME_INTERRUPTED		= 9;	//
-	IDLE						= 10;	//
-	RINSE_HOLD					= 11;	//
-	SERVICE						= 12;	//
-	SUPERFREEZING				= 13;	//
-	SUPERCOOLING				= 14;	//	
-	SUPERHEATING				= 15;	//
-	DEFAULT						= 144;	// 
-	LOCKED						= 145;	// 
-    SUPERCOOLING_SUPERFREEZING 	= 146;	// 
+    ERROR            = 0;    // ungueltiger Hauptzustand
+    OFF              = 1;    // Geraet ist aus (ggf. ist die Uhrzeit zu sehen)
+    STANDBY           = 2;     // Geraet ist im Menue und wartet auf Nutzereingabe
+    PROGRAMMED          = 3;    //
+    PROGRAMMED_WAITING_TO_START    = 4;    // Programm ausgewaehlt und wartet auf Startzeitpunkt
+    RUNNING           = 5;     // Programm laeuft
+    PAUSE            = 6;    // Programm pausiert/wartet auf nutzereingabe
+    END_PROGRAMMED        = 7;    //
+    FAILURE           = 8;     //
+    PROGRAMME_INTERRUPTED    = 9;    //
+    IDLE            = 10;    //
+    RINSE_HOLD          = 11;    //
+    SERVICE            = 12;    //
+    SUPERFREEZING        = 13;    //
+    SUPERCOOLING        = 14;    //
+    SUPERHEATING        = 15;    //
+    DEFAULT            = 144;    //
+    LOCKED            = 145;    //
+    SUPERCOOLING_SUPERFREEZING     = 146;    //
 }
 
 enum OvenProgram {
-	VDE0 = 0;
-	AUFTAUEN = 1;
-	BRATAUTOMATIK = 2;
-	BRAEUNUNGSGAREN = 3;
-	GRILL_GROSS = 4;
-	GRILL_KLEIN = 5;
-	HEISSLUFT = 6;
-	HEISSLUFT_PLUS = 7;
-	INTENSIVBACKEN = 8;
-	OBERHITZE = 9;
-	OBER_UNTERHITZE = 10;
-	PYROLYSE = 11;
-	UNTERHITZE = 12;
-	UMLUFTGRILL_ALTERNIEREND = 13;
-	UMLUFTGRILL_GROSS = 14;
-	AUTO_HEISSLUFT_PLUS = 15;
-	AUTO_OBER_UNTERHITZE = 16;
-	AUTO_NACHTBACKEN = 17;
-	NOT_DEFINED = 18;
-	KLIMAGAREN_HEISSLUFT_PLUS = 19;
-	KLIMAGAREN_OBER_UNTERHITZE = 20;
-	KLIMAGAREN_INTENSIVBACKEN = 21;
-	KLIMAGAREN_BRATAUTOMATIK = 22;
-	ROTISSERIE = 23;
+    VDE0 = 0;
+    AUFTAUEN = 1;
+    BRATAUTOMATIK = 2;
+    BRAEUNUNGSGAREN = 3;
+    GRILL_GROSS = 4;
+    GRILL_KLEIN = 5;
+    HEISSLUFT = 6;
+    HEISSLUFT_PLUS = 7;
+    INTENSIVBACKEN = 8;
+    OBERHITZE = 9;
+    OBER_UNTERHITZE = 10;
+    PYROLYSE = 11;
+    UNTERHITZE = 12;
+    UMLUFTGRILL_ALTERNIEREND = 13;
+    UMLUFTGRILL_GROSS = 14;
+    AUTO_HEISSLUFT_PLUS = 15;
+    AUTO_OBER_UNTERHITZE = 16;
+    AUTO_NACHTBACKEN = 17;
+    NOT_DEFINED = 18;
+    KLIMAGAREN_HEISSLUFT_PLUS = 19;
+    KLIMAGAREN_OBER_UNTERHITZE = 20;
+    KLIMAGAREN_INTENSIVBACKEN = 21;
+    KLIMAGAREN_BRATAUTOMATIK = 22;
+    ROTISSERIE = 23;
 }
 
 // Keine wenn das Programm nicht bekannt ist
 enum SteamOvenProgram {
-	VDE0_SO = 0;
-	GAREN_UNIVERSAL = 1;
-	WARMHALTEN = 2;
-	ENTKALKEN = 3;
-	KEINE = 4;
-	GAREN_FISCH = 5;
-	GAREN_GEMUESE = 6;
-	GAREN_FLEISCH = 7;
-	ERHITZEN = 8;
-	AUFTAUEN_SO = 9;
-	GEHEN_LASSEN = 10;
-	EINKOCHEN = 11;
-	BLANCHIEREN = 12;
-	ENTKEIMEN = 13;
-	SOUS_VIDE_GAREN = 14;
+    VDE0_SO = 0;
+    GAREN_UNIVERSAL = 1;
+    WARMHALTEN = 2;
+    ENTKALKEN = 3;
+    KEINE = 4;
+    GAREN_FISCH = 5;
+    GAREN_GEMUESE = 6;
+    GAREN_FLEISCH = 7;
+    ERHITZEN = 8;
+    AUFTAUEN_SO = 9;
+    GEHEN_LASSEN = 10;
+    EINKOCHEN = 11;
+    BLANCHIEREN = 12;
+    ENTKEIMEN = 13;
+    SOUS_VIDE_GAREN = 14;
 }
 
-// kann noch fuer andere geraete erweitert werden 
+// kann noch fuer andere geraete erweitert werden
 // (siehe getProgramPhaseLabel(int programPhase) in StateDecoder.java)
 enum ProgramPhase {
-	PROGRAMMPHASE_NO_USE = 0;
-	
-	BO_ABKUEHLEN = 3072;
-	BO_AUFHEIZEN = 3073;
-	BO_TEMP_HALTEN = 3074;
-	BO_TUER_AUF = 3075;
-	BO_PYROLYSE = 3076;
-	BO_MIKROWELLE = 3077;
-	BO_VORGANG_BEENDET = 3078;
-	BO_BELEUCHTUNG = 3079;
-	BO_ANBRATPHASE = 3080;
-	BO_FORTBRATPHASE = 3081;
-	BO_AUFTAUEN = 3082;
-	BO_ABKUEHLEN_NEU = 3083;
-	BO_ENERGIESPARPHASE = 3084;
-	BO_WARMHALTEN = 3094;
-	BO_ENTKALKEN = 3098;
-	
-	DG_NO_DISPLAY = 3840;
-	DG_TEMP_HALTEN = 3842;
-	DG_WARTEN_AUF_START = 3843;
-	DG_AUFHEIZEN = 3844;
-	DG_ABKUEHLEN = 3845;
-	DG_VORGANG_BEENDET = 3846;
-	DG_WASSERMANGEL = 3861;
-	DG_WARMHALTEN = 3862;
-	DG_DAMPFREDUKTION = 3863;
-	DG_ENTKALKEN = 3866;
+    PROGRAMMPHASE_NO_USE = 0;
+
+    BO_ABKUEHLEN = 3072;
+    BO_AUFHEIZEN = 3073;
+    BO_TEMP_HALTEN = 3074;
+    BO_TUER_AUF = 3075;
+    BO_PYROLYSE = 3076;
+    BO_MIKROWELLE = 3077;
+    BO_VORGANG_BEENDET = 3078;
+    BO_BELEUCHTUNG = 3079;
+    BO_ANBRATPHASE = 3080;
+    BO_FORTBRATPHASE = 3081;
+    BO_AUFTAUEN = 3082;
+    BO_ABKUEHLEN_NEU = 3083;
+    BO_ENERGIESPARPHASE = 3084;
+    BO_WARMHALTEN = 3094;
+    BO_ENTKALKEN = 3098;
+
+    DG_NO_DISPLAY = 3840;
+    DG_TEMP_HALTEN = 3842;
+    DG_WARTEN_AUF_START = 3843;
+    DG_AUFHEIZEN = 3844;
+    DG_ABKUEHLEN = 3845;
+    DG_VORGANG_BEENDET = 3846;
+    DG_WASSERMANGEL = 3861;
+    DG_WARMHALTEN = 3862;
+    DG_DAMPFREDUKTION = 3863;
+    DG_ENTKALKEN = 3866;
 }
 
 enum ProgramPhaseExtended {
-	UNBEKANNTER_WERT = 1;
-	IDLE_EX = 10000;
-	INFOMELDUNG = 10001;
-	BUSY = 10002;
-	ABFRAGE = 10003;
-	MATHMELDUNG = 10004;
-	FEHLERMELDUNG = 10010;
-	FEHLERANLEITUNG = 10012;
-	ERSTINBETRIEBNAHME = 10100;
-	TAGESZEITEINSTELLUNG = 10101;
-	BEENDEN = 10110;
-	WARTESCREEN = 10200;
-	PROGRAMMVORBEREITEN = 28001;
-	STARTZEIT_LAEUFT = 28002;
-	WARTEN_AUF_FERNSTART = 28003;
-	WARTEN_AUF_MANUELLENSTART = 28004;
-	ABKUEHLEN_VOR_START = 28005;
-	AUFHEIZPHASE = 28100;
-	ANBRATPHASE = 28101;
-	AUFHEIZPHASENENDE = 28102;
-	FORTBRATPHASE = 28110;
-	ABKUEHLPHASE = 28111;
-	VORGANG_LAEUFT = 28112;
-	KERNTEMPERATUR = 28113;
-	RESTZEIT = 28114;
-	RESTZEIT_CIRCA = 28115;
-	TUER_AUF = 28116;
-	WARMHALTEN_EX = 28117;
-	PYROLYSE_EX = 28118;
-	SABBAT_STATUS = 28119;
-	SABBAT_VOR_START = 28120;
-	FUNKSPIESS_FEHLER = 28121;
-	GERAET_WIRD_GESPUELT = 28122;
-	EINFACH_FERTIG = 28200;
-	VORGANG_BEENDET = 28201;
-	PYROLYSE_ABGEBROCHEN = 28203;
-	VORGANG_BEENDET_PYROLYSE = 28204;
-	FORTSCHRITTSBALKEN = 28500;
-	KUNDENDIENST_PROGRAMM_LAEUFT = 28600;
-	KD_VERBRAUCHER_AUS = 28601;
-	KD_VERBRAUCHER_EIN = 28602;
-	KD_VERBRAUCHER_STUFE0 = 28603;
-	KD_VERBRAUCHER_STUFE1 = 28604;
-	KD_VERBRAUCHER_STUFE2 = 28605;
-	KD_VERBRAUCHER_STUFE3 = 28606;
-	KD_VERBRAUCHER_ENTRIEGELT = 28607;
-	KD_VERBRAUCHER_VERRIEGELT = 28608;
-	KD_VERBRAUCHER_OFFEN = 28609;
-	KD_VERBRAUCHER_GESCHLOSSEN = 28610;
-	EIGENE_PROGRAMME_BETRIEBSSCHRITT = 28700;
-	EIGENE_PROGRAMME_PROGRAMMIERUNG = 28702;
-	ENTKALKEN_EINWIRKPHASE = 28800;
-	ENTKALKEN_SPUELEN_1 = 28801;
-	ENTKALKEN_SPUELEN_2 = 28802;
-	ENTKALKEN_SPUELEN_3 = 28803;
-	ENTKALKEN_RESTWASSERVERDAMPFUNG = 28804;
-	ENTKALKEN_EINSAUGEN = 28808;
+    UNBEKANNTER_WERT = 1;
+    IDLE_EX = 10000;
+    INFOMELDUNG = 10001;
+    BUSY = 10002;
+    ABFRAGE = 10003;
+    MATHMELDUNG = 10004;
+    FEHLERMELDUNG = 10010;
+    FEHLERANLEITUNG = 10012;
+    ERSTINBETRIEBNAHME = 10100;
+    TAGESZEITEINSTELLUNG = 10101;
+    BEENDEN = 10110;
+    WARTESCREEN = 10200;
+    PROGRAMMVORBEREITEN = 28001;
+    STARTZEIT_LAEUFT = 28002;
+    WARTEN_AUF_FERNSTART = 28003;
+    WARTEN_AUF_MANUELLENSTART = 28004;
+    ABKUEHLEN_VOR_START = 28005;
+    AUFHEIZPHASE = 28100;
+    ANBRATPHASE = 28101;
+    AUFHEIZPHASENENDE = 28102;
+    FORTBRATPHASE = 28110;
+    ABKUEHLPHASE = 28111;
+    VORGANG_LAEUFT = 28112;
+    KERNTEMPERATUR = 28113;
+    RESTZEIT = 28114;
+    RESTZEIT_CIRCA = 28115;
+    TUER_AUF = 28116;
+    WARMHALTEN_EX = 28117;
+    PYROLYSE_EX = 28118;
+    SABBAT_STATUS = 28119;
+    SABBAT_VOR_START = 28120;
+    FUNKSPIESS_FEHLER = 28121;
+    GERAET_WIRD_GESPUELT = 28122;
+    EINFACH_FERTIG = 28200;
+    VORGANG_BEENDET = 28201;
+    PYROLYSE_ABGEBROCHEN = 28203;
+    VORGANG_BEENDET_PYROLYSE = 28204;
+    FORTSCHRITTSBALKEN = 28500;
+    KUNDENDIENST_PROGRAMM_LAEUFT = 28600;
+    KD_VERBRAUCHER_AUS = 28601;
+    KD_VERBRAUCHER_EIN = 28602;
+    KD_VERBRAUCHER_STUFE0 = 28603;
+    KD_VERBRAUCHER_STUFE1 = 28604;
+    KD_VERBRAUCHER_STUFE2 = 28605;
+    KD_VERBRAUCHER_STUFE3 = 28606;
+    KD_VERBRAUCHER_ENTRIEGELT = 28607;
+    KD_VERBRAUCHER_VERRIEGELT = 28608;
+    KD_VERBRAUCHER_OFFEN = 28609;
+    KD_VERBRAUCHER_GESCHLOSSEN = 28610;
+    EIGENE_PROGRAMME_BETRIEBSSCHRITT = 28700;
+    EIGENE_PROGRAMME_PROGRAMMIERUNG = 28702;
+    ENTKALKEN_EINWIRKPHASE = 28800;
+    ENTKALKEN_SPUELEN_1 = 28801;
+    ENTKALKEN_SPUELEN_2 = 28802;
+    ENTKALKEN_SPUELEN_3 = 28803;
+    ENTKALKEN_RESTWASSERVERDAMPFUNG = 28804;
+    ENTKALKEN_EINSAUGEN = 28808;
 }
 
 enum ProgramType {
-	NORMALE_BETRIEBSART = 0;
-	EIGENES_PROGRAMM = 1;
-	AUTOMATIKPROGRAMM = 2;
-	PFLEGE_REINIGUNGSPROGRAMM = 3;
-	KUNDENDIENSTPROGRAMM = 4;
-	HILFSPROGRAMM = 5;
-	UNBEKANNT = 255; //own definition
+    NORMALE_BETRIEBSART = 0;
+    EIGENES_PROGRAMM = 1;
+    AUTOMATIKPROGRAMM = 2;
+    PFLEGE_REINIGUNGSPROGRAMM = 3;
+    KUNDENDIENSTPROGRAMM = 4;
+    HILFSPROGRAMM = 5;
+    UNBEKANNT = 255; //own definition
 }
 
 enum Information {
-	VOID = 0;
-	TUER_SCHLIESSEN = 3;
-	FRISCHWASSER_EINFUELLEN = 7;
-	WASSERTANK_EINSETZEN = 12;
-	ZUM_ABKUEHLEN_TUER_OEFFNEN = 56;
-	NICHT_IMPLEMENTIERT = 311; //own definition
+    VOID = 0;
+    TUER_SCHLIESSEN = 3;
+    FRISCHWASSER_EINFUELLEN = 7;
+    WASSERTANK_EINSETZEN = 12;
+    ZUM_ABKUEHLEN_TUER_OEFFNEN = 56;
+    NICHT_IMPLEMENTIERT = 311; //own definition
 }
-
-
-
-
-

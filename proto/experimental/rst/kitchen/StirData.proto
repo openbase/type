@@ -11,16 +11,16 @@ option java_outer_classname = "StirDataType";
 message StirData {
 
     enum Pattern {
-      STOP = 0;
-      UNKNOWN = 1;
-      CIRCLE = 2;
-      EIGHT = 3;
-      SPIRAL = 4;
+        STOP = 0;
+        UNKNOWN = 1;
+        CIRCLE = 2;
+        EIGHT = 3;
+        SPIRAL = 4;
     }
 
     enum Direction {
-      CLOCKWISE = 0;
-      COUNTERCLOCKWISE = 1;
+        CLOCKWISE = 0;
+        COUNTERCLOCKWISE = 1;
     }
 
     /**
@@ -40,8 +40,8 @@ message StirData {
     required float speed = 3;
 
     /**
-    * time stamp of stirring event
-    */
+     * time stamp of stirring event
+     */
     required uint64 time_stamp = 4;
 
     /**
@@ -60,22 +60,22 @@ message StirData {
     optional Direction direction = 12;
 
     /**
-    * progress from 0 (no stirring) to 1 (required stirring done) if required
-    */
+     * progress from 0 (no stirring) to 1 (required stirring done) if required
+     */
     optional double relative_progress = 13;
 
     /**
-    * accuracy of circle pattern from 0 (no circle) to 1 (perfect circle)
-    */
-   optional double accuracy_circle = 14;
+     * accuracy of circle pattern from 0 (no circle) to 1 (perfect circle)
+     */
+    optional double accuracy_circle = 14;
 
     /**
-    * accuracy of eight pattern from 0 (no circle) to 1 (perfect eight)
-    */
-   optional double accuracy_eight = 15;
+     * accuracy of eight pattern from 0 (no circle) to 1 (perfect eight)
+     */
+    optional double accuracy_eight = 15;
 
-   /**
-    * accuracy of spiral pattern from 0 (no circle) to 1 (perfect spiral)
-    */
-   optional double accuracy_spiral = 16;
+    /**
+     * accuracy of spiral pattern from 0 (no circle) to 1 (perfect spiral)
+     */
+    optional double accuracy_spiral = 16;
 }

@@ -6,7 +6,7 @@ option java_outer_classname = "DoorStatusType";
  * Represents the status of a Door and its components controlled by the arduino,
  * Wrapper for Communication
  * @author Britta Kemper <britta.kemper@dmwschwarze.de>
- **/
+ */
 
 import "rst/door/ContactStatus.proto";
 import "rst/door/KnockStatus.proto";
@@ -17,15 +17,14 @@ import "rst/door/RadarStatus.proto";
 import "rst/door/SpeakerStatus.proto";
 import "rst/door/LightSensor.proto";
 
-message DoorStatus
-{
-	optional LockStatus lock = 1;
-	optional ContactStatus contact = 2;
-	optional KnockStatus knock1 = 3;
-	optional KnockStatus knock2 = 4;
-	optional RadarStatus radar = 5;
-	optional MotorStatus motor = 6;
-	optional SpeakerStatus speaker = 7;
-	optional LEDStrip led = 8;
-	optional LightSensor light = 9;
+message DoorStatus {
+    optional LockStatus lock = 1;
+    optional ContactStatus contact = 2;
+    optional KnockStatus knock1 = 3;
+    optional KnockStatus knock2 = 4;
+    optional RadarStatus radar = 5;
+    optional MotorStatus motor = 6;
+    optional SpeakerStatus speaker = 7;
+    optional LEDStrip led = 8;
+    optional LightSensor light = 9;
 }

@@ -8,12 +8,12 @@ option java_outer_classname = "SystemNotificationType";
  * @author Alexander Neumann <alneuman@techfak.uni-bielefeld.de>
  **/
 message SystemNotification {
-	enum Level {
-	    ERROR = 0;
-	    WARNING = 1;
-	    INFO = 2;
-	    DEBUG = 3;
-	  }
+    enum Level {
+    ERROR = 0;
+    WARNING = 1;
+    INFO = 2;
+    DEBUG = 3;
+    }
 
     /**
      * Severity of the notification reason

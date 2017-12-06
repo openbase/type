@@ -26,11 +26,11 @@ message FillState {
     /**
      * Target volume in ml;
      */
-     required float ml = 3;
+    required float ml = 3;
 
-     /**
-      * Content/Ingredient to be filled in or other information related to the
-      * filling process
-      **/
-      optional string info = 10;
+    /**
+     * Content/Ingredient to be filled in or other information related to the
+     * filling process
+     */
+    optional string info = 10;
 }

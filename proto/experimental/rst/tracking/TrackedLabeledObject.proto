@@ -11,23 +11,23 @@ option java_outer_classname = "TrackedLabeledObjectType";
  */
 message TrackedLabeledObject {
 
-  	/**
-  	 * Unique ObjectID of the object.
-  	 */
-  	required ObjectID object_id = 1;
+    /**
+     * Unique ObjectID of the object.
+     */
+    required ObjectID object_id = 1;
 
-  	/**
-  	 * Confidence value ranging from 0 to 1
-  	 */
-  	optional float confidence = 8;
+    /**
+     * Confidence value ranging from 0 to 1
+     */
+    optional float confidence = 8;
 
-  	/**
-  	 * Bounding box of the tracked object.
-  	 */
-  	optional rst.geometry.AxisAlignedBoundingBox3DFloat box = 9;
+    /**
+     * Bounding box of the tracked object.
+     */
+    optional rst.geometry.AxisAlignedBoundingBox3DFloat box = 9;
 
-  	/**
+    /**
      * Temperature of the tracked object in degree celsius.
-  	 */
-  	optional float object_temperature_celsius = 10;
+     */
+    optional float object_temperature_celsius = 10;
 }

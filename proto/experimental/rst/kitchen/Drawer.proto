@@ -9,8 +9,8 @@ option java_outer_classname = "DrawerType";
 message Drawer {
 
     enum Status {
-      CLOSED = 0;
-      OPEN = 1;
+    CLOSED = 0;
+    OPEN = 1;
     }
 
     /**

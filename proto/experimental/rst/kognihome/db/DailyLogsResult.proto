@@ -3,18 +3,16 @@ package rst.kognihome.db;
 option java_outer_classname = "DailyLogsResultType";
 
 message DailyLogsResult {
-  message Log {
-
-    required int64 date = 1;
-    required int32 energy_expenditure = 2;
-    required int32 basal_metabolic_rate = 3;
-    required float PAL = 4;
-    required float body_fat = 5;
-    required float weight = 6;
-    required float bmi = 7;
-    required int32 body_water = 8;
-    required int32 body_muscle = 9;
-
-  }
-  repeated Log logs = 1;
+    message Log {
+        required int64 date = 1;
+        required int32 energy_expenditure = 2;
+        required int32 basal_metabolic_rate = 3;
+        required float PAL = 4;
+        required float body_fat = 5;
+        required float weight = 6;
+        required float bmi = 7;
+        required int32 body_water = 8;
+        required int32 body_muscle = 9;
+    }
+    repeated Log logs = 1;
 }

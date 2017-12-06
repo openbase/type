@@ -3,7 +3,7 @@ package rst.kognihome.db;
 option java_outer_classname = "ActivityLogsQueryType";
 
 message ActivityLogsQuery {
-  required int32 user_id = 1;
-  optional int64 start_time = 2;
-  optional int64 end_time = 3;
+    required int32 user_id = 1;
+    optional int64 start_time = 2;
+    optional int64 end_time = 3;
 }
