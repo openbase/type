@@ -12,4 +12,5 @@ message KnockStatus {
     optional int32 Empfindlichkeit = 2;
     optional int32 Offset = 3;
     optional int32 Knock_Anzahl = 4;
+    optional int32 id = 5;
 }

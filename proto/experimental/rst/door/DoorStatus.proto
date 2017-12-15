@@ -20,11 +20,10 @@ import "rst/door/LightSensor.proto";
 message DoorStatus {
     optional LockStatus lock = 1;
     optional ContactStatus contact = 2;
-    optional KnockStatus knock1 = 3;
-    optional KnockStatus knock2 = 4;
-    optional RadarStatus radar = 5;
-    optional MotorStatus motor = 6;
-    optional SpeakerStatus speaker = 7;
-    optional LEDStrip led = 8;
-    optional LightSensor light = 9;
+    optional KnockStatus knock = 3;
+    optional RadarStatus radar = 4;
+    optional MotorStatus motor = 5;
+    optional SpeakerStatus speaker = 6;
+    optional LEDStrip led = 7;
+    optional LightSensor light = 8;
 }
