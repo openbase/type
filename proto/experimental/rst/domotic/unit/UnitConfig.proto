@@ -43,6 +43,11 @@ message UnitConfig {
     optional string label = 100;
 
     /**
+     * A list of aliases linked to this unit. Can be used to identify the unit in a human readable way.
+     */
+    repeated string alias = 110;
+
+    /**
      * The id of the unit that intoduced this unit.
      * Is the id of the unit itself if it is the unit host.
      */
