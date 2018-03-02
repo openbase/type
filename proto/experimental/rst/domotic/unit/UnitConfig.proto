@@ -55,6 +55,7 @@ message UnitConfig {
 
     /**
      * The unit type.
+     * TODO: BCO 2.0 rename this field into unit_type
      */
     optional .rst.domotic.unit.UnitTemplate.UnitType type = 150;
 
