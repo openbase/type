@@ -19,8 +19,9 @@ message ServiceDescription {
 
     /**
      * The related Service type.
+     * TODO: BCO 2.0 rename this field into service_type
      */
-    optional .rst.domotic.service.ServiceTemplate.ServiceType type = 100 [deprecated=true];
+    optional .rst.domotic.service.ServiceTemplate.ServiceType type = 100;
 
     /**
      * The related Service pattern.
