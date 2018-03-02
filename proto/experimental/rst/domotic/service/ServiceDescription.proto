@@ -23,7 +23,6 @@ message ServiceDescription {
      */
     optional .rst.domotic.service.ServiceTemplate.ServiceType type = 100;
 
-    
     /**
      * The related Service pattern.
      */
