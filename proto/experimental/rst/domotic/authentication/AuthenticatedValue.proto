@@ -20,5 +20,11 @@ message AuthenticatedValue {
      * The value encrypted with the session key.
      */
     optional bytes value = 2;
+
+    /**
+     * An id set by the server on replying to en authenticatedAction. This id increases with every
+     * action and can be used to verify that at one time the server executed the requested action.
+     */
+    optional uint64 transaction_id = 3;
 }
 

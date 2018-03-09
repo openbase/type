@@ -46,5 +46,11 @@ message DeviceRegistryData {
      * Consistent flag for the device config registry.
      */
     optional bool device_unit_config_registry_consistent = 900;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 1000;
 }
 

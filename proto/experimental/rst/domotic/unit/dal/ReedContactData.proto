@@ -31,5 +31,11 @@ message ReedContactData {
      * Field which represents the last contact state of the reed contact.
      */
     optional .rst.domotic.state.ContactState contact_state_last = 310;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 400;
 }
 
