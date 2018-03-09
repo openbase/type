@@ -52,5 +52,11 @@ message ConnectionData {
      * If this connection is a passage the last passage state is represented by this field.
      */
     optional .rst.domotic.state.PassageState passage_state_last = 510;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 600;
 }
 

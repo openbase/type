@@ -25,5 +25,11 @@ message AuthorizationGroupData {
      * The presence state of this authorization group.
      */
     optional .rst.domotic.state.UserPresenceState user_presence_state = 400 [deprecated=true];
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 500;
 }
 

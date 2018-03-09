@@ -72,5 +72,11 @@ message TemperatureControllerData {
      * The requested temperature alarm state.
      */
     optional .rst.domotic.state.AlarmState temperature_alarm_state_requested = 520;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 600;
 }
 

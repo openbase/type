@@ -195,7 +195,7 @@ message UnitGroupData {
      */
     optional .rst.domotic.state.TemperatureState target_temperature_state = 1000;
 
-/**
+    /**
      * The last target temperature state of the location.
      */
     optional .rst.domotic.state.TemperatureState target_temperature_state_last = 1010;
@@ -224,5 +224,11 @@ message UnitGroupData {
      * The requested temperature state of this location.
      */
     optional .rst.domotic.state.TemperatureState temperature_state_requested = 1420;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 2300;
 }
 

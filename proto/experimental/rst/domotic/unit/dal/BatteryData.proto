@@ -31,5 +31,11 @@ message BatteryData {
      * Field which represents the last energy of the battery.
      */
     optional .rst.domotic.state.BatteryState battery_state_last = 310;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 400;
 }
 
