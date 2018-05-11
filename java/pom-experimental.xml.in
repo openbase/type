@@ -33,12 +33,14 @@
         <dependency>
             <groupId>rsb</groupId>
             <artifactId>rst</artifactId>
-            <version>@RST_MVN_UPSTREAM_VERSION@</version>
+            <!--version>@RST_MVN_UPSTREAM_VERSION@</version-->
+            <version>@RST_EXPERIMENTAL_MVN_VERSION@</version>
         </dependency>
         <dependency>
             <groupId>rsb</groupId>
             <artifactId>rst-sandbox</artifactId>
-            <version>@RST_MVN_UPSTREAM_VERSION@</version>
+            <!--version>@RST_MVN_UPSTREAM_VERSION@</version-->
+            <version>@RST_EXPERIMENTAL_MVN_VERSION@</version>
         </dependency>
     </dependencies>
 
