@@ -1,30 +1,30 @@
 package rst.domotic.activity;
 
-option java_outer_classname = "UserActivityConfigType";
+option java_outer_classname = "ActivityConfigType";
 
 import "rst/configuration/MetaConfig.proto";
 
 /**
- * Type for user activity configurations.
+ * Type for activity configurations.
  *
  * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
  */
-message UserActivityConfig {
+message ActivityConfig {
 
     /**
-     * The id of the user activity.
+     * The id of the activity.
      */
     optional string id = 100;
 
     /**
-     * The label of the user activity.
+     * The label of the activity.
      */
     optional string label = 200;
 
     /**
-     * The id of the user activity class this activity belongs to.
+     * The id of the activity template this activity belongs to.
      */
-    optional string user_activity_class_id = 300;
+    optional string activity_template_id = 300;
 
     /**
      * A field storing meta configurations.
@@ -32,7 +32,7 @@ message UserActivityConfig {
     optional .rst.configuration.MetaConfig meta_config = 400;
 
     /**
-     * A description for this user activity.
+     * A description for this activity.
      */
     optional string description = 500;
 }
