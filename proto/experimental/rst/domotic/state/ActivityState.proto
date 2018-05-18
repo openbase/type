@@ -3,18 +3,18 @@ package rst.domotic.state;
 import "rst/timing/Timestamp.proto";
 import "rst/domotic/action/ActionDescription.proto";
 
-option java_outer_classname = "UserActivityStateType";
+option java_outer_classname = "ActivityStateType";
 
 
 /**
- * Description of the user activity type.
+ * Description of the activity type.
  *
  * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
  */
-message UserActivityState {
+message ActivityState {
 
     /**
-     * The id of the current user activity.
+     * The id of the current activity.
      */
     optional string activity_id = 100;
 
