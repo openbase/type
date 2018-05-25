@@ -31,9 +31,9 @@ message LocationData {
     optional string id = 100;
 
     /**
-     * Label of the related location.
+     * A list of aliases of this unit.
      */
-    optional string label = 200;
+    repeated string alias = 110;
 
     /**
      * The smoke alarm state of the location.

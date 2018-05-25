@@ -18,9 +18,9 @@ message RFIDData {
     optional string id = 100;
 
     /**
-     * Label of the RFID. Used to build the scope.
+     * A list of aliases of this unit.
      */
-    optional string label = 200;
+    repeated string alias = 110;
 
     /**
      * Field which represents the current state of the RFID.

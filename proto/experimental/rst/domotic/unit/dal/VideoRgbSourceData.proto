@@ -16,9 +16,9 @@ message VideoRgbSourceData {
     optional string id = 100;
 
     /**
-     * Label of the video rgb source. Used to build the scope.
+     * A list of aliases of this unit.
      */
-    optional string label = 200;
+    repeated string alias = 110;
 
     /**
      * A transaction id indicating which action was the last one executed by the unit. The id increases

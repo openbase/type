@@ -43,9 +43,9 @@ message DeviceData {
     optional string id = 50;
 
     /**
-     * Label of the device.
+     * A list of aliases of this unit.
      */
-    optional string label = 100;
+    repeated string alias = 110;
 
     /**
      * The colorable light unit data of this device.

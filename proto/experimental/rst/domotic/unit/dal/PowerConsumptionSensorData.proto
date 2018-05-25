@@ -17,9 +17,9 @@ message PowerConsumptionSensorData {
     optional string id = 100;
 
     /**
-     * Label of the power consumption sensor. Used to build the scope.
+     * A list of aliases of this unit.
      */
-    optional string label = 200;
+    repeated string alias = 110;
 
     /**
      * The the power consumption state.

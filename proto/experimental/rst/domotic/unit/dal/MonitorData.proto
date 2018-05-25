@@ -19,9 +19,9 @@ message MonitorData {
     optional string id = 100;
 
     /**
-     * Label of the monitor. Used to build the scope.
+     * A list of aliases of this unit.
      */
-    optional string label = 200;
+    repeated string alias = 110;
 
     /**
      * Field which repesents the current power state of the monitor.
