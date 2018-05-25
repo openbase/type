@@ -3,6 +3,7 @@ package rst.domotic.activity;
 option java_outer_classname = "ActivityConfigType";
 
 import "rst/configuration/MetaConfig.proto";
+import "rst/domotic/service/ServiceStateDescription.proto";
 
 /**
  * Type for activity configurations.
