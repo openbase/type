@@ -231,6 +231,21 @@ message LocationData {
     optional .rst.domotic.state.TemperatureState temperature_state_requested = 1420;
 
     /**
+     * The emphasis state of this location.
+     */
+    optional .rst.domotic.state.EmphasisState emphasis_state = 1500;
+
+    /**
+     * The last emphasis state of this location.
+     */
+    optional .rst.domotic.state.EmphasisState emphasis_state_last = 1510;
+
+    /**
+     * The requested emphasis state of this location.
+     */
+    optional .rst.domotic.state.EmphasisState emphasis_state_requested = 1520;
+
+    /**
      * A transaction id indicating which action was the last one executed by the unit. The id increases
      * with every action.
      */
