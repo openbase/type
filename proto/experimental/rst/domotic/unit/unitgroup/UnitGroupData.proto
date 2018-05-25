@@ -116,7 +116,7 @@ message UnitGroupData {
     optional .rst.domotic.state.IntensityState intensity_state = 500 [deprecated = true];
 
     /**
-     * State represence if there is any humand or animal presece detected in this location.
+     * State represents if there is any humand or animal presece detected in this location.
      */
     optional .rst.domotic.state.PresenceState presence_state = 600;
 

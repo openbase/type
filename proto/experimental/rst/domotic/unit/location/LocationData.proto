@@ -36,6 +36,12 @@ message LocationData {
     repeated string alias = 110;
 
     /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 2300;
+
+    /**
      * The smoke alarm state of the location.
      */
     optional .rst.domotic.state.AlarmState smoke_alarm_state = 1200;
@@ -116,12 +122,12 @@ message LocationData {
     optional .rst.domotic.state.IntensityState intensity_state = 500 [deprecated = true];
 
     /**
-     * State represence if there is any humand or animal presece detected in this location.
+     * State represents if there is any humand or animal presece detected in this location.
      */
     optional .rst.domotic.state.PresenceState presence_state = 600;
 
     /**
-     * The last presence state of this location.
+     * The last represents state of this location.
      */
     optional .rst.domotic.state.PresenceState presence_state_last = 610;
 
@@ -246,9 +252,18 @@ message LocationData {
     optional .rst.domotic.state.EmphasisState emphasis_state_requested = 1520;
 
     /**
-     * A transaction id indicating which action was the last one executed by the unit. The id increases
-     * with every action.
+     * A list of the current activities wihtin this location.
      */
-    optional uint64 transaction_id = 2300;
+    repeated .rst.domotic.state.ActivityState activity_state = 1800;
+
+    /**
+     * A list of the last performed activities wihtin this location. Passed activities can be removed any time by the unit controller. 
+     */
+    repeated .rst.domotic.state.ActivityState activity_state_last = 1810;
+
+    /**
+     * The requested current activities performed wihtin this location.
+     */
+    repeated .rst.domotic.state.ActivityState activity_state_requested = 1820;
 }
 

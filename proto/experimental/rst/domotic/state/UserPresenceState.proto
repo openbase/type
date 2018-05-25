@@ -3,31 +3,56 @@ package rst.domotic.state;
 import "rst/timing/Timestamp.proto";
 import "rst/domotic/action/ActionDescription.proto";
 
-option java_outer_classname = "UserPresenceStateType";
+option java_outer_classname = "UserTransitStateType";
 
 
 /**
- * Description of an user presence state.
+ * Description of a user transit state.
  *
  * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
  */
-message UserPresenceState {
+
+message UserTransitState {
 
     /**
-     * The user presence state.
+     * The user transit state.
      */
     enum State {
 
         /**
-         * Unknwon presence state.
+         * The user transit state is not defined.
          */
         UNKNOWN = 0;
-        SOON_AWAY = 1;
-        SHORT_AWAY = 2;
-        AWAY = 3;
-        SOON_AT_HOME = 4;
-        SHORT_AT_HOME = 5;
-        AT_HOME = 6;
+
+        /**
+         * The user is soon away.
+         */
+        SOON_ABSENT = 1;
+
+        /**
+         * The user is away for a short amount of time.
+         */
+        SHORT_TERM_ABSENT = 2;
+
+        /**
+         * The user is away for a longer amount of time.
+         */
+        LONG_TERM_ABSENT = 2;
+
+        /**
+         * The user will be present soon.
+         */
+        SOON_PRESENT = 4;
+
+        /**
+         * The user is present for a short amount of time.
+         */
+        SHORT_TERM_PRESENT = 5;
+
+        /**
+         * The user is present for a longer amount of time.
+         */
+        LONG_TERM_PRESENT = 6;
     }
 
     /**
