@@ -34,13 +34,6 @@ message ActionDescription {
     optional string description = 30;
 
     /**
-     * The authority with which the action shall be executed.
-     * Deprecated because the ActionDescription should be encrypted using the session key
-     * of a user and thus cannot contain the users ticket.
-     */
-    optional .rst.domotic.action.ActionAuthority action_authority = 40 [deprecated=true];
-
-    /**
      * The execution state of this action.
      */
     optional .rst.domotic.state.ActionState action_state = 50;
@@ -77,12 +70,5 @@ message ActionDescription {
      * Strategy defining how the allocation of multiple resources should be treated.
      */
     optional .rst.domotic.action.MultiResourceAllocationStrategy multi_resource_allocation_strategy = 110;
-
-    /**
-     * An id set by the service which executes this action. This id increases with every transaction
-     * and can be used by the remote that triggered the action to check if its change has been applied.
-     * Deprecated because it got moved to the AuthenticatedValue.
-     */
-    optional uint64 transaction_id = 120 [deprecated=true];
 }
 

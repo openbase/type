@@ -8,8 +8,26 @@ import "rst/configuration/MetaConfig.proto";
  * Type for activity configurations.
  *
  * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ * @author Marian Pohling <mpohling@techfak.uni-bielefeld.de>
  */
 message ActivityConfig {
+
+    /**
+     * Map entry for a mapping from user/authenticationgroup id to an individal action set realted to this activity. Used because
+     * the map feature does not seem to work in protobuf 2.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The id of the user/group.
+         */
+        optional string key = 1;
+
+        /**
+         * A set of individual service states related to a user/authenticationgroup.
+         */
+        repeated .rst.domotic.service.ServiceStateDescription value = 900;
+    }
 
     /**
      * The id of the activity.
@@ -35,5 +53,15 @@ message ActivityConfig {
      * A description for this activity.
      */
     optional string description = 500;
+
+    /**
+     * If the activity is performed, this service states are applied.
+     */
+    repeated .rst.domotic.service.ServiceStateDescription service_state_description = 600;
+
+    /**
+     * An individal set of service state descriptions applied if a (user/authenticationgroup) are triggering this action.
+     */
+    repeated MapFieldEntry individual_service_state_description = 700;
 }
 
