@@ -2,7 +2,9 @@ package rst.domotic.unit.authorizationgroup;
 
 option java_outer_classname = "AuthorizationGroupDataType";
 
+
 import "rst/domotic/state/PresenceState.proto";
+import "rst/domotic/state/ActivityState.proto";
 
 /**
  * Description of an authorization group data type.
@@ -40,16 +42,16 @@ message AuthorizationGroupData {
     /**
      * A list of the current group activities.
      */
-    repeated .rst.domotic.state.ActivityState activity_state = 600;
+    repeated .rst.domotic.state.ActivityState activity_state = 700;
 
     /**
-     * A list of the last performed group activities. Passed activities can be removed any time by the unit controller. 
+     * A list of the last performed group activities. Passed activities can be removed any time by the unit controller.
      */
-    repeated .rst.domotic.state.ActivityState activity_state_last = 610;
+    repeated .rst.domotic.state.ActivityState activity_state_last = 710;
 
     /**
      * The requested current group activities.
      */
-    repeated .rst.domotic.state.ActivityState activity_state_requested = 620;
+    repeated .rst.domotic.state.ActivityState activity_state_requested = 720;
 }
 

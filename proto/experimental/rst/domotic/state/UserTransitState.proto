@@ -37,7 +37,7 @@ message UserTransitState {
         /**
          * The user is away for a longer amount of time.
          */
-        LONG_TERM_ABSENT = 2;
+        LONG_TERM_ABSENT = 3;
 
         /**
          * The user will be present soon.

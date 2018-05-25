@@ -2,7 +2,6 @@ package rst.domotic.unit.device;
 
 import "rst/domotic/unit/dal/ColorableLightData.proto";
 import "rst/domotic/unit/dal/BatteryData.proto";
-import "rst/domotic/unit/dal/BrightnessSensorData.proto";
 import "rst/domotic/unit/dal/ButtonData.proto";
 import "rst/domotic/unit/dal/DimmerData.proto";
 import "rst/domotic/unit/dal/DimmableLightData.proto";
@@ -56,11 +55,6 @@ message DeviceData {
      * The battery unit data of this device.
      */
     repeated .rst.domotic.unit.dal.BatteryData unit_battery_data = 300;
-
-    /**
-     * The brightness sensor unit data of this device.
-     */
-    repeated .rst.domotic.unit.dal.BrightnessSensorData unit_brightness_sensor_data = 400;
 
     /**
      * The button unit data of this device.

@@ -1,5 +1,6 @@
 package rst.domotic.unit.location;
 
+import "rst/domotic/state/ActivityState.proto";
 import "rst/domotic/state/AlarmState.proto";
 import "rst/domotic/state/BlindState.proto";
 import "rst/domotic/state/BrightnessState.proto";
@@ -14,6 +15,7 @@ import "rst/domotic/state/SmokeState.proto";
 import "rst/domotic/state/StandbyState.proto";
 import "rst/domotic/state/TamperState.proto";
 import "rst/domotic/state/TemperatureState.proto";
+import "rst/domotic/state/EmphasisState.proto";
 
 option java_outer_classname = "LocationDataType";
 
@@ -239,31 +241,31 @@ message LocationData {
     /**
      * The emphasis state of this location.
      */
-    optional .rst.domotic.state.EmphasisState emphasis_state = 1500;
+    optional .rst.domotic.state.EmphasisState emphasis_state = 1800;
 
     /**
      * The last emphasis state of this location.
      */
-    optional .rst.domotic.state.EmphasisState emphasis_state_last = 1510;
+    optional .rst.domotic.state.EmphasisState emphasis_state_last = 1810;
 
     /**
      * The requested emphasis state of this location.
      */
-    optional .rst.domotic.state.EmphasisState emphasis_state_requested = 1520;
+    optional .rst.domotic.state.EmphasisState emphasis_state_requested = 1820;
 
     /**
      * A list of the current activities wihtin this location.
      */
-    repeated .rst.domotic.state.ActivityState activity_state = 1800;
+    repeated .rst.domotic.state.ActivityState activity_state = 1900;
 
     /**
-     * A list of the last performed activities wihtin this location. Passed activities can be removed any time by the unit controller. 
+     * A list of the last performed activities wihtin this location. Passed activities can be removed any time by the unit controller.
      */
-    repeated .rst.domotic.state.ActivityState activity_state_last = 1810;
+    repeated .rst.domotic.state.ActivityState activity_state_last = 1910;
 
     /**
      * The requested current activities performed wihtin this location.
      */
-    repeated .rst.domotic.state.ActivityState activity_state_requested = 1820;
+    repeated .rst.domotic.state.ActivityState activity_state_requested = 1920;
 }
 

@@ -35,7 +35,7 @@ message UserData {
     repeated .rst.domotic.state.ActivityState activity_state = 300;
 
     /**
-     * A list of the last performed user activities. Passed activities can be removed any time by the unit controller. 
+     * A list of the last performed user activities. Passed activities can be removed any time by the unit controller.
      */
     repeated .rst.domotic.state.ActivityState activity_state_last = 310;
 
