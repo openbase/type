@@ -23,14 +23,14 @@ message UserData {
     repeated string alias = 110;
 
     /**
-     * The current user activities.
+     * A list of the current user activities.
      */
-    optional .rst.domotic.state.ActivityState activity_state = 300;
+    repeated .rst.domotic.state.ActivityState activity_state = 300;
 
     /**
-     * The last user activities.
+     * A list of the last performed user activities. Passed activities can be removed any time by the unit controller. 
      */
-    optional .rst.domotic.state.ActivityState activity_state_last = 310;
+    repeated .rst.domotic.state.ActivityState activity_state_last = 310;
 
     /**
      * The requested current user activities.
