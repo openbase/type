@@ -6,7 +6,6 @@ import "rst/domotic/state/BlindState.proto";
 import "rst/domotic/state/BrightnessState.proto";
 import "rst/domotic/state/ColorState.proto";
 import "rst/domotic/state/IlluminanceState.proto";
-import "rst/domotic/state/IntensityState.proto";
 import "rst/domotic/state/PowerConsumptionState.proto";
 import "rst/domotic/state/PresenceState.proto";
 import "rst/domotic/state/MotionState.proto";
@@ -119,11 +118,6 @@ message LocationData {
     optional .rst.domotic.state.IlluminanceState illuminance_state_last = 510;
 
     /**
-     * The intensity state of the location.
-     */
-    optional .rst.domotic.state.IntensityState intensity_state = 500 [deprecated = true];
-
-    /**
      * State represents if there is any humand or animal presece detected in this location.
      */
     optional .rst.domotic.state.PresenceState presence_state = 600;
@@ -217,11 +211,6 @@ message LocationData {
      * The requested target temperature state of the location.
      */
     optional .rst.domotic.state.TemperatureState target_temperature_state_requested = 1020;
-
-    /**
-     * The actual temperature state of the location.
-     */
-    optional .rst.domotic.state.TemperatureState acutal_temperature_state= 1401 [deprecated=true];
 
     /**
      * The temperature state of this location.

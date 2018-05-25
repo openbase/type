@@ -35,11 +35,6 @@ message UnitTemplate {
         BATTERY = 20;
 
         /**
-         * A brightness sensor.
-         */
-        BRIGHTNESS_SENSOR = 30;
-
-        /**
          * A button.
          */
         BUTTON = 40;

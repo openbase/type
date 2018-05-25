@@ -64,11 +64,6 @@ message ServiceTemplate {
         BRIGHTNESS_STATE_SERVICE = 20;
 
         /**
-         * Intensity service.
-         */
-        INTENSITY_STATE_SERVICE = 30;
-
-        /**
          * Button service.
          */
         BUTTON_STATE_SERVICE = 40;

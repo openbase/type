@@ -39,11 +39,6 @@ message TemperatureControllerData {
     optional .rst.domotic.state.TemperatureState temperature_state_requested = 320;
 
     /**
-     * The state which represents the actual temperature.
-     */
-    optional .rst.domotic.state.TemperatureState actual_temperature_state = 301 [deprecated=true] ;
-
-    /**
      * The state which represents the current target temperature.
      */
     optional .rst.domotic.state.TemperatureState target_temperature_state = 400;
