@@ -2,8 +2,6 @@ package rst.domotic.action;
 
 option java_outer_classname = "ActionAuthorityType";
 
-import "rst/domotic/authentication/TicketAuthenticatorWrapper.proto";
-
 /**
  * A type which defines the authority which is responsible for an action execution.
  *
@@ -36,8 +34,8 @@ message ActionAuthority {
     optional Authority authority = 100 [default = SYSTEM];
 
     /**
-     * A TicketAuthenticatorWrapper that is sent within the request for the authentication of the authority (user)
+     * The responsible executor of the action.
      */
-    optional .rst.domotic.authentication.TicketAuthenticatorWrapper ticket_authenticator_wrapper = 200;
+    optional string user_id = 300;
 }
 
