@@ -5,7 +5,7 @@ import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "BlindStateType";
 
-S
+
 /**
  * Basic sensor or object state.
  * Used by objects like rollershutters.

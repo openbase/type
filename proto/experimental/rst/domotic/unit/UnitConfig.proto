@@ -17,6 +17,7 @@ import "rst/domotic/unit/unitgroup/UnitGroupConfig.proto";
 import "rst/domotic/unit/location/LocationConfig.proto";
 import "rst/domotic/unit/connection/ConnectionConfig.proto";
 import "rst/domotic/unit/user/UserConfig.proto";
+import "rst/domotic/unit/object/ObjectConfig.proto";
 import "rst/domotic/unit/authorizationgroup/AuthorizationGroupConfig.proto";
 
 
@@ -138,6 +139,11 @@ message UnitConfig {
      * Additional configuration field. Is only set if the type is CONNECTION.
      */
     optional .rst.domotic.unit.connection.ConnectionConfig connection_config = 1600;
+
+    /**
+     * Additional configuration field. Is only set if the type is OBJECT.
+     */
+    optional .rst.domotic.unit.object.ObjectConfig object_config = 1800;
 
     /**
      * Permission configuration for setting user rights for the unit.

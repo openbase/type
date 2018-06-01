@@ -1,5 +1,7 @@
 package rst.domotic.state;
 
+import "rst/timing/Timestamp.proto";
+
 option java_outer_classname = "ActionStateType";
 
 

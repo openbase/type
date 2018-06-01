@@ -67,6 +67,11 @@ message UnitRegistryData {
     repeated .rst.domotic.unit.UnitConfig connection_unit_config = 1200;
 
     /**
+     * The list of registered object unit configs.
+     */
+    repeated .rst.domotic.unit.UnitConfig object_unit_config = 3900;
+
+    /**
      * Read only flag for the dal unit config registry.
      */
     optional bool dal_unit_config_registry_read_only = 1300;
@@ -116,7 +121,12 @@ message UnitRegistryData {
      */
     optional bool connection_unit_config_registry_read_only = 2200;
 
-    /**
+    /*
+     * Read-only flag for the object unit config registry.
+     */
+    optional bool object_unit_config_registry_read_only = 4000;
+
+    /*
      * Global read-only flag for the unit config registry.
      */
     optional bool unit_config_registry_read_only = 3600;
@@ -170,6 +180,11 @@ message UnitRegistryData {
      * Consistent flag for the connection unit config registry.
      */
     optional bool connection_unit_config_registry_consistent = 3300;
+
+    /**
+     * Consistent flag for the object unit config registry.
+     */
+    optional bool object_unit_config_registry_consistent = 4100;
 
     /**
      * Global consistent flag for the unit config registry.
