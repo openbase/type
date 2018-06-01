@@ -15,7 +15,12 @@ option java_outer_classname = "RFIDStateType";
 message RFIDState {
 
     /**
-     * The data two write to or read from the RFID as a byte array.
+     * The id of the data source\target.
+     */
+    optional string id = 50;
+
+    /**
+     * The data byte array which has been read from the source or has to be write to the target.
      */
     optional bytes data = 100;
 

@@ -46,6 +46,29 @@ message BatteryState {
     optional State value = 100;
 
     /**
+     * Map entry for a mapping from state values onto there last occurrence.
+     * This message has been introduced because of the missing map feature in protobuf 2.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional string key = 1;
+
+        /**
+         * The timestamp of the last occurrence.
+         */
+        optional .rst.timing.Timestamp value = 2;
+    }
+
+    /**
+     * A mapping of all state values onto there last occurrence.
+     * This mapping can be used for detecting state transitions.
+     */
+    repeated MapFieldEntry last_value_occurrence = 1000;
+
+    /**
      * The energy level. Range: [1..100].
      */
     optional double level = 200;

@@ -5,7 +5,7 @@ import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "BlindStateType";
 
-
+S
 /**
  * Basic sensor or object state.
  * Used by objects like rollershutters.
@@ -17,7 +17,7 @@ message BlindState {
     /**
      * The state definitions.
      */
-    enum MovementState {
+    enum State {
 
         /**
          * Unknown state.
@@ -43,7 +43,30 @@ message BlindState {
     /**
      * The movement state of the blind state.
      */
-    optional MovementState movement_state = 100;
+    optional State value = 101;
+
+    /**
+     * Map entry for a mapping from state values onto there last occurrence.
+     * This message has been introduced because of the missing map feature in protobuf 2.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional string key = 1;
+
+        /**
+         * The timestamp of the last occurrence.
+         */
+        optional .rst.timing.Timestamp value = 2;
+    }
+
+    /**
+     * A mapping of all state values onto there last occurrence.
+     * This mapping can be used for detecting state transitions.
+     */
+    repeated MapFieldEntry last_value_occurrence = 1000;
 
     /**
      * The value which represents the height of the blind in percent. Range [0..100].

@@ -45,14 +45,32 @@ message ButtonState {
     optional State value = 100;
 
     /**
+     * Map entry for a mapping from state values onto there last occurrence.
+     * This message has been introduced because of the missing map feature in protobuf 2.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional string key = 1;
+
+        /**
+         * The timestamp of the last occurrence.
+         */
+        optional .rst.timing.Timestamp value = 2;
+    }
+
+    /**
+     * A mapping of all state values onto there last occurrence.
+     * This mapping can be used for detecting state transitions.
+     */
+    repeated MapFieldEntry last_value_occurrence = 1000;
+
+    /**
      * Timestamp of the occurency of this event.
      */
     optional .rst.timing.Timestamp timestamp = 200;
-
-    /**
-     * Timestamp of the last time the button was pressed.
-     */
-    optional .rst.timing.Timestamp last_pressed = 300 [deprecated=true];
 
     /**
      * This field contains the description of the action which is responsible for this service state.

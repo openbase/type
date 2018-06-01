@@ -54,6 +54,29 @@ message InventoryState {
     optional State value = 100 [default = INSTALLED];
 
     /**
+     * Map entry for a mapping from state values onto there last occurrence.
+     * This message has been introduced because of the missing map feature in protobuf 2.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional string key = 1;
+
+        /**
+         * The timestamp of the last occurrence.
+         */
+        optional .rst.timing.Timestamp value = 2;
+    }
+
+    /**
+     * A mapping of all state values onto there last occurrence.
+     * This mapping can be used for detecting state transitions.
+     */
+    repeated MapFieldEntry last_value_occurrence = 1000;
+
+    /**
      * The id of the current location of the device.
      */
     optional string location_id = 200;
@@ -64,8 +87,8 @@ message InventoryState {
     optional .rst.timing.Timestamp timestamp = 300;
 
     /**
-     * The id of the current owner of the device.
+     * The user id of the last or current borrower of the unitS.
      */
-    optional string owner_id = 400;
+    optional string borrower_id = 400;
 }
 
