@@ -92,7 +92,7 @@ message ActionState {
         /**
          * The state value.
          */
-        optional string key = 1;
+        optional State key = 1;
 
         /**
          * The timestamp of the last occurrence.
