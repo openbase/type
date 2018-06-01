@@ -34,6 +34,11 @@ message ActionDescription {
     optional string description = 30;
 
     /**
+     * The authority with which the action shall be executed.
+     */
+    optional .rst.domotic.action.ActionAuthority action_authority = 40;
+
+    /**
      * The execution state of this action.
      */
     optional .rst.domotic.state.ActionState action_state = 50;
