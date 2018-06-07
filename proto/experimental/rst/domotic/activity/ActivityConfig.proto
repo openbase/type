@@ -39,7 +39,7 @@ message ActivityConfig {
     /**
      * The label of the activity.
      */
-    optional .rst.configuraiton.Label label = 200;
+    optional .rst.configuration.Label label = 200;
 
     /**
      * The id of the activity template this activity belongs to.

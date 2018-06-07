@@ -1,6 +1,5 @@
 package rst.domotic.service;
 
-import "rst/domotic/state/ActionState.proto";
 import "rst/domotic/service/ServiceTemplate.proto";
 import "rst/domotic/unit/UnitTemplate.proto";
 
