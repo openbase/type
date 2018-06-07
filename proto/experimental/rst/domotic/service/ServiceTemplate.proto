@@ -204,9 +204,9 @@ message ServiceTemplate {
         ILLUMINANCE_STATE_SERVICE = 310;
 
         /**
-         * User presence state for different kinds of user presence.
+         * User transit state for different kinds of user transitions.
          */
-        USER_PRESENCE_STATE_SERVICE = 320;
+        USER_TRANSIT_STATE_SERVICE = 320;
 
         /**
          * Multi Activity state for different kinds of activities a user does.

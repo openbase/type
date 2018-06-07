@@ -64,13 +64,13 @@ message LauncherData {
     optional string label = 200;
 
     /**
-     * The smoke alarm state of the UnitGroup.
+     * The state the launcher is in.
      */
     optional LauncherState launcher_state = 300;
 
     /**
      * Flag is set if the application was successfully verified after launching.
-     * In case the verification has failed, may some application functions are restricted.
+     * In case the verification has failed, maybe some application functions are restricted.
      * Returns true if the application verification was successful after launching.
      */
     optional bool verified = 400;

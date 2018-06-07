@@ -2,12 +2,13 @@ package rst.domotic.action;
 
 option java_outer_classname = "ActionDescriptionType";
 
+import "rst/calendar/DateTime.proto";
 import "rst/communicationpatterns/ResourceAllocation.proto";
+import "rst/configuration/Label.proto";
 import "rst/domotic/state/ActionState.proto";
 import "rst/domotic/action/ActionAuthority.proto";
 import "rst/domotic/action/ActionReference.proto";
 import "rst/domotic/action/MultiResourceAllocationStrategy.proto";
-import "rst/calendar/DateTime.proto";
 import "rst/domotic/service/ServiceStateDescription.proto";
 
 /**
@@ -26,7 +27,7 @@ message ActionDescription {
     /**
      * A label for the action description.
      */
-    optional string label = 20;
+    optional .rst.configuration.Label label = 20;
 
     /**
      * A description for the action description.

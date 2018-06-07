@@ -2,7 +2,6 @@ package rst.spatial;
 
 option java_outer_classname = "PlacementConfigType";
 
-import "rst/math/Vec3DFloat.proto";
 import "rst/geometry/Pose.proto";
 import "rst/spatial/Shape.proto";
 

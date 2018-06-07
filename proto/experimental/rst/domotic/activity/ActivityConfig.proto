@@ -2,6 +2,7 @@ package rst.domotic.activity;
 
 option java_outer_classname = "ActivityConfigType";
 
+import "rst/configuration/Label.proto";
 import "rst/configuration/MetaConfig.proto";
 import "rst/domotic/service/ServiceStateDescription.proto";
 
@@ -38,7 +39,7 @@ message ActivityConfig {
     /**
      * The label of the activity.
      */
-    optional string label = 200;
+    optional .rst.configuration.Label label = 200;
 
     /**
      * The id of the activity template this activity belongs to.

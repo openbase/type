@@ -2,11 +2,10 @@ package rst.domotic.unit;
 
 option java_outer_classname = "UnitConfigType";
 
-import "rst/spatial/PlacementConfig.proto";
-import "rst/rsb/Scope.proto";
+import "rst/configuration/Label.proto";
+import "rst/configuration/MetaConfig.proto";
 import "rst/domotic/service/ServiceConfig.proto";
 import "rst/domotic/unit/UnitTemplate.proto";
-import "rst/configuration/MetaConfig.proto";
 import "rst/domotic/authentication/PermissionConfig.proto";
 import "rst/domotic/state/EnablingState.proto";
 import "rst/domotic/unit/scene/SceneConfig.proto";
@@ -19,6 +18,8 @@ import "rst/domotic/unit/connection/ConnectionConfig.proto";
 import "rst/domotic/unit/user/UserConfig.proto";
 import "rst/domotic/unit/object/ObjectConfig.proto";
 import "rst/domotic/unit/authorizationgroup/AuthorizationGroupConfig.proto";
+import "rst/rsb/Scope.proto";
+import "rst/spatial/PlacementConfig.proto";
 
 
 /**
@@ -41,7 +42,7 @@ message UnitConfig {
     /**
      * The label of the unit.
      */
-    optional string label = 100;
+    optional .rst.configuration.Label label = 100;
 
     /**
      * A list of aliases linked to this unit. Can be used to identify the unit in a human readable way.
@@ -56,9 +57,8 @@ message UnitConfig {
 
     /**
      * The unit type.
-     * TODO: BCO 2.0 rename this field into unit_type
      */
-    optional .rst.domotic.unit.UnitTemplate.UnitType type = 150;
+    optional .rst.domotic.unit.UnitTemplate.UnitType unit_type = 150;
 
     /**
      * The placement of the unit.

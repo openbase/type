@@ -2,6 +2,7 @@ package rst.domotic.activity;
 
 option java_outer_classname = "ActivityTemplateType";
 
+import "rst/configuration/Label.proto";
 import "rst/configuration/MetaConfig.proto";
 
 /**
@@ -35,7 +36,7 @@ message ActivityTemplate {
     /**
      * The label of the activity template.
      */
-    optional string label = 200;
+    optional .rst.configuration.Label label = 200;
 
     /**
      * The type of the activity template.
