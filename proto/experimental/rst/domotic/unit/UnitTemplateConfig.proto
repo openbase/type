@@ -2,9 +2,10 @@ package rst.domotic.unit;
 
 option java_outer_classname = "UnitTemplateConfigType";
 
+import "rst/configuration/Label.proto";
+import "rst/configuration/MetaConfig.proto";
 import "rst/domotic/service/ServiceTemplateConfig.proto";
 import "rst/domotic/unit/UnitTemplate.proto";
-import "rst/configuration/MetaConfig.proto";
 
 /**
  * Template for units. Contains the unit type and according service types.
@@ -19,9 +20,9 @@ message UnitTemplateConfig {
     optional string id = 50;
 
     /**
-     * The label of the unit tempalte configuration.
+     * The label of the unit template configuration.
      */
-    optional string label = 70;
+    optional .rst.configuration.Label label = 70;
 
     /**
      * The unit type.
