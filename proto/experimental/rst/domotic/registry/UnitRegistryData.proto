@@ -14,7 +14,7 @@ message UnitRegistryData {
     /**
      * The label of the unit registry.
      */
-    optional string label = 100;
+    optional string label = 100 [deprecated = true];
 
     /**
      * The list of registered dal unit configs.

@@ -1,5 +1,6 @@
 package rst.domotic.execution;
 
+import "rst/configuration/Label.proto";
 import "rst/timing/Timestamp.proto";
 
 option java_outer_classname = "LauncherDataType";
@@ -61,7 +62,7 @@ message LauncherData {
     /**
      * Label of the related launcher.
      */
-    optional string label = 200;
+    optional .rst.configuration.Label label = 200;
 
     /**
      * The state the launcher is in.

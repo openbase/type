@@ -15,7 +15,7 @@ message ActivityRegistryData {
     /**
      * The label for the registry.
      */
-    optional string label = 100;
+    optional string label = 100 [deprecated = true];
 
     /**
      * The list of registered activity configurations.

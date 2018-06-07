@@ -2,8 +2,9 @@ package rst.domotic.unit;
 
 option java_outer_classname = "UnitTemplateType";
 
-import "rst/domotic/service/ServiceDescription.proto";
+import "rst/configuration/Label.proto";
 import "rst/configuration/MetaConfig.proto";
+import "rst/domotic/service/ServiceDescription.proto";
 
 /**
  * Template for units. Contains the unit type and according service descriptions.
@@ -204,6 +205,11 @@ message UnitTemplate {
      * The id of the unit template
      */
     optional string id = 50;
+
+    /**
+     * The label of the unit type containing different languages.
+     */
+    optional .rst.configuration.Label label = 70;
 
     /**
      * The type of the unit.
