@@ -2,6 +2,7 @@ package rst.domotic.unit.app;
 
 option java_outer_classname = "AppClassType";
 
+import "rst/configuration/Label.proto";
 import "rst/configuration/MetaConfig.proto";
 import "rst/domotic/binding/BindingConfig.proto";
 import "rst/domotic/unit/UnitTemplateConfig.proto";
@@ -21,7 +22,7 @@ message AppClass {
     /**
      * The label of the app class.
      */
-    optional string label = 200;
+    optional .rst.configuration.Label label = 200;
 
     /**
      * The description of the app class.
