@@ -14,7 +14,7 @@ message Label {
      * This message type is introduced because protobuf 2 does not support maps.
      */
     message MapFieldEntry {
-    
+
         /**
          * The language key.
          */
