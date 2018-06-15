@@ -134,14 +134,14 @@ message ServiceCommunicationType {
         TEMPERATURE_STATE = 220;
 
         /**
-         * Type representing the user activity state.
+         * Type representing an activity state.
          */
-        USER_ACTIVITY_STATE = 230;
+        ACTIVITY_STATE = 230;
 
         /**
-         * Type representing the user presence state.
+         * Type representing the user transit.
          */
-        USER_PRESENCE_STATE = 240;
+        USER_TRANSIT_STATE = 240;
 
         /**
          * Type representing the user window state.
