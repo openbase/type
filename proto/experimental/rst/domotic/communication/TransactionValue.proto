@@ -1,0 +1,23 @@
+package rst.domotic.communication;
+
+option java_outer_classname = "TransactionValueType";
+
+/**
+ * Type used to receive a value as a bytestring with a transaction id belonging to the request.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message TransactionValue {
+
+    /**
+     * The value as a bytestring.
+     */
+    optional bytes value = 1;
+
+    /**
+     * An id set by the server on replying to an action. This id increases with every
+     * action and can be used to verify that at one time the server executed the requested action.
+     */
+    optional uint64 transaction_id = 2;
+}
+
