@@ -29,11 +29,6 @@ message ServiceCommunicationType {
         ACTIVATION_STATE = 10;
 
         /**
-         * Type representing the activation multi state.
-         */
-        ACTIVATION_MULTI_STATE = 15;
-
-        /**
          * Type representing the alarm state.
          */
         ALARM_STATE = 20;
@@ -142,6 +137,11 @@ message ServiceCommunicationType {
          * Type representing an activity state.
          */
         ACTIVITY_STATE = 230;
+
+        /**
+         * Type representing the activity multi state.
+         */
+        ACTIVITY_MULTI_STATE = 235;
 
         /**
          * Type representing the user transit.
