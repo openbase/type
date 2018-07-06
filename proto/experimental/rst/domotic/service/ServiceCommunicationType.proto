@@ -29,6 +29,11 @@ message ServiceCommunicationType {
         ACTIVATION_STATE = 10;
 
         /**
+         * Type representing the activation multi state.
+         */
+        ACTIVATION_MULTI_STATE = 15;
+
+        /**
          * Type representing the alarm state.
          */
         ALARM_STATE = 20;

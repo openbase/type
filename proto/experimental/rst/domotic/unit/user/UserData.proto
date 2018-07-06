@@ -2,7 +2,7 @@ package rst.domotic.unit.user;
 
 option java_outer_classname = "UserDataType";
 
-import "rst/domotic/state/ActivityState.proto";
+import "rst/domotic/state/ActivityMultiState.proto";
 import "rst/domotic/state/PresenceState.proto";
 import "rst/domotic/state/UserTransitState.proto";
 
@@ -32,17 +32,17 @@ message UserData {
     /**
      * A list of the current user activities.
      */
-    repeated .rst.domotic.state.ActivityState activity_state = 300;
+    optional .rst.domotic.state.ActivityMultiState activity_multi_state = 300;
 
     /**
      * A list of the last performed user activities. Passed activities can be removed any time by the unit controller.
      */
-    repeated .rst.domotic.state.ActivityState activity_state_last = 310;
+    repeated .rst.domotic.state.ActivityMultiState activity_multi_state_last = 310;
 
     /**
      * The requested current user activities.
      */
-    repeated .rst.domotic.state.ActivityState activity_state_requested = 320;
+    repeated .rst.domotic.state.ActivityMultiState activity_multi_state_requested = 320;
 
     /**
      * State represents if the user is currently present.

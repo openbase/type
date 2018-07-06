@@ -210,9 +210,9 @@ message ServiceTemplate {
         USER_TRANSIT_STATE_SERVICE = 320;
 
         /**
-         * Multi Activity state for different kinds of activities a user does.
+         * Activity multi state for different kinds of activities a user does.
          */
-        MULTI_ACTIVITY_STATE_SERVICE = 330;
+        ACTIVITY_MULTI_STATE_SERVICE = 330;
 
         /**
          * Emphasis state for configuration of dimensions (comfort,energy,security)
