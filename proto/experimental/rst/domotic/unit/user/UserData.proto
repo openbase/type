@@ -37,12 +37,12 @@ message UserData {
     /**
      * A list of the last performed user activities. Passed activities can be removed any time by the unit controller.
      */
-    repeated .rst.domotic.state.ActivityMultiState activity_multi_state_last = 310;
+    optional .rst.domotic.state.ActivityMultiState activity_multi_state_last = 310;
 
     /**
      * The requested current user activities.
      */
-    repeated .rst.domotic.state.ActivityMultiState activity_multi_state_requested = 320;
+    optional .rst.domotic.state.ActivityMultiState activity_multi_state_requested = 320;
 
     /**
      * State represents if the user is currently present.
