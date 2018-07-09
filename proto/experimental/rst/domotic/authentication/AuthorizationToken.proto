@@ -1,0 +1,42 @@
+package rst.domotic.authentication;
+
+option java_outer_classname = "AuthorizationTokenType";
+
+import "rst/domotic/authentication/Permission.proto";
+
+/**
+ * Description of an authorization token.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message AuthorizationToken {
+
+    /**
+     * Map entry for a mapping from an id to a permission.
+     * Workaround until a protocol buffer version with map support is used.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The id of a unit, a unit template or a service template.
+         */
+        optional string key = 1;
+
+        /**
+         * Permissions for the unit, unit type or service type.
+         */
+        optional .rst.domotic.authentication.Permission value = 2;
+    }
+
+    /**
+     * The id of the user providing the token.
+     */
+    optional string user_id = 100;
+
+    /**
+     * A map from ids to permissions. If this set is empty no permissions are given to the token holder.
+     * This map defines what the user allows the token holder to do in his name.
+     */
+    repeated MapFieldEntry permission_rule = 200;
+}
+
