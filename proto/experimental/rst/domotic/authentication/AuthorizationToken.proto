@@ -12,20 +12,35 @@ import "rst/domotic/authentication/Permission.proto";
 message AuthorizationToken {
 
     /**
-     * Map entry for a mapping from an id to a permission.
-     * Workaround until a protocol buffer version with map support is used.
+     * A permission rule type defining what kind of permissions
+     * the token supplies.
      */
-    message MapFieldEntry {
+    message PermissionRule {
 
         /**
-         * The id of a unit, a unit template or a service template.
+         * The id of a unit or a location.
          */
-        optional string key = 1;
+        optional string unit_id = 1;
 
         /**
-         * Permissions for the unit, unit type or service type.
+         * The id of a unit template.
          */
-        optional .rst.domotic.authentication.Permission value = 2;
+        optional string unit_template_id = 3;
+
+        /**
+         * The id a service template.
+         */
+        optional string service_template_id = 4;
+
+        /**
+         * The permission this rule gives for the defined unit, unit type and service type.
+         */
+        optional .rst.domotic.authentication.Permission permission = 2;
+
+        /**
+         * Flag determining if the permission rule grants permissions or takes them away.
+         */
+        optional bool filter = 5;
     }
 
     /**
@@ -37,6 +52,6 @@ message AuthorizationToken {
      * A map from ids to permissions. If this set is empty no permissions are given to the token holder.
      * This map defines what the user allows the token holder to do in his name.
      */
-    repeated MapFieldEntry permission_rule = 200;
+    repeated PermissionRule permission_rule = 200;
 }
 
