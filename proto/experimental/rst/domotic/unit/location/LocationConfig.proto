@@ -2,6 +2,7 @@ package rst.domotic.unit.location;
 
 option java_outer_classname = "LocationConfigType";
 
+import "rst/domotic/state/GlobalPositionState.proto";
 import "rst/domotic/unit/location/TileConfig.proto";
 
 /**
@@ -58,5 +59,10 @@ message LocationConfig {
      * The tile configuration of the location. Should only be set if the type is tile.
      */
     optional .rst.domotic.unit.location.TileConfig tile_config = 900;
+
+    /**
+     * The position of the location on the earth.
+     */
+    optional .rst.domotic.state.GlobalPositionState global_position = 1000;
 }
 

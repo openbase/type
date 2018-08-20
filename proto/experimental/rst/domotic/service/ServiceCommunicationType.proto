@@ -157,6 +157,16 @@ message ServiceCommunicationType {
          * Emphasis state for configuration of dimensions (comfort,energy,security)
          */
         EMPHASIS_STATE = 260;
+
+        /**
+         * State describing the position at home.
+         */
+        LOCAL_POSITION_STATE = 270;
+
+        /**
+         * State describing the posision on the earth.
+         */
+        GLOBAL_POSITION_STATE = 280;
     }
 }
 

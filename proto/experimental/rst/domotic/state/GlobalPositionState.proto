@@ -1,0 +1,39 @@
+package rst.domotic.state;
+
+option java_outer_classname = "GlobalPositionStateType";
+
+import "rst/domotic/action/ActionDescription.proto";
+import "rst/timing/Timestamp.proto";
+
+/**
+ * State describing the global position on the earth.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message GlobalPositionState {
+
+    /**
+     * The latitude in decimal degrees in range of -90 to 90.
+     */
+    optional double latitude = 100;
+
+    /**
+     * The longitude in deicmal degrees in range of -180 to 180.
+     */
+    optional double longitude = 200;
+
+    /**
+     * The height in meters relative to standard elevation zero.
+     */
+    optional double elevation = 300;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 400;
+
+    /**
+     * This field contains the description of the action which is responsible for this service state.
+     */
+    optional .rst.domotic.action.ActionDescription responsible_action = 500;
+}

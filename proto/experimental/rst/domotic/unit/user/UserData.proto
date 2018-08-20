@@ -3,11 +3,13 @@ package rst.domotic.unit.user;
 option java_outer_classname = "UserDataType";
 
 import "rst/domotic/state/ActivityMultiState.proto";
+import "rst/domotic/state/GlobalPositionState.proto";
+import "rst/domotic/state/LocalPositionState.proto";
 import "rst/domotic/state/PresenceState.proto";
 import "rst/domotic/state/UserTransitState.proto";
 
 /**
- * Description of an user data type.
+ * Description of a user data type.
  *
  * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
  */
@@ -73,5 +75,35 @@ message UserData {
      * The requested transit state of the user.
      */
     optional .rst.domotic.state.UserTransitState user_transit_state_requested = 720;
+
+    /**
+     * The position of the user at home.
+     */
+    optional .rst.domotic.state.LocalPositionState local_position_state = 800;
+
+    /**
+     * The last position of the user at home.
+     */
+    optional .rst.domotic.state.LocalPositionState local_position_state_last = 810;
+
+    /**
+     * The requested position of the user at home.
+     */
+    optional .rst.domotic.state.LocalPositionState local_position_state_requested = 820;
+
+    /**
+     * The global position of the user on the earth.
+     */
+    optional .rst.domotic.state.GlobalPositionState global_position_state = 900;
+
+    /**
+     * The last global position of the user on the earth.
+     */
+    optional .rst.domotic.state.GlobalPositionState global_position_state_last = 910;
+
+    /**
+     * The requested global position of the user on the earth.
+     */
+    optional .rst.domotic.state.GlobalPositionState global_position_state_requested = 920;
 }
 

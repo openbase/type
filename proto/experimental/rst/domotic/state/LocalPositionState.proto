@@ -1,0 +1,42 @@
+package rst.domotic.state;
+
+option java_outer_classname = "LocalPositionStateType";
+
+import "rst/domotic/action/ActionDescription.proto";
+import "rst/geometry/Pose.proto";
+import "rst/timing/Timestamp.proto";
+
+/**
+ * State describing the local position of a unit.
+ * Local means that it describes the position at home.
+ * It contains the id of the location where the unit is and a pose
+ * describing the translation and rotation of the unit in the coordinate system of
+ * the root location.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message LocalPositionState {
+
+    /**
+     * The position containing the translation and rotation in the coordinate system
+     * of the root location.
+     * This field is empty or the translation zero if the unit is not at home.
+     */
+    optional .rst.geometry.Pose position = 100;
+
+    /**
+     * The id of the location in which the user is.
+     * This value is empty if the unit is not at home.
+     */
+    optional string location_id = 200;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .rst.timing.Timestamp timestamp = 300;
+
+    /**
+     * This field contains the description of the action which is responsible for this service state.
+     */
+    optional .rst.domotic.action.ActionDescription responsible_action = 400;
+}
