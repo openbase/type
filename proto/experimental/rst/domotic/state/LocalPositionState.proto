@@ -9,7 +9,7 @@ import "rst/timing/Timestamp.proto";
 /**
  * State describing the local position of a unit.
  * Local means that it describes the position at home.
- * It contains the id of the location where the unit is and a pose
+ * It contains a list of ids of the location where the unit is and a pose
  * describing the translation and rotation of the unit in the coordinate system of
  * the root location.
  *
@@ -25,10 +25,13 @@ message LocalPositionState {
     optional .rst.geometry.Pose position = 100;
 
     /**
-     * The id of the location in which the user is.
+     * A list of ids of locations in which the unit is.
+     * The list is sorted in a way that the first elements are ids of regions, followed by
+     * the id of a tile and ending with ids of zones.
+     * Thus the most detailed information available for a unit is the first id.
      * This value is empty if the unit is not at home.
      */
-    optional string location_id = 200;
+    repeated string location_id = 200;
 
     /**
      * Timestamp of the occurency of this event.
