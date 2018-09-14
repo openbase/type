@@ -1,0 +1,29 @@
+package rst.domotic.communication;
+
+option java_outer_classname = "UserMessageType";
+
+/**
+ * Type used to receive a value as a bytestring with a transaction id belonging to the request.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UserMessage {
+
+    optional MultiLanguageText text = 100;
+
+    optional String sender = 200;
+
+    optional String receiver = 300;
+
+    /* 
+     * Flag if the message was already read by the user.
+     */
+    optional bool read = 400;
+ 
+    level (debug info warn error critical)
+    acknowlegement (act, remind later, 
+    time
+    permission
+    condicion
+}
+

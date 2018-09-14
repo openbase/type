@@ -18,17 +18,17 @@ option java_outer_classname = "EmphasisStateType";
 message EmphasisState {
 
     /**
-     * The comfort emphasis in the range of [0..100] %.
+     * The comfort emphasis in the range of [0..1].
      */
     optional double comfort = 100;
 
     /**
-     * The comfort energy in the range of [0..100] %.
+     * The economy emphasis in the range of [0..1].
      */
-    optional double energy = 200;
+    optional double economy = 200;
 
     /**
-     * The comfort security in the range of [0..100] %.
+     * The comfort security in the range of [0..1].
      */
     optional double security = 300;
 

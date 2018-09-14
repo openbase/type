@@ -1,0 +1,43 @@
+package rst.domotic.action;
+
+option java_outer_classname = "ActionInitiatorType";
+
+/**
+ * A type which defines the initiator type which is responsible for an action execution.
+ *
+ * @auther Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ActionInitiator {
+
+    enum Initiator {
+
+        /**
+         * Unknown authority.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * For all actions initiated by the system.
+	 * This includes automation components, robots and virtual agents.
+         */
+        SYSTEM = 1;
+
+        /**
+         * For all actions initiated by humans.
+         */
+        HUMAN = 2;
+    }
+
+    /**
+     * The authority which is responsible for the execution.
+     */
+    optional Initiator initiator = 100 [default = SYSTEM];
+
+    /**
+     * Field can be used to define the action initiator via its user id.
+     * It is only used to lookup the initiator but not to authorize the action.
+     */
+    optional string user_id = 300;
+}
+
