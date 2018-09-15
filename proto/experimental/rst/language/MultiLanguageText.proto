@@ -1,0 +1,34 @@
+package rst.language;
+
+option java_outer_classname = "MultiLanguageTextType";
+
+/**
+ * A language independent MultiLanguageText.
+ *
+ * @author Divine Threepwood <divine@openbase.org>
+ */
+message MultiLanguageText {
+
+    /**
+     * Map entry for mapping a text to a given language.
+     * This message type is introduced because protobuf 2 does not support maps.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The language key.
+         */
+        optional string key = 1;
+
+        /**
+         * A text for the language.
+         */
+        optional string value = 2;
+    }
+
+    /**
+     * A list of entries mapping a language to a text.
+     */
+    repeated MapFieldEntry entry = 1;
+}
+
