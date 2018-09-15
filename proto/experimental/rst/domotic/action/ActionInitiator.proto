@@ -19,7 +19,7 @@ message ActionInitiator {
 
         /**
          * For all actions initiated by the system.
-	 * This includes automation components, robots and virtual agents.
+         * This includes automation components, robots and virtual agents.
          */
         SYSTEM = 1;
 

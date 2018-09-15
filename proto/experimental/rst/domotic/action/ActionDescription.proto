@@ -37,7 +37,7 @@ message ActionDescription {
     /**
      * The authority with which the action shall be executed.
      */
-    optional .rst.domotic.action.ActionInitiator initiator = 40;:
+    optional .rst.domotic.action.ActionInitiator initiator = 40;
 
     /**
      * The execution state of this action.
@@ -57,7 +57,7 @@ message ActionDescription {
     /**
      * The execution state of this action.
      */
-    optional .rst.domotic.action.ActionPriority priority = 50;
+    optional .rst.domotic.action.ActionPriority priority = 80;
 
     /**
      * The defined runtime period of this action it microsecunds.

@@ -1,6 +1,6 @@
 package rst.domotic.action;
 
-import "rst/domotic/action/ActionAuthority.proto";
+import "rst/domotic/action/ActionInitiator.proto";
 import "rst/domotic/service/ServiceStateDescription.proto";
 
 option java_outer_classname = "ActionReferenceType";
@@ -22,7 +22,7 @@ message ActionReference {
     /**
      * The authority of the referenced action.
      */
-    optional .rst.domotic.action.ActionAuthority authority = 20;
+    optional .rst.domotic.action.ActionInitiator initiator = 20;
 
     /**
      * The state applied by the referenced action.
