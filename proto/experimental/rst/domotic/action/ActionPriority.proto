@@ -78,10 +78,5 @@ message ActionPriority {
          */
         EMERGENCY = 6;
     }
-
-    /*
-     * The priority to perform the execution of an action.
-     */
-    optional Priority priority = 100 [default = NORMAL];
 }
 

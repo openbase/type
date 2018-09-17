@@ -65,12 +65,12 @@ message ActionDescription {
      *
      * Note: Default priority is NORMAL
      */
-    optional .rst.domotic.action.ActionPriority priority = 80;
+    optional .rst.domotic.action.ActionPriority.Priority priority = 80 [default = NORMAL];
 
     /**
      * The emphasis category representing the optimization intention of this action used for the ranking.
      */
-    optional .rst.domotic.action.ActionEmphasis.Category category = 90;
+    repeated .rst.domotic.action.ActionEmphasis.Category category = 90;
 
     /**
      * The defined runtime period of this action it microsecunds.
