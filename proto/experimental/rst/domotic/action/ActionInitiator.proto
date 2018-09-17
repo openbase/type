@@ -35,9 +35,10 @@ message ActionInitiator {
     optional Initiator initiator = 100 [default = SYSTEM];
 
     /**
-     * Field can be used to define the action initiator via its user id.
-     * It is only used to lookup the initiator but not to authorize the action.
+     * Field can be used to define the action initiator via its unit id.
+     * An initiator can be a user who pressed a physical button or any unit like a scene which is generating further actions after activation.
+     * Out of security reasons, this id is only used for debuging and to improve the system transparency but not to authenticate or authorize the action.
      */
-    optional string user_id = 300;
+    optional string unit_id = 300;
 }
 

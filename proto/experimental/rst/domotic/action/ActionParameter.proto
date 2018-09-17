@@ -2,13 +2,17 @@ package rst.domotic.action;
 
 option java_outer_classname = "ActionParameterType";
 
-import "rst/communicationpatterns/ResourceAllocation.proto";
 import "rst/domotic/action/ActionDescription.proto";
-import "rst/calendar/DateTime.proto";
-import "rst/domotic/unit/UnitTemplate.proto";
+import "rst/configuration/Label.proto";
+import "rst/domotic/state/ActionState.proto";
+import "rst/domotic/action/ActionInitiator.proto";
+import "rst/domotic/action/ActionReference.proto";
+import "rst/domotic/service/ServiceStateDescription.proto";
+import "rst/domotic/action/ActionPriority.proto";
+import "rst/domotic/action/ActionEmphasis.proto";
 
 /**
- * Description of paramters which are optional for an action because they have default values.
+ * Description of possible paramters to define an action.
  *
  * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
  * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
@@ -16,37 +20,54 @@ import "rst/domotic/unit/UnitTemplate.proto";
 message ActionParameter {
 
     /**
-     * The action that triggered this action. In the default case this field is empty and
-     * this action does not have an initiator.
+     * A label for the action description.
+     *
+     * Note: Field is optional.
      */
-    optional .rst.domotic.action.ActionDescription initiator = 10;
+    optional .rst.configuration.Label label = 20;
 
     /**
-     * The priority with which the resources for this action are allocated. Default is NORMAL.
+     * The initiator of this action.
+     *
+     * Note: Field is required to define the action.
      */
-    optional .rst.communicationpatterns.ResourceAllocation.Priority priority  = 20;
+    optional .rst.domotic.action.ActionInitiator initiator = 40;
 
     /**
-     * The time in ms how long the state invoked by this action should be preserved. Default is 0.
+     * The state which this action shall apply.
+     *
+     * Note: Field is required to define the action.
      */
-    optional uint64 execution_time_period = 30;
+    optional .rst.domotic.service.ServiceStateDescription service_state_description = 70;
 
     /**
-     * The validity of this action.
-     * The action will be canceled or never triggered after the validity time expired.
-     * Default should be one hour after creation of this type.
+     * The execution state of this action used for the action ranking.
+     *
+     * Note: Default priority is NORMAL
      */
-    optional .rst.calendar.DateTime execution_validity = 40;
+    optional .rst.domotic.action.ActionPriority priority = 80;
 
     /**
-     * The policy with which the resources for this action are allocated. Default is FIRST.
+     * The emphasis category representing the optimization intention of this action used for the ranking.
+     *
+     * Note: Field is required to define the action.
      */
-    optional .rst.communicationpatterns.ResourceAllocation.Policy policy = 50;
+    optional .rst.domotic.action.ActionEmphasis.Category category = 90;
 
     /**
-     * The unit type for which this action is restricted. Default is UNKOWN which means
-     * no restriction.
+     * The defined runtime period of this action it microsecunds.
+     * The action will be finished after expiration.
+     * If set to 0 then the action will finish directly after its execution.
+     *
+     * Note: Default period is 0
      */
-    optional .rst.domotic.unit.UnitTemplate.UnitType unit_type = 60;
+    optional uint64 execution_time_period = 100;
+
+    /**
+     * If this action was caused by another action, those action is referred by this field to enable the reconstruction of the complete action chain.
+     *
+     * Note: This field is only required if the action is a result of another one.
+     */
+    optional .rst.domotic.action.ActionDescription cause = 10;
 }
 

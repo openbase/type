@@ -11,7 +11,7 @@ option java_outer_classname = "EmphasisStateType";
  * Emphasis state of comfort, energy saving, and safty dimensions.
  * Mainly provided by the locations and used by units like the agents.
  *
- * Because safety is not included in this type because its always ranked as high.
+ * Note: Safety is not included in this type because its always ranked as high.
  *
  * @author Timo Michalski <tmichalski@techfak.uni-bielefeld.de>
  */
