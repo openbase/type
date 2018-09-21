@@ -44,7 +44,7 @@ message UserConfig {
     /**
      * This flag defines if the user is a system account or a real user.
      */
-    optional bool is_system_user = 900;
+    optional bool system_user = 900;
 
     /**
      * This value defines the language the user uses for the system.

@@ -73,10 +73,28 @@ message ActionDescription {
     repeated .rst.domotic.action.ActionEmphasis.Category category = 90;
 
     /**
-     * The defined runtime period of this action it microsecunds.
-     * The action will be finished after expiration.
-     * If set to 0 then the action will finish directly after its execution.
+     * The defined runtime period of this action in microsecunds.
+     * The action will be finished or rejected (if prevously scheduled) after expiration.
+     * If set to 0 then the action will only be executed ones if no other action is blocking the unit to avoid state flickering.
      */
     optional uint64 execution_time_period = 100;
+
+    /**
+     * Flag defines if an currently scheduled or executing action should be canceled.
+     * To perform a cancelation of a running action, only this flag and the id of the action is needed.
+     */
+    optional uint64 cancel = 110;
+
+    /**
+     * Flag defines if the action execution can be continued after interruption.
+     * This means if this action was relegated by another one, it is directly rejected and whill not be scheduled again.
+     */
+    optional bool interruptible = 120;
+
+    /**
+     * Flag defines if this action supports it, to be scheduled.
+     * If not than the action will directly rejected in case a currenly higher ranked action is blocking the unit.
+     */
+    optional bool schedulable = 130;
 }
 

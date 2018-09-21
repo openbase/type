@@ -68,6 +68,18 @@ message ActionParameter {
      *
      * Note: This field is only required if the action is a result of another one.
      */
-    optional .rst.domotic.action.ActionDescription cause = 10;
+    optional .rst.domotic.action.ActionDescription cause = 110;
+
+    /**
+     * Flag defines if the action execution can be continued after interruption.
+     * This means if this action was relegated by another one, it is directly rejected and whill not be scheduled again.
+     */
+    optional bool interruptible = 120;
+
+    /**
+     * Flag defines if this action supports it, to be scheduled.
+     * If not than the action will directly rejected in case a currenly higher ranked action is blocking the unit.
+     */
+    optional bool schedulable = 130;
 }
 
