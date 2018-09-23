@@ -22,7 +22,7 @@ message ActionReference {
     /**
      * The authority of the referenced action.
      */
-    optional .rst.domotic.action.ActionInitiator initiator = 20;
+    optional .rst.domotic.action.ActionInitiator action_initiator = 20;
 
     /**
      * The state applied by the referenced action.

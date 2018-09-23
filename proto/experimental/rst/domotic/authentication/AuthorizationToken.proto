@@ -28,7 +28,7 @@ message AuthorizationToken {
         optional string unit_template_id = 3;
 
         /**
-         * The id a service template.
+         * The id of a service template.
          */
         optional string service_template_id = 4;
 

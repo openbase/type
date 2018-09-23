@@ -3,7 +3,7 @@ package rst.domotic.action;
 option java_outer_classname = "ActionInitiatorType";
 
 /**
- * A type which defines the initiator type which is responsible for an action execution.
+ * A type which defines the initiator which is responsible for an action initiation.
  *
  * @auther Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
  * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
@@ -34,11 +34,24 @@ message ActionInitiator {
      * An initiator can be a user who pressed a physical button or any unit like a scene which is generating further actions after activation.
      * Out of security reasons, this id is only used for debuging and to improve the system transparency but not to authenticate or authorize the action.
      */
-    optional string unit_id = 300;
+    optional string initiator_id = 100;
 
     /**
-     * The authority which is responsible for the execution.
+     * The type of initiator. The type is important to know for the action scheduling to guarantee that humans are always able to control units.
      */
-    optional InitiatorType initiator_type = 100 [default = SYSTEM];
-}
+    optional InitiatorType initiator_type = 200 [default = SYSTEM];
 
+    /**
+     * The id of the user who authorized the initiators action.
+     *
+     * Note: Do not set this value manually, it will be auto generated and overwritten anyway.
+     */
+    optional string authorized_by = 300;
+
+    /**
+     * The id of the user who authenticated the initiators action.
+     *
+     * Note: Do not set this value manually, it will be auto generated and overwritten anyway.
+     */
+    optional string authenticated_by = 400;
+}
