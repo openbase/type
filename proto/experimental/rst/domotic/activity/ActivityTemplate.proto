@@ -3,6 +3,7 @@ package rst.domotic.activity;
 option java_outer_classname = "ActivityTemplateType";
 
 import "rst/language/Label.proto";
+import "rst/language/Description.proto";
 import "rst/configuration/MetaConfig.proto";
 
 /**
@@ -51,6 +52,6 @@ message ActivityTemplate {
     /**
      * A description of the activity template.
      */
-    optional string description = 500;
+    optional .rst.language.Description description = 500;
 }
 
