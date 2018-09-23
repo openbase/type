@@ -83,7 +83,7 @@ message ActionDescription {
      * Flag defines if an currently scheduled or executing action should be canceled.
      * To perform a cancelation of a running action, only this flag and the id of the action is needed.
      */
-    optional uint64 cancel = 110;
+    optional bool cancel = 110;
 
     /**
      * Flag defines if the action execution can be continued after interruption.
