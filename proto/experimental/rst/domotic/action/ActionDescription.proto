@@ -41,7 +41,7 @@ message ActionDescription {
     /**
      * The initiator of this action.
      */
-    optional .rst.domotic.action.ActionInitiator initiator = 40;
+    optional .rst.domotic.action.ActionInitiator action_initiator = 40;
 
     /**
      * The execution state of this action.

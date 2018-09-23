@@ -31,7 +31,7 @@ message ActionParameter {
      *
      * Note: Field is required to define the action.
      */
-    optional .rst.domotic.action.ActionInitiator initiator = 40;
+    optional .rst.domotic.action.ActionInitiator action_initiator = 40;
 
     /**
      * The state which this action shall apply.
