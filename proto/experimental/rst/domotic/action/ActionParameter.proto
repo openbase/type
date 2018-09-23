@@ -3,7 +3,7 @@ package rst.domotic.action;
 option java_outer_classname = "ActionParameterType";
 
 import "rst/domotic/action/ActionDescription.proto";
-import "rst/configuration/Label.proto";
+import "rst/language/Label.proto";
 import "rst/domotic/state/ActionState.proto";
 import "rst/domotic/action/ActionInitiator.proto";
 import "rst/domotic/action/ActionReference.proto";
@@ -24,7 +24,7 @@ message ActionParameter {
      *
      * Note: Field is optional.
      */
-    optional .rst.configuration.Label label = 20;
+    optional .rst.language.Label label = 20;
 
     /**
      * The initiator of this action.

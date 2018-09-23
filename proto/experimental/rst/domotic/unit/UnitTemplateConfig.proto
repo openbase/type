@@ -2,7 +2,7 @@ package rst.domotic.unit;
 
 option java_outer_classname = "UnitTemplateConfigType";
 
-import "rst/configuration/Label.proto";
+import "rst/language/Label.proto";
 import "rst/configuration/MetaConfig.proto";
 import "rst/domotic/service/ServiceTemplateConfig.proto";
 import "rst/domotic/unit/UnitTemplate.proto";
@@ -22,7 +22,7 @@ message UnitTemplateConfig {
     /**
      * The label of the unit template configuration.
      */
-    optional .rst.configuration.Label label = 70;
+    optional .rst.language.Label label = 70;
 
     /**
      * The unit type.

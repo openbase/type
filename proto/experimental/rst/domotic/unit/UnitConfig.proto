@@ -2,7 +2,7 @@ package rst.domotic.unit;
 
 option java_outer_classname = "UnitConfigType";
 
-import "rst/configuration/Label.proto";
+import "rst/language/Label.proto";
 import "rst/configuration/MetaConfig.proto";
 import "rst/domotic/service/ServiceConfig.proto";
 import "rst/domotic/unit/UnitTemplate.proto";
@@ -42,7 +42,7 @@ message UnitConfig {
     /**
      * The label of the unit.
      */
-    optional .rst.configuration.Label label = 100;
+    optional .rst.language.Label label = 100;
 
     /**
      * A list of aliases linked to this unit. Can be used to identify the unit in a human readable way.

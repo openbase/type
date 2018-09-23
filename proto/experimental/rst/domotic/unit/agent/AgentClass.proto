@@ -2,7 +2,7 @@ package rst.domotic.unit.agent;
 
 option java_outer_classname = "AgentClassType";
 
-import "rst/configuration/Label.proto";
+import "rst/language/Label.proto";
 import "rst/configuration/MetaConfig.proto";
 
 /**
@@ -20,7 +20,7 @@ message AgentClass {
     /**
      * The label of the agent class.
      */
-    optional .rst.configuration.Label label = 200;
+    optional .rst.language.Label label = 200;
 
     /**
      * The description of the agent class.

@@ -2,7 +2,7 @@ package rst.domotic.service;
 
 option java_outer_classname = "ServiceTemplateType";
 
-import "rst/configuration/Label.proto";
+import "rst/language/Label.proto";
 import "rst/configuration/MetaConfig.proto";
 import "rst/domotic/service/ServiceCommunicationType.proto";
 
@@ -238,7 +238,7 @@ message ServiceTemplate {
     /**
      * The label of the service type for different languages.
      */
-    optional .rst.configuration.Label label = 70;
+    optional .rst.language.Label label = 70;
 
     /**
      * The related Service type.

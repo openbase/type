@@ -2,7 +2,7 @@ package rst.domotic.action;
 
 option java_outer_classname = "ActionDescriptionType";
 
-import "rst/configuration/Label.proto";
+import "rst/language/Label.proto";
 import "rst/domotic/state/ActionState.proto";
 import "rst/domotic/action/ActionInitiator.proto";
 import "rst/domotic/action/ActionReference.proto";
@@ -29,7 +29,7 @@ message ActionDescription {
     /**
      * A label for the action description.
      */
-    optional .rst.configuration.Label label = 20;
+    optional .rst.language.Label label = 20;
 
     /**
      * A description for the action description.
