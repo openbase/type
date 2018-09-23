@@ -3,6 +3,7 @@ package rst.domotic.unit;
 option java_outer_classname = "UnitConfigType";
 
 import "rst/language/Label.proto";
+import "rst/language/Description.proto";
 import "rst/configuration/MetaConfig.proto";
 import "rst/domotic/service/ServiceConfig.proto";
 import "rst/domotic/unit/UnitTemplate.proto";
@@ -73,7 +74,7 @@ message UnitConfig {
     /**
      * The description of the unit.
      */
-    optional string description = 500;
+    optional .rst.language.Description description = 500;
 
     /**
      * Flag determining whether the unit is bound to its host unit keeps the same location.

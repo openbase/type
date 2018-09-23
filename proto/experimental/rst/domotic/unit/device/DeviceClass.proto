@@ -3,6 +3,7 @@ package rst.domotic.unit.device;
 option java_outer_classname = "DeviceClassType";
 
 import "rst/language/Label.proto";
+import "rst/language/Description.proto";
 import "rst/configuration/MetaConfig.proto";
 import "rst/domotic/binding/BindingConfig.proto";
 import "rst/domotic/unit/UnitTemplateConfig.proto";
@@ -33,7 +34,7 @@ message DeviceClass {
     /**
      * The description of the device class.
      */
-    optional string description = 300;
+    optional .rst.language.Description description = 300;
 
     /**
      * The company that produces the devices of this device class.
