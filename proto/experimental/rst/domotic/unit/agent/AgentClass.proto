@@ -3,7 +3,7 @@ package rst.domotic.unit.agent;
 option java_outer_classname = "AgentClassType";
 
 import "rst/language/Label.proto";
-import "rst/language/Description.proto";
+import "rst/language/MultiLanguageText.proto";
 import "rst/configuration/MetaConfig.proto";
 
 /**
@@ -26,7 +26,7 @@ message AgentClass {
     /**
      * The description of the agent class.
      */
-    optional .rst.language.Description description = 500;
+    optional .rst.language.MultiLanguageText description = 500;
 
     /**
      * A field for storing meta agent configurations.

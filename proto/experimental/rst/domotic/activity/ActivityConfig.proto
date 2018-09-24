@@ -3,7 +3,7 @@ package rst.domotic.activity;
 option java_outer_classname = "ActivityConfigType";
 
 import "rst/language/Label.proto";
-import "rst/language/Description.proto";
+import "rst/language/MultiLanguageText.proto";
 import "rst/configuration/MetaConfig.proto";
 import "rst/domotic/service/ServiceStateDescription.proto";
 
@@ -55,7 +55,7 @@ message ActivityConfig {
     /**
      * A description for this activity.
      */
-    optional .rst.language.Description description = 500;
+    optional .rst.language.MultiLanguageText description = 500;
 
     /**
      * If the activity is performed, this service states are applied.
