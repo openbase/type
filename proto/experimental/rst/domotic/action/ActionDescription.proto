@@ -10,7 +10,7 @@ import "rst/domotic/action/ActionReference.proto";
 import "rst/domotic/service/ServiceStateDescription.proto";
 import "rst/domotic/action/ActionPriority.proto";
 import "rst/domotic/action/ActionEmphasis.proto";
-
+import "rst/timing/Timestamp.proto";
 
 /**
  * Description of an action.

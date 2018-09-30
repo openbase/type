@@ -5,6 +5,8 @@ option java_outer_classname = "AgentClassType";
 import "rst/language/Label.proto";
 import "rst/language/MultiLanguageText.proto";
 import "rst/configuration/MetaConfig.proto";
+import "rst/domotic/action/ActionPriority.proto";
+import "rst/domotic/action/ActionEmphasis.proto";
 
 /**
  * Description of an agent class.
