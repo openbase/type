@@ -24,6 +24,12 @@ message SmokeDetectorData {
     repeated string alias = 110;
 
     /**
+     * A list of all operating actions.
+     * The action at index 0 is the currently executing action while the other ones are scheduled.
+     */
+    repeated .rst.domotic.action.ActionDescription action = 150;
+
+    /**
      * State to indicate wether this sensor has sent an alarm.
      */
     optional .rst.domotic.state.AlarmState smoke_alarm_state = 300;

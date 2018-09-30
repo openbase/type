@@ -24,6 +24,12 @@ message TelevisionData {
     repeated string alias = 110;
 
     /**
+     * A list of all operating actions.
+     * The action at index 0 is the currently executing action while the other ones are scheduled.
+     */
+    repeated .rst.domotic.action.ActionDescription action = 150;
+
+    /**
      * Field which repesents the current power state of the television.
      */
     optional .rst.domotic.state.PowerState power_state = 300;

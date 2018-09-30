@@ -22,6 +22,12 @@ message SwitchData {
     repeated string alias = 110;
 
     /**
+     * A list of all operating actions.
+     * The action at index 0 is the currently executing action while the other ones are scheduled.
+     */
+    repeated .rst.domotic.action.ActionDescription action = 150;
+
+    /**
      * Field which represents the current state of the switch.
      */
     optional .rst.domotic.state.SwitchState switch_state = 300;

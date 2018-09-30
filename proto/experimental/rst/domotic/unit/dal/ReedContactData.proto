@@ -23,6 +23,12 @@ message ReedContactData {
     repeated string alias = 110;
 
     /**
+     * A list of all operating actions.
+     * The action at index 0 is the currently executing action while the other ones are scheduled.
+     */
+    repeated .rst.domotic.action.ActionDescription action = 150;
+
+    /**
      * Field which represents the current contact state of the reed contact.
      */
     optional .rst.domotic.state.ContactState contact_state = 300;

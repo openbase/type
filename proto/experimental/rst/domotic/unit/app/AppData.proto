@@ -23,6 +23,12 @@ message AppData {
     repeated string alias = 110;
 
     /**
+     * A list of all operating actions.
+     * The action at index 0 is the currently executing action while the other ones are scheduled.
+     */
+    repeated .rst.domotic.action.ActionDescription action = 150;
+
+    /**
      * The activation state of this app.
      */
     optional .rst.domotic.state.ActivationState activation_state = 300;
