@@ -1,9 +1,9 @@
 package rst.domotic.unit.dal;
 
 import "rst/domotic/state/BatteryState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "BatteryDataType";
-
 
 /**
  * Generic description of a battery.

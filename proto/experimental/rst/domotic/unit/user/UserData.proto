@@ -7,6 +7,7 @@ import "rst/domotic/state/GlobalPositionState.proto";
 import "rst/domotic/state/LocalPositionState.proto";
 import "rst/domotic/state/PresenceState.proto";
 import "rst/domotic/state/UserTransitState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 /**
  * Description of a user data type.

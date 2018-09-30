@@ -15,9 +15,9 @@ import "rst/domotic/state/StandbyState.proto";
 import "rst/domotic/state/TamperState.proto";
 import "rst/domotic/state/TemperatureState.proto";
 import "rst/domotic/state/EmphasisState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "LocationDataType";
-
 
 /**
  * Description of a location data type.

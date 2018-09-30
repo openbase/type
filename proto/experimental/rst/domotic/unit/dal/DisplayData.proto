@@ -1,7 +1,8 @@
 package rst.domotic.unit.dal;
 
-option java_outer_classname = "DisplayDataType";
+import "rst/domotic/action/ActionDescription.proto";
 
+option java_outer_classname = "DisplayDataType";
 
 /**
  * Generic description of a display.

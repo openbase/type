@@ -1,7 +1,8 @@
 package rst.domotic.unit.dal;
 
-option java_outer_classname = "VideoDepthSourceDataType";
+import "rst/domotic/action/ActionDescription.proto";
 
+option java_outer_classname = "VideoDepthSourceDataType";
 
 /**
  * Generic description of a video depth source.

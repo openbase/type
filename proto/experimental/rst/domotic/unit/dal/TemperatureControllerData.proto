@@ -2,9 +2,9 @@ package rst.domotic.unit.dal;
 
 import "rst/domotic/state/TemperatureState.proto";
 import "rst/domotic/state/AlarmState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "TemperatureControllerDataType";
-
 
 /**
  * Generic description of a temperature controller.

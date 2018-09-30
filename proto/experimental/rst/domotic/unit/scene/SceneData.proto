@@ -1,9 +1,9 @@
 package rst.domotic.unit.scene;
 
 import "rst/domotic/state/ActivationState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "SceneDataType";
-
 
 /**
  * Generic description of an scene data type.

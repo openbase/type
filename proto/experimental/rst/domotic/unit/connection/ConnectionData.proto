@@ -3,6 +3,7 @@ package rst.domotic.unit.connection;
 import "rst/domotic/state/DoorState.proto";
 import "rst/domotic/state/WindowState.proto";
 import "rst/domotic/state/PassageState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "ConnectionDataType";
 

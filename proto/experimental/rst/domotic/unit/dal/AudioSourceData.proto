@@ -1,7 +1,8 @@
 package rst.domotic.unit.dal;
 
-option java_outer_classname = "AudioSourceDataType";
+import "rst/domotic/action/ActionDescription.proto";
 
+option java_outer_classname = "AudioSourceDataType";
 
 /**
  * Generic description of a audio source.

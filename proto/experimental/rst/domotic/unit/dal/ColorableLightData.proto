@@ -3,6 +3,7 @@ package rst.domotic.unit.dal;
 import "rst/domotic/state/PowerState.proto";
 import "rst/domotic/state/ColorState.proto";
 import "rst/domotic/state/BrightnessState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "ColorableLightDataType";
 

@@ -13,9 +13,9 @@ import "rst/domotic/state/SmokeState.proto";
 import "rst/domotic/state/StandbyState.proto";
 import "rst/domotic/state/TamperState.proto";
 import "rst/domotic/state/TemperatureState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "UnitGroupDataType";
-
 
 /**
  * Description of a unitgroup data type.

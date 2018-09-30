@@ -2,9 +2,9 @@ package rst.domotic.unit.agent;
 
 import "rst/domotic/state/EmphasisState.proto";
 import "rst/domotic/state/ActivationState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "AgentDataType";
-
 
 /**
  * Generic description of an agent data type.

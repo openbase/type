@@ -25,9 +25,9 @@ import "rst/domotic/unit/dal/VideoRgbSourceData.proto";
 import "rst/domotic/unit/dal/VideoDepthSourceData.proto";
 import "rst/domotic/unit/dal/AudioSourceData.proto";
 import "rst/domotic/unit/dal/RFIDData.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "DeviceDataType";
-
 
 /**
  * Description of a generic device type.

@@ -1,7 +1,8 @@
 package rst.domotic.unit.dal;
 
-option java_outer_classname = "ObjectDataType";
+import "rst/domotic/action/ActionDescription.proto";
 
+option java_outer_classname = "ObjectDataType";
 
 /**
  * Generic description of a object.

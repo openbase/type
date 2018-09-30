@@ -1,9 +1,9 @@
 package rst.domotic.unit.app;
 
 import "rst/domotic/state/ActivationState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "AppDataType";
-
 
 /**
  * Generic description of an app data type.

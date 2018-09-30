@@ -1,9 +1,9 @@
 package rst.domotic.unit.dal;
 
 import "rst/domotic/state/TamperState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "TamperDetectorDataType";
-
 
 /**
  * Generic description of a tamper detector.

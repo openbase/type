@@ -1,6 +1,7 @@
 package rst.domotic.unit.dal;
 
 import "rst/domotic/state/SwitchState.proto";
+import "rst/domotic/action/ActionDescription.proto";
 
 option java_outer_classname = "SwitchDataType";
 

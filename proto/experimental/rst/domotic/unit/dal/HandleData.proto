@@ -1,9 +1,9 @@
 package rst.domotic.unit.dal;
 
+import "rst/domotic/action/ActionDescription.proto";
 import "rst/domotic/state/HandleState.proto";
 
 option java_outer_classname = "HandleDataType";
-
 
 /**
  * Description of a generic handle.

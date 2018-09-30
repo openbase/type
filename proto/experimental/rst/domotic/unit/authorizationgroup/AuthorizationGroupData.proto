@@ -1,10 +1,10 @@
 package rst.domotic.unit.authorizationgroup;
 
-option java_outer_classname = "AuthorizationGroupDataType";
-
-
 import "rst/domotic/state/PresenceState.proto";
 import "rst/domotic/state/ActivityState.proto";
+import "rst/domotic/action/ActionDescription.proto";
+
+option java_outer_classname = "AuthorizationGroupDataType";
 
 /**
  * Description of an authorization group data type.
