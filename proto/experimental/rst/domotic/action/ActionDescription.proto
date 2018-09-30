@@ -101,6 +101,6 @@ message ActionDescription {
     /**
      * The time when this action was created.
      */
-    optional uint64 creation_time = 140;
+    optional .rst.timing.Timestamp timestamp = 140;
 }
 
