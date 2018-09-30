@@ -97,5 +97,10 @@ message ActionDescription {
      * If not than the action will directly rejected in case a currenly higher ranked action is blocking the unit.
      */
     optional bool schedulable = 130;
+
+    /**
+     * The time when this action was created.
+     */
+    optional uint64 creation_time = 140;
 }
 
