@@ -62,14 +62,14 @@ message ActionDescription {
     optional .rst.domotic.service.ServiceStateDescription service_state_description = 70;
 
     /**
-     * The execution state of this action used for the action ranking.
+     * The execution priority of this action used for the action ranking.
      *
      * Note: Default priority is NORMAL
      */
     optional .rst.domotic.action.ActionPriority.Priority priority = 80 [default = NORMAL];
 
     /**
-     * The emphasis category representing the optimization intention of this action used for the ranking.
+     * The emphasis categories representing the optimization intention of this action used for the ranking.
      */
     repeated .rst.domotic.action.ActionEmphasis.Category category = 90;
 
@@ -84,19 +84,19 @@ message ActionDescription {
      * Flag defines if an currently scheduled or executing action should be canceled.
      * To perform a cancelation of a running action, only this flag and the id of the action is needed.
      */
-    optional bool cancel = 110;
+    optional bool cancel = 110 [default = false];
 
     /**
      * Flag defines if the action execution can be continued after interruption.
      * This means if this action was relegated by another one, it is directly rejected and whill not be scheduled again.
      */
-    optional bool interruptible = 120;
+    optional bool interruptible = 120 [default = true];
 
     /**
      * Flag defines if this action supports it, to be scheduled.
      * If not than the action will directly rejected in case a currenly higher ranked action is blocking the unit.
      */
-    optional bool schedulable = 130;
+    optional bool schedulable = 130 [default = true];
 
     /**
      * The time when this action was created.
