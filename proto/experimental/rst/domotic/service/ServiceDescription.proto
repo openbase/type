@@ -28,6 +28,13 @@ message ServiceDescription {
     optional .rst.domotic.service.ServiceTemplate.ServicePattern pattern = 200;
 
     /**
+     * This flag defines if this service is just an aggregation of multible other services or if the service is directly representing an state of its unit.
+     * false means the sevice is directly representing an state of its unit.
+     * true means the sevice is an aggregation of multible other service states (e.g.).
+     */
+    optional bool aggregated = 250;
+
+    /**
      * A field for storing meta service template configurations.
      */
     optional .rst.configuration.MetaConfig meta_config = 300;
