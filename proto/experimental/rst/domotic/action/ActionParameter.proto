@@ -81,5 +81,18 @@ message ActionParameter {
      * If not than the action will directly rejected in case a currenly higher ranked action is blocking the unit.
      */
     optional bool schedulable = 130 [default = true];
+
+    /**
+     * The token with which the actions is authenticated.
+     * If this field is empty the user logged in at the default session manager is authenticated.
+     * If this field is set, the initiator will always be overwritten by the user specified in this token.
+     */
+    optional string authentication_token = 140;
+
+    /**
+     * The token with which the action is authorized.
+     * If this field is empty, the permissions of the user logged in at the default session manager are used for authorziation.
+     */
+    optional string authorization_token = 150;
 }
 
