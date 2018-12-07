@@ -22,9 +22,9 @@ message ActionEmphasis {
         UNKNOWN = 0;
 
         /**
-         * Savety category used to detect and handle emergency situations.
+         * Safety category used to detect and handle emergency situations.
          */
-        SAVETY = 1;
+        SAFETY = 1;
 
         /**
          * Security category is used to anti-burglary protection, burglar alarm components and preventive actions like presence simulation.
