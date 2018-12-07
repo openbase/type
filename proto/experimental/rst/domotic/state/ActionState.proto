@@ -23,32 +23,32 @@ message ActionState {
         UNKNOWN = 0;
 
         /**
-         * Action is propertly configured and ready for initiation.
+         * Action is valid, propertly configured and ready for initiation.
          */
         INITIALIZED = 1;
 
         /**
-         * Action is scheduled for a specific initiation time.
+         * Action is scheduled for a later execution.
          */
         SCHEDULED = 2;
 
         /**
-         * Action is allocating the resources which are needed for execution.
+         * The action execution is initiated so EXECUTING will probably the next state..
          */
         INITIATING = 3;
 
         /**
-         * Action is currently performing the defined assigned action.
+         * The action is currently performing.
          */
         EXECUTING = 4;
 
         /**
-         * An error occured during action execution.
+         * An error occured during action execution and a recovering strategy was initiated..
          */
         EXECUTION_FAILED = 5;
 
         /**
-         * Action is successfully executed and releasing all allocated resources.
+         * Action is successfully executed and needed resources are cleaned up.
          */
         FINISHING = 6;
 
@@ -58,7 +58,7 @@ message ActionState {
         FINISHED = 7;
 
         /**
-         * Action was externaly canceled and is now aborting the execution phrase.
+         * Action was externaly canceled and is now aborting the execution phrase and than rescheduled.
          */
         ABORTING = 8;
 
@@ -73,9 +73,19 @@ message ActionState {
         ABORTING_FAILED = 10;
 
         /**
-         * Action could not be initiated because some resources are not available.
+         * Action was removed from the scheduling queue because its action description is not valid anymore.
          */
         REJECTED = 11;
+
+        /**
+         * Action is canceled by one of its initiators.
+         */
+        CANCELING = 12;
+
+        /**
+         * Action was canceled by one of its initiators.
+         */
+        CANCELED = 13;
     }
 
     /*
