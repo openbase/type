@@ -6,7 +6,6 @@ option java_outer_classname = "ActionParameterType";
 
 import "rst/domotic/action/ActionDescription.proto";
 import "rst/language/Label.proto";
-import "rst/domotic/state/ActionState.proto";
 import "rst/domotic/action/ActionInitiator.proto";
 import "rst/domotic/service/ServiceStateDescription.proto";
 import "rst/domotic/action/ActionPriority.proto";
