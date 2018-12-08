@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 package rst.tracking;
 
 import "rst/geometry/Ray3DFloat.proto";

@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 package rst.domotic.unit.app;
 
 import "rst/domotic/state/ActivationState.proto";

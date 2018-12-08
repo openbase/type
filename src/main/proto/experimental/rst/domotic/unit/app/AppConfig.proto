@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 package rst.domotic.unit.app;
 
 option java_outer_classname = "AppConfigType";

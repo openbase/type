@@ -1,10 +1,14 @@
+syntax = "proto2";
+
 package rst.domotic.service;
 
 option java_outer_classname = "ServiceCommunicationTypeType";
 
 /**
  * This type contains an enumeration that contains a value
- * for every state or mode in the domotic package. It is used
+ * for every state or mode in the domotic syntax = "proto2";
+
+package. It is used
  * to map from a service type to the state or mode that is
  * processed by this service.
  *

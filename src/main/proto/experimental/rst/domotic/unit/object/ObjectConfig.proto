@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 package rst.domotic.unit.object;
 
 option java_outer_classname = "ObjectConfigType";

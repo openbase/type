@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 package rst.domotic.unit.agent;
 
 import "rst/domotic/state/EmphasisState.proto";
