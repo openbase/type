@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package rst.math;
+
+option java_outer_classname = "Vec3DDoubleType";
+
+/**
+ * A 3D vector with double entries.
+ *
+ * @author Michael Goetting <mgoettin@techfak.uni-bielefeld.de>
+ */
+message Vec3DDouble {
+
+    /**
+     * The X component of the vector.
+     */
+    required double x = 1 [default = 0];
+
+    /**
+     * The Y component of the vector.
+     */
+    required double y = 2 [default = 0];
+
+    /**
+     * The Z component of the vector.
+     */
+    required double z = 3 [default = 0];
+
+}
