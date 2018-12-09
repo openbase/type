@@ -1,0 +1,22 @@
+package rst.tracking;
+
+import "rst/tracking/PointingRay3DFloat.proto";
+
+option java_outer_classname = "PointingRay3DFloatCollectionType";
+
+/**
+ * Collection of @ref .PointingRay3DFloat instances.
+ *
+ * Auto-generated.
+ */
+message PointingRay3DFloatCollection {
+
+    /**
+     * The individual elements of the collection.
+     *
+     * Constraints regarding the empty collection, sorting, duplicated
+     * entries etc. are use case specific.
+     */
+    repeated PointingRay3DFloat element = 1;
+
+}
