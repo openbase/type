@@ -1,22 +1,22 @@
 <project>
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-      <groupId>org.openbase</groupId>
-      <artifactId>type</artifactId>
-      <version>1.0-SNAPSHOT</version>
+    <groupId>org.openbase</groupId>
+    <artifactId>type</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-      <name>Openbase Type Lib</name>
-      <inceptionYear>2018</inceptionYear>
-      <description>This is a collection of open source protocoll buffer types.</description>
+    <name>Openbase Type Lib</name>
+    <inceptionYear>2018</inceptionYear>
+    <description>This is a collection of open source protocoll buffer types.</description>
 
-      <url>http://opesbase.org</url>
+    <url>http://opesbase.org</url>
 
-      <organization>
-          <name>openbase.org</name>
-          <url>http://openbase.org</url>
-      </organization>
+    <organization>
+        <name>openbase.org</name>
+        <url>http://openbase.org</url>
+    </organization>
 
-      <developers>
+    <developers>
         <developer>
             <id>DivineThreepwood</id>
             <name>Marian Pohling</name>
@@ -43,86 +43,87 @@
             </roles>
             <timezone>+1</timezone>
         </developer>
-          <developer>
-              <id>jdaberkow</id>
-              <name>Julian Daberkow</name>
-              <email>jdaberkow@techfak.uni-bielefeld.de</email>
-              <url>https://github.com/jdaberkow</url>
-              <organization>openbase.org</organization>
-              <organizationUrl>https://github.com/openbase</organizationUrl>
-              <roles>
-                  <role>architect</role>
-                  <role>developer</role>
-              </roles>
-              <timezone>+1</timezone>
-          </developer>
-          <developer>
-              <id>tmichalskibi</id>
-              <name>Timo Michalski</name>
-              <email>tmichalski@techfak.uni-bielefeld.de</email>
-              <url>https://github.com/tmichalskibi</url>
-              <organization>openbase.org</organization>
-              <organizationUrl>https://github.com/openbase</organizationUrl>
-              <roles>
-                  <role>architect</role>
-                  <role>developer</role>
-              </roles>
-              <timezone>+1</timezone>
-          </developer>
-      </developers>
+        <developer>
+            <id>jdaberkow</id>
+            <name>Julian Daberkow</name>
+            <email>jdaberkow@techfak.uni-bielefeld.de</email>
+            <url>https://github.com/jdaberkow</url>
+            <organization>openbase.org</organization>
+            <organizationUrl>https://github.com/openbase</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+        <developer>
+            <id>tmichalskibi</id>
+            <name>Timo Michalski</name>
+            <email>tmichalski@techfak.uni-bielefeld.de</email>
+            <url>https://github.com/tmichalskibi</url>
+            <organization>openbase.org</organization>
+            <organizationUrl>https://github.com/openbase</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
 
-      <licenses>
-          <license>
-              <name>LGPLv3</name>
-              <url>http://www.gnu.org/licenses/lgpl.html</url>
-          </license>
-      </licenses>
+    <licenses>
+        <license>
+            <name>LGPLv3</name>
+            <url>http://www.gnu.org/licenses/lgpl.html</url>
+        </license>
+    </licenses>
 
-      <packaging>jar</packaging>
+    <packaging>jar</packaging>
 
-      <scm>
-          <connection>scm:git:https://github.com/openbase/rst-experimental.git</connection>
-          <developerConnection>scm:git:https://github.com/openbase/rst-experimental.git</developerConnection>
-          <url>https://github.com/openbase/rst-experimental.git</url>
-      </scm>
-  <build>
-    <extensions>
-      <extension>
-        <groupId>kr.motd.maven</groupId>
-        <artifactId>os-maven-plugin</artifactId>
-        <version>1.6.1</version>
-      </extension>
-    </extensions>
-    <plugins>
-      <plugin>
-        <groupId>org.xolstice.maven.plugins</groupId>
-        <artifactId>protobuf-maven-plugin</artifactId>
-        <version>0.6.1</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>compile</goal>
-              <goal>test-compile</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <protocArtifact>com.google.protobuf:protoc:3.6.1:exe:${os.detected.classifier}</protocArtifact>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+    <scm>
+        <connection>scm:git:https://github.com/openbase/rst-experimental.git</connection>
+        <developerConnection>scm:git:https://github.com/openbase/rst-experimental.git</developerConnection>
+        <url>https://github.com/openbase/rst-experimental.git</url>
+    </scm>
+    <build>
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.6.1</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <plugin>
+                <groupId>org.xolstice.maven.plugins</groupId>
+                <artifactId>protobuf-maven-plugin</artifactId>
+                <version>0.6.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <protocArtifact>com.google.protobuf:protoc:3.6.1:exe:${os.detected.classifier}</protocArtifact>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-  <properties>
-    <maven.compiler.source>8</maven.compiler.source>
-    <maven.compiler.target>8</maven.compiler.target>
-  </properties>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
-  <dependencies>
-    <dependency>
-      <groupId>com.google.protobuf</groupId>
-      <artifactId>protobuf-java</artifactId>
-      <version>3.6.1</version>
-    </dependency>
-  </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.6.1</version>
+        </dependency>
+    </dependencies>
 </project>
