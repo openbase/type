@@ -102,7 +102,11 @@
                     <execution>
                         <goals>
                             <goal>compile</goal>
+                            <goal>compile-cpp</goal>
+                            <goal>compile-python</goal>
                             <goal>test-compile</goal>
+                            <goal>test-compile-cpp</goal>
+                            <goal>test-compile-python</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -116,15 +120,14 @@
                 <version>1.12</version>
                 <configuration>
                     <verbose>false</verbose>
-                    <licenseName>gpl_v3</licenseName>
+                    <licenseName>lgpl_v3</licenseName>
                     <failOnMissingHeader>true</failOnMissingHeader>
                     <failOnNotUptodateHeader>true</failOnNotUptodateHeader>
                     <canUpdateCopyright>true</canUpdateCopyright>
                     <canUpdateDescription>true</canUpdateDescription>
                     <canUpdateLicense>true</canUpdateLicense>
                     <roots>
-                        <root>src/main/java</root>
-                        <root>src/test</root>
+                        <root>src/main/proto</root>
                     </roots>
                 </configuration>
                 <executions>
@@ -139,6 +142,22 @@
                         <id>download-licenses</id>
                         <goals>
                             <goal>download-licenses</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.salesforce.servicelibs</groupId>
+                <artifactId>proto-backwards-compatibility</artifactId>
+                <version>1.0.2</version>
+                <configuration>
+                    <!-- Optional alternative protos location -->
+                    <protoSourceRoot>src/main/proto</protoSourceRoot>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>backwards-compatibility-check</goal>
                         </goals>
                     </execution>
                 </executions>
