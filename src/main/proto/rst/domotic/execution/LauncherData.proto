@@ -7,7 +7,6 @@ import "rst/timing/Timestamp.proto";
 
 option java_outer_classname = "LauncherDataType";
 
-
 /**
  * Description of a launcher data type.
  *
