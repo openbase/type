@@ -1,0 +1,85 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.execution;
+
+import "org/openbase/type/language/Label.proto";
+import "org/openbase/type/timing/Timestamp.proto";
+
+option java_outer_classname = "LauncherDataType";
+
+/**
+ * Description of a launcher data type.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message LauncherData {
+
+    /**
+     * The state definitions.
+     */
+    enum LauncherState {
+
+        /**
+         * Unknown state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Initializing state.
+         */
+        INITALIZING = 1;
+
+        /**
+         * State if the launcher is currently starting.
+         */
+        LAUNCHING = 2;
+
+        /**
+         * State if the launcher is currently running.
+         */
+        RUNNING = 3;
+
+        /**
+         * State if the launcher is currently stopping.
+         */
+        STOPPING = 4;
+
+        /**
+         * State if the launcher was stopped.
+         */
+        STOPPED = 5;
+
+        /**
+         * State if the launcher failed during execution.
+         */
+        ERROR = 6;
+    }
+
+    /**
+     * A unique launcher identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * Label of the related launcher.
+     */
+    optional .org.openbase.type.language.Label label = 200;
+
+    /**
+     * The state the launcher is in.
+     */
+    optional LauncherState launcher_state = 300;
+
+    /**
+     * Flag is set if the application was successfully verified after launching.
+     * In case the verification has failed, maybe some application functions are restricted.
+     * Returns true if the application verification was successful after launching.
+     */
+    optional bool verified = 400;
+
+    /**
+     * Timestamp of the launch time. Can e.g. be used to calulate the current uptime of the launcher.
+     */
+    optional .org.openbase.type.timing.Timestamp launch_time = 500;
+}
+

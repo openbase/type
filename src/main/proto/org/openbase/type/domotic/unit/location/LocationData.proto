@@ -1,0 +1,268 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.unit.location;
+
+import "org/openbase/type/domotic/state/ActivityState.proto";
+import "org/openbase/type/domotic/state/AlarmState.proto";
+import "org/openbase/type/domotic/state/BlindState.proto";
+import "org/openbase/type/domotic/state/BrightnessState.proto";
+import "org/openbase/type/domotic/state/ColorState.proto";
+import "org/openbase/type/domotic/state/IlluminanceState.proto";
+import "org/openbase/type/domotic/state/PowerConsumptionState.proto";
+import "org/openbase/type/domotic/state/PresenceState.proto";
+import "org/openbase/type/domotic/state/MotionState.proto";
+import "org/openbase/type/domotic/state/PowerState.proto";
+import "org/openbase/type/domotic/state/SmokeState.proto";
+import "org/openbase/type/domotic/state/StandbyState.proto";
+import "org/openbase/type/domotic/state/TamperState.proto";
+import "org/openbase/type/domotic/state/TemperatureState.proto";
+import "org/openbase/type/domotic/state/EmphasisState.proto";
+import "org/openbase/type/domotic/action/ActionDescription.proto";
+
+option java_outer_classname = "LocationDataType";
+
+/**
+ * Description of a location data type.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message LocationData {
+
+    /**
+     * A unique location identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * A list of aliases of this unit.
+     */
+    repeated string alias = 110;
+
+    /**
+     * A list of all operating actions.
+     * The action at index 0 is the currently executing action while the other ones are scheduled.
+     */
+    repeated .org.openbase.type.domotic.action.ActionDescription action = 150;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 2300;
+
+    /**
+     * The smoke alarm state of the location.
+     */
+    optional .org.openbase.type.domotic.state.AlarmState smoke_alarm_state = 1200;
+
+    /**
+     * The last smoke alarm state of the location.
+     */
+    optional .org.openbase.type.domotic.state.AlarmState smoke_alarm_state_last = 1210;
+
+    /**
+     * The temperature alarm state of the location.
+     */
+    optional .org.openbase.type.domotic.state.AlarmState temperature_alarm_state = 1500;
+
+    /**
+     * The last temperature alarm state of the location.
+     */
+    optional .org.openbase.type.domotic.state.AlarmState temperature_alarm_state_last = 1510;
+
+    /**
+     * The blind state of the location.
+     */
+    optional .org.openbase.type.domotic.state.BlindState blind_state = 800;
+
+    /**
+     * The last blind state of the location.
+     */
+    optional .org.openbase.type.domotic.state.BlindState blind_state_last = 810;
+
+    /**
+     * The requested blind state of the location.
+     */
+    optional .org.openbase.type.domotic.state.BlindState blind_state_requested = 820;
+
+    /**
+     * The brightness state of the location.
+     */
+    optional .org.openbase.type.domotic.state.BrightnessState brightness_state = 300;
+
+    /**
+     * The last brightness state of the location.
+     */
+    optional .org.openbase.type.domotic.state.BrightnessState brightness_state_last = 310;
+
+    /**
+     * The requested brightness state of the location.
+     */
+    optional .org.openbase.type.domotic.state.BrightnessState brightness_state_requested = 320;
+
+    /**
+     * The color state of the location.
+     */
+    optional .org.openbase.type.domotic.state.ColorState color_state = 400;
+
+    /**
+     * The last color state of the location.
+     */
+    optional .org.openbase.type.domotic.state.ColorState color_state_last = 410;
+
+    /**
+     * The requested color state of the location.
+     */
+    optional .org.openbase.type.domotic.state.ColorState color_state_requested = 420;
+
+    /**
+     * The illuminance of the location.
+     */
+    optional .org.openbase.type.domotic.state.IlluminanceState illuminance_state = 501;
+
+    /**
+     * The last illuminance of the location.
+     */
+    optional .org.openbase.type.domotic.state.IlluminanceState illuminance_state_last = 510;
+
+    /**
+     * State represents if there is any humand or animal presece detected in this location.
+     */
+    optional .org.openbase.type.domotic.state.PresenceState presence_state = 600;
+
+    /**
+     * The last represents state of this location.
+     */
+    optional .org.openbase.type.domotic.state.PresenceState presence_state_last = 610;
+
+    /**
+     * The motion state of the location.
+     */
+    optional .org.openbase.type.domotic.state.MotionState motion_state = 1100;
+
+    /**
+     * The last motion state of the location.
+     */
+    optional .org.openbase.type.domotic.state.MotionState motion_state_last = 1110;
+
+    /**
+     * The power consumption state of the location.
+     */
+    optional .org.openbase.type.domotic.state.PowerConsumptionState power_consumption_state = 1600;
+
+    /**
+     * The last power consumption state of the location.
+     */
+    optional .org.openbase.type.domotic.state.PowerConsumptionState power_consumption_state_last = 1610;
+
+    /**
+     * The power state of the location.
+     */
+    optional .org.openbase.type.domotic.state.PowerState power_state = 700;
+
+    /**
+     * The last power state of the location.
+     */
+    optional .org.openbase.type.domotic.state.PowerState power_state_last = 710;
+
+    /**
+     * The requested power state of the location.
+     */
+    optional .org.openbase.type.domotic.state.PowerState power_state_requested = 720;
+
+    /**
+     * The smoke state of the location.
+     */
+    optional .org.openbase.type.domotic.state.SmokeState smoke_state = 1300;
+
+    /**
+     * The last smoke state of the location.
+     */
+    optional .org.openbase.type.domotic.state.SmokeState smoke_state_last = 1310;
+
+    /**
+     * The standby state of the location.
+     */
+    optional .org.openbase.type.domotic.state.StandbyState standby_state = 900;
+
+    /**
+     * The last standby state of the location.
+     */
+    optional .org.openbase.type.domotic.state.StandbyState standby_state_last = 910;
+
+    /**
+     * The requested standby state of the location.
+     */
+    optional .org.openbase.type.domotic.state.StandbyState standby_state_requested = 920;
+
+    /**
+     * The tamper state of the location.
+     */
+    optional .org.openbase.type.domotic.state.TamperState tamper_state = 1700;
+
+    /**
+     * The last tamper state of the location.
+     */
+    optional .org.openbase.type.domotic.state.TamperState tamper_state_last = 1710;
+
+    /**
+     * The target temperature state of the location.
+     */
+    optional .org.openbase.type.domotic.state.TemperatureState target_temperature_state = 1000;
+
+    /**
+     * The last target temperature state of the location.
+     */
+    optional .org.openbase.type.domotic.state.TemperatureState target_temperature_state_last = 1010;
+
+    /**
+     * The requested target temperature state of the location.
+     */
+    optional .org.openbase.type.domotic.state.TemperatureState target_temperature_state_requested = 1020;
+
+    /**
+     * The temperature state of this location.
+     */
+    optional .org.openbase.type.domotic.state.TemperatureState temperature_state = 1400;
+
+    /**
+     * The last temperature state of this location.
+     */
+    optional .org.openbase.type.domotic.state.TemperatureState temperature_state_last = 1410;
+
+    /**
+     * The requested temperature state of this location.
+     */
+    optional .org.openbase.type.domotic.state.TemperatureState temperature_state_requested = 1420;
+
+    /**
+     * The emphasis state of this location.
+     */
+    optional .org.openbase.type.domotic.state.EmphasisState emphasis_state = 1800;
+
+    /**
+     * The last emphasis state of this location.
+     */
+    optional .org.openbase.type.domotic.state.EmphasisState emphasis_state_last = 1810;
+
+    /**
+     * The requested emphasis state of this location.
+     */
+    optional .org.openbase.type.domotic.state.EmphasisState emphasis_state_requested = 1820;
+
+    /**
+     * A list of the current activities wihtin this location.
+     */
+    repeated .org.openbase.type.domotic.state.ActivityState activity_state = 1900;
+
+    /**
+     * A list of the last performed activities wihtin this location. Passed activities can be removed any time by the unit controller.
+     */
+    repeated .org.openbase.type.domotic.state.ActivityState activity_state_last = 1910;
+
+    /**
+     * The requested current activities performed wihtin this location.
+     */
+    repeated .org.openbase.type.domotic.state.ActivityState activity_state_requested = 1920;
+}
+

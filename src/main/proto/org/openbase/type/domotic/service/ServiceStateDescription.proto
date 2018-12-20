@@ -1,0 +1,45 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.service;
+
+import "org/openbase/type/domotic/service/ServiceTemplate.proto";
+import "org/openbase/type/domotic/unit/UnitTemplate.proto";
+
+option java_outer_classname = "ServiceStateDescriptionType";
+
+/**
+ * Description of a service state.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message ServiceStateDescription {
+
+    /**
+     * The id of the unit which provides the service.
+     */
+    optional string unit_id = 10;
+
+    /**
+     * The type of the service executed.
+     */
+    optional .org.openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 20;
+
+    /**
+     * The type of the units on which this state shall be executed. E.g. if the unit_id
+     * is a location this could be LIGHT.
+     */
+    optional .org.openbase.type.domotic.unit.UnitTemplate.UnitType unit_type = 30;
+
+    /**
+     * Serialization of the service attribute type needed to deserialize the service attribute.
+     */
+    optional string service_attribute_type = 40;
+
+    /**
+     * The attribute which defines the state the service shall have.
+     */
+    optional string service_attribute = 50;
+
+}
+

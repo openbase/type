@@ -1,0 +1,54 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.unit.dal;
+
+import "org/openbase/type/domotic/state/IlluminanceState.proto";
+import "org/openbase/type/domotic/action/ActionDescription.proto";
+
+option java_outer_classname = "LightSensorDataType";
+
+/**
+ * Generic Description of a light sensor.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message LightSensorData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * A list of aliases of this unit.
+     */
+    repeated string alias = 110;
+
+    /**
+     * A list of all operating actions.
+     * The action at index 0 is the currently executing action while the other ones are scheduled.
+     */
+    repeated .org.openbase.type.domotic.action.ActionDescription action = 150;
+
+    /**
+     * The current light measured as illuminance.
+     */
+    optional .org.openbase.type.domotic.state.IlluminanceState illuminance_state = 300;
+
+    /**
+     * The last light measured as illuminance.
+     */
+    optional .org.openbase.type.domotic.state.IlluminanceState illuminance_state_last = 310;
+
+    /**
+     * The requested light measured as illuminance.
+     */
+    optional .org.openbase.type.domotic.state.IlluminanceState illuminance_state_requested = 320;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 400;
+}
+

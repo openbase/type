@@ -1,0 +1,84 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.communication;
+
+option java_outer_classname = "UserMessageType";
+
+import "org/openbase/type/language/MultiLanguageText.proto";
+import "org/openbase/type/timing/Timestamp.proto";
+import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
+
+/**
+ * Description of a multi language user message type.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message UserMessage {
+
+    /**
+     * The message type definitions.
+     */
+    enum MessageType {
+
+        /**
+         * The message type is unknown.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * This type is used to inform the user about something.
+         */
+        INFO = 1;
+
+        /**
+         * This type is used to notify the user about a special state.
+         */
+        NOTIFICATION = 2;
+
+        /**
+         * This type is used to deliver warnings.
+         */
+        WARNING = 3;
+
+        /**
+         * This type is used to deliver emergency messages.
+         */
+        EMERGENCY = 4;
+
+    }
+
+    optional .org.openbase.type.language.MultiLanguageText text = 100;
+
+    /**
+     * The user id of the sender.
+     */
+    optional string sender_id = 200;
+
+    /**
+     * The user or groug id of the recipient.
+     */
+    optional string recipient_id = 300;
+
+    /*
+     * Flag if the message was acknowledged by the receiver.
+     */
+    optional bool acknowledged = 400;
+
+    /*
+     * The type of the message.
+     */
+    optional MessageType message_type = 500;
+
+    /**
+     * The creation timestamp of the message.
+     */
+    optional .org.openbase.type.timing.Timestamp timestamp = 600;
+
+    /**
+     * A list of service states used as condition for this message.
+     * In case one of the conditions is not fullfilled which means the referred unit is not in the described state than this message in not valid anymore and will be deleted.
+     * If no condition is defined, the message is valide until deletion.
+     */
+    repeated .org.openbase.type.domotic.service.ServiceStateDescription condition = 700;
+}
+

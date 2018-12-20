@@ -1,0 +1,38 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.binding.openhab;
+
+option java_outer_classname = "UpDownHolderType";
+
+
+/**
+ * Basic UpDown type used by openhab.
+ * Used by objects like rollershutters.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UpDownHolder {
+
+    /**
+     * The state definitions.
+     */
+    enum UpDown {
+
+        /**
+         * Down state.
+         */
+        DOWN = 0;
+
+        /**
+         * Up state.
+         */
+        UP = 1;
+    }
+
+    /**
+     * The up or down state.
+     */
+    optional UpDown state = 100;
+
+}
+

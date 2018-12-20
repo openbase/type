@@ -1,0 +1,52 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.unit.connection;
+
+option java_outer_classname = "ConnectionConfigType";
+
+/**
+ * Description of a connection of tiles.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message ConnectionConfig {
+
+    enum ConnectionType {
+
+        /**
+         * Unknown.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Type for a door.
+         */
+        DOOR = 1;
+
+        /**
+         * Type for a window.
+         */
+        WINDOW = 2;
+
+        /**
+         * Type for a PASSAGE.
+         */
+        PASSAGE = 3;
+    }
+
+    /**
+     * The type of the location.
+     */
+    optional ConnectionType type = 300;
+
+    /**
+     * The ids of the tile connected by this connection.
+     */
+    repeated string tile_id = 400;
+
+    /**
+     * A list of the available units on this connection.
+     */
+    repeated string unit_id = 500;
+}
+

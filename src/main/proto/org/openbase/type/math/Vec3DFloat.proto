@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package org.openbase.type.math;
+
+option java_outer_classname = "Vec3DFloatType";
+
+/**
+ * A 3D vector with float entries.
+ *
+ * @author Michael Goetting <mgoettin@techfak.uni-bielefeld.de>
+ */
+message Vec3DFloat {
+
+    /**
+     * The X-component of the vector.
+     */
+    optional float x = 1 [default = 0];
+
+    /**
+     * The Y-component of the vector.
+     */
+    optional float y = 2 [default = 0];
+
+    /**
+     * The Z-component of the vector.
+     */
+    optional float z = 3 [default = 0];
+
+}

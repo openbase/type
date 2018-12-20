@@ -1,0 +1,84 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.action;
+
+option java_outer_classname = "ActionPriorityType";
+
+/**
+ * A type which defines the priority of an action execution.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ActionPriority {
+
+    /**
+     * The state definitions.
+     */
+    enum Priority {
+
+        /**
+         * Unknown priority.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * No priority or unspecified.
+         *
+         * Example usage:
+         * - system self tests
+         * - background behaviours
+         */
+        NO = 1;
+
+        /**
+         * Low priority.
+         * Example usage:
+         *
+         * - background behaviours
+         * - user assistance
+         */
+        LOW = 2;
+
+        /**
+         * Normal priority.
+         *
+         * Example usage:
+         * - user interaction
+         * - user assistance
+         * - scenario control
+         */
+        NORMAL = 3;
+
+        /**
+         * High priority.
+         *
+         * Example usage:
+         * - user interaction
+         * - user assistance
+         * - user notification
+         */
+        HIGH = 4;
+
+        /**
+         * Critical priority.
+         *
+         * Example usage:
+         * - user interaction
+         * - user assistance
+         * - user notification
+         */
+        URGENT = 5;
+
+        /**
+         * Emergency priority.
+         *
+         * Example usage:
+         * - human or hardware hazard prevention
+         * - safety assistance
+         * - safety notification
+         * - emergency actions
+         */
+        EMERGENCY = 6;
+    }
+}
+

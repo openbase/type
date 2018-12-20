@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+package org.openbase.type.geometry;
+
+import "org/openbase/type/math/Vec3DFloat.proto";
+
+option java_outer_classname = "Ray3DFloatType";
+
+/**
+ * Ray with general origin and direction.
+ *
+ * @author Thoren Huppke <thuppke@techfak.uni-bielefeld.de>
+ */
+message Ray3DFloat {
+
+    /**
+     * Position of the ray's origin.
+     */
+    optional math.Vec3DFloat origin = 1;
+
+    /**
+     * Direction of the ray.
+     */
+    optional math.Vec3DFloat direction = 2;
+
+}
+

@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package org.openbase.type.timing;
+
+option java_outer_classname = "TimestampType";
+
+/**
+ * Holds a UNIX timestamp in microseconds.
+ *
+ * Count starts at the Unix Epoch on January 1st, 1970 in UTC time.
+ *
+ * @author Agnes Swadzba <aswadzba@techfak.uni-bielefeld.de>
+ */
+// @create_collection
+message Timestamp {
+
+    /**
+     * Number of microseconds since January 1st, 1970 in UTC time.
+     */
+    // @unit(microsecond)
+    optional uint64 time = 1;
+
+}

@@ -1,0 +1,43 @@
+syntax = "proto2";
+
+package org.openbase.type.devices.sensfloor;
+
+option java_outer_classname = "FloorModuleStateType";
+
+/**
+ * Holds information about the state of one Future-Shape SensFloor Module.
+ *
+ * @author Hendrik Oestreich <hoestreich@techfak.uni-bielefeld.de>
+ */
+
+message FloorModuleState {
+
+    message FloorSegmentState {
+
+        /**
+         * The capacity values for each of the eight segments in a module.
+         */
+        optional int32 capacity_segment = 1;
+
+        /**
+         * The activation values for each of the eight segments in a module.
+         */
+        optional bool activation_segment = 2;
+
+    }
+
+    /**
+     * The activation and capacity combined in one message.
+     * Each module consists of 8 segments, so normally this field should be
+     * repeated 8 times. The segments are ordered clockwise, starting at
+     * 12 o' clock position.
+     */
+    repeated FloorSegmentState segment = 1;
+
+    /**
+     * The Position of the module in the room (from the transciever).
+     */
+    optional int32 position_col = 2;
+    optional int32 position_row = 3;
+
+}

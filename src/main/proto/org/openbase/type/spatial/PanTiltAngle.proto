@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package org.openbase.type.spatial;
+
+option java_outer_classname = "PanTiltAngleType";
+
+/**
+ * Description of a pan tilt direction.
+ *
+ * @author Christian Leichsenring <cleichsenring@techfak.uni-bielefeld.de>
+ */
+message PanTiltAngle {
+
+    /**
+     * Pan in degrees
+     */
+    optional float pan = 1;
+
+    /**
+     * Tilt in degrees
+     */
+    optional float tilt = 2;
+}
+

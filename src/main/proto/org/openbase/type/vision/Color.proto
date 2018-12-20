@@ -1,0 +1,59 @@
+syntax = "proto2";
+
+package org.openbase.type.vision;
+
+import "org/openbase/type/vision/HSBColor.proto";
+import "org/openbase/type/vision/RGBColor.proto";
+
+option java_outer_classname = "ColorType";
+
+
+/**
+ * A generic color type that can deal with several encodings.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message Color {
+
+//==========================================================
+// Solution if oneof does not become available
+
+    /**
+     * Type defining which color field is set.
+     */
+    enum Type {
+
+        /**
+         * HSB type.
+         */
+        HSB = 0;
+
+        /**
+         * RGB type.
+         */
+        RGB = 1;
+    }
+
+    /**
+     * The type. Defining which color field is set.
+     */
+    optional Type type = 1;
+
+    /**
+     * The rgb color type.
+     */
+    optional .org.openbase.type.vision.RGBColor rgb_color = 2;
+
+    /**
+     * The hsb color type.
+     */
+    optional .org.openbase.type.vision.HSBColor hsb_color = 3;
+
+//==========================================================
+
+    /*oneof color_oneof {
+        .org.openbase.type.HSBColor hsb = 1;
+        .org.openbase.type.RGBColor rgb = 2;
+    }*/
+}
+

@@ -1,0 +1,37 @@
+syntax = "proto2";
+
+package org.openbase.type.language;
+
+option java_outer_classname = "LabelType";
+
+/**
+ * Description of a language dependent label.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message Label {
+
+    /**
+     * Map entry for mapping a list of labels to a given language.
+     * This message type is introduced because protobuf 2 does not support maps.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The language key.
+         */
+        optional string key = 1;
+
+        /**
+         * A list of labels for the language.
+         * This is not a single value to allow aliases.
+         */
+        repeated string value = 2;
+    }
+
+    /**
+     * A list of entries mapping a language to a list of labels.
+     */
+    repeated MapFieldEntry entry = 1;
+}
+

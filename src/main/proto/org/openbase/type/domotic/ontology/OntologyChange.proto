@@ -1,0 +1,49 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.ontology;
+
+option java_outer_classname = "OntologyChangeType";
+
+
+import "org/openbase/type/domotic/unit/UnitTemplate.proto";
+import "org/openbase/type/domotic/service/ServiceTemplate.proto";
+
+/**
+ * Tpye descripts an ontlogy change and its properties.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message OntologyChange {
+
+    /**
+     * The change category definition.
+     */
+    enum Category {
+
+        /**
+         * Unknown change so everything could be changed.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * The ontology change contains value aggregations e.g. value aggregation over time.
+         */
+        AGGREGATION = 1;
+    }
+
+    /**
+     * The categories of this ontology change.
+     */
+    repeated Category category = 100;
+
+    /**
+     * The list of potentially changed units represented as unit type list.
+     */
+    repeated .org.openbase.type.domotic.unit.UnitTemplate.UnitType unit_type = 200;
+
+    /**
+     * The list of potentially affected services represented as service type.
+     */
+    repeated .org.openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 300;
+}
+

@@ -1,0 +1,44 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.service;
+
+option java_outer_classname = "ServiceDescriptionType";
+
+import "org/openbase/type/domotic/service/ServiceTemplate.proto";
+import "org/openbase/type/configuration/MetaConfig.proto";
+
+/**
+ * ServiceDescription is a combination of service type and service pattern.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ServiceDescription {
+
+    /**
+     * The related service template id.
+     */
+    optional string service_template_id = 50;
+
+    /**
+     * The related Service type.
+     */
+    optional .org.openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 100;
+
+    /**
+     * The related Service pattern.
+     */
+    optional .org.openbase.type.domotic.service.ServiceTemplate.ServicePattern pattern = 200;
+
+    /**
+     * This flag defines if this service is just an aggregation of multible other services or if the service is directly representing an state of its unit.
+     * false means the sevice is directly representing an state of its unit.
+     * true means the sevice is an aggregation of multible other service states (e.g.).
+     */
+    optional bool aggregated = 250;
+
+    /**
+     * A field for storing meta service template configurations.
+     */
+    optional .org.openbase.type.configuration.MetaConfig meta_config = 300;
+}
+

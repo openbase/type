@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.action;
+
+option java_outer_classname = "SnapshotType";
+
+import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
+import "org/openbase/type/timing/Timestamp.proto";
+
+/**
+ * A snapshot is a list of service state whic is a subset of unit states.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message Snapshot {
+
+    /*
+     * Last time when the snapshot was recorded.
+     */
+    optional .org.openbase.type.timing.Timestamp record_time = 100;
+
+    /**
+     * A list of recorded service states which can be used to restore the snapshot.
+     */
+    repeated .org.openbase.type.domotic.service.ServiceStateDescription service_state_description = 200;
+}
+

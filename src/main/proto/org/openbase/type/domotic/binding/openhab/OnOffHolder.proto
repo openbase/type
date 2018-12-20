@@ -1,0 +1,38 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.binding.openhab;
+
+option java_outer_classname = "OnOffHolderType";
+
+
+/**
+ * Basic OnOff type used by openhab.
+ * Used by objects like power plugs.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message OnOffHolder {
+
+    /**
+     * The state definitions.
+     */
+    enum OnOff {
+
+        /**
+         * Off state.
+         */
+        OFF = 0;
+
+        /**
+         * On state.
+         */
+        ON = 1;
+    }
+
+    /**
+     * The on or off state.
+     */
+    optional OnOff state = 100;
+
+}
+

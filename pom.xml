@@ -7,9 +7,9 @@
 
     <name>Openbase Type Lib</name>
     <inceptionYear>2018</inceptionYear>
-    <description>This is a collection of open source protocoll buffer types.</description>
+    <description>This is a collection of open source protocol buffer types.</description>
 
-    <url>http://opesbase.org</url>
+    <url>http://openbase.org/type</url>
 
     <organization>
         <name>openbase.org</name>
@@ -81,9 +81,9 @@
     <packaging>jar</packaging>
 
     <scm>
-        <connection>scm:git:https://github.com/openbase/rst-experimental.git</connection>
-        <developerConnection>scm:git:https://github.com/openbase/rst-experimental.git</developerConnection>
-        <url>https://github.com/openbase/rst-experimental.git</url>
+        <connection>scm:git:https://github.com/openbase/type.git</connection>
+        <developerConnection>scm:git:https://github.com/openbase/type.git</developerConnection>
+        <url>https://github.com/openbase/type.git</url>
     </scm>
     <build>
         <extensions>

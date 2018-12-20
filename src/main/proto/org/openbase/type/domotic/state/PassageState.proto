@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.state;
+
+import "org/openbase/type/timing/Timestamp.proto";
+import "org/openbase/type/domotic/action/ActionDescription.proto";
+
+
+option java_outer_classname = "PassageStateType";
+
+
+/**
+ * State describing the state of a passage.
+ *
+ * TODO: what states belong to a passage?
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message PassageState {
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .org.openbase.type.timing.Timestamp timestamp = 300;
+
+    /**
+     * This field contains the description of the action which is responsible for this service state.
+     */
+    optional .org.openbase.type.domotic.action.ActionDescription responsible_action = 400;
+}
+

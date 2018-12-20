@@ -1,0 +1,55 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.state;
+
+import "org/openbase/type/timing/Timestamp.proto";
+import "org/openbase/type/domotic/action/ActionDescription.proto";
+
+option java_outer_classname = "BrightnessStateType";
+
+
+/**
+ * Basic sensor or object state.
+ * Used by units like the dimmable light or the dimmer.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message BrightnessState {
+
+    /**
+     * The date unit of the brighntess value.
+     */
+    enum DataUnit {
+
+        /**
+         * Unkown data unit.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * If the brighntess is given in percent e. g. for dimmable lights.
+         */
+        PERCENT = 2;
+    }
+
+    /**
+     * The brightness of a light source in the range of [0..1].
+     */
+    optional double brightness = 100;
+
+    /**
+     * The data unit of the give brightness value.
+     */
+    optional DataUnit brightness_data_unit = 200 [default = PERCENT];
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .org.openbase.type.timing.Timestamp timestamp = 300;
+
+    /**
+     * This field contains the description of the action which is responsible for this service state.
+     */
+    optional .org.openbase.type.domotic.action.ActionDescription responsible_action = 400;
+}
+

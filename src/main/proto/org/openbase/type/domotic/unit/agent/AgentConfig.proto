@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.unit.agent;
+
+option java_outer_classname = "AgentConfigType";
+
+/**
+ * Description of a agent configuration.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AgentConfig {
+
+    /**
+     * The type of the agent.
+     */
+    optional string agent_class_id = 250;
+
+    /**
+     * Flag can be set true to initiate an app auto start after the application is launche.
+     */
+    optional bool autostart = 300;
+}
+

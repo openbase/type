@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package org.openbase.type.tracking;
+
+option java_outer_classname = "ObjectIDType";
+
+/**
+ * Unique object identifier consisting of two elements, an object instance
+ * identifier and an object class. E.g. Pot/Small, Cube/15.
+ * @author Alexander Neumann <alneuman@techfak.uni-bielefeld.de>
+ */
+
+message ObjectID {
+
+    /**
+     * Class for an Object. E.g. Cube/Pot/Arm...
+     */
+    optional string type = 1;
+
+    /**
+     * Identifier for an object. E.g. 42/Left/Upper/Marvin...
+     */
+    optional string id = 2;
+}

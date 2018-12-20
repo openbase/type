@@ -1,0 +1,47 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.state;
+
+option java_outer_classname = "LocalPositionStateType";
+
+import "org/openbase/type/domotic/action/ActionDescription.proto";
+import "org/openbase/type/geometry/Pose.proto";
+import "org/openbase/type/timing/Timestamp.proto";
+
+/**
+ * State describing the local position of a unit.
+ * Local means that it describes the position at home.
+ * It contains a list of ids of the location where the unit is and a pose
+ * describing the translation and rotation of the unit in the coordinate system of
+ * the root location.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message LocalPositionState {
+
+    /**
+     * The position containing the translation and rotation in the coordinate system
+     * of the root location.
+     * This field is empty or the translation zero if the unit is not at home.
+     */
+    optional .org.openbase.type.geometry.Pose position = 100;
+
+    /**
+     * A list of ids of locations in which the unit is.
+     * The list is sorted in a way that the first elements are ids of regions, followed by
+     * the id of a tile and ending with ids of zones.
+     * Thus the most detailed information available for a unit is the first id.
+     * This value is empty if the unit is not at home.
+     */
+    repeated string location_id = 200;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .org.openbase.type.timing.Timestamp timestamp = 300;
+
+    /**
+     * This field contains the description of the action which is responsible for this service state.
+     */
+    optional .org.openbase.type.domotic.action.ActionDescription responsible_action = 400;
+}

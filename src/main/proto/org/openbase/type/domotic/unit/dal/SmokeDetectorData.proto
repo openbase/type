@@ -1,0 +1,61 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.unit.dal;
+
+import "org/openbase/type/domotic/state/AlarmState.proto";
+import "org/openbase/type/domotic/state/SmokeState.proto";
+import "org/openbase/type/domotic/action/ActionDescription.proto";
+
+option java_outer_classname = "SmokeDetectorDataType";
+
+/**
+ * Generic description of a smoke detector.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message SmokeDetectorData {
+
+    /**
+     * A unique object identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * A list of aliases of this unit.
+     */
+    repeated string alias = 110;
+
+    /**
+     * A list of all operating actions.
+     * The action at index 0 is the currently executing action while the other ones are scheduled.
+     */
+    repeated .org.openbase.type.domotic.action.ActionDescription action = 150;
+
+    /**
+     * State to indicate wether this sensor has sent an alarm.
+     */
+    optional .org.openbase.type.domotic.state.AlarmState smoke_alarm_state = 300;
+
+    /**
+     * State to indicate wether this sensor has last sent an alarm.
+     */
+    optional .org.openbase.type.domotic.state.AlarmState smoke_alarm_state_last = 310;
+
+    /**
+     * State which represents the current smoke level.
+     */
+    optional .org.openbase.type.domotic.state.SmokeState smoke_state = 400;
+
+    /**
+     * State which represents the last smoke level.
+     */
+    optional .org.openbase.type.domotic.state.SmokeState smoke_state_last = 410;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 500;
+}
+

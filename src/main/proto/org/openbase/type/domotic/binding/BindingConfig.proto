@@ -1,0 +1,27 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.binding;
+
+option java_outer_classname = "BindingConfigType";
+
+import "org/openbase/type/configuration/MetaConfig.proto";
+
+/**
+ * Type containing the configuration of a device for different bindings.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ * @author Marian Pohling <mpohling@techfak.uni-bielefeld.de>
+ */
+message BindingConfig {
+
+    /**
+     * The used binding type.
+     */
+    optional string binding_id = 100;
+
+    /**
+     * A field storing meta binding configuations.
+     */
+    optional .org.openbase.type.configuration.MetaConfig meta_config = 200;
+}
+

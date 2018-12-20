@@ -1,0 +1,34 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.action;
+
+import "org/openbase/type/domotic/action/ActionInitiator.proto";
+import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
+
+option java_outer_classname = "ActionReferenceType";
+
+
+/**
+ * Description of a reference to another action which is a cause of this one.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message ActionReference {
+
+    /**
+     * The id of the action referenced.
+     */
+    optional string action_id = 10;
+
+    /**
+     * The authority of the referenced action.
+     */
+    optional .org.openbase.type.domotic.action.ActionInitiator action_initiator = 20;
+
+    /**
+     * The state applied by the referenced action.
+     */
+    optional .org.openbase.type.domotic.service.ServiceStateDescription service_state_description = 30;
+}
+

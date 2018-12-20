@@ -1,0 +1,237 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.unit;
+
+option java_outer_classname = "UnitTemplateType";
+
+import "org/openbase/type/language/Label.proto";
+import "org/openbase/type/configuration/MetaConfig.proto";
+import "org/openbase/type/domotic/service/ServiceDescription.proto";
+
+/**
+ * Template for units. Contains the unit type and according service descriptions.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UnitTemplate {
+
+    enum UnitType {
+
+        /**
+         * The unknown type.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * A generic unit type to represent non smart objects as units.
+         */
+        OBJECT = 1;
+
+        /**
+         * A light which is dimmable and colorable.
+         */
+        COLORABLE_LIGHT = 10;
+
+        /**
+         * A battery.
+         */
+        BATTERY = 20;
+
+        /**
+         * A button.
+         */
+        BUTTON = 40;
+
+        /**
+         * A switch.
+         */
+        SWITCH = 50;
+
+        /**
+         * A dimmer.
+         */
+        DIMMER = 60;
+
+        /**
+         * A dimmable light.
+         */
+        DIMMABLE_LIGHT = 70;
+
+        /**
+         * A handle.
+         */
+        HANDLE = 80;
+
+        /**
+         * A light.
+         */
+        LIGHT = 90;
+
+        /**
+         * A light sensor.
+         */
+        LIGHT_SENSOR = 95;
+
+        /**
+         * A motion detector.
+         */
+        MOTION_DETECTOR = 100;
+
+        /**
+         * A power consumption sensor.
+         */
+        POWER_CONSUMPTION_SENSOR = 110;
+
+        /**
+         * A power switch.
+         */
+        POWER_SWITCH = 120;
+
+        /**
+         * A reed contact.
+         */
+        REED_CONTACT = 130;
+
+        /**
+         * A smoke detector.
+         */
+        SMOKE_DETECTOR = 140;
+
+        /**
+         * A tamper detector.
+         */
+        TAMPER_DETECTOR = 150;
+
+        /**
+         * A temperature controller.
+         */
+        TEMPERATURE_CONTROLLER = 160;
+
+        /**
+         * A temperature sensor.
+         */
+        TEMPERATURE_SENSOR = 170;
+
+        /**
+         * A roller shutter.
+         */
+        ROLLER_SHUTTER = 180;
+
+        /**
+         * A monitor.
+         */
+        MONITOR = 190;
+
+        /**
+         * A display.
+         */
+        DISPLAY = 200;
+
+        /**
+         * A television.
+         */
+        TELEVISION = 210;
+
+        /**
+         * Unit type for an audio source like a microphone.
+         */
+        AUDIO_SOURCE = 220;
+
+        /**
+         * Unit type for an audio sink like a speaker.
+         */
+        AUDIO_SINK = 230;
+
+        /**
+         * Unit type for an rgb video source.
+         */
+        VIDEO_RGB_SOURCE = 240;
+
+        /**
+         * Unit type for a depth video source.
+         */
+        VIDEO_DEPTH_SOURCE = 250;
+
+        /**
+         * A sytem unit of type location.
+         */
+        LOCATION = 260;
+
+        /**
+         * A sytem unit of type connection.
+         */
+        CONNECTION = 270;
+
+        /**
+         * A sytem unit of type scene.
+         */
+        SCENE = 280;
+
+        /**
+         * A sytem unit of typen agent.
+         */
+        AGENT = 290;
+
+        /**
+         * A sytem unit of typen app.
+         */
+        APP = 300;
+
+        /**
+         * A sytem unit of type Device.
+         */
+        DEVICE = 310;
+
+        /**
+         * A sytem unit of type user.
+         */
+        USER = 320;
+
+        /**
+         * A sytem unit of type authorization group.
+         */
+        AUTHORIZATION_GROUP = 330;
+
+        /**
+         * A sytem unit of type unit group.
+         */
+        UNIT_GROUP = 340;
+
+        /**
+         * An RFID.
+         */
+        RFID = 350;
+}
+
+    /**
+     * The id of the unit template
+     */
+    optional string id = 50;
+
+    /**
+     * The label of the unit type containing different languages.
+     */
+    optional .org.openbase.type.language.Label label = 70;
+
+    /**
+     * The type of the unit.
+     */
+    optional UnitType type = 100;
+
+    /**
+     * A list of unit types included by the type of this unit template.
+     * For example a colorable light includes a dimmable light and a light.
+     */
+    repeated UnitType included_type = 150;
+
+    /**
+     * The service descriptions.
+     */
+    repeated .org.openbase.type.domotic.service.ServiceDescription service_description = 200;
+
+    /**
+     * A field storing meta unit template configurations.
+     */
+    optional .org.openbase.type.configuration.MetaConfig meta_config = 300;
+}
+

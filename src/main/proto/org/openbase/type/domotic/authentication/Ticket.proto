@@ -1,0 +1,37 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.authentication;
+
+option java_outer_classname = "TicketType";
+
+import "org/openbase/type/timing/Interval.proto";
+
+/**
+ * Type for both Ticket Granting Ticket and Client Server Ticket,
+ * used for the Kerberos authentication.
+ *
+ * @author Constantin Romankiewicz <cromankiewicz@techfak.uni-bielefeld.de>
+ */
+message Ticket {
+
+    /**
+     * Unique client ID.
+     */
+    optional string client_id = 1;
+
+    /**
+     * IP address of the client.
+     */
+    optional string client_ip = 2;
+
+    /**
+     * Validity period.
+     */
+    optional .org.openbase.type.timing.Interval validity_period = 3;
+
+    /**
+     * Session key, used to encrypt Authenticator objects.
+     */
+    optional string session_key = 4;
+}
+

@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.action;
+
+option java_outer_classname = "MultiResourceAllocationStrategyType";
+
+/**
+ * A type which defines strategies how multiple resources should be allocated.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message MultiResourceAllocationStrategy {
+
+    /**
+     * The state definitions.
+     */
+    enum Strategy {
+
+        AT_LEAST_ONE = 0;
+
+        ALL_OR_NOTHING = 1;
+    }
+
+    /*
+     * The strategy with which multiple resources should be allocated.
+     */
+    optional Strategy strategy = 100 [default = AT_LEAST_ONE];
+}
+

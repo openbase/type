@@ -1,0 +1,39 @@
+syntax = "proto2";
+
+package org.openbase.type.spatial;
+
+option java_outer_classname = "ShapeType";
+
+import "org/openbase/type/geometry/AxisAlignedBoundingBox3DFloat.proto";
+import "org/openbase/type/math/Vec3DDouble.proto";
+import "org/openbase/type/spatial/FloorCeilingEdgeIndices.proto";
+
+
+/**
+ * Description of a Shape.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message Shape {
+
+    /**
+     * The bounding box of this shape.
+     */
+    optional .org.openbase.type.geometry.AxisAlignedBoundingBox3DFloat bounding_box = 10;
+
+    /**
+     * Floor polygon of the shape.
+     */
+    repeated .org.openbase.type.math.Vec3DDouble floor = 50;
+
+    /**
+     * Ceiling polygon of the shape.
+     */
+    repeated .org.openbase.type.math.Vec3DDouble ceiling = 100;
+
+    /**
+     * Indices of the links between floor and ceiling points in that order.
+     */
+    repeated .org.openbase.type.spatial.FloorCeilingEdgeIndices floor_ceiling_edge = 150;
+}
+

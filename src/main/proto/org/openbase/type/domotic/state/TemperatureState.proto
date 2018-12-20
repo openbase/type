@@ -1,0 +1,66 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.state;
+
+import "org/openbase/type/timing/Timestamp.proto";
+import "org/openbase/type/domotic/action/ActionDescription.proto";
+
+
+option java_outer_classname = "TemperatureStateType";
+
+
+/**
+ * Basic sensor or object state.
+ * Used by units like a temperature sensor.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message TemperatureState {
+
+    /**
+     * The physical unit of the given temperature.
+     */
+    enum DataUnit {
+
+        /**
+         * Unknown physical unit.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Degree celsius.
+         */
+        CELSIUS = 1;
+
+        /**
+         * Degree kelvin.
+         */
+        KELVIN = 2;
+
+        /**
+         * Degree fahrenheit.
+         */
+        FAHRENHEIT = 3;
+    }
+
+    /**
+     * The temperature in the given physical unit.
+     */
+    optional double temperature = 100;
+
+    /**
+     * The physical unit of the given temperature.
+     */
+    optional DataUnit temperature_data_unit = 200 [default = CELSIUS];
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .org.openbase.type.timing.Timestamp timestamp = 300;
+
+    /**
+     * This field contains the description of the action which is responsible for this service state.
+     */
+    optional .org.openbase.type.domotic.action.ActionDescription responsible_action = 400;
+}
+

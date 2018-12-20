@@ -1,0 +1,59 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.authentication;
+
+option java_outer_classname = "AuthorizationTokenType";
+
+import "org/openbase/type/domotic/authentication/Permission.proto";
+
+/**
+ * Description of an authorization token.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message AuthorizationToken {
+
+    /**
+     * A permission rule type defining what kind of permissions
+     * the token supplies.
+     */
+    message PermissionRule {
+
+        /**
+         * The id of a unit or a location.
+         */
+        optional string unit_id = 1;
+
+        /**
+         * The id of a unit template.
+         */
+        optional string unit_template_id = 3;
+
+        /**
+         * The id of a service template.
+         */
+        optional string service_template_id = 4;
+
+        /**
+         * The permission this rule gives for the defined unit, unit type and service type.
+         */
+        optional .org.openbase.type.domotic.authentication.Permission permission = 2;
+
+        /**
+         * Flag determining if the permission rule grants permissions or takes them away.
+         */
+        optional bool filter = 5;
+    }
+
+    /**
+     * The id of the user providing the token.
+     */
+    optional string user_id = 100;
+
+    /**
+     * A map from ids to permissions. If this set is empty no permissions are given to the token holder.
+     * This map defines what the user allows the token holder to do in his name.
+     */
+    repeated PermissionRule permission_rule = 200;
+}
+

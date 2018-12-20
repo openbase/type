@@ -1,0 +1,74 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.registry;
+
+option java_outer_classname = "ClassRegistryDataType";
+
+import "org/openbase/type/domotic/unit/agent/AgentClass.proto";
+import "org/openbase/type/domotic/unit/app/AppClass.proto";
+import "org/openbase/type/domotic/unit/device/DeviceClass.proto";
+
+/**
+ * Description of a class registry.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message ClassRegistryData {
+
+    /**
+     * The label of the class registry.
+     */
+    optional string label = 100 [deprecated=true];
+
+    /**
+     * The list of registered device classes.
+     */
+    repeated .org.openbase.type.domotic.unit.device.DeviceClass device_class = 200;
+
+    /**
+     * Read only flag for the device class registry.
+     */
+    optional bool device_class_registry_read_only = 300;
+
+    /**
+     * Consistent flag for the device class registry.
+     */
+    optional bool device_class_registry_consistent = 400;
+
+    /**
+     * The list of registerd agent classes.
+     */
+    repeated .org.openbase.type.domotic.unit.agent.AgentClass agent_class = 500;
+
+    /**
+     * Read only flag for the agent class registry.
+     */
+    optional bool agent_class_registry_read_only = 600;
+
+    /**
+     * Consistent flag for the agent class registry.
+     */
+    optional bool agent_class_registry_consistent = 700;
+
+    /**
+     * The list of registerd app classes.
+     */
+    repeated .org.openbase.type.domotic.unit.app.AppClass app_class = 800;
+
+    /**
+     * Read only flag for the app class registry.
+     */
+    optional bool app_class_registry_read_only = 900;
+
+    /**
+     * Consistent flag for the app class registry.
+     */
+    optional bool app_class_registry_consistent = 1000;
+
+    /**
+     * A transaction id indicating which action was the last one executed. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 1100;
+}
+

@@ -1,0 +1,30 @@
+syntax = "proto2";
+
+package org.openbase.type.vision;
+
+option java_outer_classname = "HSBColorType";
+
+
+/**
+ * Basic object state used by lights to describe their color.
+ *
+ * @author Marian Pohling <mpohling@techfak.uni-bielefeld.de>
+ */
+message HSBColor {
+
+    /**
+     * The hue value in the HSV color space. Range: [0..360].
+     */
+    optional double hue = 100;
+
+    /**
+     * The saturation in the HSV color space. Range: [0..100].
+     */
+    optional double saturation = 200;
+
+    /**
+     * The value in the HSV color space. Range: [0..100].
+     */
+    optional double brightness = 300;
+}
+

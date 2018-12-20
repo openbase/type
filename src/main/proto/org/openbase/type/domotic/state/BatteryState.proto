@@ -1,0 +1,87 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.state;
+
+import "org/openbase/type/timing/Timestamp.proto";
+import "org/openbase/type/domotic/action/ActionDescription.proto";
+
+option java_outer_classname = "BatteryStateType";
+
+
+/**
+ * Basic object state used by battery devices
+ * to display their energy level.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message BatteryState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknwon state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Ok state.
+         */
+        OK = 1;
+
+        /**
+         * Critical state.
+         */
+        CRITICAL = 2;
+
+        /**
+         * Insufficient energy state.
+         */
+        INSUFFICIENT = 3;
+    }
+
+    /**
+     * The energy state.
+     */
+    optional State value = 100;
+
+    /**
+     * Map entry for a mapping from state values onto there last occurrence.
+     * This message has been introduced because of the missing map feature in protobuf 2.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional State key = 1;
+
+        /**
+         * The timestamp of the last occurrence.
+         */
+        optional .org.openbase.type.timing.Timestamp value = 2;
+    }
+
+    /**
+     * A mapping of all state values onto there last occurrence.
+     * This mapping can be used for detecting state transitions.
+     */
+    repeated MapFieldEntry last_value_occurrence = 1000;
+
+    /**
+     * The energy level. Range: [0..1].
+     */
+    optional double level = 200;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .org.openbase.type.timing.Timestamp timestamp = 300;
+
+    /**
+     * This field contains the description of the action which is responsible for this service state.
+     */
+    optional .org.openbase.type.domotic.action.ActionDescription responsible_action = 400;
+}

@@ -1,0 +1,50 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.unit.app;
+
+option java_outer_classname = "AppClassType";
+
+import "org/openbase/type/language/Label.proto";
+import "org/openbase/type/language/MultiLanguageText.proto";
+import "org/openbase/type/configuration/MetaConfig.proto";
+import "org/openbase/type/domotic/binding/BindingConfig.proto";
+import "org/openbase/type/domotic/unit/UnitTemplateConfig.proto";
+
+/**
+ * Description of an app class.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AppClass {
+
+    /**
+     * The id of the app class.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of the app class.
+     */
+    optional .org.openbase.type.language.Label label = 200;
+
+    /**
+     * The description of the app class.
+     */
+    optional .org.openbase.type.language.MultiLanguageText description = 300;
+
+    /**
+     * A field for storing meta app class configurations.
+     */
+    optional .org.openbase.type.configuration.MetaConfig meta_config = 400;
+
+    /**
+     * The binding configuration of the device class.
+     */
+    optional .org.openbase.type.domotic.binding.BindingConfig binding_config = 500;
+
+    /**
+     * A list of unit template configs.
+     */
+    repeated .org.openbase.type.domotic.unit.UnitTemplateConfig unit_template_config = 600;
+}
+

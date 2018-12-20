@@ -1,0 +1,98 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.action;
+
+option java_outer_classname = "ActionParameterType";
+
+import "org/openbase/type/domotic/action/ActionDescription.proto";
+import "org/openbase/type/language/Label.proto";
+import "org/openbase/type/domotic/action/ActionInitiator.proto";
+import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
+import "org/openbase/type/domotic/action/ActionPriority.proto";
+import "org/openbase/type/domotic/action/ActionEmphasis.proto";
+
+/**
+ * Description of possible paramters to define an action.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message ActionParameter {
+
+    /**
+     * A label for the action description.
+     *
+     * Note: Field is optional.
+     */
+    optional .org.openbase.type.language.Label label = 20;
+
+    /**
+     * The initiator of this action.
+     *
+     * Note: Field is required to define the action.
+     */
+    optional .org.openbase.type.domotic.action.ActionInitiator action_initiator = 40;
+
+    /**
+     * The state which this action shall apply.
+     *
+     * Note: Field is required to define the action.
+     */
+    optional .org.openbase.type.domotic.service.ServiceStateDescription service_state_description = 70;
+
+    /**
+     * The execution priority of this action used for the action ranking.
+     *
+     * Note: Default priority is NORMAL
+     */
+    optional .org.openbase.type.domotic.action.ActionPriority.Priority priority = 80 [default = NORMAL];
+
+    /**
+     * The emphasis categories representing the optimization intention of this action used for the ranking.
+     *
+     * Note: Field is required to define the action.
+     */
+    repeated .org.openbase.type.domotic.action.ActionEmphasis.Category category = 90;
+
+    /**
+     * The defined runtime period of this action it microsecunds.
+     * The action will be finished after expiration.
+     * If set to 0 then the action will finish directly after its execution.
+     *
+     * Note: Default period is 0
+     */
+    optional uint64 execution_time_period = 100;
+
+    /**
+     * If this action was caused by another action, those action is referred by this field to enable the reconstruction of the complete action chain.
+     *
+     * Note: This field is only required if the action is a result of another one.
+     */
+    optional .org.openbase.type.domotic.action.ActionDescription cause = 110;
+
+    /**
+     * Flag defines if the action execution can be continued after interruption.
+     * This means if this action was relegated by another one, it is directly rejected and whill not be scheduled again.
+     */
+    optional bool interruptible = 120 [default = true];
+
+    /**
+     * Flag defines if this action supports it, to be scheduled.
+     * If not than the action will directly rejected in case a currenly higher ranked action is blocking the unit.
+     */
+    optional bool schedulable = 130 [default = true];
+
+    /**
+     * The token with which the actions is authenticated.
+     * If this field is empty the user logged in at the default session manager is authenticated.
+     * If this field is set, the initiator will always be overwritten by the user specified in this token.
+     */
+    optional string authentication_token = 140;
+
+    /**
+     * The token with which the action is authorized.
+     * If this field is empty, the permissions of the user logged in at the default session manager are used for authorziation.
+     */
+    optional string authorization_token = 150;
+}
+

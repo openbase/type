@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.ontology;
+
+option java_outer_classname = "TriggerConfigType";
+
+
+import "org/openbase/type/domotic/ontology/OntologyChange.proto";
+
+/**
+ * This configuration describes a trigger configuration and can be used to initialize those ones.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message TriggerConfig {
+
+    /**
+     * The label of this trigger.
+     */
+    optional string label = 100;
+
+    /**
+     * The query of this trigger which mainly describes the condition of the trigger.
+     */
+    optional string query = 200;
+
+    /**
+     * The ontology change where this trigger is depending on.
+     */
+    optional .org.openbase.type.domotic.ontology.OntologyChange depending_ontology_change = 300;
+}
+

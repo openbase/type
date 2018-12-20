@@ -1,0 +1,24 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.unit;
+
+import "org/openbase/type/domotic/unit/UnitProbability.proto";
+
+option java_outer_classname = "UnitProbabilityCollectionType";
+
+/**
+ * Collection of @ref .UnitProbability instances.
+ *
+ * Auto-generated.
+ */
+message UnitProbabilityCollection {
+
+    /**
+     * The individual elements of the collection.
+     *
+     * Constraints regarding the empty collection, sorting, duplicated
+     * entries etc. are use case specific.
+     */
+    repeated UnitProbability element = 1;
+
+}

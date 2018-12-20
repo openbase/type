@@ -1,0 +1,65 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.unit.authorizationgroup;
+
+import "org/openbase/type/domotic/state/PresenceState.proto";
+import "org/openbase/type/domotic/state/ActivityState.proto";
+import "org/openbase/type/domotic/action/ActionDescription.proto";
+
+option java_outer_classname = "AuthorizationGroupDataType";
+
+/**
+ * Description of an authorization group data type.
+ *
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message AuthorizationGroupData {
+
+    /**
+     * A unique authorization group identifier.
+     */
+    optional string id = 100;
+
+    /**
+     * A list of aliases of this unit.
+     */
+    repeated string alias = 110;
+
+    /**
+     * A list of all operating actions.
+     * The action at index 0 is the currently executing action while the other ones are scheduled.
+     */
+    repeated .org.openbase.type.domotic.action.ActionDescription action = 150;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 500;
+
+    /**
+     * State represents if there is any member of this group currently present.
+     */
+    optional .org.openbase.type.domotic.state.PresenceState presence_state = 600;
+
+    /**
+     * The last presence state of any member of this group.
+     */
+    optional .org.openbase.type.domotic.state.PresenceState presence_state_last = 610;
+
+    /**
+     * A list of the current group activities.
+     */
+    repeated .org.openbase.type.domotic.state.ActivityState activity_state = 700;
+
+    /**
+     * A list of the last performed group activities. Passed activities can be removed any time by the unit controller.
+     */
+    repeated .org.openbase.type.domotic.state.ActivityState activity_state_last = 710;
+
+    /**
+     * The requested current group activities.
+     */
+    repeated .org.openbase.type.domotic.state.ActivityState activity_state_requested = 720;
+}
+

@@ -1,0 +1,54 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.authentication;
+
+option java_outer_classname = "PermissionConfigType";
+
+import "org/openbase/type/domotic/authentication/Permission.proto";
+
+/**
+ * Description of a permission configuration.
+ *
+ * @author Constantin Romankiewicz <cromankiewicz@techfak.uni-bielefeld.de>
+ */
+message PermissionConfig {
+
+    /**
+     * Map entry for a mapping from group id to permission. Used because
+     * the map feature does not seem to work.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The id of the group.
+         */
+        optional string group_id = 1;
+
+        /**
+         * The permission for the group given by the group id.
+         */
+        optional .org.openbase.type.domotic.authentication.Permission permission = 2;
+    }
+
+    /**
+     * ID of the user owning the unit.
+     */
+    optional string owner_id = 100;
+
+    /**
+     * Permissions for the user set by owner_id.
+     */
+    optional .org.openbase.type.domotic.authentication.Permission owner_permission = 200;
+
+    /**
+     * Permissions for everyone, without respect to authorization or user groups.
+     */
+    optional .org.openbase.type.domotic.authentication.Permission other_permission = 300;
+
+    /**
+     * Permissions for selected groups.
+     * Every group with permissions different from "other" has an entry.
+     */
+    repeated MapFieldEntry group_permission = 400;
+}
+

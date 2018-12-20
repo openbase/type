@@ -1,0 +1,59 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.activity;
+
+option java_outer_classname = "ActivityTemplateType";
+
+import "org/openbase/type/language/Label.proto";
+import "org/openbase/type/language/MultiLanguageText.proto";
+import "org/openbase/type/configuration/MetaConfig.proto";
+
+/**
+ * Template for activities.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message ActivityTemplate {
+
+    /**
+     * The activity categories.
+     */
+    enum ActivityType {
+
+        UNKNOWN = 0;
+        OTHER = 1;
+        RELAXING = 2;
+        SLEEPING = 3;
+        WORKING = 4;
+        EATING = 5;
+        COOKING = 6;
+        CLEANING = 7;
+        CELEBRATING = 8;
+    }
+
+    /**
+     * The id of the activity template.
+     */
+    optional string id = 100;
+
+    /**
+     * The label of the activity template.
+     */
+    optional .org.openbase.type.language.Label label = 200;
+
+    /**
+     * The type of the activity template.
+     */
+    optional ActivityType type = 300;
+
+    /**
+     * A field storing meta configurations.
+     */
+    optional .org.openbase.type.configuration.MetaConfig meta_config = 400;
+
+    /**
+     * A description of the activity template.
+     */
+    optional .org.openbase.type.language.MultiLanguageText description = 500;
+}
+

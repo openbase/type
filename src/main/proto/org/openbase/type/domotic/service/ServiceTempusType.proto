@@ -1,0 +1,42 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.service;
+
+option java_outer_classname = "ServiceTempusTypeType";
+
+/**
+ * This type contains an enum for a tempus describing
+ * when a service state has been applied.
+ *
+ * @authro Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ */
+message ServiceTempusType {
+
+    /**
+     * The tempus describing when a service state has been applied.
+     */
+    enum ServiceTempus {
+
+        /**
+         * Unknown service tempus.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Tempus describing the present state.
+         */
+        CURRENT = 1;
+
+        /**
+         * Tempus describing the past state.
+         */
+        LAST = 2;
+
+        /**
+         * Tempus describing the future state.
+         */
+        REQUESTED = 3;
+    }
+}
+
