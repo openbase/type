@@ -19,19 +19,19 @@ message Translation {
      * Cartesian displacement along the x axis
      */
     // @unit(meter)
-    required double x = 1;
+    optional double x = 1;
 
     /**
      * Cartesian displacement along the y axis
      */
     // @unit(meter)
-    required double y = 2;
+    optional double y = 2;
 
     /**
      * Cartesian displacement along the z axis
      */
     // @unit(meter)
-    required double z = 3;
+    optional double z = 3;
 
     /**
      * Identifier for the coordinate frame of the rotation.

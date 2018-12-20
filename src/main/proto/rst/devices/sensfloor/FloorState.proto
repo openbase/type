@@ -17,7 +17,7 @@ message FloorState {
     /**
      * The label describes the location where the modules are installed.
      */
-    required string label = 1;
+    optional string label = 1;
 
     /**
      * The repeated Field contains RST FloorModuleState Types which

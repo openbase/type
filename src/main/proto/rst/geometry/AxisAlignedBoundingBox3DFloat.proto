@@ -46,24 +46,24 @@ message AxisAlignedBoundingBox3DFloat {
     /**
      * Coordinates of the bottom left front corner.
      */
-    required geometry.Translation left_front_bottom = 1;
+    optional geometry.Translation left_front_bottom = 1;
 
     /**
      * The width (along the X axis) of the box.
      */
     // @unit(meter)
-    required float width = 2;
+    optional float width = 2;
 
     /**
      * The depth (along the Y axis) of the box.
      */
     // @unit(meter)
-    required float depth = 3;
+    optional float depth = 3;
 
     /**
      * The height (along the Z axis) of the box.
      */
     // @unit(meter)
-    required float height = 4;
+    optional float height = 4;
 
 }

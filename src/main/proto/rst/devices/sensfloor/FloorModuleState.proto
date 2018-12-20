@@ -17,12 +17,12 @@ message FloorModuleState {
         /**
          * The capacity values for each of the eight segments in a module.
          */
-        required int32 capacity_segment = 1;
+        optional int32 capacity_segment = 1;
 
         /**
          * The activation values for each of the eight segments in a module.
          */
-        required bool activation_segment = 2;
+        optional bool activation_segment = 2;
 
     }
 
@@ -37,7 +37,7 @@ message FloorModuleState {
     /**
      * The Position of the module in the room (from the transciever).
      */
-    required int32 position_col = 2;
-    required int32 position_row = 3;
+    optional int32 position_col = 2;
+    optional int32 position_row = 3;
 
 }

@@ -19,12 +19,12 @@ message TrackedPosture3DFloat {
      * Tracking information such as identity of the subject being
      * tracked.
      */
-    required TrackingInfo              info       = 1;
+    optional TrackingInfo              info       = 1;
 
     /**
      * Posture of the tracked subject identified by @ref .info.
      */
-    required kinematics.Posture3DFloat posture    = 2;
+    optional kinematics.Posture3DFloat posture    = 2;
 
     /**
      * Confidence values for the individual positions stored in @ref

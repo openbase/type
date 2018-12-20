@@ -20,12 +20,12 @@ message Pose {
      * The translation of the object with respect to the origin of the
      * coordinate system.
      */
-    required Translation translation = 1;
+    optional Translation translation = 1;
 
     /**
      * The rotation of the object at the position described by
      * @ref .translation with respect to the coordinate system.
      */
-    required Rotation rotation = 2;
+    optional Rotation rotation = 2;
 
 }

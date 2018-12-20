@@ -18,6 +18,6 @@ message Timestamp {
      * Number of microseconds since January 1st, 1970 in UTC time.
      */
     // @unit(microsecond)
-    required uint64 time = 1;
+    optional uint64 time = 1;
 
 }

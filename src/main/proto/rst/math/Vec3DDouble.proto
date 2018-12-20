@@ -14,16 +14,16 @@ message Vec3DDouble {
     /**
      * The X component of the vector.
      */
-    required double x = 1 [default = 0];
+    optional double x = 1 [default = 0];
 
     /**
      * The Y component of the vector.
      */
-    required double y = 2 [default = 0];
+    optional double y = 2 [default = 0];
 
     /**
      * The Z component of the vector.
      */
-    required double z = 3 [default = 0];
+    optional double z = 3 [default = 0];
 
 }

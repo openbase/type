@@ -15,10 +15,10 @@ message ObjectID {
     /**
      * Class for an Object. E.g. Cube/Pot/Arm...
      */
-    required string type = 1;
+    optional string type = 1;
 
     /**
      * Identifier for an object. E.g. 42/Left/Upper/Marvin...
      */
-    required string id = 2;
+    optional string id = 2;
 }

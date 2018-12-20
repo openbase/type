@@ -18,7 +18,7 @@ message SceneConfig {
      * Required states will be applied when activating and tested
      * when checking if the scene is still active.
      */
-    repeated .rst.domotic.service.ServiceStateDescription required_service_state_description = 800;
+    optional .rst.domotic.service.ServiceStateDescription required_service_state_description = 800;
 
     /**
      * A list of optional service states for this scene.

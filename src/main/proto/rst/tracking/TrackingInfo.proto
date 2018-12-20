@@ -18,7 +18,7 @@ message TrackingInfo {
      * Repeated values can occur due to component restarts or integer
      * overflows.
      */
-    required uint32 id = 1;
+    optional uint32 id = 1;
 
     /**
      * A unique id for the track.

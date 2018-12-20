@@ -14,16 +14,16 @@ message Vec3DFloat {
     /**
      * The X-component of the vector.
      */
-    required float x = 1 [default = 0];
+    optional float x = 1 [default = 0];
 
     /**
      * The Y-component of the vector.
      */
-    required float y = 2 [default = 0];
+    optional float y = 2 [default = 0];
 
     /**
      * The Z-component of the vector.
      */
-    required float z = 3 [default = 0];
+    optional float z = 3 [default = 0];
 
 }
