@@ -55,8 +55,15 @@ message ActionDescription {
 
     /**
      * A list of actions which caused this action.
+     * This list represent the upper part of the action chain.
      */
-    repeated .org.openbase.type.domotic.action.ActionReference action_chain = 60;
+    repeated .org.openbase.type.domotic.action.ActionReference action_cause = 60;
+
+    /**
+     * A list of actions which were initiated by this action.
+     * This list represent the lower part of the action chain.
+     */
+    repeated .org.openbase.type.domotic.action.ActionReference action_impact = 65;
 
     /**
      * The state which this action shall apply.
