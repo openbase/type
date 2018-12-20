@@ -1,0 +1,1 @@
+# Openbase Protobuf Type Lib
