@@ -5600,6 +5600,17 @@
                 "name": "unit_template_config",
                 "type": ".org.openbase.type.domotic.unit.UnitTemplateConfig",
                 "is_repeated": true
+              },
+              {
+                "id": 700,
+                "name": "priority",
+                "type": ".org.openbase.type.domotic.action.ActionPriority.Priority"
+              },
+              {
+                "id": 800,
+                "name": "category",
+                "type": ".org.openbase.type.domotic.action.ActionEmphasis.Category",
+                "is_repeated": true
               }
             ]
           }
@@ -5619,6 +5630,12 @@
           },
           {
             "path": "org/openbase/type/domotic/unit/UnitTemplateConfig.proto"
+          },
+          {
+            "path": "org/openbase/type/domotic/action/ActionPriority.proto"
+          },
+          {
+            "path": "org/openbase/type/domotic/action/ActionEmphasis.proto"
           }
         ]
       }
