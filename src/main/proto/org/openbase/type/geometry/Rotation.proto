@@ -20,25 +20,25 @@ message Rotation {
     /**
      * Angle component of the quaternion.
      */
-    optional double qw = 4;
+    optional double qw = 4 [default = 1];
 
     /**
      * Defines the orientation of the turning axis wrt. the X axis of
      * the world (or the frame specified in @ref .frame_id).
      */
-    optional double qx = 5;
+    optional double qx = 5 [default = 0];
 
     /**
      * Defines the orientation of the turning axis wrt. the Y axis of
      * the world (or the frame specified in @ref .frame_id).
      */
-    optional double qy = 6;
+    optional double qy = 6 [default = 0];
 
     /**
      * Defines the orientation of the turning axis wrt. the Y axis of
      * the world (or the frame specified in @ref .frame_id).
      */
-    optional double qz = 7;
+    optional double qz = 7 [default = 0];
 
     /**
      * Identifier for the coordinate frame of the rotation.
