@@ -1,0 +1,92 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.state;
+
+import "org/openbase/type/timing/Timestamp.proto";
+import "org/openbase/type/domotic/action/ActionDescription.proto";
+
+option java_outer_classname = "ConnectionStateType";
+
+
+/**
+ * Basic connection state.
+ *
+ * @author Divine Threepwood <divine@openbase.org>
+ */
+message ConnectionState {
+
+    /**
+     * The state definitions.
+     */
+    enum State {
+
+        /**
+         * Unknown state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * State for establishing a connection.
+         */
+        CONNECTING = 1;
+
+        /**
+         * State for a established connection.
+         */
+        CONNECTED = 2;
+
+        /**
+         * State for a disconnected participants.
+         */
+        DISCONNECTED = 3;
+
+        /**
+         * State for a reestablishing a connection.
+         */
+        RECONNECTING = 4;
+
+        /**
+         * State for reinitialize the connection participant.
+         */
+        REINITIALIZING = 5;
+    }
+
+    /**
+     * The connection state.
+     */
+    optional State value = 100;
+
+    /**
+     * Map entry for a mapping from state values onto there last occurrence.
+     * This message has been introduced because of the missing map feature in protobuf 2.
+     */
+    message MapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional State key = 1;
+
+        /**
+         * The timestamp of the last occurrence.
+         */
+        optional .org.openbase.type.timing.Timestamp value = 2;
+    }
+
+    /**
+     * A mapping of all state values onto there last occurrence.
+     * This mapping can be used for detecting state transitions.
+     */
+    repeated MapFieldEntry last_value_occurrence = 1000;
+
+    /**
+     * Timestamp of the occurency of this event.
+     */
+    optional .org.openbase.type.timing.Timestamp timestamp = 200;
+
+    /**
+     * This field contains the description of the action which is responsible for this service state.
+     */
+    optional .org.openbase.type.domotic.action.ActionDescription responsible_action = 400;
+}
+
