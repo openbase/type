@@ -3162,6 +3162,90 @@
       }
     },
     {
+      "protopath": "org:/:openbase:/:type:/:domotic:/:state:/:AvailabilityState.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "AvailabilityState.State",
+            "enum_fields": [
+              {
+                "name": "UNKNOWN"
+              },
+              {
+                "name": "ACTIVATING",
+                "integer": 1
+              },
+              {
+                "name": "ONLINE",
+                "integer": 2
+              },
+              {
+                "name": "DEACTIVATING",
+                "integer": 3
+              },
+              {
+                "name": "OFFLINE",
+                "integer": 4
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "AvailabilityState",
+            "fields": [
+              {
+                "id": 100,
+                "name": "value",
+                "type": "State"
+              },
+              {
+                "id": 1000,
+                "name": "last_value_occurrence",
+                "type": "MapFieldEntry",
+                "is_repeated": true
+              },
+              {
+                "id": 200,
+                "name": "timestamp",
+                "type": ".org.openbase.type.timing.Timestamp"
+              },
+              {
+                "id": 400,
+                "name": "responsible_action",
+                "type": ".org.openbase.type.domotic.action.ActionDescription"
+              }
+            ],
+            "messages": [
+              {
+                "name": "MapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "value",
+                    "type": ".org.openbase.type.timing.Timestamp"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "org/openbase/type/timing/Timestamp.proto"
+          },
+          {
+            "path": "org/openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ]
+      }
+    },
+    {
       "protopath": "org:/:openbase:/:type:/:domotic:/:state:/:BatteryState.proto",
       "def": {
         "enums": [
@@ -3494,6 +3578,94 @@
           {
             "path": "org/openbase/type/vision/Color.proto"
           },
+          {
+            "path": "org/openbase/type/timing/Timestamp.proto"
+          },
+          {
+            "path": "org/openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "org:/:openbase:/:type:/:domotic:/:state:/:ConnectionState.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "ConnectionState.State",
+            "enum_fields": [
+              {
+                "name": "UNKNOWN"
+              },
+              {
+                "name": "CONNECTING",
+                "integer": 1
+              },
+              {
+                "name": "CONNECTED",
+                "integer": 2
+              },
+              {
+                "name": "DISCONNECTED",
+                "integer": 3
+              },
+              {
+                "name": "RECONNECTING",
+                "integer": 4
+              },
+              {
+                "name": "REINITIALIZING",
+                "integer": 5
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "ConnectionState",
+            "fields": [
+              {
+                "id": 100,
+                "name": "value",
+                "type": "State"
+              },
+              {
+                "id": 1000,
+                "name": "last_value_occurrence",
+                "type": "MapFieldEntry",
+                "is_repeated": true
+              },
+              {
+                "id": 200,
+                "name": "timestamp",
+                "type": ".org.openbase.type.timing.Timestamp"
+              },
+              {
+                "id": 400,
+                "name": "responsible_action",
+                "type": ".org.openbase.type.domotic.action.ActionDescription"
+              }
+            ],
+            "messages": [
+              {
+                "name": "MapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "value",
+                    "type": ".org.openbase.type.timing.Timestamp"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "imports": [
           {
             "path": "org/openbase/type/timing/Timestamp.proto"
           },
