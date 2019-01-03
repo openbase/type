@@ -248,6 +248,12 @@ message ServiceTemplate {
     optional ServiceType type = 100;
 
     /**
+     * A list of service types included by the type of this unit template.
+     * For example a colorable state can represent a brightness state where the brightness service is the super type of the color service type.
+     */
+    repeated ServiceType super_type = 150;
+
+    /**
      * The enum representing the state that is used by this service.
      */
     optional .org.openbase.type.domotic.service.ServiceCommunicationType.CommunicationType communication_type = 250;

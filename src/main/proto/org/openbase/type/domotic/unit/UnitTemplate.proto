@@ -220,9 +220,9 @@ message UnitTemplate {
 
     /**
      * A list of unit types included by the type of this unit template.
-     * For example a colorable light includes a dimmable light and a light.
+     * For example a colorable light has a dimmable light and a light as super types.
      */
-    repeated UnitType included_type = 150;
+    repeated UnitType super_type = 150;
 
     /**
      * The service descriptions.

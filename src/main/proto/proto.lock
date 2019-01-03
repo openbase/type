@@ -2735,6 +2735,12 @@
                 "type": "ServiceType"
               },
               {
+                "id": 150,
+                "name": "super_type",
+                "type": "ServiceType",
+                "is_repeated": true
+              },
+              {
                 "id": 250,
                 "name": "communication_type",
                 "type": ".org.openbase.type.domotic.service.ServiceCommunicationType.CommunicationType"
@@ -5485,7 +5491,7 @@
               },
               {
                 "id": 150,
-                "name": "included_type",
+                "name": "super_type",
                 "type": "UnitType",
                 "is_repeated": true
               },
