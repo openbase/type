@@ -9469,7 +9469,7 @@
               },
               {
                 "id": 200,
-                "name": "position",
+                "name": "pose",
                 "type": ".org.openbase.type.geometry.Pose"
               },
               {
