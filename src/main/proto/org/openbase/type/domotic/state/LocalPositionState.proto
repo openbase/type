@@ -24,7 +24,7 @@ message LocalPositionState {
      * of the root location.
      * This field is empty or the translation zero if the unit is not at home.
      */
-    optional .org.openbase.type.geometry.Pose position = 100;
+    optional .org.openbase.type.geometry.Pose pose = 100;
 
     /**
      * A list of ids of locations in which the unit is.

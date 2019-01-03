@@ -27,7 +27,7 @@ message PlacementConfig {
     /**
      * The position.
      */
-    optional .org.openbase.type.geometry.Pose position = 200;
+    optional .org.openbase.type.geometry.Pose pose = 200;
 
     /**
      * The shape of the placement.

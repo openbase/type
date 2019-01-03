@@ -4185,7 +4185,7 @@
             "fields": [
               {
                 "id": 100,
-                "name": "position",
+                "name": "pose",
                 "type": ".org.openbase.type.geometry.Pose"
               },
               {
