@@ -42,6 +42,13 @@ message ActionDescription {
     optional .org.openbase.type.language.MultiLanguageText description = 30;
 
     /**
+     * Flag defines if this action is an intermediary element in the action chain.
+     * If the action is intermediary, they will never be scheduled or its action state updated.
+     * The actions on the action_impact list can be observed to determine the process of an intermediary action.
+     */
+    optional bool intermediary = 35;
+
+    /**
      * The initiator of this action.
      */
     optional .org.openbase.type.domotic.action.ActionInitiator action_initiator = 40;

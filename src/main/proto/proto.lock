@@ -159,6 +159,11 @@
                 "type": ".org.openbase.type.language.MultiLanguageText"
               },
               {
+                "id": 35,
+                "name": "intermediary",
+                "type": "bool"
+              },
+              {
                 "id": 40,
                 "name": "action_initiator",
                 "type": ".org.openbase.type.domotic.action.ActionInitiator"
