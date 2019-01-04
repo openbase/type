@@ -54,14 +54,15 @@ message ActionDescription {
     optional .org.openbase.type.domotic.state.ActionState action_state = 50;
 
     /**
-     * A list of actions which caused this action.
-     * This list represent the upper part of the action chain.
+     * A list of actions (scheduled and passive actions) which caused this action.
+     * This list represent the complete upper part of the action chain.
      */
     repeated .org.openbase.type.domotic.action.ActionReference action_cause = 60;
 
     /**
-     * A list of actions which were initiated by this action.
-     * This list represent the lower part of the action chain.
+     * A list of scheduled actions which were initiated by this action.
+     * The list is a spare representation of the lower part of the action
+     * chain because it only contains the scheduled end point actions.
      */
     repeated .org.openbase.type.domotic.action.ActionReference action_impact = 65;
 
