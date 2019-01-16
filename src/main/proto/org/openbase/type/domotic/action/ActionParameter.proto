@@ -72,7 +72,7 @@ message ActionParameter {
 
     /**
      * Flag defines if the action execution can be continued after interruption.
-     * This means if this action was relegated by another one, it is directly rejected and whill not be scheduled again.
+     * This means if this action is not interruptable but was relegated by another one, it is directly rejected and whill not be scheduled again.
      */
     optional bool interruptible = 120 [default = true];
 
