@@ -789,6 +789,28 @@
       }
     },
     {
+      "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:AuthenticationPair.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "AuthenticationPair",
+            "fields": [
+              {
+                "id": 1,
+                "name": "user_id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "client_id",
+                "type": "string"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:AuthenticationToken.proto",
       "def": {
         "messages": [
@@ -814,8 +836,8 @@
             "fields": [
               {
                 "id": 1,
-                "name": "client_id",
-                "type": "string"
+                "name": "authentication_pair",
+                "type": ".org.openbase.type.domotic.authentication.AuthenticationPair"
               },
               {
                 "id": 2,
@@ -826,6 +848,9 @@
           }
         ],
         "imports": [
+          {
+            "path": "org/openbase/type/domotic/authentication/AuthenticationPair.proto"
+          },
           {
             "path": "org/openbase/type/timing/Timestamp.proto"
           }
@@ -913,50 +938,13 @@
                 "id": 3,
                 "name": "admin",
                 "type": "bool"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:LoginCredentialsChange.proto",
-      "def": {
-        "messages": [
-          {
-            "name": "LoginCredentialsChange",
-            "fields": [
-              {
-                "id": 1,
-                "name": "id",
-                "type": "string"
-              },
-              {
-                "id": 2,
-                "name": "old_credentials",
-                "type": "bytes"
-              },
-              {
-                "id": 3,
-                "name": "new_credentials",
-                "type": "bytes"
               },
               {
                 "id": 4,
-                "name": "ticket_authenticator_wrapper",
-                "type": ".org.openbase.type.domotic.authentication.TicketAuthenticatorWrapper"
-              },
-              {
-                "id": 5,
-                "name": "admin",
+                "name": "symmetric",
                 "type": "bool"
               }
             ]
-          }
-        ],
-        "imports": [
-          {
-            "path": "org/openbase/type/domotic/authentication/TicketAuthenticatorWrapper.proto"
           }
         ]
       }
@@ -970,8 +958,8 @@
             "fields": [
               {
                 "id": 1,
-                "name": "element",
-                "type": "LoginCredentials",
+                "name": "login_credentials",
+                "type": ".org.openbase.type.domotic.authentication.LoginCredentials",
                 "is_repeated": true
               }
             ]
@@ -1075,13 +1063,8 @@
             "fields": [
               {
                 "id": 1,
-                "name": "client_id",
-                "type": "string"
-              },
-              {
-                "id": 2,
-                "name": "client_ip",
-                "type": "string"
+                "name": "authentication_pair",
+                "type": ".org.openbase.type.domotic.authentication.AuthenticationPair"
               },
               {
                 "id": 3,
@@ -1097,6 +1080,9 @@
           }
         ],
         "imports": [
+          {
+            "path": "org/openbase/type/domotic/authentication/AuthenticationPair.proto"
+          },
           {
             "path": "org/openbase/type/timing/Interval.proto"
           }
