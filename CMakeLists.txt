@@ -47,6 +47,10 @@ target_link_libraries(${PROJECT_NAME}
         ${PROTOBUF_LIBRARIES}
 )
 
+if(UNIX OR APPLE)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -Wall -std=c++11")
+endif()
+
 install(TARGETS ${PROJECT_NAME}
     EXPORT ${PROJECT_NAME}-export
     LIBRARY DESTINATION lib
