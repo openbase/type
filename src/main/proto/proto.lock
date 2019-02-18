@@ -2522,12 +2522,12 @@
               },
               {
                 "id": 40,
-                "name": "service_attribute_type",
+                "name": "service_state_class_name",
                 "type": "string"
               },
               {
                 "id": 50,
-                "name": "service_attribute",
+                "name": "service_state",
                 "type": "string"
               }
             ]

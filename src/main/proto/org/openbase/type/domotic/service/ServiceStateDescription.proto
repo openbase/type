@@ -32,14 +32,14 @@ message ServiceStateDescription {
     optional .org.openbase.type.domotic.unit.UnitTemplate.UnitType unit_type = 30;
 
     /**
-     * Serialization of the service attribute type needed to deserialize the service attribute.
+     * The classname of the service state needed for deserialization.
      */
-    optional string service_attribute_type = 40;
+    optional string service_state_class_name = 40;
 
     /**
-     * The attribute which defines the state the service shall have.
+     * The service state to apply or which has been applied.
      */
-    optional string service_attribute = 50;
+    optional string service_state = 50;
 
 }
 

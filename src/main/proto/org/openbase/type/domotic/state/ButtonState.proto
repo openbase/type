@@ -70,7 +70,7 @@ message ButtonState {
     repeated MapFieldEntry last_value_occurrence = 1000;
 
     /**
-     * Timestamp of the occurency of this event.
+     * Timestamp of the occurrency of this event.
      */
     optional .org.openbase.type.timing.Timestamp timestamp = 200;
 
