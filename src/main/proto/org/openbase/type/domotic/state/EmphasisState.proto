@@ -12,6 +12,8 @@ option java_outer_classname = "EmphasisStateType";
 /**
  * Emphasis state of comfort, energy saving, and safty dimensions.
  * Mainly provided by the locations and used by units like the agents.
+ * The emphasis state is only valid, if the sum of comfort, economy and security is exactly 1.
+ * The default ranking is: comfort < economy < security < safety
  *
  * Note: Safety is not included in this type because its always ranked as high.
  *
@@ -21,18 +23,21 @@ message EmphasisState {
 
     /**
      * The comfort emphasis in the range of [0..1].
+     * Its default value is 0.32d related to the default emphasis ranking.
      */
-    optional double comfort = 100;
+    optional double comfort = 100 [default = 0.32];
 
     /**
      * The economy emphasis in the range of [0..1].
+     * Its default value is 0.33d related to the default emphasis ranking.
      */
-    optional double economy = 200;
+    optional double economy = 200 [default = 0.33];
 
     /**
      * The comfort security in the range of [0..1].
+     * Its default value is 0.35d related to the default emphasis ranking.
      */
-    optional double security = 300;
+    optional double security = 300 [default = 0.35];
 
     /**
      * Timestamp of the occurency of this event.
