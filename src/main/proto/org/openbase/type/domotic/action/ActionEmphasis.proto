@@ -15,6 +15,7 @@ message ActionEmphasis {
 
     /**
      * The emphasis categories.
+     * The default ranking is: comfort < economy < security < safety
      */
     enum Category {
 
