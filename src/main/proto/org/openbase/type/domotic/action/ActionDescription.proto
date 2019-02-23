@@ -92,14 +92,16 @@ message ActionDescription {
 
     /**
      * The defined runtime period of this action in microseconds.
-     * The action will be finished or rejected (if prevously scheduled) after expiration.
-     * If set to 0 then the action will only be executed ones if no other action is blocking the unit to avoid state flickering.
+     * The action will be finished or rejected (if previously scheduled) after expiration.
+     * 0 is not a valid value as time period and the action will directly rejected to avoid state flickering.
+     * Be aware that the upper boarder of the execution time will always be limited by the controller to 15 minutes.
+     * You can extent the execution of an action via the last_extension field, to archive a longer execution time period.
      */
     optional uint64 execution_time_period = 100;
 
     /**
      * Flag defines if an currently scheduled or executing action should be canceled.
-     * To perform a cancelation of a running action, only this flag and the id of the action is needed.
+     * To perform a cancellation of a running action, only this flag and the id of the action is needed.
      */
     optional bool cancel = 110 [default = false];
 
@@ -111,7 +113,7 @@ message ActionDescription {
 
     /**
      * Flag defines if this action supports it, to be scheduled.
-     * If not than the action will directly rejected in case a currenly higher ranked action is blocking the unit.
+     * If not than the action will directly rejected in case a currently higher ranked action is blocking the unit.
      */
     optional bool schedulable = 130 [default = true];
 
@@ -119,5 +121,13 @@ message ActionDescription {
      * The time when this action was created.
      */
     optional .org.openbase.type.timing.Timestamp timestamp = 140;
+
+    /**
+     * This field can be used to extend an already running action.
+     * The execution time period of of system action is always limited to 15 minutes via the unit controller
+     * but it can be extended by setting the last_extension to the current system time and reapplying the action.
+     * The unit of the timestamp is microseconds.
+     */
+    optional .org.openbase.type.timing.Timestamp last_extension = 150;
 }
 
