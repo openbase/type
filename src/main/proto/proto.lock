@@ -225,6 +225,11 @@
                 "id": 140,
                 "name": "timestamp",
                 "type": ".org.openbase.type.timing.Timestamp"
+              },
+              {
+                "id": 150,
+                "name": "last_extension",
+                "type": ".org.openbase.type.timing.Timestamp"
               }
             ]
           }
@@ -504,6 +509,32 @@
                 "id": 40,
                 "name": "execution_time_period",
                 "type": "uint64"
+              },
+              {
+                "id": 50,
+                "name": "priority",
+                "type": ".org.openbase.type.domotic.action.ActionPriority.Priority"
+              },
+              {
+                "id": 60,
+                "name": "category",
+                "type": ".org.openbase.type.domotic.action.ActionEmphasis.Category",
+                "is_repeated": true
+              },
+              {
+                "id": 70,
+                "name": "interruptible",
+                "type": "bool"
+              },
+              {
+                "id": 80,
+                "name": "schedulable",
+                "type": "bool"
+              },
+              {
+                "id": 90,
+                "name": "timestamp",
+                "type": ".org.openbase.type.timing.Timestamp"
               }
             ]
           }
@@ -514,6 +545,15 @@
           },
           {
             "path": "org/openbase/type/domotic/service/ServiceStateDescription.proto"
+          },
+          {
+            "path": "org/openbase/type/timing/Timestamp.proto"
+          },
+          {
+            "path": "org/openbase/type/domotic/action/ActionPriority.proto"
+          },
+          {
+            "path": "org/openbase/type/domotic/action/ActionEmphasis.proto"
           }
         ]
       }

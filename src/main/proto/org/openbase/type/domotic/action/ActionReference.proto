@@ -4,6 +4,9 @@ package org.openbase.type.domotic.action;
 
 import "org/openbase/type/domotic/action/ActionInitiator.proto";
 import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
+import "org/openbase/type/timing/Timestamp.proto";
+import "org/openbase/type/domotic/action/ActionPriority.proto";
+import "org/openbase/type/domotic/action/ActionEmphasis.proto";
 
 option java_outer_classname = "ActionReferenceType";
 
@@ -36,5 +39,34 @@ message ActionReference {
      * the action causes will be searched for this value.
      */
     optional uint64 execution_time_period = 40;
+
+    /**
+     * The execution priority of this action used for the action ranking.
+     *
+     * Note: Default priority is NORMAL
+     */
+    optional .org.openbase.type.domotic.action.ActionPriority.Priority priority = 50 [default = NORMAL];
+
+    /**
+     * The emphasis categories representing the optimization intention of this action used for the ranking.
+     */
+    repeated .org.openbase.type.domotic.action.ActionEmphasis.Category category = 60;
+
+    /**
+     * Flag defines if the action execution can be continued after interruption.
+     * This means if this action was relegated by another one, it is directly rejected and whill not be scheduled again.
+     */
+    optional bool interruptible = 70 [default = true];
+
+    /**
+     * Flag defines if this action supports it, to be scheduled.
+     * If not than the action will directly rejected in case a currently higher ranked action is blocking the unit.
+     */
+    optional bool schedulable = 80 [default = true];
+
+    /**
+     * The time when this action was created.
+     */
+    optional .org.openbase.type.timing.Timestamp timestamp = 90;
 }
 
