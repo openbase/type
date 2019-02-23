@@ -96,8 +96,11 @@ message ActionDescription {
      * 0 is not a valid value as time period and the action will directly rejected to avoid state flickering.
      * Be aware that the upper boarder of the execution time will always be limited by the controller to 15 minutes.
      * You can extent the execution of an action via the last_extension field, to archive a longer execution time period.
+     *
+     * The default value is 15 minutes.
      */
-    optional uint64 execution_time_period = 100;
+    optional uint64 execution_time_period = 100 [default = 900000000];
+
 
     /**
      * Flag defines if an currently scheduled or executing action should be canceled.
