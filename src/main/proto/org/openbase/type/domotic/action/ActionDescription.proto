@@ -91,7 +91,7 @@ message ActionDescription {
     repeated .org.openbase.type.domotic.action.ActionEmphasis.Category category = 90;
 
     /**
-     * The defined runtime period of this action in microsecunds.
+     * The defined runtime period of this action in microseconds.
      * The action will be finished or rejected (if prevously scheduled) after expiration.
      * If set to 0 then the action will only be executed ones if no other action is blocking the unit to avoid state flickering.
      */

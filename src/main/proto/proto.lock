@@ -499,6 +499,11 @@
                 "id": 30,
                 "name": "service_state_description",
                 "type": ".org.openbase.type.domotic.service.ServiceStateDescription"
+              },
+              {
+                "id": 40,
+                "name": "execution_time_period",
+                "type": "uint64"
               }
             ]
           }

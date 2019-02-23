@@ -30,5 +30,11 @@ message ActionReference {
      * The state applied by the referenced action.
      */
     optional .org.openbase.type.domotic.service.ServiceStateDescription service_state_description = 30;
+
+    /**
+     * The runtime period of the referenced action in microseconds. If an action has not specified a runtime
+     * the action causes will be searched for this value.
+     */
+    optional uint64 execution_time_period = 40;
 }
 
