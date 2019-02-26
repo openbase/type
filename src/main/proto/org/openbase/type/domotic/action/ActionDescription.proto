@@ -95,7 +95,7 @@ message ActionDescription {
      * The action will be finished or rejected (if previously scheduled) after expiration.
      * 0 is not a valid value as time period and the action will directly rejected to avoid state flickering.
      * Be aware that the upper boarder of the execution time will always be limited by the controller to 15 minutes.
-     * You can extent the execution of an action via the last_extension field, to archive a longer execution time period.
+     * You can extent the execution of an action via the extend flag, to archive a longer execution time period.
      *
      * The default value is 15 minutes.
      */
@@ -109,8 +109,16 @@ message ActionDescription {
     optional bool cancel = 110 [default = false];
 
     /**
+     * Flag can be used to extend an already running action.
+     * The extension of the actions execution time will only be applied if the action is already known by the target unit,
+     * and it's still valid.
+     * To perform a extension of a running action, only this flag and the id of the action is needed.
+     */
+    optional bool extend = 115 [default = false];
+
+    /**
      * Flag defines if the action execution can be continued after interruption.
-     * This means if this action was relegated by another one, it is directly rejected and whill not be scheduled again.
+     * This means if this action was relegated by another one, it is directly rejected and will not be scheduled again.
      */
     optional bool interruptible = 120 [default = true];
 
@@ -126,11 +134,16 @@ message ActionDescription {
     optional .org.openbase.type.timing.Timestamp timestamp = 140;
 
     /**
-     * This field can be used to extend an already running action.
+     * The time when this action was terminated.
+     */
+    optional .org.openbase.type.timing.Timestamp termination_timestamp = 150;
+
+    /**
+     * This field delivers the time of the last successful extension of this action.
      * The execution time period of of system action is always limited to 15 minutes via the unit controller
-     * but it can be extended by setting the last_extension to the current system time and reapplying the action.
+     * but it can be extended by setting the extent flag and reapplying the action.
      * The unit of the timestamp is microseconds.
      */
-    optional .org.openbase.type.timing.Timestamp last_extension = 150;
+    optional .org.openbase.type.timing.Timestamp last_extension_timestamp = 160;
 }
 
