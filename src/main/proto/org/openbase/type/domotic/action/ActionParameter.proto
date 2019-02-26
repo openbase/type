@@ -10,6 +10,7 @@ import "org/openbase/type/domotic/action/ActionInitiator.proto";
 import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
 import "org/openbase/type/domotic/action/ActionPriority.proto";
 import "org/openbase/type/domotic/action/ActionEmphasis.proto";
+import "org/openbase/type/domotic/authentication/AuthToken.proto";
 
 /**
  * Description of possible paramters to define an action.
@@ -85,16 +86,18 @@ message ActionParameter {
     optional bool schedulable = 130 [default = true];
 
     /**
-     * The token with which the actions is authenticated.
-     * If this field is empty the user logged in at the default session manager is authenticated.
-     * If this field is set, the initiator will always be overwritten by the user specified in this token.
+     * A bundle of authentication and authorization tokens used to acquire permissions:
+     *
+     * authentication token:
+     *     The token with which the actions is authenticated.
+     *     If this field is empty the user logged in at the default session manager is authenticated.
+     *     If this field is set, the initiator will always be overwritten by the user specified in this token.
+     *
+     * authorization token:
+     *    The token with which the action is authorized.
+     *    If this field is empty, the permissions of the user logged in at the default session manager are used for authorziation.
+     *
      */
-    optional string authentication_token = 140;
-
-    /**
-     * The token with which the action is authorized.
-     * If this field is empty, the permissions of the user logged in at the default session manager are used for authorziation.
-     */
-    optional string authorization_token = 150;
+    optional .org.openbase.type.domotic.authentication.AuthToken auth_token = 140;
 }
 

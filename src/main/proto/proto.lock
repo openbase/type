@@ -212,6 +212,11 @@
                 "type": "bool"
               },
               {
+                "id": 115,
+                "name": "extend",
+                "type": "bool"
+              },
+              {
                 "id": 120,
                 "name": "interruptible",
                 "type": "bool"
@@ -228,7 +233,12 @@
               },
               {
                 "id": 150,
-                "name": "last_extension",
+                "name": "termination_timestamp",
+                "type": ".org.openbase.type.timing.Timestamp"
+              },
+              {
+                "id": 160,
+                "name": "last_extension_timestamp",
                 "type": ".org.openbase.type.timing.Timestamp"
               }
             ]
@@ -406,13 +416,8 @@
               },
               {
                 "id": 140,
-                "name": "authentication_token",
-                "type": "string"
-              },
-              {
-                "id": 150,
-                "name": "authorization_token",
-                "type": "string"
+                "name": "auth_token",
+                "type": ".org.openbase.type.domotic.authentication.AuthToken"
               }
             ]
           }
@@ -435,6 +440,9 @@
           },
           {
             "path": "org/openbase/type/domotic/action/ActionEmphasis.proto"
+          },
+          {
+            "path": "org/openbase/type/domotic/authentication/AuthToken.proto"
           }
         ]
       }
@@ -787,6 +795,28 @@
           },
           {
             "path": "org/openbase/type/configuration/MetaConfig.proto"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:AuthToken.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "AuthToken",
+            "fields": [
+              {
+                "id": 100,
+                "name": "authentication_token",
+                "type": "string"
+              },
+              {
+                "id": 200,
+                "name": "authorization_token",
+                "type": "string"
+              }
+            ]
           }
         ]
       }
