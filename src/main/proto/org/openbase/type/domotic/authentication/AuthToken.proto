@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+package org.openbase.type.domotic.authentication;
+
+option java_outer_classname = "AuthTokenType";
+
+/**
+ * A bundle of an authentication and an authorization token.
+ *
+ * @author Divine Threepwodd <divine@openbase.org>
+ */
+message AuthToken {
+
+    /**
+     * The token with which the actions is authenticated.
+     * If this field is empty the user logged in at the default session manager is authenticated.
+     * If this field is set, the initiator will always be overwritten by the user specified in this token.
+     */
+    optional string authentication_token = 100;
+
+    /**
+     * The token with which the action is authorized.
+     * If this field is empty, the permissions of the user logged in at the default session manager are used for authorziation.
+     */
+    optional string authorization_token = 200;
+}
