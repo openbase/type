@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package rct.proto;
+package org.openbase.type.geometry;
 
 option java_outer_classname = "FrameTransformCollectionType";
 
