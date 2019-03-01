@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package org.openbase.type.devices.sensfloor;
 
-import "org/openbase/type/devices/sensfloor/FloorModuleState.proto";
+import "src/main/proto/org/openbase/type/device/sensfloor/FloorModuleState.proto";
 
 option java_outer_classname = "FloorStateType";
 
