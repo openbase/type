@@ -64,7 +64,7 @@
       }
     },
     {
-      "protopath": "org:/:openbase:/:type:/:devices:/:sensfloor:/:FloorModuleState.proto",
+      "protopath": "org:/:openbase:/:type:/:device:/:sensfloor:/:FloorModuleState.proto",
       "def": {
         "messages": [
           {
@@ -109,7 +109,7 @@
       }
     },
     {
-      "protopath": "org:/:openbase:/:type:/:devices:/:sensfloor:/:FloorState.proto",
+      "protopath": "org:/:openbase:/:type:/:device:/:sensfloor:/:FloorState.proto",
       "def": {
         "messages": [
           {
@@ -123,7 +123,7 @@
               {
                 "id": 2,
                 "name": "floormodulestate",
-                "type": ".org.openbase.type.devices.sensfloor.FloorModuleState",
+                "type": ".org.openbase.type.device.sensfloor.FloorModuleState",
                 "is_repeated": true
               }
             ]
@@ -131,7 +131,7 @@
         ],
         "imports": [
           {
-            "path": "org/openbase/type/devices/sensfloor/FloorModuleState.proto"
+            "path": "org/openbase/type/device/sensfloor/FloorModuleState.proto"
           }
         ]
       }
