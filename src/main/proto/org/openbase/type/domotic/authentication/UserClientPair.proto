@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package org.openbase.type.domotic.authentication;
 
-option java_outer_classname = "AuthenticationPairType";
+option java_outer_classname = "UserClientPairType";
 
 /**
  * Type identifying who is logged in. Since BCO differentiates between users and clients,
@@ -10,7 +10,7 @@ option java_outer_classname = "AuthenticationPairType";
  *
  * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
  */
-message AuthenticationPair {
+message UserClientPair {
 
     /**
      * The id of the user logged in.

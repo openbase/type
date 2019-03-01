@@ -864,28 +864,6 @@
       }
     },
     {
-      "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:AuthenticationPair.proto",
-      "def": {
-        "messages": [
-          {
-            "name": "AuthenticationPair",
-            "fields": [
-              {
-                "id": 1,
-                "name": "user_id",
-                "type": "string"
-              },
-              {
-                "id": 2,
-                "name": "client_id",
-                "type": "string"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
       "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:AuthenticationToken.proto",
       "def": {
         "messages": [
@@ -911,8 +889,8 @@
             "fields": [
               {
                 "id": 1,
-                "name": "authentication_pair",
-                "type": ".org.openbase.type.domotic.authentication.AuthenticationPair"
+                "name": "user_client_pair",
+                "type": ".org.openbase.type.domotic.authentication.UserClientPair"
               },
               {
                 "id": 2,
@@ -924,7 +902,7 @@
         ],
         "imports": [
           {
-            "path": "org/openbase/type/domotic/authentication/AuthenticationPair.proto"
+            "path": "org/openbase/type/domotic/authentication/UserClientPair.proto"
           },
           {
             "path": "org/openbase/type/timing/Timestamp.proto"
@@ -1007,7 +985,7 @@
               {
                 "id": 2,
                 "name": "credentials",
-                "type": "string"
+                "type": "bytes"
               },
               {
                 "id": 3,
@@ -1020,6 +998,43 @@
                 "type": "bool"
               }
             ]
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:LoginCredentialsChange.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "LoginCredentialsChange",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "symmetric",
+                "type": "bool"
+              },
+              {
+                "id": 3,
+                "name": "old_credentials",
+                "type": "bytes"
+              },
+              {
+                "id": 4,
+                "name": "new_credentials",
+                "type": "bytes"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "org/openbase/type/domotic/authentication/LoginCredentials.proto"
           }
         ]
       }
@@ -1138,8 +1153,8 @@
             "fields": [
               {
                 "id": 1,
-                "name": "authentication_pair",
-                "type": ".org.openbase.type.domotic.authentication.AuthenticationPair"
+                "name": "user_client_pair",
+                "type": ".org.openbase.type.domotic.authentication.UserClientPair"
               },
               {
                 "id": 3,
@@ -1156,7 +1171,7 @@
         ],
         "imports": [
           {
-            "path": "org/openbase/type/domotic/authentication/AuthenticationPair.proto"
+            "path": "org/openbase/type/domotic/authentication/UserClientPair.proto"
           },
           {
             "path": "org/openbase/type/timing/Interval.proto"
@@ -1202,6 +1217,28 @@
                 "id": 2,
                 "name": "session_key",
                 "type": "bytes"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:UserClientPair.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "UserClientPair",
+            "fields": [
+              {
+                "id": 1,
+                "name": "user_id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "client_id",
+                "type": "string"
               }
             ]
           }

@@ -4,7 +4,7 @@ package org.openbase.type.domotic.authentication;
 
 option java_outer_classname = "TicketType";
 
-import "org/openbase/type/domotic/authentication/AuthenticationPair.proto";
+import "org/openbase/type/domotic/authentication/UserClientPair.proto";
 import "org/openbase/type/timing/Interval.proto";
 
 /**
@@ -18,7 +18,7 @@ message Ticket {
     /**
      * Type identifying the logged in user and client.
      */
-    optional .org.openbase.type.domotic.authentication.AuthenticationPair authentication_pair = 1;
+    optional .org.openbase.type.domotic.authentication.UserClientPair user_client_pair = 1;
 
     /**
      * Validity period.
