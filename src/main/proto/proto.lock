@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "protopath": "org:/:openbase:/:type:/:com:/:Scope.proto",
+      "protopath": "org:/:openbase:/:type:/:communication:/:Scope.proto",
       "def": {
         "messages": [
           {
@@ -5201,7 +5201,7 @@
               {
                 "id": 300,
                 "name": "scope",
-                "type": ".org.openbase.type.com.Scope"
+                "type": ".org.openbase.type.communication.Scope"
               },
               {
                 "id": 500,
@@ -5340,7 +5340,7 @@
             "path": "org/openbase/type/domotic/unit/authorizationgroup/AuthorizationGroupConfig.proto"
           },
           {
-            "path": "org/openbase/type/com/Scope.proto"
+            "path": "org/openbase/type/communication/Scope.proto"
           },
           {
             "path": "org/openbase/type/spatial/PlacementConfig.proto"
