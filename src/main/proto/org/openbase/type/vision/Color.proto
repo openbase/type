@@ -56,4 +56,3 @@ message Color {
         .org.openbase.type.RGBColor rgb = 2;
     }*/
 }
-

@@ -37,7 +37,7 @@ message ConnectionConfig {
     /**
      * The type of the location.
      */
-    optional ConnectionType type = 300;
+    optional ConnectionType connection_type = 300;
 
     /**
      * The ids of the tile connected by this connection.
@@ -49,4 +49,3 @@ message ConnectionConfig {
      */
     repeated string unit_id = 500;
 }
-

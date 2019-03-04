@@ -44,7 +44,7 @@ message ActivityTemplate {
     /**
      * The type of the activity template.
      */
-    optional ActivityType type = 300;
+    optional ActivityType activity_type = 300;
 
     /**
      * A field storing meta configurations.
@@ -56,4 +56,3 @@ message ActivityTemplate {
      */
     optional .org.openbase.type.language.MultiLanguageText description = 500;
 }
-

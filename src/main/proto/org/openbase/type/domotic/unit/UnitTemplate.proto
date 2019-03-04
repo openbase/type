@@ -216,7 +216,7 @@ message UnitTemplate {
     /**
      * The type of the unit.
      */
-    optional UnitType type = 100;
+    optional UnitType unit_type = 100;
 
     /**
      * A list of unit types included by the type of this unit template.
@@ -234,4 +234,3 @@ message UnitTemplate {
      */
     optional .org.openbase.type.configuration.MetaConfig meta_config = 300;
 }
-

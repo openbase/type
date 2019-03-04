@@ -245,7 +245,7 @@ message ServiceTemplate {
     /**
      * The related Service type.
      */
-    optional ServiceType type = 100;
+    optional ServiceType service_type = 100;
 
     /**
      * A list of service types included by the type of this unit template.
@@ -263,4 +263,3 @@ message ServiceTemplate {
      */
     optional .org.openbase.type.configuration.MetaConfig meta_config = 300;
 }
-

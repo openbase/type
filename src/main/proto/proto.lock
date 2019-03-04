@@ -770,7 +770,7 @@
               },
               {
                 "id": 300,
-                "name": "type",
+                "name": "activity_type",
                 "type": "ActivityType"
               },
               {
@@ -2811,7 +2811,7 @@
               },
               {
                 "id": 100,
-                "name": "type",
+                "name": "service_type",
                 "type": "ServiceType"
               },
               {
@@ -5566,7 +5566,7 @@
               },
               {
                 "id": 100,
-                "name": "type",
+                "name": "unit_type",
                 "type": "UnitType"
               },
               {
@@ -5621,7 +5621,7 @@
               },
               {
                 "id": 100,
-                "name": "type",
+                "name": "unit_type",
                 "type": ".org.openbase.type.domotic.unit.UnitTemplate.UnitType"
               },
               {
@@ -6105,7 +6105,7 @@
             "fields": [
               {
                 "id": 300,
-                "name": "type",
+                "name": "connection_type",
                 "type": "ConnectionType"
               },
               {
@@ -8123,7 +8123,7 @@
             "fields": [
               {
                 "id": 150,
-                "name": "type",
+                "name": "location_type",
                 "type": "LocationType"
               },
               {
@@ -8495,7 +8495,7 @@
             "fields": [
               {
                 "id": 100,
-                "name": "type",
+                "name": "tile_type",
                 "type": "TileType"
               },
               {
