@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(openbase-types VERSION 1.0.0 LANGUAGES CXX)
+project(org_openbase_type VERSION 1.0.0 LANGUAGES CXX)
 
 find_package(Protobuf 3.0.2 REQUIRED)
 
