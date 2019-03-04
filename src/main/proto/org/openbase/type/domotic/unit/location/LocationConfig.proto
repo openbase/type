@@ -40,7 +40,7 @@ message LocationConfig {
     /**
      * The type of the location.
      */
-    optional LocationType type = 150;
+    optional LocationType location_type = 150;
 
     /**
      * Flag if this location is a root location.
@@ -67,4 +67,3 @@ message LocationConfig {
      */
     optional .org.openbase.type.domotic.state.GlobalPositionState global_position = 1000;
 }
-

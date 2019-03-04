@@ -38,3 +38,8 @@ cd build
 cmake ..
 make
 ```
+
+### Install
+```
+make install
+```

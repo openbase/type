@@ -29,7 +29,7 @@ message UnitTemplateConfig {
     /**
      * The unit type.
      */
-    optional .org.openbase.type.domotic.unit.UnitTemplate.UnitType type = 100;
+    optional .org.openbase.type.domotic.unit.UnitTemplate.UnitType unit_type = 100;
 
     /**
      * The service templates.
@@ -41,4 +41,3 @@ message UnitTemplateConfig {
      */
     optional .org.openbase.type.configuration.MetaConfig meta_config = 300;
 }
-

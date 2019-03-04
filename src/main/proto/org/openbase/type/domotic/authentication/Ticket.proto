@@ -22,7 +22,7 @@ message Ticket {
     /**
      * IP address of the client.
      */
-    optional string client_ip = 2;
+    optional string client_ip = 2 [deprecated = true];
 
     /**
      * Validity period.

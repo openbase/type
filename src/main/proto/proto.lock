@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "protopath": "org:/:openbase:/:type:/:com:/:Scope.proto",
+      "protopath": "org:/:openbase:/:type:/:communication:/:Scope.proto",
       "def": {
         "messages": [
           {
@@ -64,7 +64,7 @@
       }
     },
     {
-      "protopath": "org:/:openbase:/:type:/:devices:/:sensfloor:/:FloorModuleState.proto",
+      "protopath": "org:/:openbase:/:type:/:device:/:sensfloor:/:FloorModuleState.proto",
       "def": {
         "messages": [
           {
@@ -109,7 +109,7 @@
       }
     },
     {
-      "protopath": "org:/:openbase:/:type:/:devices:/:sensfloor:/:FloorState.proto",
+      "protopath": "org:/:openbase:/:type:/:device:/:sensfloor:/:FloorState.proto",
       "def": {
         "messages": [
           {
@@ -123,7 +123,7 @@
               {
                 "id": 2,
                 "name": "floormodulestate",
-                "type": ".org.openbase.type.devices.sensfloor.FloorModuleState",
+                "type": ".org.openbase.type.device.sensfloor.FloorModuleState",
                 "is_repeated": true
               }
             ]
@@ -131,7 +131,7 @@
         ],
         "imports": [
           {
-            "path": "org/openbase/type/devices/sensfloor/FloorModuleState.proto"
+            "path": "org/openbase/type/device/sensfloor/FloorModuleState.proto"
           }
         ]
       }
@@ -212,6 +212,11 @@
                 "type": "bool"
               },
               {
+                "id": 115,
+                "name": "extend",
+                "type": "bool"
+              },
+              {
                 "id": 120,
                 "name": "interruptible",
                 "type": "bool"
@@ -224,6 +229,16 @@
               {
                 "id": 140,
                 "name": "timestamp",
+                "type": ".org.openbase.type.timing.Timestamp"
+              },
+              {
+                "id": 150,
+                "name": "termination_timestamp",
+                "type": ".org.openbase.type.timing.Timestamp"
+              },
+              {
+                "id": 160,
+                "name": "last_extension_timestamp",
                 "type": ".org.openbase.type.timing.Timestamp"
               }
             ]
@@ -401,13 +416,8 @@
               },
               {
                 "id": 140,
-                "name": "authentication_token",
-                "type": "string"
-              },
-              {
-                "id": 150,
-                "name": "authorization_token",
-                "type": "string"
+                "name": "auth_token",
+                "type": ".org.openbase.type.domotic.authentication.AuthToken"
               }
             ]
           }
@@ -430,6 +440,9 @@
           },
           {
             "path": "org/openbase/type/domotic/action/ActionEmphasis.proto"
+          },
+          {
+            "path": "org/openbase/type/domotic/authentication/AuthToken.proto"
           }
         ]
       }
@@ -499,6 +512,37 @@
                 "id": 30,
                 "name": "service_state_description",
                 "type": ".org.openbase.type.domotic.service.ServiceStateDescription"
+              },
+              {
+                "id": 40,
+                "name": "execution_time_period",
+                "type": "uint64"
+              },
+              {
+                "id": 50,
+                "name": "priority",
+                "type": ".org.openbase.type.domotic.action.ActionPriority.Priority"
+              },
+              {
+                "id": 60,
+                "name": "category",
+                "type": ".org.openbase.type.domotic.action.ActionEmphasis.Category",
+                "is_repeated": true
+              },
+              {
+                "id": 70,
+                "name": "interruptible",
+                "type": "bool"
+              },
+              {
+                "id": 80,
+                "name": "schedulable",
+                "type": "bool"
+              },
+              {
+                "id": 90,
+                "name": "timestamp",
+                "type": ".org.openbase.type.timing.Timestamp"
               }
             ]
           }
@@ -509,6 +553,15 @@
           },
           {
             "path": "org/openbase/type/domotic/service/ServiceStateDescription.proto"
+          },
+          {
+            "path": "org/openbase/type/timing/Timestamp.proto"
+          },
+          {
+            "path": "org/openbase/type/domotic/action/ActionPriority.proto"
+          },
+          {
+            "path": "org/openbase/type/domotic/action/ActionEmphasis.proto"
           }
         ]
       }
@@ -717,7 +770,7 @@
               },
               {
                 "id": 300,
-                "name": "type",
+                "name": "activity_type",
                 "type": "ActivityType"
               },
               {
@@ -742,6 +795,28 @@
           },
           {
             "path": "org/openbase/type/configuration/MetaConfig.proto"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:AuthToken.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "AuthToken",
+            "fields": [
+              {
+                "id": 100,
+                "name": "authentication_token",
+                "type": "string"
+              },
+              {
+                "id": 200,
+                "name": "authorization_token",
+                "type": "string"
+              }
+            ]
           }
         ]
       }
@@ -2522,12 +2597,12 @@
               },
               {
                 "id": 40,
-                "name": "service_attribute_type",
+                "name": "service_state_class_name",
                 "type": "string"
               },
               {
                 "id": 50,
-                "name": "service_attribute",
+                "name": "service_state",
                 "type": "string"
               }
             ]
@@ -2736,7 +2811,7 @@
               },
               {
                 "id": 100,
-                "name": "type",
+                "name": "service_type",
                 "type": "ServiceType"
               },
               {
@@ -5126,7 +5201,7 @@
               {
                 "id": 300,
                 "name": "scope",
-                "type": ".org.openbase.type.com.Scope"
+                "type": ".org.openbase.type.communication.Scope"
               },
               {
                 "id": 500,
@@ -5265,7 +5340,7 @@
             "path": "org/openbase/type/domotic/unit/authorizationgroup/AuthorizationGroupConfig.proto"
           },
           {
-            "path": "org/openbase/type/com/Scope.proto"
+            "path": "org/openbase/type/communication/Scope.proto"
           },
           {
             "path": "org/openbase/type/spatial/PlacementConfig.proto"
@@ -5491,7 +5566,7 @@
               },
               {
                 "id": 100,
-                "name": "type",
+                "name": "unit_type",
                 "type": "UnitType"
               },
               {
@@ -5546,7 +5621,7 @@
               },
               {
                 "id": 100,
-                "name": "type",
+                "name": "unit_type",
                 "type": ".org.openbase.type.domotic.unit.UnitTemplate.UnitType"
               },
               {
@@ -6030,7 +6105,7 @@
             "fields": [
               {
                 "id": 300,
-                "name": "type",
+                "name": "connection_type",
                 "type": "ConnectionType"
               },
               {
@@ -8048,7 +8123,7 @@
             "fields": [
               {
                 "id": 150,
-                "name": "type",
+                "name": "location_type",
                 "type": "LocationType"
               },
               {
@@ -8420,7 +8495,7 @@
             "fields": [
               {
                 "id": 100,
-                "name": "type",
+                "name": "tile_type",
                 "type": "TileType"
               },
               {

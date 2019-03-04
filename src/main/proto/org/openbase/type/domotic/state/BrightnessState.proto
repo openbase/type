@@ -17,17 +17,17 @@ option java_outer_classname = "BrightnessStateType";
 message BrightnessState {
 
     /**
-     * The date unit of the brighntess value.
+     * The date unit of the brightness value.
      */
     enum DataUnit {
 
         /**
-         * Unkown data unit.
+         * Unknown data unit.
          */
         UNKNOWN = 0;
 
         /**
-         * If the brighntess is given in percent e. g. for dimmable lights.
+         * If the brightness is given in percent e. g. for dimmable lights.
          */
         PERCENT = 2;
     }
@@ -43,7 +43,7 @@ message BrightnessState {
     optional DataUnit brightness_data_unit = 200 [default = PERCENT];
 
     /**
-     * Timestamp of the occurency of this event.
+     * Timestamp of the occurrence of this event.
      */
     optional .org.openbase.type.timing.Timestamp timestamp = 300;
 

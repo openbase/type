@@ -91,27 +91,40 @@ message ActionDescription {
     repeated .org.openbase.type.domotic.action.ActionEmphasis.Category category = 90;
 
     /**
-     * The defined runtime period of this action in microsecunds.
-     * The action will be finished or rejected (if prevously scheduled) after expiration.
-     * If set to 0 then the action will only be executed ones if no other action is blocking the unit to avoid state flickering.
+     * The defined runtime period of this action in microseconds.
+     * The action will be finished or rejected (if previously scheduled) after expiration.
+     * 0 is not a valid value as time period and the action will directly rejected to avoid state flickering.
+     * Be aware that the upper boarder of the execution time will always be limited by the controller to 15 minutes.
+     * You can extent the execution of an action via the extend flag, to archive a longer execution time period.
+     *
+     * The default value is 15 minutes.
      */
-    optional uint64 execution_time_period = 100;
+    optional uint64 execution_time_period = 100 [default = 900000000];
+
 
     /**
      * Flag defines if an currently scheduled or executing action should be canceled.
-     * To perform a cancelation of a running action, only this flag and the id of the action is needed.
+     * To perform a cancellation of a running action, only this flag and the id of the action is needed.
      */
     optional bool cancel = 110 [default = false];
 
     /**
+     * Flag can be used to extend an already running action.
+     * The extension of the actions execution time will only be applied if the action is already known by the target unit,
+     * and it's still valid.
+     * To perform a extension of a running action, only this flag and the id of the action is needed.
+     */
+    optional bool extend = 115 [default = false];
+
+    /**
      * Flag defines if the action execution can be continued after interruption.
-     * This means if this action was relegated by another one, it is directly rejected and whill not be scheduled again.
+     * This means if this action was relegated by another one, it is directly rejected and will not be scheduled again.
      */
     optional bool interruptible = 120 [default = true];
 
     /**
      * Flag defines if this action supports it, to be scheduled.
-     * If not than the action will directly rejected in case a currenly higher ranked action is blocking the unit.
+     * If not than the action will directly rejected in case a currently higher ranked action is blocking the unit.
      */
     optional bool schedulable = 130 [default = true];
 
@@ -119,5 +132,18 @@ message ActionDescription {
      * The time when this action was created.
      */
     optional .org.openbase.type.timing.Timestamp timestamp = 140;
+
+    /**
+     * The time when this action was terminated.
+     */
+    optional .org.openbase.type.timing.Timestamp termination_timestamp = 150;
+
+    /**
+     * This field delivers the time of the last successful extension of this action.
+     * The execution time period of of system action is always limited to 15 minutes via the unit controller
+     * but it can be extended by setting the extent flag and reapplying the action.
+     * The unit of the timestamp is microseconds.
+     */
+    optional .org.openbase.type.timing.Timestamp last_extension_timestamp = 160;
 }
 

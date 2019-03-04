@@ -10,6 +10,7 @@ import "org/openbase/type/domotic/action/ActionInitiator.proto";
 import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
 import "org/openbase/type/domotic/action/ActionPriority.proto";
 import "org/openbase/type/domotic/action/ActionEmphasis.proto";
+import "org/openbase/type/domotic/authentication/AuthToken.proto";
 
 /**
  * Description of possible paramters to define an action.
@@ -55,13 +56,15 @@ message ActionParameter {
     repeated .org.openbase.type.domotic.action.ActionEmphasis.Category category = 90;
 
     /**
-     * The defined runtime period of this action it microsecunds.
-     * The action will be finished after expiration.
-     * If set to 0 then the action will finish directly after its execution.
+     * The defined runtime period of this action in microseconds.
+     * The action will be finished or rejected (if previously scheduled) after expiration.
+     * 0 is not a valid value as time period and the action will directly rejected to avoid state flickering.
+     * Be aware that the upper boarder of the execution time will always be limited by the controller to 15 minutes.
+     * You can extent the execution of an action via the last_extension field, to archive a longer execution time period.
      *
-     * Note: Default period is 0
+     * The default value is 15 minutes.
      */
-    optional uint64 execution_time_period = 100;
+    optional uint64 execution_time_period = 100 [default = 900000000];
 
     /**
      * If this action was caused by another action, those action is referred by this field to enable the reconstruction of the complete action chain.
@@ -83,16 +86,18 @@ message ActionParameter {
     optional bool schedulable = 130 [default = true];
 
     /**
-     * The token with which the actions is authenticated.
-     * If this field is empty the user logged in at the default session manager is authenticated.
-     * If this field is set, the initiator will always be overwritten by the user specified in this token.
+     * A bundle of authentication and authorization tokens used to acquire permissions:
+     *
+     * authentication token:
+     *     The token with which the actions is authenticated.
+     *     If this field is empty the user logged in at the default session manager is authenticated.
+     *     If this field is set, the initiator will always be overwritten by the user specified in this token.
+     *
+     * authorization token:
+     *    The token with which the action is authorized.
+     *    If this field is empty, the permissions of the user logged in at the default session manager are used for authorziation.
+     *
      */
-    optional string authentication_token = 140;
-
-    /**
-     * The token with which the action is authorized.
-     * If this field is empty, the permissions of the user logged in at the default session manager are used for authorziation.
-     */
-    optional string authorization_token = 150;
+    optional .org.openbase.type.domotic.authentication.AuthToken auth_token = 140;
 }
 
