@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 3.5)
-project(org_openbase_type VERSION 1.0.0 LANGUAGES CXX)
+
+project(openbase_type VERSION 1.0.0 LANGUAGES CXX)
+set(PROJECT_NAMESPACE "org_openbase")
 
 find_package(Protobuf 3.0.2 REQUIRED)
+
+set(CONFIG_PACKAGE_LOCATION "lib/cmake/${PROJECT_NAME}")
 
 set(PROTO_SOURCE_DIR "${PROJECT_SOURCE_DIR}/src/main/proto")
 
@@ -66,10 +70,7 @@ install(DIRECTORY "${CMAKE_SOURCE_DIR}/src/main/proto"
     FILES_MATCHING PATTERN "*.proto*")
 
 install(EXPORT ${PROJECT_NAME}-export
-  FILE
-  ${PROJECT_NAME}Config.cmake
-  NAMESPACE
-    ${PROJECT_NAME}::
-  DESTINATION
-    share/${PROJECT_NAME}
+  FILE ${PROJECT_NAME}Config.cmake
+  NAMESPACE ${PROJECT_NAMESPACE}::
+  DESTINATION share/${PROJECT_NAME}
 )

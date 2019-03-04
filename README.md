@@ -30,12 +30,20 @@ sudo apt install libprotobuf-dev protobuf-compiler cmake
 ```
 
 ### Generate
-Now you are ready the generate the c++ tyes. First of all we need a build folder ```mkdir build```.
+Now you are ready the generate the c++ types. First of all we need a build folder ```mkdir build```.
 Let's tell cmake to generate the ```makefile``` which can than be used to build the types by calling ```make```.
 ```
 mkdir build
 cd build
 cmake ..
+make
+```
+
+#### Custom Installation Directory
+```
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/path/to/installation/directory ..
 make
 ```
 
