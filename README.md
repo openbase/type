@@ -51,3 +51,21 @@ make
 ```
 make install
 ```
+
+## Use Openbase Type as Upstream Lib
+
+### Via Maven
+```
+<dependency>
+    <groupId>org.openbase</groupId>
+    <artifactId>type</artifactId>
+    <version>1.0-SNAPSHOT</version>
+</dependency>
+```
+
+### Via CMake
+```
+find_package(PkgConfig)
+find_package(openbase_type REQUIRED)
+```
+Target Link Lib Id:```org_openbase::openbase_type```
