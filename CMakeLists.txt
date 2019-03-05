@@ -1,11 +1,29 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(openbase_type VERSION 1.0.0 LANGUAGES CXX)
-set(PROJECT_NAMESPACE "org_openbase")
+### project version
+set(OPENBASE_TYPE_VERSION_MAJOR 1)
+set(OPENBASE_TYPE_VERSION_MINOR 0)
+set(OPENBASE_TYPE_VERSION_PATCH 0)
+set(OPENBASE_TYPE_VERSION "${OPENBASE_TYPE_VERSION_MAJOR}.${OPENBASE_TYPE_VERSION_MINOR}.${OPENBASE_TYPE_VERSION_PATCH}")
 
+### project name
+project(openbase_type VERSION ${OPENBASE_TYPE_VERSION} LANGUAGES CXX)
+
+### project setup
+
+set(PROJECT_VERSION ${OPENBASE_TYPE_VERSION})
+set(PROJECT_NAMESPACE "org_openbase")
+set(CONFIG_PACKAGE_LOCATION "lib/cmake/${PROJECT_NAME}")
+set(CMAKE_CONFIG_FILE_NAME "${PROJECT_NAME}-config.cmake")
+set(CMAKE_CONFIG_VERSION_FILE_NAME "${PROJECT_NAME}-config-version.cmake")
+set(CMAKE_CONFIG_FILE_PATH "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CONFIG_FILE_NAME}")
+set(CMAKE_CONFIG_VERSION_FILE_PATH "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CONFIG_VERSION_FILE_NAME}")
+
+### declare deps
 find_package(Protobuf 3.0.2 REQUIRED)
 
-set(CONFIG_PACKAGE_LOCATION "lib/cmake/${PROJECT_NAME}")
+
+### prepare generated type code
 
 set(PROTO_SOURCE_DIR "${PROJECT_SOURCE_DIR}/src/main/proto")
 
@@ -17,60 +35,83 @@ set(PROTOBUF_GENERATE_CPP_APPEND_PATH TRUE)
 set(PROTO_SOURCES)
 set(PROTO_HEADERS)
 
-foreach(PROTOFILE ${PROTO})
+foreach (PROTOFILE ${PROTO})
     string(REPLACE "${PROTO_SOURCE_DIR}/" "" PROTONAME "${PROTOFILE}")
     string(REPLACE "/" "." TARGETNAME "${PROTONAME}")
     string(REPLACE "${PROTO_SOURCE_DIR}" "${CMAKE_CURRENT_BINARY_DIR}" PROTOTARGET "${PROTOFILE}")
     string(REPLACE ".proto" ".pb.cc" CFILE "${PROTOTARGET}")
-    string(REPLACE ".proto" ".pb.h"  HFILE "${PROTOTARGET}")
+    string(REPLACE ".proto" ".pb.h" HFILE "${PROTOTARGET}")
 
     list(APPEND PROTO_SOURCES ${CFILE})
     list(APPEND PROTO_HEADERS ${HFILE})
 
     add_custom_command(
-        OUTPUT "${CFILE}" "${HFILE}"
-        COMMAND  ${PROTOBUF_PROTOC_EXECUTABLE}
-        ARGS --cpp_out ${CMAKE_CURRENT_BINARY_DIR} --proto_path=${PROTO_SOURCE_DIR} ${PROTOFILE}
-        DEPENDS ${PROTOFILE} ${PROTOBUF_PROTOC_EXECUTABLE}
-        COMMENT "Running C++ protocol buffer compiler on ${FIL}"
-        VERBATIM
-    )
-endforeach()
+            OUTPUT "${CFILE}" "${HFILE}"
+            COMMAND ${PROTOBUF_PROTOC_EXECUTABLE}
+            ARGS --cpp_out ${CMAKE_CURRENT_BINARY_DIR} --proto_path=${PROTO_SOURCE_DIR} ${PROTOFILE}
+            DEPENDS ${PROTOFILE} ${PROTOBUF_PROTOC_EXECUTABLE}
+            COMMENT "Running C++ protocol buffer compiler on ${FIL}"
+            VERBATIM)
+endforeach ()
 
 add_library(${PROJECT_NAME} SHARED ${PROTO_SOURCES})
 
 target_include_directories(${PROJECT_NAME}
-    PUBLIC
+        PUBLIC
         $<INSTALL_INTERFACE:include>
-    PRIVATE
-        $<BUILD_INTERFACE: ${CMAKE_BINARY_DIR} ${PROTOBUF_INCLUDE_DIRS}>
-)
+        PRIVATE
+        $<BUILD_INTERFACE: ${CMAKE_BINARY_DIR} ${PROTOBUF_INCLUDE_DIRS}>)
 
 target_link_libraries(${PROJECT_NAME}
-    PUBLIC
-        ${PROTOBUF_LIBRARIES}
-)
+        PUBLIC
+        ${PROTOBUF_LIBRARIES})
 
-if(UNIX OR APPLE)
+if (UNIX OR APPLE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -Wall -std=c++11")
-endif()
+endif ()
 
+### setup package config
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file(
+        ${CMAKE_CONFIG_VERSION_FILE_PATH}
+        VERSION ${OPENBASE_TYPE_VERSION}
+        COMPATIBILITY AnyNewerVersion)
+
+### install targets
 install(TARGETS ${PROJECT_NAME}
-    EXPORT ${PROJECT_NAME}-export
-    LIBRARY DESTINATION lib
-    PUBLIC_HEADER DESTINATION include
-)
+        EXPORT ${PROJECT_NAME}-export
+        LIBRARY DESTINATION lib
+        PUBLIC_HEADER DESTINATION include)
 
 install(DIRECTORY "${CMAKE_BINARY_DIR}/org"
-    DESTINATION "include"
-    FILES_MATCHING PATTERN "*.h*")
+        DESTINATION "include"
+        FILES_MATCHING PATTERN "*.h*")
 
 install(DIRECTORY "${CMAKE_SOURCE_DIR}/src/main/proto"
-    DESTINATION "share/${PROJECT_NAME}/"
-    FILES_MATCHING PATTERN "*.proto*")
+        DESTINATION "share/${PROJECT_NAME}/"
+        FILES_MATCHING PATTERN "*.proto*")
+
+### export
+install(EXPORT ${PROJECT_NAME}-export
+        FILE ${CMAKE_CONFIG_FILE_NAME}
+        NAMESPACE ${PROJECT_NAMESPACE}::
+        DESTINATION share/${PROJECT_NAME})
+
+export(EXPORT ${PROJECT_NAME}-export
+        FILE ${CMAKE_CONFIG_FILE_PATH}
+        NAMESPACE ${PROJECT_NAMESPACE}::)
 
 install(EXPORT ${PROJECT_NAME}-export
-  FILE ${PROJECT_NAME}Config.cmake
-  NAMESPACE ${PROJECT_NAMESPACE}::
-  DESTINATION share/${PROJECT_NAME}
-)
+        FILE ${CMAKE_CONFIG_FILE_NAME}
+        NAMESPACE ${PROJECT_NAMESPACE}::
+        DESTINATION ${CONFIG_PACKAGE_LOCATION})
+
+install(FILES ${CMAKE_CONFIG_FILE_PATH}
+        ${CMAKE_CONFIG_VERSION_FILE_PATH}
+        DESTINATION ${CONFIG_PACKAGE_LOCATION}
+        COMPONENT Devel)
+
+install(FILES ${CMAKE_CONFIG_FILE_PATH}
+        ${CMAKE_CONFIG_VERSION_FILE_PATH}
+        DESTINATION share/${PROJECT_NAME}
+        COMPONENT Devel)
