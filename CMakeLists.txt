@@ -74,7 +74,7 @@ include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
         ${CMAKE_CONFIG_VERSION_FILE_PATH}
         VERSION ${OPENBASE_TYPE_VERSION}
-        COMPATIBILITY AnyNewerVersion)
+        COMPATIBILITY SameMajorVersion)
 
 ### install targets
 install(TARGETS ${PROJECT_NAME}
