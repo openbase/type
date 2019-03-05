@@ -66,6 +66,6 @@ make install
 ### Via CMake
 ```
 find_package(PkgConfig)
-find_package(openbase_type REQUIRED)
+find_package(openbase-type REQUIRED)
 ```
-Target Link Lib Id:```org_openbase::openbase_type```
+Target Link Lib Id:```org-openbase::openbase-type```
