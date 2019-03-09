@@ -188,4 +188,7 @@ gen-external-apklibs
 ### Node JS and VuePress
 node_modules/.cache
 node_modules/vuepress/node_modules
-www/.vuepress
+www/.vuepres
+
+### Custom Python
+dist
