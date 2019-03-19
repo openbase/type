@@ -1,0 +1,4 @@
+include *.md LICENSE.txt .travis.yml
+recursive-include src *.proto
+recursive-include docs *.md
+prune target

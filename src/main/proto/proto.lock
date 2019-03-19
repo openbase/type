@@ -1,7 +1,7 @@
 {
   "definitions": [
     {
-      "protopath": "org:/:openbase:/:type:/:com:/:Scope.proto",
+      "protopath": "org:/:openbase:/:type:/:communication:/:Scope.proto",
       "def": {
         "messages": [
           {
@@ -64,7 +64,7 @@
       }
     },
     {
-      "protopath": "org:/:openbase:/:type:/:devices:/:sensfloor:/:FloorModuleState.proto",
+      "protopath": "org:/:openbase:/:type:/:device:/:sensfloor:/:FloorModuleState.proto",
       "def": {
         "messages": [
           {
@@ -109,7 +109,7 @@
       }
     },
     {
-      "protopath": "org:/:openbase:/:type:/:devices:/:sensfloor:/:FloorState.proto",
+      "protopath": "org:/:openbase:/:type:/:device:/:sensfloor:/:FloorState.proto",
       "def": {
         "messages": [
           {
@@ -123,7 +123,7 @@
               {
                 "id": 2,
                 "name": "floormodulestate",
-                "type": ".org.openbase.type.devices.sensfloor.FloorModuleState",
+                "type": ".org.openbase.type.device.sensfloor.FloorModuleState",
                 "is_repeated": true
               }
             ]
@@ -131,7 +131,7 @@
         ],
         "imports": [
           {
-            "path": "org/openbase/type/devices/sensfloor/FloorModuleState.proto"
+            "path": "org/openbase/type/device/sensfloor/FloorModuleState.proto"
           }
         ]
       }
@@ -770,7 +770,7 @@
               },
               {
                 "id": 300,
-                "name": "type",
+                "name": "activity_type",
                 "type": "ActivityType"
               },
               {
@@ -2834,7 +2834,7 @@
               },
               {
                 "id": 100,
-                "name": "type",
+                "name": "service_type",
                 "type": "ServiceType"
               },
               {
@@ -5224,7 +5224,7 @@
               {
                 "id": 300,
                 "name": "scope",
-                "type": ".org.openbase.type.com.Scope"
+                "type": ".org.openbase.type.communication.Scope"
               },
               {
                 "id": 500,
@@ -5363,7 +5363,7 @@
             "path": "org/openbase/type/domotic/unit/authorizationgroup/AuthorizationGroupConfig.proto"
           },
           {
-            "path": "org/openbase/type/com/Scope.proto"
+            "path": "org/openbase/type/communication/Scope.proto"
           },
           {
             "path": "org/openbase/type/spatial/PlacementConfig.proto"
@@ -5589,7 +5589,7 @@
               },
               {
                 "id": 100,
-                "name": "type",
+                "name": "unit_type",
                 "type": "UnitType"
               },
               {
@@ -5644,7 +5644,7 @@
               },
               {
                 "id": 100,
-                "name": "type",
+                "name": "unit_type",
                 "type": ".org.openbase.type.domotic.unit.UnitTemplate.UnitType"
               },
               {
@@ -6128,7 +6128,7 @@
             "fields": [
               {
                 "id": 300,
-                "name": "type",
+                "name": "connection_type",
                 "type": "ConnectionType"
               },
               {
@@ -8146,7 +8146,7 @@
             "fields": [
               {
                 "id": 150,
-                "name": "type",
+                "name": "location_type",
                 "type": "LocationType"
               },
               {
@@ -8518,7 +8518,7 @@
             "fields": [
               {
                 "id": 100,
-                "name": "type",
+                "name": "tile_type",
                 "type": "TileType"
               },
               {
