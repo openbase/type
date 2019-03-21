@@ -19,8 +19,6 @@ PYTHON_DIST="./dist"
 PYTHON_DIST_DATA="${PYTHON_DIST}/data"
 PYTHON_DIST_SOURCE="${PYTHON_DIST}/openbase_type"
 
-
-
 echo -e "=== ${APP_NAME} project ${WHITE}cleanup${NC}" &&
 rm -rf ${PYTHON_DIST}
 echo -e "=== ${APP_NAME} project ${WHITE}installation${NC}"
@@ -46,5 +44,9 @@ python package-gen.py
 
 # generate source distribution
 python setup.py sdist
+python setup.py bdist_wheel
+pip wheel -r requirements.txt
 
+# install to default or given prefix
+python setup.py install $@
 echo -e "=== ${APP_NAME} was ${GREEN}successfully${NC} installed to ${WHITE}${prefix}${NC}"
