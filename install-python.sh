@@ -19,9 +19,16 @@ PYTHON_DIST="./dist"
 PYTHON_DIST_DATA="${PYTHON_DIST}/data"
 PYTHON_DIST_SOURCE="${PYTHON_DIST}/openbase_type"
 
+
+
 echo -e "=== ${APP_NAME} project ${WHITE}cleanup${NC}" &&
 rm -rf ${PYTHON_DIST}
 echo -e "=== ${APP_NAME} project ${WHITE}installation${NC}"
+
+if [ ! -d $PYTHON_SOURCE ]; then
+    # build source if not already done
+    mvn package
+fi
 
 # copy python sources and meta
 mkdir -p ${PYTHON_DIST_SOURCE}
