@@ -34,7 +34,7 @@ message TileConfig {
     /**
      * The type of the tile.
      */
-    optional TileType type = 100;
+    optional TileType tile_type = 100;
 
     /**
      * A list of connections connecting this tile with others.
@@ -46,4 +46,3 @@ message TileConfig {
      */
     optional .org.openbase.type.configuration.MetaConfig meta_config = 300;
 }
-

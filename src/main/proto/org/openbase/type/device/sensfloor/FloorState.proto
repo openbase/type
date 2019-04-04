@@ -1,8 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.devices.sensfloor;
+package org.openbase.type.device.sensfloor;
 
-import "org/openbase/type/devices/sensfloor/FloorModuleState.proto";
+import "org/openbase/type/device/sensfloor/FloorModuleState.proto";
 
 option java_outer_classname = "FloorStateType";
 
@@ -23,6 +23,6 @@ message FloorState {
      * The repeated Field contains RST FloorModuleState Types which
      * encode the detail information about the state of each module
      */
-    repeated .org.openbase.type.devices.sensfloor.FloorModuleState floormodulestate = 2;
+    repeated .org.openbase.type.device.sensfloor.FloorModuleState floormodulestate = 2;
 
 }

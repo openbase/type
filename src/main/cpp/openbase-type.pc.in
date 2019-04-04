@@ -1,0 +1,11 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: openbase type lib
+Description: Type specifications for robotics, domotics and cognitive systems specified in Google Protocol Buffer's IDL format.
+Version: @OPENBASE_TYPE_VERSION@
+Requires: protobuf
+Libs: -L${libdir} -l@PROJECT_NAME@
+Cflags: -I${includedir}
+

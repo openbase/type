@@ -21,7 +21,7 @@ import "org/openbase/type/domotic/unit/connection/ConnectionConfig.proto";
 import "org/openbase/type/domotic/unit/user/UserConfig.proto";
 import "org/openbase/type/domotic/unit/object/ObjectConfig.proto";
 import "org/openbase/type/domotic/unit/authorizationgroup/AuthorizationGroupConfig.proto";
-import "org/openbase/type/com/Scope.proto";
+import "org/openbase/type/communication/Scope.proto";
 import "org/openbase/type/spatial/PlacementConfig.proto";
 
 
@@ -71,7 +71,7 @@ message UnitConfig {
     /**
      * The scope of the unit.
      */
-    optional .org.openbase.type.com.Scope scope = 300;
+    optional .org.openbase.type.communication.Scope scope = 300;
 
     /**
      * The description of the unit.
