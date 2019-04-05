@@ -28,7 +28,7 @@ setup(
     #packages=find_packages(where='target/generated-sources/protobuf/python'),
     packages=find_packages('openbase_type'),
     package_data={'proto': ['data/proto/*']},
-    package_dir={'':'openbase_type'},
+    package_dir={'':'org'},
     include_package_data=True,
     install_requires=['protobuf'],
     #extras_require=extras_require,
