@@ -1,12 +1,13 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.registry;
+package openbase.type.domotic.registry;
 
+option java_package = "org.openbase.type.domotic.registry";
 option java_outer_classname = "TemplateRegistryDataType";
 
-import "org/openbase/type/domotic/activity/ActivityTemplate.proto";
-import "org/openbase/type/domotic/service/ServiceTemplate.proto";
-import "org/openbase/type/domotic/unit/UnitTemplate.proto";
+import "openbase/type/domotic/activity/ActivityTemplate.proto";
+import "openbase/type/domotic/service/ServiceTemplate.proto";
+import "openbase/type/domotic/unit/UnitTemplate.proto";
 
 /**
  * Description of a template registry.
@@ -23,7 +24,7 @@ message TemplateRegistryData {
     /**
      * The list of registered unit templates.
      */
-    repeated .org.openbase.type.domotic.unit.UnitTemplate unit_template = 200;
+    repeated .openbase.type.domotic.unit.UnitTemplate unit_template = 200;
 
     /**
      * Read only flag for the unit template registry.
@@ -38,7 +39,7 @@ message TemplateRegistryData {
     /**
      * The list of registered scene templates.
      */
-    repeated .org.openbase.type.domotic.service.ServiceTemplate service_template = 500;
+    repeated .openbase.type.domotic.service.ServiceTemplate service_template = 500;
 
     /**
      * Read only flag for the service template registry.
@@ -53,7 +54,7 @@ message TemplateRegistryData {
     /**
      * The list of registered activity templates.
      */
-    repeated .org.openbase.type.domotic.activity.ActivityTemplate activity_template = 800;
+    repeated .openbase.type.domotic.activity.ActivityTemplate activity_template = 800;
 
     /**
      * Read only flag for the activity template registry.

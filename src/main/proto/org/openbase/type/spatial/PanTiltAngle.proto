@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.spatial;
+package openbase.type.spatial;
 
+option java_package = "org.openbase.type.spatial";
 option java_outer_classname = "PanTiltAngleType";
 
 /**

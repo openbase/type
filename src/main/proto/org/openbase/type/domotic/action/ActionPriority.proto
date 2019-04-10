@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.action;
+package openbase.type.domotic.action;
 
+option java_package = "org.openbase.type.domotic.action";
 option java_outer_classname = "ActionPriorityType";
 
 /**

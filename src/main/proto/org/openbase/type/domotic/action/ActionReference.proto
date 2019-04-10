@@ -1,13 +1,14 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.action;
+package openbase.type.domotic.action;
 
-import "org/openbase/type/domotic/action/ActionInitiator.proto";
-import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
-import "org/openbase/type/timing/Timestamp.proto";
-import "org/openbase/type/domotic/action/ActionPriority.proto";
-import "org/openbase/type/domotic/action/ActionEmphasis.proto";
+import "openbase/type/domotic/action/ActionInitiator.proto";
+import "openbase/type/domotic/service/ServiceStateDescription.proto";
+import "openbase/type/timing/Timestamp.proto";
+import "openbase/type/domotic/action/ActionPriority.proto";
+import "openbase/type/domotic/action/ActionEmphasis.proto";
 
+option java_package = "org.openbase.type.domotic.action";
 option java_outer_classname = "ActionReferenceType";
 
 
@@ -27,12 +28,12 @@ message ActionReference {
     /**
      * The authority of the referenced action.
      */
-    optional .org.openbase.type.domotic.action.ActionInitiator action_initiator = 20;
+    optional .openbase.type.domotic.action.ActionInitiator action_initiator = 20;
 
     /**
      * The state applied by the referenced action.
      */
-    optional .org.openbase.type.domotic.service.ServiceStateDescription service_state_description = 30;
+    optional .openbase.type.domotic.service.ServiceStateDescription service_state_description = 30;
 
     /**
      * The runtime period of the referenced action in microseconds. If an action has not specified a runtime
@@ -45,12 +46,12 @@ message ActionReference {
      *
      * Note: Default priority is NORMAL
      */
-    optional .org.openbase.type.domotic.action.ActionPriority.Priority priority = 50 [default = NORMAL];
+    optional .openbase.type.domotic.action.ActionPriority.Priority priority = 50 [default = NORMAL];
 
     /**
      * The emphasis categories representing the optimization intention of this action used for the ranking.
      */
-    repeated .org.openbase.type.domotic.action.ActionEmphasis.Category category = 60;
+    repeated .openbase.type.domotic.action.ActionEmphasis.Category category = 60;
 
     /**
      * Flag defines if the action execution can be continued after interruption.
@@ -67,6 +68,6 @@ message ActionReference {
     /**
      * The time when this action was created.
      */
-    optional .org.openbase.type.timing.Timestamp timestamp = 90;
+    optional .openbase.type.timing.Timestamp timestamp = 90;
 }
 

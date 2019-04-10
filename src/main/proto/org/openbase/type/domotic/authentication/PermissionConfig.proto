@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.authentication;
+package openbase.type.domotic.authentication;
 
+option java_package = "org.openbase.type.domotic.authentication";
 option java_outer_classname = "PermissionConfigType";
 
-import "org/openbase/type/domotic/authentication/Permission.proto";
+import "openbase/type/domotic/authentication/Permission.proto";
 
 /**
  * Description of a permission configuration.
@@ -27,7 +28,7 @@ message PermissionConfig {
         /**
          * The permission for the group given by the group id.
          */
-        optional .org.openbase.type.domotic.authentication.Permission permission = 2;
+        optional .openbase.type.domotic.authentication.Permission permission = 2;
     }
 
     /**
@@ -38,12 +39,12 @@ message PermissionConfig {
     /**
      * Permissions for the user set by owner_id.
      */
-    optional .org.openbase.type.domotic.authentication.Permission owner_permission = 200;
+    optional .openbase.type.domotic.authentication.Permission owner_permission = 200;
 
     /**
      * Permissions for everyone, without respect to authorization or user groups.
      */
-    optional .org.openbase.type.domotic.authentication.Permission other_permission = 300;
+    optional .openbase.type.domotic.authentication.Permission other_permission = 300;
 
     /**
      * Permissions for selected groups.

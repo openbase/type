@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.vision;
+package openbase.type.vision;
 
-import "org/openbase/type/vision/HSBColor.proto";
-import "org/openbase/type/vision/RGBColor.proto";
+import "openbase/type/vision/HSBColor.proto";
+import "openbase/type/vision/RGBColor.proto";
 
+option java_package = "org.openbase.type.vision";
 option java_outer_classname = "ColorType";
 
 
@@ -42,17 +43,17 @@ message Color {
     /**
      * The rgb color type.
      */
-    optional .org.openbase.type.vision.RGBColor rgb_color = 2;
+    optional .openbase.type.vision.RGBColor rgb_color = 2;
 
     /**
      * The hsb color type.
      */
-    optional .org.openbase.type.vision.HSBColor hsb_color = 3;
+    optional .openbase.type.vision.HSBColor hsb_color = 3;
 
 //==========================================================
 
     /*oneof color_oneof {
-        .org.openbase.type.HSBColor hsb = 1;
-        .org.openbase.type.RGBColor rgb = 2;
+        .openbase.type.HSBColor hsb = 1;
+        .openbase.type.RGBColor rgb = 2;
     }*/
 }

@@ -1,11 +1,12 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.dal;
+package openbase.type.domotic.unit.dal;
 
-import "org/openbase/type/domotic/state/AlarmState.proto";
-import "org/openbase/type/domotic/state/TemperatureState.proto";
-import "org/openbase/type/domotic/action/ActionDescription.proto";
+import "openbase/type/domotic/state/AlarmState.proto";
+import "openbase/type/domotic/state/TemperatureState.proto";
+import "openbase/type/domotic/action/ActionDescription.proto";
 
+option java_package = "org.openbase.type.domotic.unit.dal";
 option java_outer_classname = "TemperatureSensorDataType";
 
 /**
@@ -29,27 +30,27 @@ message TemperatureSensorData {
      * A list of all operating actions.
      * The action at index 0 is the currently executing action while the other ones are scheduled.
      */
-    repeated .org.openbase.type.domotic.action.ActionDescription action = 150;
+    repeated .openbase.type.domotic.action.ActionDescription action = 150;
 
     /**
      * The value which represents the current temperature.
      */
-    optional .org.openbase.type.domotic.state.TemperatureState temperature_state = 300;
+    optional .openbase.type.domotic.state.TemperatureState temperature_state = 300;
 
     /**
      * The value which represents the last temperature.
      */
-    optional .org.openbase.type.domotic.state.TemperatureState temperature_state_last = 310;
+    optional .openbase.type.domotic.state.TemperatureState temperature_state_last = 310;
 
     /**
      * State to indicate wether this sensor has currently detected an alarm.
      */
-    optional .org.openbase.type.domotic.state.AlarmState temperature_alarm_state = 400;
+    optional .openbase.type.domotic.state.AlarmState temperature_alarm_state = 400;
 
     /**
      * State to indicate wether this sensor has last detected an alarm.
      */
-    optional .org.openbase.type.domotic.state.AlarmState temperature_alarm_state_last = 410;
+    optional .openbase.type.domotic.state.AlarmState temperature_alarm_state_last = 410;
 
     /**
      * A transaction id indicating which action was the last one executed by the unit. The id increases

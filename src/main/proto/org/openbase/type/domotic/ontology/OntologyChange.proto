@@ -1,12 +1,13 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.ontology;
+package openbase.type.domotic.ontology;
 
+option java_package = "org.openbase.type.domotic.ontology";
 option java_outer_classname = "OntologyChangeType";
 
 
-import "org/openbase/type/domotic/unit/UnitTemplate.proto";
-import "org/openbase/type/domotic/service/ServiceTemplate.proto";
+import "openbase/type/domotic/unit/UnitTemplate.proto";
+import "openbase/type/domotic/service/ServiceTemplate.proto";
 
 /**
  * Tpye descripts an ontlogy change and its properties.
@@ -39,11 +40,11 @@ message OntologyChange {
     /**
      * The list of potentially changed units represented as unit type list.
      */
-    repeated .org.openbase.type.domotic.unit.UnitTemplate.UnitType unit_type = 200;
+    repeated .openbase.type.domotic.unit.UnitTemplate.UnitType unit_type = 200;
 
     /**
      * The list of potentially affected services represented as service type.
      */
-    repeated .org.openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 300;
+    repeated .openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 300;
 }
 

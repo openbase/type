@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.authentication;
+package openbase.type.domotic.authentication;
 
+option java_package = "org.openbase.type.domotic.authentication";
 option java_outer_classname = "AuthenticatorType";
 
-import "org/openbase/type/timing/Timestamp.proto";
+import "openbase/type/timing/Timestamp.proto";
 
 /**
  * Authenticator used for the Kerberos authentication, sent with every request.
@@ -21,6 +22,6 @@ message Authenticator {
     /**
      * Timestamp, used to check if the request is valid.
      */
-    optional .org.openbase.type.timing.Timestamp timestamp = 2;
+    optional .openbase.type.timing.Timestamp timestamp = 2;
 }
 

@@ -1,13 +1,14 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.activity;
+package openbase.type.domotic.activity;
 
+option java_package = "org.openbase.type.domotic.activity";
 option java_outer_classname = "ActivityConfigType";
 
-import "org/openbase/type/language/Label.proto";
-import "org/openbase/type/language/MultiLanguageText.proto";
-import "org/openbase/type/configuration/MetaConfig.proto";
-import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
+import "openbase/type/language/Label.proto";
+import "openbase/type/language/MultiLanguageText.proto";
+import "openbase/type/configuration/MetaConfig.proto";
+import "openbase/type/domotic/service/ServiceStateDescription.proto";
 
 /**
  * Type for activity configurations.
@@ -31,7 +32,7 @@ message ActivityConfig {
         /**
          * A set of individual service states related to a user/authenticationgroup.
          */
-        repeated .org.openbase.type.domotic.service.ServiceStateDescription value = 900;
+        repeated .openbase.type.domotic.service.ServiceStateDescription value = 900;
     }
 
     /**
@@ -42,7 +43,7 @@ message ActivityConfig {
     /**
      * The label of the activity.
      */
-    optional .org.openbase.type.language.Label label = 200;
+    optional .openbase.type.language.Label label = 200;
 
     /**
      * The id of the activity template this activity belongs to.
@@ -52,17 +53,17 @@ message ActivityConfig {
     /**
      * A field storing meta configurations.
      */
-    optional .org.openbase.type.configuration.MetaConfig meta_config = 400;
+    optional .openbase.type.configuration.MetaConfig meta_config = 400;
 
     /**
      * A description for this activity.
      */
-    optional .org.openbase.type.language.MultiLanguageText description = 500;
+    optional .openbase.type.language.MultiLanguageText description = 500;
 
     /**
      * If the activity is performed, this service states are applied.
      */
-    repeated .org.openbase.type.domotic.service.ServiceStateDescription service_state_description = 600;
+    repeated .openbase.type.domotic.service.ServiceStateDescription service_state_description = 600;
 
     /**
      * An individal set of service state descriptions applied if a (user/authenticationgroup) are triggering this action.

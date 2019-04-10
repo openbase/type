@@ -1,28 +1,29 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit;
+package openbase.type.domotic.unit;
 
+option java_package = "org.openbase.type.domotic.unit";
 option java_outer_classname = "UnitConfigType";
 
-import "org/openbase/type/language/Label.proto";
-import "org/openbase/type/language/MultiLanguageText.proto";
-import "org/openbase/type/configuration/MetaConfig.proto";
-import "org/openbase/type/domotic/service/ServiceConfig.proto";
-import "org/openbase/type/domotic/unit/UnitTemplate.proto";
-import "org/openbase/type/domotic/authentication/PermissionConfig.proto";
-import "org/openbase/type/domotic/state/EnablingState.proto";
-import "org/openbase/type/domotic/unit/scene/SceneConfig.proto";
-import "org/openbase/type/domotic/unit/agent/AgentConfig.proto";
-import "org/openbase/type/domotic/unit/app/AppConfig.proto";
-import "org/openbase/type/domotic/unit/device/DeviceConfig.proto";
-import "org/openbase/type/domotic/unit/unitgroup/UnitGroupConfig.proto";
-import "org/openbase/type/domotic/unit/location/LocationConfig.proto";
-import "org/openbase/type/domotic/unit/connection/ConnectionConfig.proto";
-import "org/openbase/type/domotic/unit/user/UserConfig.proto";
-import "org/openbase/type/domotic/unit/object/ObjectConfig.proto";
-import "org/openbase/type/domotic/unit/authorizationgroup/AuthorizationGroupConfig.proto";
-import "org/openbase/type/communication/Scope.proto";
-import "org/openbase/type/spatial/PlacementConfig.proto";
+import "openbase/type/language/Label.proto";
+import "openbase/type/language/MultiLanguageText.proto";
+import "openbase/type/configuration/MetaConfig.proto";
+import "openbase/type/domotic/service/ServiceConfig.proto";
+import "openbase/type/domotic/unit/UnitTemplate.proto";
+import "openbase/type/domotic/authentication/PermissionConfig.proto";
+import "openbase/type/domotic/state/EnablingState.proto";
+import "openbase/type/domotic/unit/scene/SceneConfig.proto";
+import "openbase/type/domotic/unit/agent/AgentConfig.proto";
+import "openbase/type/domotic/unit/app/AppConfig.proto";
+import "openbase/type/domotic/unit/device/DeviceConfig.proto";
+import "openbase/type/domotic/unit/unitgroup/UnitGroupConfig.proto";
+import "openbase/type/domotic/unit/location/LocationConfig.proto";
+import "openbase/type/domotic/unit/connection/ConnectionConfig.proto";
+import "openbase/type/domotic/unit/user/UserConfig.proto";
+import "openbase/type/domotic/unit/object/ObjectConfig.proto";
+import "openbase/type/domotic/unit/authorizationgroup/AuthorizationGroupConfig.proto";
+import "openbase/type/communication/Scope.proto";
+import "openbase/type/spatial/PlacementConfig.proto";
 
 
 /**
@@ -45,7 +46,7 @@ message UnitConfig {
     /**
      * The label of the unit.
      */
-    optional .org.openbase.type.language.Label label = 100;
+    optional .openbase.type.language.Label label = 100;
 
     /**
      * A list of aliases linked to this unit. Can be used to identify the unit in a human readable way.
@@ -61,22 +62,22 @@ message UnitConfig {
     /**
      * The unit type.
      */
-    optional .org.openbase.type.domotic.unit.UnitTemplate.UnitType unit_type = 150;
+    optional .openbase.type.domotic.unit.UnitTemplate.UnitType unit_type = 150;
 
     /**
      * The placement of the unit.
      */
-    optional .org.openbase.type.spatial.PlacementConfig placement_config = 200;
+    optional .openbase.type.spatial.PlacementConfig placement_config = 200;
 
     /**
      * The scope of the unit.
      */
-    optional .org.openbase.type.communication.Scope scope = 300;
+    optional .openbase.type.communication.Scope scope = 300;
 
     /**
      * The description of the unit.
      */
-    optional .org.openbase.type.language.MultiLanguageText description = 500;
+    optional .openbase.type.language.MultiLanguageText description = 500;
 
     /**
      * Flag determining whether the unit is bound to its host unit keeps the same location.
@@ -86,71 +87,71 @@ message UnitConfig {
     /**
      * A list of service configurations.
      */
-    repeated .org.openbase.type.domotic.service.ServiceConfig service_config = 600;
+    repeated .openbase.type.domotic.service.ServiceConfig service_config = 600;
 
     /**
      * A field for storing meta unit configurations.
      */
-    optional .org.openbase.type.configuration.MetaConfig meta_config = 700;
+    optional .openbase.type.configuration.MetaConfig meta_config = 700;
 
     /**
      * The state if the unit is enabled for the system.
      */
-    optional .org.openbase.type.domotic.state.EnablingState enabling_state = 750;
+    optional .openbase.type.domotic.state.EnablingState enabling_state = 750;
 
     /**
      * Additional configuration field. Is only set if the type is USER.
      */
-    optional .org.openbase.type.domotic.unit.user.UserConfig user_config = 800;
+    optional .openbase.type.domotic.unit.user.UserConfig user_config = 800;
 
     /**
      * Additional configuration field. Is only set if the type is AUTHORIZATION_GROUP.
      */
-    optional .org.openbase.type.domotic.unit.authorizationgroup.AuthorizationGroupConfig authorization_group_config = 900;
+    optional .openbase.type.domotic.unit.authorizationgroup.AuthorizationGroupConfig authorization_group_config = 900;
 
     /**
      * Additional configuration field. Is only set if the type is AGENT.
      */
-    optional .org.openbase.type.domotic.unit.agent.AgentConfig agent_config = 1000;
+    optional .openbase.type.domotic.unit.agent.AgentConfig agent_config = 1000;
 
     /**
      * Additional configuration field. Is only set if the type is APP.
      */
-    optional .org.openbase.type.domotic.unit.app.AppConfig app_config = 1100;
+    optional .openbase.type.domotic.unit.app.AppConfig app_config = 1100;
 
     /**
      * Additional configuration field. Is only set if the type is SCENE.
      */
-    optional .org.openbase.type.domotic.unit.scene.SceneConfig scene_config = 1200;
+    optional .openbase.type.domotic.unit.scene.SceneConfig scene_config = 1200;
 
     /**
      * Additional configuration field. Is only set if the type is DEVICE.
      */
-    optional .org.openbase.type.domotic.unit.device.DeviceConfig device_config = 1300;
+    optional .openbase.type.domotic.unit.device.DeviceConfig device_config = 1300;
 
     /**
      * Additional configuration field. Is only set if the type is UNIT_GROUP.
      */
-    optional .org.openbase.type.domotic.unit.unitgroup.UnitGroupConfig unit_group_config = 1400;
+    optional .openbase.type.domotic.unit.unitgroup.UnitGroupConfig unit_group_config = 1400;
 
     /**
      * Additional configuration field. Is only set if the type is LOCATION.
      */
-    optional .org.openbase.type.domotic.unit.location.LocationConfig location_config = 1500;
+    optional .openbase.type.domotic.unit.location.LocationConfig location_config = 1500;
 
     /**
      * Additional configuration field. Is only set if the type is CONNECTION.
      */
-    optional .org.openbase.type.domotic.unit.connection.ConnectionConfig connection_config = 1600;
+    optional .openbase.type.domotic.unit.connection.ConnectionConfig connection_config = 1600;
 
     /**
      * Additional configuration field. Is only set if the type is OBJECT.
      */
-    optional .org.openbase.type.domotic.unit.object.ObjectConfig object_config = 1800;
+    optional .openbase.type.domotic.unit.object.ObjectConfig object_config = 1800;
 
     /**
      * Permission configuration for setting user rights for the unit.
      */
-    optional .org.openbase.type.domotic.authentication.PermissionConfig permission_config = 1700;
+    optional .openbase.type.domotic.authentication.PermissionConfig permission_config = 1700;
 }
 

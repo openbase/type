@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.user;
+package openbase.type.domotic.unit.user;
 
+option java_package = "org.openbase.type.domotic.unit.user";
 option java_outer_classname = "UserConfigType";
 
 /**

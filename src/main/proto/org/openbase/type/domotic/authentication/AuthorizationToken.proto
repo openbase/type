@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.authentication;
+package openbase.type.domotic.authentication;
 
+option java_package = "org.openbase.type.domotic.authentication";
 option java_outer_classname = "AuthorizationTokenType";
 
-import "org/openbase/type/domotic/authentication/Permission.proto";
+import "openbase/type/domotic/authentication/Permission.proto";
 
 /**
  * Description of an authorization token.
@@ -37,7 +38,7 @@ message AuthorizationToken {
         /**
          * The permission this rule gives for the defined unit, unit type and service type.
          */
-        optional .org.openbase.type.domotic.authentication.Permission permission = 2;
+        optional .openbase.type.domotic.authentication.Permission permission = 2;
 
         /**
          * Flag determining if the permission rule grants permissions or takes them away.

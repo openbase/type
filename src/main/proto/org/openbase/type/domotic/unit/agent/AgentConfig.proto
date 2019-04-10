@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.agent;
+package openbase.type.domotic.unit.agent;
 
+option java_package = "org.openbase.type.domotic.unit.agent";
 option java_outer_classname = "AgentConfigType";
 
 /**

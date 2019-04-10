@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.device.sensfloor;
+package openbase.type.device.sensfloor;
 
+option java_package = "org.openbase.type.device.sensfloor";
 option java_outer_classname = "FloorModuleStateType";
 
 /**

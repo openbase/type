@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.object;
+package openbase.type.domotic.unit.object;
 
+option java_package = "org.openbase.type.domotic.unit.object";
 option java_outer_classname = "ObjectConfigType";
 
-import "org/openbase/type/domotic/state/InventoryState.proto";
+import "openbase/type/domotic/state/InventoryState.proto";
 
 /**
  * Description of a object configuration.
@@ -16,5 +17,5 @@ message ObjectConfig {
     /**
      * The inventory state of the object.
      */
-    optional .org.openbase.type.domotic.state.InventoryState inventory_state = 600;
+    optional .openbase.type.domotic.state.InventoryState inventory_state = 600;
 }

@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.app;
+package openbase.type.domotic.unit.app;
 
+option java_package = "org.openbase.type.domotic.unit.app";
 option java_outer_classname = "AppConfigType";
 
 /**

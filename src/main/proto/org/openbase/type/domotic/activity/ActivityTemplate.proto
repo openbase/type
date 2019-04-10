@@ -1,12 +1,13 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.activity;
+package openbase.type.domotic.activity;
 
+option java_package = "org.openbase.type.domotic.activity";
 option java_outer_classname = "ActivityTemplateType";
 
-import "org/openbase/type/language/Label.proto";
-import "org/openbase/type/language/MultiLanguageText.proto";
-import "org/openbase/type/configuration/MetaConfig.proto";
+import "openbase/type/language/Label.proto";
+import "openbase/type/language/MultiLanguageText.proto";
+import "openbase/type/configuration/MetaConfig.proto";
 
 /**
  * Template for activities.
@@ -39,7 +40,7 @@ message ActivityTemplate {
     /**
      * The label of the activity template.
      */
-    optional .org.openbase.type.language.Label label = 200;
+    optional .openbase.type.language.Label label = 200;
 
     /**
      * The type of the activity template.
@@ -49,10 +50,10 @@ message ActivityTemplate {
     /**
      * A field storing meta configurations.
      */
-    optional .org.openbase.type.configuration.MetaConfig meta_config = 400;
+    optional .openbase.type.configuration.MetaConfig meta_config = 400;
 
     /**
      * A description of the activity template.
      */
-    optional .org.openbase.type.language.MultiLanguageText description = 500;
+    optional .openbase.type.language.MultiLanguageText description = 500;
 }

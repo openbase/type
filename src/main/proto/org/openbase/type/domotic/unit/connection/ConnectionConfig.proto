@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.connection;
+package openbase.type.domotic.unit.connection;
 
+option java_package = "org.openbase.type.domotic.unit.connection";
 option java_outer_classname = "ConnectionConfigType";
 
 /**

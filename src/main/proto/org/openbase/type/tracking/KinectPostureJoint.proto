@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.tracking;
+package openbase.type.tracking;
 
+option java_package = "org.openbase.type.tracking";
 option java_outer_classname = "KinectPostureJointType";
 
 

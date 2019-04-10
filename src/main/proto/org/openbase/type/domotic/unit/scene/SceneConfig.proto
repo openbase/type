@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.scene;
+package openbase.type.domotic.unit.scene;
 
+option java_package = "org.openbase.type.domotic.unit.scene";
 option java_outer_classname = "SceneConfigType";
 
-import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
+import "openbase/type/domotic/service/ServiceStateDescription.proto";
 
 /**
  * Description of a scene configuration.
@@ -18,14 +19,14 @@ message SceneConfig {
      * Required states will be applied when activating and tested
      * when checking if the scene is still active.
      */
-    repeated .org.openbase.type.domotic.service.ServiceStateDescription required_service_state_description = 800;
+    repeated .openbase.type.domotic.service.ServiceStateDescription required_service_state_description = 800;
 
     /**
      * A list of optional service states for this scene.
      * Optional states will be applied when activating but are not tested
      * when checking if the scene is still active.
      */
-    repeated .org.openbase.type.domotic.service.ServiceStateDescription optional_service_state_description = 900;
+    repeated .openbase.type.domotic.service.ServiceStateDescription optional_service_state_description = 900;
 
 }
 

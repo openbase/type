@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.registry;
+package openbase.type.domotic.registry;
 
+option java_package = "org.openbase.type.domotic.registry";
 option java_outer_classname = "UnitRegistryDataType";
 
-import "org/openbase/type/domotic/unit/UnitConfig.proto";
+import "openbase/type/domotic/unit/UnitConfig.proto";
 
 /**
  * Description of a unit registry.
@@ -21,57 +22,57 @@ message UnitRegistryData {
     /**
      * The list of registered dal unit configs.
      */
-    repeated .org.openbase.type.domotic.unit.UnitConfig dal_unit_config = 300;
+    repeated .openbase.type.domotic.unit.UnitConfig dal_unit_config = 300;
 
     /**
      * The list of registered device unit configs.
      */
-    repeated .org.openbase.type.domotic.unit.UnitConfig device_unit_config = 400;
+    repeated .openbase.type.domotic.unit.UnitConfig device_unit_config = 400;
 
     /**
      * The list of registered unit group unit configs.
      */
-    repeated .org.openbase.type.domotic.unit.UnitConfig unit_group_unit_config = 500;
+    repeated .openbase.type.domotic.unit.UnitConfig unit_group_unit_config = 500;
 
     /**
      * The list of registered scene unit configs.
      */
-    repeated .org.openbase.type.domotic.unit.UnitConfig scene_unit_config = 600;
+    repeated .openbase.type.domotic.unit.UnitConfig scene_unit_config = 600;
 
     /**
      * The list of registered agent unit configs.
      */
-    repeated .org.openbase.type.domotic.unit.UnitConfig agent_unit_config = 700;
+    repeated .openbase.type.domotic.unit.UnitConfig agent_unit_config = 700;
 
     /**
      * The list of registered app unit configs.
      */
-    repeated .org.openbase.type.domotic.unit.UnitConfig app_unit_config = 800;
+    repeated .openbase.type.domotic.unit.UnitConfig app_unit_config = 800;
 
     /**
      * The list of registered user unit configs.
      */
-    repeated .org.openbase.type.domotic.unit.UnitConfig user_unit_config = 900;
+    repeated .openbase.type.domotic.unit.UnitConfig user_unit_config = 900;
 
     /**
      * The list of registered authorization group unit configs.
      */
-    repeated .org.openbase.type.domotic.unit.UnitConfig authorization_group_unit_config = 1000;
+    repeated .openbase.type.domotic.unit.UnitConfig authorization_group_unit_config = 1000;
 
     /**
      * The list of registered location unit configs.
      */
-    repeated .org.openbase.type.domotic.unit.UnitConfig location_unit_config = 1100;
+    repeated .openbase.type.domotic.unit.UnitConfig location_unit_config = 1100;
 
     /**
      * The list of registered connection unit configs.
      */
-    repeated .org.openbase.type.domotic.unit.UnitConfig connection_unit_config = 1200;
+    repeated .openbase.type.domotic.unit.UnitConfig connection_unit_config = 1200;
 
     /**
      * The list of registered object unit configs.
      */
-    repeated .org.openbase.type.domotic.unit.UnitConfig object_unit_config = 3900;
+    repeated .openbase.type.domotic.unit.UnitConfig object_unit_config = 3900;
 
     /**
      * Read only flag for the dal unit config registry.

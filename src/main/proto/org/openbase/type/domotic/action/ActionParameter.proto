@@ -1,16 +1,17 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.action;
+package openbase.type.domotic.action;
 
+option java_package = "org.openbase.type.domotic.action";
 option java_outer_classname = "ActionParameterType";
 
-import "org/openbase/type/domotic/action/ActionDescription.proto";
-import "org/openbase/type/language/Label.proto";
-import "org/openbase/type/domotic/action/ActionInitiator.proto";
-import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
-import "org/openbase/type/domotic/action/ActionPriority.proto";
-import "org/openbase/type/domotic/action/ActionEmphasis.proto";
-import "org/openbase/type/domotic/authentication/AuthToken.proto";
+import "openbase/type/domotic/action/ActionDescription.proto";
+import "openbase/type/language/Label.proto";
+import "openbase/type/domotic/action/ActionInitiator.proto";
+import "openbase/type/domotic/service/ServiceStateDescription.proto";
+import "openbase/type/domotic/action/ActionPriority.proto";
+import "openbase/type/domotic/action/ActionEmphasis.proto";
+import "openbase/type/domotic/authentication/AuthToken.proto";
 
 /**
  * Description of possible paramters to define an action.
@@ -25,35 +26,35 @@ message ActionParameter {
      *
      * Note: Field is optional.
      */
-    optional .org.openbase.type.language.Label label = 20;
+    optional .openbase.type.language.Label label = 20;
 
     /**
      * The initiator of this action.
      *
      * Note: Field is required to define the action.
      */
-    optional .org.openbase.type.domotic.action.ActionInitiator action_initiator = 40;
+    optional .openbase.type.domotic.action.ActionInitiator action_initiator = 40;
 
     /**
      * The state which this action shall apply.
      *
      * Note: Field is required to define the action.
      */
-    optional .org.openbase.type.domotic.service.ServiceStateDescription service_state_description = 70;
+    optional .openbase.type.domotic.service.ServiceStateDescription service_state_description = 70;
 
     /**
      * The execution priority of this action used for the action ranking.
      *
      * Note: Default priority is NORMAL
      */
-    optional .org.openbase.type.domotic.action.ActionPriority.Priority priority = 80 [default = NORMAL];
+    optional .openbase.type.domotic.action.ActionPriority.Priority priority = 80 [default = NORMAL];
 
     /**
      * The emphasis categories representing the optimization intention of this action used for the ranking.
      *
      * Note: Field is required to define the action.
      */
-    repeated .org.openbase.type.domotic.action.ActionEmphasis.Category category = 90;
+    repeated .openbase.type.domotic.action.ActionEmphasis.Category category = 90;
 
     /**
      * The defined runtime period of this action in microseconds.
@@ -71,7 +72,7 @@ message ActionParameter {
      *
      * Note: This field is only required if the action is a result of another one.
      */
-    optional .org.openbase.type.domotic.action.ActionDescription cause = 110;
+    optional .openbase.type.domotic.action.ActionDescription cause = 110;
 
     /**
      * Flag defines if the action execution can be continued after interruption.
@@ -98,6 +99,6 @@ message ActionParameter {
      *    If this field is empty, the permissions of the user logged in at the default session manager are used for authorziation.
      *
      */
-    optional .org.openbase.type.domotic.authentication.AuthToken auth_token = 140;
+    optional .openbase.type.domotic.authentication.AuthToken auth_token = 140;
 }
 

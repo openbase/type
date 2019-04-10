@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.binding.openhab;
+package openbase.type.domotic.binding.openhab;
 
+option java_package = "org.openbase.type.domotic.binding.openhab";
 option java_outer_classname = "OpenClosedHolderType";
 
 

@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.geometry;
+package openbase.type.geometry;
 
+option java_package = "org.openbase.type.geometry";
 option java_outer_classname = "TranslationType";
 
 /**

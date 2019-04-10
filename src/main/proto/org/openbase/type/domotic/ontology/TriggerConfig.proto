@@ -1,11 +1,12 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.ontology;
+package openbase.type.domotic.ontology;
 
+option java_package = "org.openbase.type.domotic.ontology";
 option java_outer_classname = "TriggerConfigType";
 
 
-import "org/openbase/type/domotic/ontology/OntologyChange.proto";
+import "openbase/type/domotic/ontology/OntologyChange.proto";
 
 /**
  * This configuration describes a trigger configuration and can be used to initialize those ones.
@@ -27,6 +28,6 @@ message TriggerConfig {
     /**
      * The ontology change where this trigger is depending on.
      */
-    optional .org.openbase.type.domotic.ontology.OntologyChange depending_ontology_change = 300;
+    optional .openbase.type.domotic.ontology.OntologyChange depending_ontology_change = 300;
 }
 

@@ -1,11 +1,12 @@
 syntax = "proto2";
 
-package org.openbase.type.geometry;
+package openbase.type.geometry;
 
+option java_package = "org.openbase.type.geometry";
 option java_outer_classname = "FrameTransformType";
 
-import "org/openbase/type/geometry/Pose.proto";
-import "org/openbase/type/timing/Timestamp.proto";
+import "openbase/type/geometry/Pose.proto";
+import "openbase/type/timing/Timestamp.proto";
 
 /**
  * This is a container for rct frame transformation data,
@@ -20,7 +21,7 @@ message FrameTransform {
     /**
      * The pose at the target frame.
      */
-    optional .org.openbase.type.geometry.Pose    transform     = 1;
+    optional .openbase.type.geometry.Pose    transform     = 1;
 
     /**
      * The name of the rct parent frame.
@@ -35,5 +36,5 @@ message FrameTransform {
     /**
      * The time of the available transformation.
      */
-    optional .org.openbase.type.timing.Timestamp time          = 4;
+    optional .openbase.type.timing.Timestamp time          = 4;
 }

@@ -1,11 +1,12 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.unitgroup;
+package openbase.type.domotic.unit.unitgroup;
 
+option java_package = "org.openbase.type.domotic.unit.unitgroup";
 option java_outer_classname = "UnitGroupConfigType";
 
-import "org/openbase/type/domotic/unit/UnitTemplate.proto";
-import "org/openbase/type/domotic/service/ServiceDescription.proto";
+import "openbase/type/domotic/unit/UnitTemplate.proto";
+import "openbase/type/domotic/service/ServiceDescription.proto";
 
 /**
  * Type for a group of units.
@@ -23,11 +24,11 @@ message UnitGroupConfig {
      * The unit type of the grouped units. This field is optional but when set
      * defines the service types.
      */
-    optional .org.openbase.type.domotic.unit.UnitTemplate.UnitType unit_type = 400;
+    optional .openbase.type.domotic.unit.UnitTemplate.UnitType unit_type = 400;
 
     /**
      * The service descriptions of the grouped units.
      */
-    repeated .org.openbase.type.domotic.service.ServiceDescription service_description = 500;
+    repeated .openbase.type.domotic.service.ServiceDescription service_description = 500;
 }
 

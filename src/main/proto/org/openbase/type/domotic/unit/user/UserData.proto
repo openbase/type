@@ -1,15 +1,16 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.user;
+package openbase.type.domotic.unit.user;
 
+option java_package = "org.openbase.type.domotic.unit.user";
 option java_outer_classname = "UserDataType";
 
-import "org/openbase/type/domotic/state/ActivityMultiState.proto";
-import "org/openbase/type/domotic/state/GlobalPositionState.proto";
-import "org/openbase/type/domotic/state/LocalPositionState.proto";
-import "org/openbase/type/domotic/state/PresenceState.proto";
-import "org/openbase/type/domotic/state/UserTransitState.proto";
-import "org/openbase/type/domotic/action/ActionDescription.proto";
+import "openbase/type/domotic/state/ActivityMultiState.proto";
+import "openbase/type/domotic/state/GlobalPositionState.proto";
+import "openbase/type/domotic/state/LocalPositionState.proto";
+import "openbase/type/domotic/state/PresenceState.proto";
+import "openbase/type/domotic/state/UserTransitState.proto";
+import "openbase/type/domotic/action/ActionDescription.proto";
 
 /**
  * Description of a user data type.
@@ -32,7 +33,7 @@ message UserData {
      * A list of all operating actions.
      * The action at index 0 is the currently executing action while the other ones are scheduled.
      */
-    repeated .org.openbase.type.domotic.action.ActionDescription action = 150;
+    repeated .openbase.type.domotic.action.ActionDescription action = 150;
 
     /**
      * A transaction id indicating which action was the last one executed by the unit. The id increases
@@ -43,76 +44,76 @@ message UserData {
     /**
      * A list of the current user activities.
      */
-    optional .org.openbase.type.domotic.state.ActivityMultiState activity_multi_state = 300;
+    optional .openbase.type.domotic.state.ActivityMultiState activity_multi_state = 300;
 
     /**
      * A list of the last performed user activities. Passed activities can be removed any time by the unit controller.
      */
-    optional .org.openbase.type.domotic.state.ActivityMultiState activity_multi_state_last = 310;
+    optional .openbase.type.domotic.state.ActivityMultiState activity_multi_state_last = 310;
 
     /**
      * The requested current user activities.
      */
-    optional .org.openbase.type.domotic.state.ActivityMultiState activity_multi_state_requested = 320;
+    optional .openbase.type.domotic.state.ActivityMultiState activity_multi_state_requested = 320;
 
     /**
      * State represents if the user is currently present.
      */
-    optional .org.openbase.type.domotic.state.PresenceState presence_state = 600;
+    optional .openbase.type.domotic.state.PresenceState presence_state = 600;
 
     /**
      * The last presence state of the user.
      */
-    optional .org.openbase.type.domotic.state.PresenceState presence_state_last = 610;
+    optional .openbase.type.domotic.state.PresenceState presence_state_last = 610;
 
     /**
      * The requested transit state of the user.
      */
-    optional .org.openbase.type.domotic.state.PresenceState presence_state_requested = 620;
+    optional .openbase.type.domotic.state.PresenceState presence_state_requested = 620;
 
     /**
      * The transit state of the user.
      */
-    optional .org.openbase.type.domotic.state.UserTransitState user_transit_state = 700;
+    optional .openbase.type.domotic.state.UserTransitState user_transit_state = 700;
 
     /**
      * The last transit state of the user.
      */
-    optional .org.openbase.type.domotic.state.UserTransitState user_transit_state_last = 710;
+    optional .openbase.type.domotic.state.UserTransitState user_transit_state_last = 710;
 
     /**
      * The requested transit state of the user.
      */
-    optional .org.openbase.type.domotic.state.UserTransitState user_transit_state_requested = 720;
+    optional .openbase.type.domotic.state.UserTransitState user_transit_state_requested = 720;
 
     /**
      * The position of the user at home.
      */
-    optional .org.openbase.type.domotic.state.LocalPositionState local_position_state = 800;
+    optional .openbase.type.domotic.state.LocalPositionState local_position_state = 800;
 
     /**
      * The last position of the user at home.
      */
-    optional .org.openbase.type.domotic.state.LocalPositionState local_position_state_last = 810;
+    optional .openbase.type.domotic.state.LocalPositionState local_position_state_last = 810;
 
     /**
      * The requested position of the user at home.
      */
-    optional .org.openbase.type.domotic.state.LocalPositionState local_position_state_requested = 820;
+    optional .openbase.type.domotic.state.LocalPositionState local_position_state_requested = 820;
 
     /**
      * The global position of the user on the earth.
      */
-    optional .org.openbase.type.domotic.state.GlobalPositionState global_position_state = 900;
+    optional .openbase.type.domotic.state.GlobalPositionState global_position_state = 900;
 
     /**
      * The last global position of the user on the earth.
      */
-    optional .org.openbase.type.domotic.state.GlobalPositionState global_position_state_last = 910;
+    optional .openbase.type.domotic.state.GlobalPositionState global_position_state_last = 910;
 
     /**
      * The requested global position of the user on the earth.
      */
-    optional .org.openbase.type.domotic.state.GlobalPositionState global_position_state_requested = 920;
+    optional .openbase.type.domotic.state.GlobalPositionState global_position_state_requested = 920;
 }
 

@@ -2,7 +2,7 @@ from os.path import isdir, walk, join
 
 # generates the python package identification files within the given source folder.
 
-source_folder = "./org"
+source_folder = "./openbase_type"
 finit = '__init__.py'
 
 def visitor(arg, dirname, fnames):

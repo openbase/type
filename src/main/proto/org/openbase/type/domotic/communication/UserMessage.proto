@@ -1,12 +1,13 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.communication;
+package openbase.type.domotic.communication;
 
+option java_package = "org.openbase.type.domotic.communication";
 option java_outer_classname = "UserMessageType";
 
-import "org/openbase/type/language/MultiLanguageText.proto";
-import "org/openbase/type/timing/Timestamp.proto";
-import "org/openbase/type/domotic/service/ServiceStateDescription.proto";
+import "openbase/type/language/MultiLanguageText.proto";
+import "openbase/type/timing/Timestamp.proto";
+import "openbase/type/domotic/service/ServiceStateDescription.proto";
 
 /**
  * Description of a multi language user message type.
@@ -47,7 +48,7 @@ message UserMessage {
 
     }
 
-    optional .org.openbase.type.language.MultiLanguageText text = 100;
+    optional .openbase.type.language.MultiLanguageText text = 100;
 
     /**
      * The user id of the sender.
@@ -72,13 +73,13 @@ message UserMessage {
     /**
      * The creation timestamp of the message.
      */
-    optional .org.openbase.type.timing.Timestamp timestamp = 600;
+    optional .openbase.type.timing.Timestamp timestamp = 600;
 
     /**
      * A list of service states used as condition for this message.
      * In case one of the conditions is not fullfilled which means the referred unit is not in the described state than this message in not valid anymore and will be deleted.
      * If no condition is defined, the message is valide until deletion.
      */
-    repeated .org.openbase.type.domotic.service.ServiceStateDescription condition = 700;
+    repeated .openbase.type.domotic.service.ServiceStateDescription condition = 700;
 }
 

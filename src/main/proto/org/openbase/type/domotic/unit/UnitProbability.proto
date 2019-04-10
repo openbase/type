@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit;
+package openbase.type.domotic.unit;
 
+option java_package = "org.openbase.type.domotic.unit";
 option java_outer_classname = "UnitProbabilityType";
 
 /**

@@ -1,12 +1,13 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.registry;
+package openbase.type.domotic.registry;
 
+option java_package = "org.openbase.type.domotic.registry";
 option java_outer_classname = "ClassRegistryDataType";
 
-import "org/openbase/type/domotic/unit/agent/AgentClass.proto";
-import "org/openbase/type/domotic/unit/app/AppClass.proto";
-import "org/openbase/type/domotic/unit/device/DeviceClass.proto";
+import "openbase/type/domotic/unit/agent/AgentClass.proto";
+import "openbase/type/domotic/unit/app/AppClass.proto";
+import "openbase/type/domotic/unit/device/DeviceClass.proto";
 
 /**
  * Description of a class registry.
@@ -23,7 +24,7 @@ message ClassRegistryData {
     /**
      * The list of registered device classes.
      */
-    repeated .org.openbase.type.domotic.unit.device.DeviceClass device_class = 200;
+    repeated .openbase.type.domotic.unit.device.DeviceClass device_class = 200;
 
     /**
      * Read only flag for the device class registry.
@@ -38,7 +39,7 @@ message ClassRegistryData {
     /**
      * The list of registerd agent classes.
      */
-    repeated .org.openbase.type.domotic.unit.agent.AgentClass agent_class = 500;
+    repeated .openbase.type.domotic.unit.agent.AgentClass agent_class = 500;
 
     /**
      * Read only flag for the agent class registry.
@@ -53,7 +54,7 @@ message ClassRegistryData {
     /**
      * The list of registerd app classes.
      */
-    repeated .org.openbase.type.domotic.unit.app.AppClass app_class = 800;
+    repeated .openbase.type.domotic.unit.app.AppClass app_class = 800;
 
     /**
      * Read only flag for the app class registry.

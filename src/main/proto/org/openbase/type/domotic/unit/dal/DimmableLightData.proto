@@ -1,11 +1,12 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.dal;
+package openbase.type.domotic.unit.dal;
 
-import "org/openbase/type/domotic/state/BrightnessState.proto";
-import "org/openbase/type/domotic/state/PowerState.proto";
-import "org/openbase/type/domotic/action/ActionDescription.proto";
+import "openbase/type/domotic/state/BrightnessState.proto";
+import "openbase/type/domotic/state/PowerState.proto";
+import "openbase/type/domotic/action/ActionDescription.proto";
 
+option java_package = "org.openbase.type.domotic.unit.dal";
 option java_outer_classname = "DimmableLightDataType";
 
 /**
@@ -29,37 +30,37 @@ message DimmableLightData {
      * A list of all operating actions.
      * The action at index 0 is the currently executing action while the other ones are scheduled.
      */
-    repeated .org.openbase.type.domotic.action.ActionDescription action = 150;
+    repeated .openbase.type.domotic.action.ActionDescription action = 150;
 
     /**
      * Field which represents the power state of the dimmer.
      */
-    optional .org.openbase.type.domotic.state.PowerState power_state = 300;
+    optional .openbase.type.domotic.state.PowerState power_state = 300;
 
     /**
      * Field which represents the power state of the dimmer.
      */
-    optional .org.openbase.type.domotic.state.PowerState power_state_last = 310;
+    optional .openbase.type.domotic.state.PowerState power_state_last = 310;
 
     /**
      * Field which represents the power state of the dimmer.
      */
-    optional .org.openbase.type.domotic.state.PowerState power_state_requested = 320;
+    optional .openbase.type.domotic.state.PowerState power_state_requested = 320;
 
     /**
      * The brighntess state of the light.
      */
-    optional .org.openbase.type.domotic.state.BrightnessState brightness_state = 400;
+    optional .openbase.type.domotic.state.BrightnessState brightness_state = 400;
 
     /**
      * The brighntess state of the light.
      */
-    optional .org.openbase.type.domotic.state.BrightnessState brightness_state_last = 410;
+    optional .openbase.type.domotic.state.BrightnessState brightness_state_last = 410;
 
     /**
      * The brighntess state of the light.
      */
-    optional .org.openbase.type.domotic.state.BrightnessState brightness_state_requested = 420;
+    optional .openbase.type.domotic.state.BrightnessState brightness_state_requested = 420;
 
     /**
      * A transaction id indicating which action was the last one executed by the unit. The id increases

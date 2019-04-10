@@ -1,9 +1,10 @@
 syntax = "proto2";
 
-package org.openbase.type.vision;
+package openbase.type.vision;
 
-import "org/openbase/type/timing/Timestamp.proto";
+import "openbase/type/timing/Timestamp.proto";
 
+option java_package = "org.openbase.type.vision";
 option java_outer_classname = "FourierDescriptorType";
 
 /**
@@ -13,7 +14,7 @@ option java_outer_classname = "FourierDescriptorType";
  * @author Michael Goerlich <mgoerlic@techfak.uni-bielefeld.de
  */
 message FourierDescriptor {
-    optional .org.openbase.type.timing.Timestamp time = 1;
+    optional .openbase.type.timing.Timestamp time = 1;
     repeated double a = 2;
     repeated double b = 3;
     repeated double c = 4;

@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.language;
+package openbase.type.language;
 
+option java_package = "org.openbase.type.language";
 option java_outer_classname = "MultiLanguageTextType";
 
 /**

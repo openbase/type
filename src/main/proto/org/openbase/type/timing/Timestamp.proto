@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.timing;
+package openbase.type.timing;
 
+option java_package = "org.openbase.type.timing";
 option java_outer_classname = "TimestampType";
 
 /**

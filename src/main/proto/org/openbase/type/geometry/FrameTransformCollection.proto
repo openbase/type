@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.geometry;
+package openbase.type.geometry;
 
+option java_package = "org.openbase.type.geometry";
 option java_outer_classname = "FrameTransformCollectionType";
 
-import "org/openbase/type/geometry/FrameTransform.proto";
+import "openbase/type/geometry/FrameTransform.proto";
 
 /**
  * A Collection of FrameTransform types.
@@ -17,5 +18,5 @@ message FrameTransformCollection {
     /**
      * A collection of transformation frames.
      */
-    repeated .org.openbase.type.geometry.FrameTransform transforms = 1;
+    repeated .openbase.type.geometry.FrameTransform transforms = 1;
 }

@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.device;
+package openbase.type.domotic.unit.device;
 
+option java_package = "org.openbase.type.domotic.unit.device";
 option java_outer_classname = "DeviceConfigType";
 
-import "org/openbase/type/domotic/state/InventoryState.proto";
+import "openbase/type/domotic/state/InventoryState.proto";
 
 /**
  * Description of a device configuration.
@@ -21,7 +22,7 @@ message DeviceConfig {
     /**
      * The inventory state of the device.
      */
-    optional .org.openbase.type.domotic.state.InventoryState inventory_state = 600;
+    optional .openbase.type.domotic.state.InventoryState inventory_state = 600;
 
     /**
      * The id of the device class of the device.

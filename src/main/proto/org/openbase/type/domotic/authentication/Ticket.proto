@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.authentication;
+package openbase.type.domotic.authentication;
 
+option java_package = "org.openbase.type.domotic.authentication";
 option java_outer_classname = "TicketType";
 
-import "org/openbase/type/timing/Interval.proto";
+import "openbase/type/timing/Interval.proto";
 
 /**
  * Type for both Ticket Granting Ticket and Client Server Ticket,
@@ -27,7 +28,7 @@ message Ticket {
     /**
      * Validity period.
      */
-    optional .org.openbase.type.timing.Interval validity_period = 3;
+    optional .openbase.type.timing.Interval validity_period = 3;
 
     /**
      * Session key, used to encrypt Authenticator objects.

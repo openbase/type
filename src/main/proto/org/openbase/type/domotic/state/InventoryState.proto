@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.state;
+package openbase.type.domotic.state;
 
+option java_package = "org.openbase.type.domotic.state";
 option java_outer_classname = "InventoryStateType";
 
-import "org/openbase/type/timing/Timestamp.proto";
+import "openbase/type/timing/Timestamp.proto";
 
 
 /**
@@ -69,7 +70,7 @@ message InventoryState {
         /**
          * The timestamp of the last occurrence.
          */
-        optional .org.openbase.type.timing.Timestamp value = 2;
+        optional .openbase.type.timing.Timestamp value = 2;
     }
 
     /**
@@ -86,7 +87,7 @@ message InventoryState {
     /**
      * Last change of the inventory status.
      */
-    optional .org.openbase.type.timing.Timestamp timestamp = 300;
+    optional .openbase.type.timing.Timestamp timestamp = 300;
 
     /**
      * The user id of the last or current borrower of the unitS.

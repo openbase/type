@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.authentication;
+package openbase.type.domotic.authentication;
 
+option java_package = "org.openbase.type.domotic.authentication";
 option java_outer_classname = "AuthenticatedValueType";
 
-import "org/openbase/type/domotic/authentication/TicketAuthenticatorWrapper.proto";
+import "openbase/type/domotic/authentication/TicketAuthenticatorWrapper.proto";
 
 /**
  * Type used to receive a value for which a user has to be logged in.
@@ -16,7 +17,7 @@ message AuthenticatedValue {
     /**
      * CST and Authenticator to authenticate the user who wants to receive the value.
      */
-    optional .org.openbase.type.domotic.authentication.TicketAuthenticatorWrapper ticket_authenticator_wrapper = 1;
+    optional .openbase.type.domotic.authentication.TicketAuthenticatorWrapper ticket_authenticator_wrapper = 1;
 
     /**
      * The value encrypted with the session key.

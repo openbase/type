@@ -1,12 +1,13 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit;
+package openbase.type.domotic.unit;
 
+option java_package = "org.openbase.type.domotic.unit";
 option java_outer_classname = "UnitTemplateType";
 
-import "org/openbase/type/language/Label.proto";
-import "org/openbase/type/configuration/MetaConfig.proto";
-import "org/openbase/type/domotic/service/ServiceDescription.proto";
+import "openbase/type/language/Label.proto";
+import "openbase/type/configuration/MetaConfig.proto";
+import "openbase/type/domotic/service/ServiceDescription.proto";
 
 /**
  * Template for units. Contains the unit type and according service descriptions.
@@ -211,7 +212,7 @@ message UnitTemplate {
     /**
      * The label of the unit type containing different languages.
      */
-    optional .org.openbase.type.language.Label label = 70;
+    optional .openbase.type.language.Label label = 70;
 
     /**
      * The type of the unit.
@@ -227,10 +228,10 @@ message UnitTemplate {
     /**
      * The service descriptions.
      */
-    repeated .org.openbase.type.domotic.service.ServiceDescription service_description = 200;
+    repeated .openbase.type.domotic.service.ServiceDescription service_description = 200;
 
     /**
      * A field storing meta unit template configurations.
      */
-    optional .org.openbase.type.configuration.MetaConfig meta_config = 300;
+    optional .openbase.type.configuration.MetaConfig meta_config = 300;
 }

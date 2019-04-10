@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.vision;
+package openbase.type.vision;
 
+option java_package = "org.openbase.type.vision";
 option java_outer_classname = "HSBColorType";
 
 

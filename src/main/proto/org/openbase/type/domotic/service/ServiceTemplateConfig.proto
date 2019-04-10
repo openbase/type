@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.service;
+package openbase.type.domotic.service;
 
-import "org/openbase/type/domotic/service/ServiceTemplate.proto";
-import "org/openbase/type/configuration/MetaConfig.proto";
+import "openbase/type/domotic/service/ServiceTemplate.proto";
+import "openbase/type/configuration/MetaConfig.proto";
 
+option java_package = "org.openbase.type.domotic.service";
 option java_outer_classname = "ServiceTemplateConfigType";
 
 
@@ -18,11 +19,11 @@ message ServiceTemplateConfig {
     /**
      * The service type of the config.
      */
-    optional .org.openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 100;
+    optional .openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 100;
 
     /**
      * A field for storing meta service template configurations.
      */
-    optional .org.openbase.type.configuration.MetaConfig meta_config = 200;
+    optional .openbase.type.configuration.MetaConfig meta_config = 200;
 }
 

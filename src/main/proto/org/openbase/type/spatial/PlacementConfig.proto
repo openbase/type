@@ -1,11 +1,12 @@
 syntax = "proto2";
 
-package org.openbase.type.spatial;
+package openbase.type.spatial;
 
+option java_package = "org.openbase.type.spatial";
 option java_outer_classname = "PlacementConfigType";
 
-import "org/openbase/type/geometry/Pose.proto";
-import "org/openbase/type/spatial/Shape.proto";
+import "openbase/type/geometry/Pose.proto";
+import "openbase/type/spatial/Shape.proto";
 
 /**
  * Description of a placement.
@@ -27,11 +28,11 @@ message PlacementConfig {
     /**
      * The position.
      */
-    optional .org.openbase.type.geometry.Pose pose = 200;
+    optional .openbase.type.geometry.Pose pose = 200;
 
     /**
      * The shape of the placement.
      */
-    optional .org.openbase.type.spatial.Shape shape = 300;
+    optional .openbase.type.spatial.Shape shape = 300;
 }
 

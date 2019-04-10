@@ -1,12 +1,13 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.state;
+package openbase.type.domotic.state;
 
+option java_package = "org.openbase.type.domotic.state";
 option java_outer_classname = "LocalPositionStateType";
 
-import "org/openbase/type/domotic/action/ActionDescription.proto";
-import "org/openbase/type/geometry/Pose.proto";
-import "org/openbase/type/timing/Timestamp.proto";
+import "openbase/type/domotic/action/ActionDescription.proto";
+import "openbase/type/geometry/Pose.proto";
+import "openbase/type/timing/Timestamp.proto";
 
 /**
  * State describing the local position of a unit.
@@ -24,7 +25,7 @@ message LocalPositionState {
      * of the root location.
      * This field is empty or the translation zero if the unit is not at home.
      */
-    optional .org.openbase.type.geometry.Pose pose = 100;
+    optional .openbase.type.geometry.Pose pose = 100;
 
     /**
      * A list of ids of locations in which the unit is.
@@ -38,10 +39,10 @@ message LocalPositionState {
     /**
      * Timestamp of the occurency of this event.
      */
-    optional .org.openbase.type.timing.Timestamp timestamp = 300;
+    optional .openbase.type.timing.Timestamp timestamp = 300;
 
     /**
      * This field contains the description of the action which is responsible for this service state.
      */
-    optional .org.openbase.type.domotic.action.ActionDescription responsible_action = 400;
+    optional .openbase.type.domotic.action.ActionDescription responsible_action = 400;
 }

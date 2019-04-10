@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.registry;
+package openbase.type.domotic.registry;
 
+option java_package = "org.openbase.type.domotic.registry";
 option java_outer_classname = "ActivityRegistryDataType";
 
-import "org/openbase/type/domotic/activity/ActivityConfig.proto";
+import "openbase/type/domotic/activity/ActivityConfig.proto";
 
 /**
  * Description of the activity registry.
@@ -22,7 +23,7 @@ message ActivityRegistryData {
     /**
      * The list of registered activity configurations.
      */
-    repeated .org.openbase.type.domotic.activity.ActivityConfig activity_config = 200;
+    repeated .openbase.type.domotic.activity.ActivityConfig activity_config = 200;
 
     /**
      * Read only flag for the activity config registry.

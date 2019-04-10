@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.authorizationgroup;
+package openbase.type.domotic.unit.authorizationgroup;
 
+option java_package = "org.openbase.type.domotic.unit.authorizationgroup";
 option java_outer_classname = "AuthorizationGroupConfigType";
 
 /**

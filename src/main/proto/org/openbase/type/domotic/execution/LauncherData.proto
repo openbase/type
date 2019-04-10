@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.execution;
+package openbase.type.domotic.execution;
 
-import "org/openbase/type/language/Label.proto";
-import "org/openbase/type/timing/Timestamp.proto";
+import "openbase/type/language/Label.proto";
+import "openbase/type/timing/Timestamp.proto";
 
+option java_package = "org.openbase.type.domotic.execution";
 option java_outer_classname = "LauncherDataType";
 
 /**
@@ -63,7 +64,7 @@ message LauncherData {
     /**
      * Label of the related launcher.
      */
-    optional .org.openbase.type.language.Label label = 200;
+    optional .openbase.type.language.Label label = 200;
 
     /**
      * The state the launcher is in.
@@ -80,6 +81,6 @@ message LauncherData {
     /**
      * Timestamp of the launch time. Can e.g. be used to calulate the current uptime of the launcher.
      */
-    optional .org.openbase.type.timing.Timestamp launch_time = 500;
+    optional .openbase.type.timing.Timestamp launch_time = 500;
 }
 

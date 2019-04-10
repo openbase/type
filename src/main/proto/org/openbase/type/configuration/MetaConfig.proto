@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.configuration;
+package openbase.type.configuration;
 
+option java_package = "org.openbase.type.configuration";
 option java_outer_classname = "MetaConfigType";
 
-import "org/openbase/type/configuration/Entry.proto";
+import "openbase/type/configuration/Entry.proto";
 
 /**
  * A collection of meta config entries to support a key value configuration structure.

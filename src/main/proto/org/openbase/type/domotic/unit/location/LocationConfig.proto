@@ -1,11 +1,12 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.location;
+package openbase.type.domotic.unit.location;
 
+option java_package = "org.openbase.type.domotic.unit.location";
 option java_outer_classname = "LocationConfigType";
 
-import "org/openbase/type/domotic/state/GlobalPositionState.proto";
-import "org/openbase/type/domotic/unit/location/TileConfig.proto";
+import "openbase/type/domotic/state/GlobalPositionState.proto";
+import "openbase/type/domotic/unit/location/TileConfig.proto";
 
 /**
  * Description of a Location.
@@ -60,10 +61,10 @@ message LocationConfig {
     /**
      * The tile configuration of the location. Should only be set if the type is tile.
      */
-    optional .org.openbase.type.domotic.unit.location.TileConfig tile_config = 900;
+    optional .openbase.type.domotic.unit.location.TileConfig tile_config = 900;
 
     /**
      * The position of the location on the earth.
      */
-    optional .org.openbase.type.domotic.state.GlobalPositionState global_position = 1000;
+    optional .openbase.type.domotic.state.GlobalPositionState global_position = 1000;
 }

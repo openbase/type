@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.communication;
+package openbase.type.communication;
 
+option java_package = "org.openbase.type.communication";
 option java_outer_classname = "ScopeType";
 
 

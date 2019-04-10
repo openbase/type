@@ -1,7 +1,8 @@
 syntax = "proto2";
 
-package org.openbase.type.configuration;
+package openbase.type.configuration;
 
+option java_package = "org.openbase.type.configuration";
 option java_outer_classname = "EntryType";
 
 /**

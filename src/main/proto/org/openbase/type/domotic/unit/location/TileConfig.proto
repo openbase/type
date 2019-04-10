@@ -1,10 +1,11 @@
 syntax = "proto2";
 
-package org.openbase.type.domotic.unit.location;
+package openbase.type.domotic.unit.location;
 
+option java_package = "org.openbase.type.domotic.unit.location";
 option java_outer_classname = "TileConfigType";
 
-import "org/openbase/type/configuration/MetaConfig.proto";
+import "openbase/type/configuration/MetaConfig.proto";
 
 /**
  * Description of a tile.
@@ -44,5 +45,5 @@ message TileConfig {
     /**
      * A field for storing meta unit configurations.
      */
-    optional .org.openbase.type.configuration.MetaConfig meta_config = 300;
+    optional .openbase.type.configuration.MetaConfig meta_config = 300;
 }
