@@ -82,7 +82,7 @@ install(TARGETS ${PROJECT_NAME}
         LIBRARY DESTINATION lib
         PUBLIC_HEADER DESTINATION include)
 
-install(DIRECTORY "${CMAKE_BINARY_DIR}/org"
+install(DIRECTORY "${CMAKE_BINARY_DIR}/openbase"
         DESTINATION "include"
         FILES_MATCHING PATTERN "*.h*")
 
