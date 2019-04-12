@@ -11,6 +11,7 @@ PYTHON_SOURCE_TARGET="${PYTHON_DIST}/openbase_type"
 
 if [ ! -d $PYTHON_SOURCE ]; then
     # build source if not already done
+    echo "Generate missing python types..."
     mvn package
 fi
 
