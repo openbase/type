@@ -1063,6 +1063,61 @@
       }
     },
     {
+      "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:LoginCredentialsEncoded.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "LoginCredentialsEncoded",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "credentials",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "admin",
+                "type": "bool"
+              },
+              {
+                "id": 4,
+                "name": "symmetric",
+                "type": "bool"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:LoginCredentialsEncodedCollection.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "LoginCredentialsEncodedCollection",
+            "fields": [
+              {
+                "id": 1,
+                "name": "login_credentials_encoded",
+                "type": ".org.openbase.type.domotic.authentication.LoginCredentialsEncoded",
+                "is_repeated": true
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "org/openbase/type/domotic/authentication/LoginCredentialsEncoded.proto"
+          }
+        ]
+      }
+    },
+    {
       "protopath": "org:/:openbase:/:type:/:domotic:/:authentication:/:Permission.proto",
       "def": {
         "messages": [
