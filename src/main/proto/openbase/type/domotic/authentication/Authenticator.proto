@@ -5,6 +5,7 @@ package openbase.type.domotic.authentication;
 option java_package = "org.openbase.type.domotic.authentication";
 option java_outer_classname = "AuthenticatorType";
 
+import "openbase/type/domotic/authentication/UserClientPair.proto";
 import "openbase/type/timing/Timestamp.proto";
 
 /**
@@ -15,9 +16,9 @@ import "openbase/type/timing/Timestamp.proto";
 message Authenticator {
 
     /**
-     * Unique client ID.
+     * Pair identifying the logged in user and client.
      */
-    optional string client_id = 1;
+    optional .openbase.type.domotic.authentication.UserClientPair user_client_pair = 1;
 
     /**
      * Timestamp, used to check if the request is valid.

@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+package openbase.type.domotic.authentication;
+
+option java_package = "org.openbase.type.domotic.authentication";
+option java_outer_classname = "UserClientPairType";
+
+/**
+ * Type identifying who is logged in. Since BCO differentiates between users and clients,
+ * this type contains an id for each of them.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UserClientPair {
+
+    /**
+     * The id of the user logged in.
+     */
+    optional string user_id = 1;
+
+    /**
+     * The id of the client logged in.
+     */
+    optional string client_id = 2;
+}
+
