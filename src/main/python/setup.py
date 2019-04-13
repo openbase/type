@@ -30,7 +30,7 @@ setup(
     package_data={'proto': ['data/proto/*']},
     package_dir={'':'openbase_type'},
     include_package_data=True,
-    install_requires=['six'],
+    install_requires=['protobuf'],
     #extras_require=extras_require,
     #tests_require=tests_require,
     license='LGPLv3+',

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+PYTHON_TEMPLATES="src/main/python"
+PROTOBUF_SOURCE="src/main/proto"
+PYTHON_SOURCE="target/generated-sources/protobuf/python/org/openbase/type"
+
+export PYTHON_DIST="./dist"
+PYTHON_DIST_DATA="${PYTHON_DIST}/data"
+PYTHON_DIST_SOURCE="${PYTHON_DIST}/openbase_type"
+
+if [ ! -d $PYTHON_SOURCE ]; then
+    # build source if not already done
+    mvn package
+fi
+
+# copy python sources and meta
+mkdir -p ${PYTHON_DIST_SOURCE}
+mkdir -p ${PYTHON_DIST_DATA}
+cp -r ${PYTHON_SOURCE}/* ${PYTHON_DIST_SOURCE}/
+cp ${PYTHON_TEMPLATES}/* ${PYTHON_DIST}/
+cp README.md ACKNOWLEDGMENT.md LICENSE.txt ${PYTHON_DIST}/
+
+# copy raw protobuf types
+cp -r ${PROTOBUF_SOURCE} ${PYTHON_DIST_DATA}/
