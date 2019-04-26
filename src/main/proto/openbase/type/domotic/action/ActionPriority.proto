@@ -27,7 +27,6 @@ message ActionPriority {
          *
          * Example usage:
          * - system self tests
-         * - background behaviours
          */
         NO = 1;
 
@@ -36,7 +35,6 @@ message ActionPriority {
          * Example usage:
          *
          * - background behaviours
-         * - user assistance
          */
         LOW = 2;
 
@@ -44,9 +42,9 @@ message ActionPriority {
          * Normal priority.
          *
          * Example usage:
-         * - user interaction
-         * - user assistance
-         * - scenario control
+         * - manual user control
+         * - user assistance and scenario control (apps)
+         * - long term user notifications
          */
         NORMAL = 3;
 
@@ -54,9 +52,9 @@ message ActionPriority {
          * High priority.
          *
          * Example usage:
-         * - user interaction
-         * - user assistance
-         * - user notification
+         * - user initiated overwrite () 
+         * - user assistance and scenario control (apps)
+         * - short term user notifications e.g. door bell
          */
         HIGH = 4;
 
@@ -64,9 +62,9 @@ message ActionPriority {
          * Critical priority.
          *
          * Example usage:
-         * - user interaction
-         * - user assistance
-         * - user notification
+         * - hardware hazard prevention
+         * - panic button actions
+         * - security alerts
          */
         URGENT = 5;
 
@@ -74,7 +72,7 @@ message ActionPriority {
          * Emergency priority.
          *
          * Example usage:
-         * - human or hardware hazard prevention
+         * - human hazard prevention
          * - safety assistance
          * - safety notification
          * - emergency actions
