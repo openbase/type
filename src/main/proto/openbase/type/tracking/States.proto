@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package openbase.type.tracking;
+
+option java_package = "org.openbase.type.tracking";
+option java_outer_classname = "StatesType";
+
+import "openbase/type/tracking/State.proto";
+
+/**
+ * A collection of @ref .State objects.
+ *
+ * Collecting multiple @ref .State objects in a single data structure
+ * is an easy way to express the fact that they have been recorded at
+ * the same point in time.
+ *
+ * @author Jan Moringen <jmoringe@techfak.uni-bielefeld.de>
+ */
+message States {
+
+    /**
+     * Empty collections of states are allowed.
+     *
+     * Order of states is not significant since association of states
+     * to tracked subjects is done via @ref .state.info.
+     */
+    repeated State state = 1;
+
+}

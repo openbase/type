@@ -1,0 +1,119 @@
+syntax = "proto2";
+
+package openbase.type.tracking;
+
+option java_package = "org.openbase.type.tracking";
+option java_outer_classname = "StateType";
+
+import "openbase/type/tracking/TrackingInfo.proto";
+
+/**
+ * Describes the available tracking information (via @ref .aspect) for
+ * a given tracked subject (identified by @ref .info).
+ *
+ * Possible applications include answering queries regarding the
+ * tracking state of certain subjects or broadcasting updated tracking
+ * state information when changes occur.
+ *
+ * @author Jan Moringen <jmoringe@techfak.uni-bielefeld.de>
+ */
+message State {
+
+    /**
+     * Aspects of tracking information which are available in the
+     * reported tracking state.
+     */
+    enum Aspect {
+
+        /**
+         * A rough description of the position of the tracked subject
+         * in two-dimensional space (e.g. in a camera image) is
+         * available.
+         *
+         * See @ref rst.math.Vec2DInt, @ref rst.math.Vec2DFloat.
+         */
+        ASPECT_POSITION_2D                  = 0;
+
+        /**
+         * A rough description of the position of the tracked subject
+         * in three-dimensional space is available.
+         *
+         * See @ref rst.geometry.Translation.
+         */
+        ASPECT_POSITION_3D                  = 1;
+
+        /**
+         * An axis-aligned box bounding the area in which the tracked
+         * subject is contained is available.
+         *
+         * See @ref rst.geometry.BoundingBox.
+         */
+        ASPECT_AXIS_ALIGNED_BOUNDING_BOX_2D = 2;
+
+        /**
+         * An axis-aligned box bounding the volume in which the
+         * tracked subject is contained is available.
+         *
+         * See @ref rst.geometry.AxisAlignedBoundingBox3DFloat.
+         */
+        ASPECT_AXIS_ALIGNED_BOUNDING_BOX_3D = 3;
+
+        /**
+         * A box in general position and orientation (i.e. not
+         * necessarily axis-aligned) bounding the area in which the
+         * tracked subject is contained is available.
+         */
+        ASPECT_BOUNDING_BOX_2D              = 4;
+
+        /**
+         * A box in general position and orientation (i.e. not
+         * necessarily axis-aligned) bounding the volume in which the
+         * tracked subject is contained is available.
+         *
+         * See @ref rst.geometry.BoundingBox3DFloat.
+         */
+        ASPECT_BOUNDING_BOX_3D              = 5;
+
+        /**
+         * A contour bounding the area in which the tracked subject is
+         * contained is available.
+         */
+        ASPECT_CONTOUR                      = 6;
+
+        /**
+         * For an articulated tracked subject (such as a human or a
+         * humanoid robot), individual estimations of the positions of
+         * certain points on/in the body of the subject in
+         * two-dimensional space are available.
+         */
+        ASPECT_POSTURE_2D                   = 7;
+
+        /**
+         * For an articulated tracked subject (such as a human or a
+         * humanoid robot), individual estimations of the positions of
+         * certain points on/in the body of the subject in
+         * three-dimensional space are available.
+         *
+         * See @ref rst.kinematics.Posture3DFloat.
+         */
+        ASPECT_POSTURE_3D                   = 8;
+    }
+
+    /**
+     * Identifies the subject for which the tracking state is
+     * reported.
+     */
+    required TrackingInfo info   = 1;
+
+    /**
+     * Lists of the available tracking aspects for the subject
+     * identified by @ref .info.
+     *
+     * An empty collection of aspects is allowed and corresponds to
+     * the fact that a subject has been lost.
+     *
+     * The order of aspects is not significant.
+     */
+    repeated Aspect       aspect = 2 [packed=true];
+
+}
