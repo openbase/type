@@ -10048,6 +10048,99 @@
       }
     },
     {
+      "protopath": "openbase:/:type:/:tracking:/:State.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "State.Aspect",
+            "enum_fields": [
+              {
+                "name": "ASPECT_POSITION_2D"
+              },
+              {
+                "name": "ASPECT_POSITION_3D",
+                "integer": 1
+              },
+              {
+                "name": "ASPECT_AXIS_ALIGNED_BOUNDING_BOX_2D",
+                "integer": 2
+              },
+              {
+                "name": "ASPECT_AXIS_ALIGNED_BOUNDING_BOX_3D",
+                "integer": 3
+              },
+              {
+                "name": "ASPECT_BOUNDING_BOX_2D",
+                "integer": 4
+              },
+              {
+                "name": "ASPECT_BOUNDING_BOX_3D",
+                "integer": 5
+              },
+              {
+                "name": "ASPECT_CONTOUR",
+                "integer": 6
+              },
+              {
+                "name": "ASPECT_POSTURE_2D",
+                "integer": 7
+              },
+              {
+                "name": "ASPECT_POSTURE_3D",
+                "integer": 8
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "State",
+            "fields": [
+              {
+                "id": 1,
+                "name": "info",
+                "type": "TrackingInfo"
+              },
+              {
+                "id": 2,
+                "name": "aspect",
+                "type": "Aspect",
+                "is_repeated": true
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "openbase/type/tracking/TrackingInfo.proto"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "openbase:/:type:/:tracking:/:States.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "States",
+            "fields": [
+              {
+                "id": 1,
+                "name": "state",
+                "type": "State",
+                "is_repeated": true
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "openbase/type/tracking/State.proto"
+          }
+        ]
+      }
+    },
+    {
       "protopath": "openbase:/:type:/:tracking:/:TrackedPosture3DFloat.proto",
       "def": {
         "messages": [
