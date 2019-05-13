@@ -15,6 +15,6 @@ echo -e "=== ${APP_NAME} project ${WHITE}installation${NC}" &&
 mkdir build
 cd build
 cmake ..
-make -j install
+make -j 2 install
 cd ..
 echo -e "=== ${APP_NAME} was ${GREEN}successfully${NC} installed to ${WHITE}${prefix}${NC}"
