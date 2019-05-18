@@ -53,7 +53,7 @@ message Color {
 //==========================================================
 
     /*oneof color_oneof {
-        .openbase.type.HSBColor hsb = 1;
-        .openbase.type.RGBColor rgb = 2;
+    *   .openbase.type.HSBColor hsb = 1;
+    *    .openbase.type.RGBColor rgb = 2;
     }*/
 }
