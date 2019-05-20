@@ -8,6 +8,9 @@ components={}
 schemas = {}
 components['schemas'] = schemas
 
+schemaNumbers = {}
+references = []
+
 def skipLine(line):
     if line == "":
         return True
@@ -46,6 +49,10 @@ def protoToOpenAPISchema(filename):
 
                     internalMessageName = messageName + '.' + line.split(' ')[1]
                     internalMessages[line.split(' ')[1]] = internalMessageName
+                    if internalMessageName in schemaNumbers:
+                        schemaNumbers[internalMessageName] += 1
+                    else:
+                        schemaNumbers[internalMessageName] = 1
 
                     internalMessageSchema = {}
                     internalMessageSchema['type'] = 'object'
@@ -62,9 +69,13 @@ def protoToOpenAPISchema(filename):
                 enum = True
 
                 enumName = line.split(' ')[1]
-                if enumName == 'State':
-                    enumName = messageName + '.' + enumName
+                enumName = messageName + '.' + enumName
                 internalEnums[line.split(' ')[1]] = enumName
+
+                if enumName in schemaNumbers:
+                    schemaNumbers[enumName] += 1
+                else:
+                    schemaNumbers[enumName] = 1
 
                 enumSchema = {}
 
@@ -107,22 +118,32 @@ def protoToOpenAPISchema(filename):
                 else:
                     schema['properties'][fieldName] = prop
 
-
             if fieldType in internalEnums:
+                references.append((internalEnums[fieldType], filename))
                 ref = "#/components/schemas/" + internalEnums[fieldType]
                 prop['$ref'] = ref
                 continue
 
             if fieldType in internalMessages:
+                references.append((internalMessages[fieldType], filename))
                 ref = "#components/schemas/" + internalMessages[fieldType]
                 prop['$ref'] = ref
                 continue
 
             if len(fieldType.split('.')) > 1:
-                prop['$ref'] = '#/components/schemas/' + fieldType.split('.')[-1]
+                refName = ""
+                for x in fieldType.split('.'):
+                    if len(x) == 0:
+                        continue
+                    if x[0].isupper():
+                        refName += x + '.'
+                refName = refName[:-1]
+                references.append((refName, filename))
+                prop['$ref'] = '#/components/schemas/' + refName#fieldType.split('.')[-1]
                 continue
 
             if fieldType[0].isupper():
+                references.append((fieldType, filename))
                 prop['$ref'] = '#/components/schemas/' + fieldType
                 continue
 
@@ -153,11 +174,29 @@ def protoToOpenAPISchema(filename):
             else:
                 print('Unexpected fieldType: ' + fieldType + " in " + str(filename) + " - " + line)
 
+        if messageName in schemaNumbers:
+            schemaNumbers[messageName] += 1
+        else:
+            schemaNumbers[messageName] = 1
         schemas[messageName] = schema 
 
 for filename in Path('openbase').glob('**/*.proto'):
     protoToOpenAPISchema(filename)
 
+
+error = False
+for s in schemaNumbers:
+    if schemaNumbers[s] > 1:
+        error = True
+        print('Schema[' + s + '] is used ' + str(schemaNumbers[s]) + " times");
+
+for r in references:
+    if r[0] not in schemaNumbers:
+        error = True
+        print("Reference[" + r[0] + ", " + str(r[1]) + "] is undefined!")
+
+if error:
+    print("There are some error in the generated configuration!")
+    exit(1)
+
 print(yaml.dump(components, default_flow_style=False))
-
-
