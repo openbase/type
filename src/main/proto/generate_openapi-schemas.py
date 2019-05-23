@@ -35,7 +35,7 @@ def skipLine(line):
         return True
     return False
 
-def addTypeToProp(fieldType, prop, internalSchemas={}):
+def addTypeToProp(fieldType, prop, schemaPrefix, internalSchemas={}):
     """
     Add an openAPI property type based on the fieldType defined in a proto definition.
     If the field type starts with an upper case then a reference is added, possible to an internal schema.
@@ -53,7 +53,7 @@ def addTypeToProp(fieldType, prop, internalSchemas={}):
             if internalSchema.split('.')[-1] == fieldType:
                 prop['$ref'] = referencePrefix + internalSchema
                 return prop
-        prop['$ref'] = referencePrefix + fieldType
+        prop['$ref'] = referencePrefix + schemaPrefix + fieldType
         return True
 
     if len(fieldType.split('.')) > 1:
@@ -65,7 +65,7 @@ def addTypeToProp(fieldType, prop, internalSchemas={}):
             if x[0].isupper():
                 refName += x + '.'
         refName = refName[:-1]
-        prop['$ref'] = '#/components/schemas/' + refName
+        prop['$ref'] = '#/components/schemas/' + schemaPrefix + refName
         return True
     
     # translate default types
@@ -99,7 +99,7 @@ def addTypeToProp(fieldType, prop, internalSchemas={}):
 
     return True
 
-def protoToOpenAPISchemaRecursive(lines, schemas, basename): 
+def protoToOpenAPISchemaRecursive(lines, schemas, schemaPrefix, basename): 
     """
     Recursively create a schema from lines read from a proto file.
     This method is recursive because proto messages can contain internal messages and enums.
@@ -120,8 +120,10 @@ def protoToOpenAPISchemaRecursive(lines, schemas, basename):
     i = 0;
     # iterate till end of file
     while (i < len(lines)):
-        # get current line and remove whitespaces
+        # get current line and remove whitespaces at front and end
         line = lines[i].strip()
+        # replace multiple whitepaces with a single one, see https://stackoverflow.com/questions/2077897/substitute-multiple-whitespace-with-single-whitespace-in-python
+        line = ' '.join(line.split())
         # increase index
         i += 1
 
@@ -138,7 +140,7 @@ def protoToOpenAPISchemaRecursive(lines, schemas, basename):
         if name != "" and (line.startswith('message') or line.startswith('enum')):
             # name is already specified but there is a message/enum, so it is internal
             # recursively call this method but splice the lines to begin at the definition of the internal type
-            _, processedLines = protoToOpenAPISchemaRecursive(lines[(i-1):len(lines)-1], schemas, basename=(name + '.'))
+            _, processedLines = protoToOpenAPISchemaRecursive(lines[(i-1):len(lines)-1], schemas, schemaPrefix, basename=(name + '.'))
             # move the index of this iteration after the definition of the internal type
             i += processedLines
             continue
@@ -149,6 +151,8 @@ def protoToOpenAPISchemaRecursive(lines, schemas, basename):
             isMessage = True
             # extract name
             name = basename + line.split(' ')[1]
+            if basename == '':
+                name = schemaPrefix + name
             # create schema and add to schemas
             schemas[name] = schema
             schema['type'] = 'object'
@@ -161,6 +165,8 @@ def protoToOpenAPISchemaRecursive(lines, schemas, basename):
             isMessage = False
             # extract name
             name = basename + line.split(' ')[1]
+            if basename == '':
+                name = schemaPrefix + name
             # create schema for enum and add to schemas
             schemas[name] = schema
             schema['type'] = 'string'
@@ -195,12 +201,12 @@ def protoToOpenAPISchemaRecursive(lines, schemas, basename):
             schema['properties'][fieldName] = prop
         
         # add property fields based on field type and print an error if it could not be done
-        if not addTypeToProp(fieldType, prop, schemas):
+        if not addTypeToProp(fieldType, prop, schemaPrefix, schemas):
             print('Could not parser fieldType[' + fieldType + '] into an openAPI property')
     return schemas, i
         
 
-def protoToOpenAPISchema(protoFile): 
+def protoToOpenAPISchema(protoFile, schemaPrefix): 
     """
     Create openAPI schemas from a proto file.
     For more details have a look at the method protoToOpenAPISchemaRecursive.
@@ -210,7 +216,7 @@ def protoToOpenAPISchema(protoFile):
     """
     schemas = {}
     with open(protoFile, 'r') as f:
-        protoToOpenAPISchemaRecursive(f.readlines(), schemas, '')
+        protoToOpenAPISchemaRecursive(f.readlines(), schemas, schemaPrefix, '')
     return schemas
 
 def findReferencesRecursive(dictionary, referenceList):
@@ -261,6 +267,7 @@ if __name__ == '__main__':
     parser.add_argument('-p', '--proto', default='.', type=str, help='proto file or directory. If a directory, it is recursively searched for proto files.')
     parser.add_argument('--openAPI', default='openAPI.yaml', type=str, help='openAPI definition file in yaml format to which the generated schemas will be added. If it does not exist it will be created.')
     parser.add_argument('--overwrite', action='store_true', help='flag determining if schemas should be overwritten if defined multiple times.')
+    parser.add_argument('--schemaPrefix', default='', type=str, help='prefix used for every schema name.')
     args = parser.parse_args() 
 
     # create dictionary for the openAPI definition
@@ -297,7 +304,7 @@ if __name__ == '__main__':
     # iterate over every proto file
     for filename in files:
         # create schema definitions for file
-        schemasInFile = protoToOpenAPISchema(filename)
+        schemasInFile = protoToOpenAPISchema(filename, args.schemaPrefix)
         # iterate over new schemas
         for schema in schemasInFile:
             # check if schema with name already exist and has changed
