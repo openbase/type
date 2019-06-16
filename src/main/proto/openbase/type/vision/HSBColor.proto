@@ -19,12 +19,12 @@ message HSBColor {
     optional double hue = 100;
 
     /**
-     * The saturation in the HSV color space. Range: [0..100].
+     * The saturation in the HSV color space. Range: [0..1].
      */
     optional double saturation = 200;
 
     /**
-     * The value in the HSV color space. Range: [0..100].
+     * The value in the HSV color space. Range: [0..1].
      */
     optional double brightness = 300;
 }
