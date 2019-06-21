@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+package openbase.type.domotic.database;
+
+option java_package = "org.openbase.type.domotic.database";
+option java_outer_classname = "DatabaseQueryType";
+
+
+message DatabaseQuery {
+
+    optional string measurement = 100;
+    optional string window = 200;
+    optional int64 timeStart = 300;
+    optional int64 timeStop = 400;
+    optional string field = 500;
+    repeated string filter=600;
+
+
+}
+
