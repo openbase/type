@@ -4,7 +4,6 @@ package openbase.type.domotic.state;
 
 import "openbase/type/timing/Timestamp.proto";
 import "openbase/type/domotic/action/ActionDescription.proto";
-import "openbase/type/domotic/state/PowerStatteAverage.proto";
 import "openbase/type/domotic/database/DatabaseQuery.proto";
 
 
@@ -81,9 +80,9 @@ message PowerState {
 
     message PowerStateAverage {
 
-        optional int32 unknown = 100;
-        optional int32 on = 200;
-        optional int32 off = 300;
+        optional int32 unknown = 1;
+        optional int32 on = 2;
+        optional int32 off = 3;
 
         optional .openbase.type.domotic.database.DatabaseQuery query = 400;
 
@@ -91,5 +90,5 @@ message PowerState {
     }
 
 
-    repeated .openbase.type.domotic.state.PowerStateAverage average = 500;
+    repeated PowerStateAverage average = 500;
 }
