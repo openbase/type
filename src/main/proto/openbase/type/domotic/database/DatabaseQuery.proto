@@ -2,6 +2,8 @@ syntax = "proto2";
 
 package openbase.type.domotic.database;
 
+import "openbase/type/domotic/service/ServiceTemplate.proto";
+
 option java_package = "org.openbase.type.domotic.database";
 option java_outer_classname = "DatabaseQueryType";
 
@@ -13,7 +15,13 @@ message DatabaseQuery {
     optional int64 timeStart = 300;
     optional int64 timeStop = 400;
     optional string field = 500;
-    repeated string filter=600;
+    repeated string filter = 600;
+    optional string unitId = 700;
+
+    /**
+    * The related Service type.
+    */
+    optional .openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 800;
 
 
 }

@@ -4,11 +4,11 @@ package openbase.type.domotic.state;
 
 import "openbase/type/timing/Timestamp.proto";
 import "openbase/type/domotic/action/ActionDescription.proto";
+import "openbase/type/domotic/database/DatabaseQuery.proto";
 
 
 option java_package = "org.openbase.type.domotic.state";
 option java_outer_classname = "PowerConsumptionStateType";
-
 
 /**
  * Power consumption state containing current, voltage and power.
@@ -41,4 +41,17 @@ message PowerConsumptionState {
      * This field contains the description of the action which is responsible for this service state.
      */
     optional .openbase.type.domotic.action.ActionDescription responsible_action = 500;
+
+
+    message PowerStateConsumptionAverage {
+
+        optional int32 consumption = 1;
+        optional int32 current = 2;
+        optional int32 voltage = 3;
+        optional .openbase.type.domotic.database.DatabaseQuery query = 400;
+    }
+
+    repeated PowerStateConsumptionAverage average = 600;
+
+
 }
