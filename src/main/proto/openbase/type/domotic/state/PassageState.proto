@@ -20,7 +20,7 @@ option java_outer_classname = "PassageStateType";
 message PassageState {
 
     /**
-     * Timestamp of the occurency of this event.
+     * Timestamp of the occurrence of this event.
      */
     optional .openbase.type.timing.Timestamp timestamp = 300;
 

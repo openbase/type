@@ -1793,6 +1793,121 @@
       }
     },
     {
+      "protopath": "openbase:/:type:/:domotic:/:database:/:DatabaseQuery.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "DatabaseQuery",
+            "fields": [
+              {
+                "id": 100,
+                "name": "measurement",
+                "type": "string"
+              },
+              {
+                "id": 200,
+                "name": "window",
+                "type": "string"
+              },
+              {
+                "id": 300,
+                "name": "timeStart",
+                "type": "int64"
+              },
+              {
+                "id": 400,
+                "name": "timeStop",
+                "type": "int64"
+              },
+              {
+                "id": 500,
+                "name": "field",
+                "type": "string"
+              },
+              {
+                "id": 600,
+                "name": "filter",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 700,
+                "name": "unitId",
+                "type": "string"
+              },
+              {
+                "id": 800,
+                "name": "service_type",
+                "type": ".openbase.type.domotic.service.ServiceTemplate.ServiceType"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "openbase/type/domotic/service/ServiceTemplate.proto"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "openbase:/:type:/:domotic:/:database:/:Record.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "Record",
+            "fields": [
+              {
+                "id": 100,
+                "name": "table",
+                "type": "int32"
+              },
+              {
+                "id": 300,
+                "name": "start",
+                "type": "int64"
+              },
+              {
+                "id": 400,
+                "name": "stop",
+                "type": "int64"
+              },
+              {
+                "id": 500,
+                "name": "time",
+                "type": "int64"
+              },
+              {
+                "id": 600,
+                "name": "value",
+                "type": "int64"
+              },
+              {
+                "id": 700,
+                "name": "measurement",
+                "type": "string"
+              },
+              {
+                "id": 800,
+                "name": "field",
+                "type": "string"
+              }
+            ],
+            "maps": [
+              {
+                "key_type": "string",
+                "field": {
+                  "id": 200,
+                  "name": "values",
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "protopath": "openbase:/:type:/:domotic:/:execution:/:LauncherData.proto",
       "def": {
         "enums": [
@@ -4516,6 +4631,39 @@
                 "id": 500,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 600,
+                "name": "average",
+                "type": "PowerStateConsumptionAverage",
+                "is_repeated": true
+              }
+            ],
+            "messages": [
+              {
+                "name": "PowerStateConsumptionAverage",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "consumption",
+                    "type": "int32"
+                  },
+                  {
+                    "id": 2,
+                    "name": "current",
+                    "type": "int32"
+                  },
+                  {
+                    "id": 3,
+                    "name": "voltage",
+                    "type": "int32"
+                  },
+                  {
+                    "id": 400,
+                    "name": "query",
+                    "type": ".openbase.type.domotic.database.DatabaseQuery"
+                  }
+                ]
               }
             ]
           }
@@ -4526,6 +4674,9 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          },
+          {
+            "path": "openbase/type/domotic/database/DatabaseQuery.proto"
           }
         ]
       }
@@ -4575,6 +4726,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "average",
+                "type": "PowerStateAverage",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -4592,6 +4749,31 @@
                     "type": ".openbase.type.timing.Timestamp"
                   }
                 ]
+              },
+              {
+                "name": "PowerStateAverage",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "unknown",
+                    "type": "int32"
+                  },
+                  {
+                    "id": 2,
+                    "name": "on",
+                    "type": "int32"
+                  },
+                  {
+                    "id": 3,
+                    "name": "off",
+                    "type": "int32"
+                  },
+                  {
+                    "id": 400,
+                    "name": "query",
+                    "type": ".openbase.type.domotic.database.DatabaseQuery"
+                  }
+                ]
               }
             ]
           }
@@ -4602,6 +4784,9 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          },
+          {
+            "path": "openbase/type/domotic/database/DatabaseQuery.proto"
           }
         ]
       }

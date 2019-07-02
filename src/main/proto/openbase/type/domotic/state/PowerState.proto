@@ -68,7 +68,7 @@ message PowerState {
     repeated MapFieldEntry last_value_occurrence = 1000;
 
     /**
-     * Timestamp of the occurency of this event.
+     * Timestamp of the occurrence of this event.
      */
     optional .openbase.type.timing.Timestamp timestamp = 200;
 
@@ -76,29 +76,28 @@ message PowerState {
      * This field contains the description of the action which is responsible for this service state.
      */
     optional .openbase.type.domotic.action.ActionDescription responsible_action = 400;
-
-
+    
     message PowerStateAverage {
 
         /**
-        * Unknown state average.
-        */
+         * Unknown state average.
+         */
         optional double UNKNOWN = 1;
+
         /**
-        * ON state average.
-        */
+         * ON state average.
+         */
         optional double ON = 2;
+
         /**
-        * OFF state average.
-        */
+         * OFF state average.
+         */
         optional double OFF = 3;
 
         /**
-        * The query that produced the data.
-        */
+         * The query that produced the data.
+         */
         optional .openbase.type.domotic.database.DatabaseQuery query = 400;
-
-
     }
 
     /**

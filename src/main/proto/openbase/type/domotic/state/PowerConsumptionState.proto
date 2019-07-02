@@ -34,7 +34,7 @@ message PowerConsumptionState {
     optional double voltage = 300;
 
     /**
-     * Timestamp of the occurency of this event.
+     * Timestamp of the occurrence of this event.
      */
     optional .openbase.type.timing.Timestamp timestamp = 400;
 
@@ -43,15 +43,32 @@ message PowerConsumptionState {
      */
     optional .openbase.type.domotic.action.ActionDescription responsible_action = 500;
 
-
     message PowerStateConsumptionAverage {
 
+        /**
+         * The power consumption average in watt.
+         */
         optional double consumption = 1;
+
+        /**
+         * The current average in ampere.
+         */
         optional double current = 2;
+
+        /**
+         * The voltage average in volt.
+         */
         optional double voltage = 3;
+
+        /**
+         * The query that produced the data.
+         */
         optional .openbase.type.domotic.database.DatabaseQuery query = 400;
     }
 
+    /**
+     * All average values.
+     */
     repeated PowerStateConsumptionAverage average = 600;
 
 
