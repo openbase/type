@@ -26,7 +26,7 @@ message ActionState {
         UNKNOWN = 0;
 
         /**
-         * Action is valid, propertly configured and ready for initiation.
+         * Action is valid, properly configured and ready for initiation.
          */
         INITIALIZED = 1;
 
@@ -46,7 +46,7 @@ message ActionState {
         EXECUTING = 4;
 
         /**
-         * An error occured during action execution and a recovering strategy was initiated..
+         * An error occurred during action execution and a recovering strategy was initiated..
          */
         EXECUTION_FAILED = 5;
 
@@ -61,12 +61,12 @@ message ActionState {
         FINISHED = 7;
 
         /**
-         * Action was externaly canceled and is now aborting the execution phrase and than rescheduled.
+         * Action was externally canceled and is now aborting the execution phrase and than rescheduled.
          */
         ABORTING = 8;
 
         /**
-         * Action is successfully abordted.
+         * Action is successfully aborted.
          */
         ABORTED = 9;
 

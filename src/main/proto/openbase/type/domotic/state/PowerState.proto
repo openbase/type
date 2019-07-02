@@ -24,7 +24,7 @@ message PowerState {
     enum State {
 
         /**
-         * Unknwon state.
+         * Unknown state.
          */
         UNKNOWN = 0;
 
@@ -80,15 +80,29 @@ message PowerState {
 
     message PowerStateAverage {
 
-        optional double unknown = 1;
-        optional double on = 2;
-        optional double off = 3;
+        /**
+        * Unknown state average.
+        */
+        optional double UNKNOWN = 1;
+        /**
+        * ON state average.
+        */
+        optional double ON = 2;
+        /**
+        * OFF state average.
+        */
+        optional double OFF = 3;
 
+        /**
+        * The query that produced the data.
+        */
         optional .openbase.type.domotic.database.DatabaseQuery query = 400;
 
 
     }
 
-
+    /**
+     * All average values.
+     */
     repeated PowerStateAverage average = 500;
 }
