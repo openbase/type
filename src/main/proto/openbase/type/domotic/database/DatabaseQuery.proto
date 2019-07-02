@@ -1,6 +1,7 @@
 syntax = "proto2";
 
 package openbase.type.domotic.database;
+import "openbase/type/timing/Timestamp.proto";
 
 import "openbase/type/domotic/service/ServiceTemplate.proto";
 
@@ -12,8 +13,8 @@ message DatabaseQuery {
 
     optional string measurement = 100;
     optional string window = 200;
-    optional int64 timeStart = 300;
-    optional int64 timeStop = 400;
+    optional .openbase.type.timing.Timestamp  timeStart = 300;
+    optional .openbase.type.timing.Timestamp  timeStop = 400;
     optional string field = 500;
     repeated string filter = 600;
     optional string unitId = 700;

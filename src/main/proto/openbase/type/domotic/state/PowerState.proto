@@ -80,9 +80,9 @@ message PowerState {
 
     message PowerStateAverage {
 
-        optional int32 unknown = 1;
-        optional int32 on = 2;
-        optional int32 off = 3;
+        optional double unknown = 1;
+        optional double on = 2;
+        optional double off = 3;
 
         optional .openbase.type.domotic.database.DatabaseQuery query = 400;
 
