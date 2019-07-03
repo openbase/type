@@ -4,7 +4,6 @@ package openbase.type.domotic.state;
 
 import "openbase/type/timing/Timestamp.proto";
 import "openbase/type/domotic/action/ActionDescription.proto";
-import "openbase/type/domotic/database/DatabaseQuery.proto";
 
 
 option java_package = "org.openbase.type.domotic.state";
@@ -61,6 +60,19 @@ message PowerState {
         optional .openbase.type.timing.Timestamp value = 2;
     }
 
+    message AggregatedValueCoverageMapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional State key = 1;
+
+        /**
+         * The coverage of the state.
+         */
+        optional double coverage = 2;
+    }
+
     /**
      * A mapping of all state values onto there last occurrence.
      * This mapping can be used for detecting state transitions.
@@ -76,32 +88,9 @@ message PowerState {
      * This field contains the description of the action which is responsible for this service state.
      */
     optional .openbase.type.domotic.action.ActionDescription responsible_action = 400;
-    
-    message PowerStateAverage {
-
-        /**
-         * Unknown state average.
-         */
-        optional double UNKNOWN = 1;
-
-        /**
-         * ON state average.
-         */
-        optional double ON = 2;
-
-        /**
-         * OFF state average.
-         */
-        optional double OFF = 3;
-
-        /**
-         * The query that produced the data.
-         */
-        optional .openbase.type.domotic.database.DatabaseQuery query = 400;
-    }
 
     /**
-     * All average values.
+     * All aggregated average values.
      */
-    repeated PowerStateAverage average = 500;
+    repeated AggregatedValueCoverageMapFieldEntry aggregated_value_coverage = 500;
 }

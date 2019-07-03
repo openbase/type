@@ -4,7 +4,6 @@ package openbase.type.domotic.state;
 
 import "openbase/type/timing/Timestamp.proto";
 import "openbase/type/domotic/action/ActionDescription.proto";
-import "openbase/type/domotic/database/DatabaseQuery.proto";
 
 
 option java_package = "org.openbase.type.domotic.state";
@@ -42,19 +41,6 @@ message WindowState {
          */
         TILTED = 3;
     }
-
-    message WindowStateAverage {
-
-        optional double UNKNOWN = 1;
-        optional double CLOSED = 2;
-        optional double OPEN = 3;
-        optional double TILTED = 4;
-
-        optional .openbase.type.domotic.database.DatabaseQuery query = 400;
-
-    }
-
-    repeated WindowStateAverage average = 500;
 
     /**
      * The open, closed or tilted state.

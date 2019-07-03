@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+package openbase.type.domotic.service;
+
+import "openbase/type/domotic/service/ServiceTemplate.proto";
+import "openbase/type/domotic/database/DatabaseQuery.proto";
+import "openbase/type/domotic/state/PowerConsumptionState.proto";
+import "openbase/type/domotic/state/PowerState.proto";
+
+option java_outer_classname = "AggregatedServiceStateType";
+
+
+message AggregatedServiceState {
+
+    /**
+    * The related Service type.
+    */
+    optional .openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 100;
+
+    /**
+     * The query that produced the data.
+     */
+    optional .openbase.type.domotic.database.DatabaseQuery query = 200;
+
+    oneof aggregated_service_state {
+        .openbase.type.domotic.state.PowerConsumptionState power_consumption_state = 1;
+        .openbase.type.domotic.state.PowerState power_state = 2;
+
+    }
+}
+
