@@ -1,12 +1,13 @@
 syntax = "proto2";
 
-package openbase.type.domotic.service;
+package openbase.type.domotic.state;
 
 import "openbase/type/domotic/service/ServiceTemplate.proto";
 import "openbase/type/domotic/database/DatabaseQuery.proto";
 import "openbase/type/domotic/state/PowerConsumptionState.proto";
 import "openbase/type/domotic/state/PowerState.proto";
 
+option java_package = "org.openbase.type.domotic.state";
 option java_outer_classname = "AggregatedServiceStateType";
 
 
@@ -22,7 +23,7 @@ message AggregatedServiceState {
      */
     optional .openbase.type.domotic.database.DatabaseQuery query = 200;
 
-    oneof aggregated_service_state {
+    oneof aggregated_service_type {
         .openbase.type.domotic.state.PowerConsumptionState power_consumption_state = 1;
         .openbase.type.domotic.state.PowerState power_state = 2;
 
