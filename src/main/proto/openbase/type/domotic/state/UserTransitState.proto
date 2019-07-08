@@ -58,22 +58,6 @@ message UserTransitState {
         LONG_TERM_PRESENT = 6;
     }
 
-    message UserTransitStateAverage {
-
-        optional double UNKNOWN = 1;
-        optional double SOON_ABSENT = 2;
-        optional double SHORT_TERM_ABSENT = 3;
-        optional double LONG_TERM_ABSENT = 4;
-        optional double SOON_PRESENT = 5;
-        optional double SHORT_TERM_PRESENT = 6;
-        optional double LONG_TERM_PRESENT = 7;
-
-        optional .openbase.type.domotic.database.DatabaseQuery query = 400;
-
-    }
-
-    repeated UserTransitStateAverage average = 500;
-
     /**
      * The presence state value.
      */
@@ -111,5 +95,20 @@ message UserTransitState {
      * This field contains the description of the action which is responsible for this service state.
      */
     optional .openbase.type.domotic.action.ActionDescription responsible_action = 400;
+
+    message AggregatedValueCoverageMapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional State key = 1;
+
+        /**
+         * The coverage of the state.
+         */
+        optional double coverage = 2;
+    }
+    repeated AggregatedValueCoverageMapFieldEntry aggregated_value_coverage = 500;
+
 }
 

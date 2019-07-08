@@ -6,6 +6,9 @@ import "openbase/type/domotic/service/ServiceTemplate.proto";
 import "openbase/type/domotic/database/DatabaseQuery.proto";
 import "openbase/type/domotic/state/PowerConsumptionState.proto";
 import "openbase/type/domotic/state/PowerState.proto";
+import "openbase/type/domotic/state/ActivationState.proto";
+import "openbase/type/domotic/state/AlarmState.proto";
+
 
 option java_package = "org.openbase.type.domotic.state";
 option java_outer_classname = "AggregatedServiceStateType";
@@ -26,6 +29,9 @@ message AggregatedServiceState {
     oneof aggregated_service_type {
         .openbase.type.domotic.state.PowerConsumptionState power_consumption_state = 1;
         .openbase.type.domotic.state.PowerState power_state = 2;
+        .openbase.type.domotic.state.ActivationState activation_state = 3;
+        .openbase.type.domotic.state.AlarmState alarm_state = 4;
+
 
     }
 }

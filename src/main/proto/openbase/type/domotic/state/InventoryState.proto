@@ -93,5 +93,20 @@ message InventoryState {
      * The user id of the last or current borrower of the unitS.
      */
     optional string borrower_id = 400;
+
+    message AggregatedValueCoverageMapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional State key = 1;
+
+        /**
+         * The coverage of the state.
+         */
+        optional double coverage = 2;
+    }
+    repeated AggregatedValueCoverageMapFieldEntry aggregated_value_coverage = 500;
+
 }
 

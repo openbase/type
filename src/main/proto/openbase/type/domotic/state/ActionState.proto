@@ -118,5 +118,20 @@ message ActionState {
      * This mapping can be used for detecting state transitions.
      */
     repeated MapFieldEntry last_value_occurrence = 1000;
+
+    message AggregatedValueCoverageMapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional State key = 1;
+
+        /**
+         * The coverage of the state.
+         */
+        optional double coverage = 2;
+    }
+    repeated AggregatedValueCoverageMapFieldEntry aggregated_value_coverage = 500;
+
 }
 
