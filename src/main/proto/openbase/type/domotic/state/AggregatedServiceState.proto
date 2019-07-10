@@ -77,8 +77,6 @@ message AggregatedServiceState {
         .openbase.type.domotic.state.WindowState window_state = 26;
         .openbase.type.domotic.state.TemperatureState target_temperature_state = 27;
         .openbase.type.domotic.state.AlarmState temperature_alarm_state = 28;
-
-
     }
 }
 
