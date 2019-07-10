@@ -36,7 +36,9 @@ message DatabaseQuery {
      */
     optional string field = 500;
 
-
+    /**
+     * Additional filters for the query.
+     */
     repeated .openbase.type.configuration.Entry filter = 600;
 
     /**
