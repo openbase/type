@@ -3181,6 +3181,12 @@
                 "name": "last_value_occurrence",
                 "type": "MapFieldEntry",
                 "is_repeated": true
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -3196,6 +3202,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -3258,6 +3279,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -3273,6 +3300,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -3391,6 +3433,136 @@
                 "id": 2,
                 "name": "power_state",
                 "type": ".openbase.type.domotic.state.PowerState"
+              },
+              {
+                "id": 3,
+                "name": "activation_state",
+                "type": ".openbase.type.domotic.state.ActivationState"
+              },
+              {
+                "id": 4,
+                "name": "alarm_state",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 5,
+                "name": "action_state",
+                "type": ".openbase.type.domotic.state.ActionState"
+              },
+              {
+                "id": 6,
+                "name": "availability_state",
+                "type": ".openbase.type.domotic.state.AvailabilityState"
+              },
+              {
+                "id": 7,
+                "name": "battery_state",
+                "type": ".openbase.type.domotic.state.BatteryState"
+              },
+              {
+                "id": 8,
+                "name": "blind_state",
+                "type": ".openbase.type.domotic.state.BlindState"
+              },
+              {
+                "id": 9,
+                "name": "brightness_state",
+                "type": ".openbase.type.domotic.state.BrightnessState"
+              },
+              {
+                "id": 10,
+                "name": "button_state",
+                "type": ".openbase.type.domotic.state.ButtonState"
+              },
+              {
+                "id": 11,
+                "name": "connection_state",
+                "type": ".openbase.type.domotic.state.ConnectionState"
+              },
+              {
+                "id": 12,
+                "name": "contact_state",
+                "type": ".openbase.type.domotic.state.ContactState"
+              },
+              {
+                "id": 13,
+                "name": "door_state",
+                "type": ".openbase.type.domotic.state.DoorState"
+              },
+              {
+                "id": 14,
+                "name": "emphasis_state",
+                "type": ".openbase.type.domotic.state.EmphasisState"
+              },
+              {
+                "id": 15,
+                "name": "enabling_state",
+                "type": ".openbase.type.domotic.state.EnablingState"
+              },
+              {
+                "id": 16,
+                "name": "handle_state",
+                "type": ".openbase.type.domotic.state.HandleState"
+              },
+              {
+                "id": 17,
+                "name": "illuminance_state",
+                "type": ".openbase.type.domotic.state.IlluminanceState"
+              },
+              {
+                "id": 18,
+                "name": "inventory_state",
+                "type": ".openbase.type.domotic.state.InventoryState"
+              },
+              {
+                "id": 19,
+                "name": "motion_state",
+                "type": ".openbase.type.domotic.state.MotionState"
+              },
+              {
+                "id": 20,
+                "name": "presence_state",
+                "type": ".openbase.type.domotic.state.PresenceState"
+              },
+              {
+                "id": 21,
+                "name": "smoke_state",
+                "type": ".openbase.type.domotic.state.SmokeState"
+              },
+              {
+                "id": 22,
+                "name": "standby_state",
+                "type": ".openbase.type.domotic.state.StandbyState"
+              },
+              {
+                "id": 23,
+                "name": "tamper_state",
+                "type": ".openbase.type.domotic.state.TamperState"
+              },
+              {
+                "id": 24,
+                "name": "temperature_state",
+                "type": ".openbase.type.domotic.state.TemperatureState"
+              },
+              {
+                "id": 25,
+                "name": "user_transit_state",
+                "type": ".openbase.type.domotic.state.UserTransitState"
+              },
+              {
+                "id": 30,
+                "name": "window_state",
+                "type": ".openbase.type.domotic.state.WindowState"
+              },
+              {
+                "id": 27,
+                "name": "target_temperature_state",
+                "type": ".openbase.type.domotic.state.TemperatureState"
+              },
+              {
+                "id": 28,
+                "name": "temperature_alarm_state",
+                "type": ".openbase.type.domotic.state.AlarmState"
               }
             ]
           }
@@ -3407,6 +3579,78 @@
           },
           {
             "path": "openbase/type/domotic/state/PowerState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/ActivationState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/AlarmState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/ActionState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/AvailabilityState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/BatteryState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/BlindState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/BrightnessState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/ButtonState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/ConnectionState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/ContactState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/DoorState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/EmphasisState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/EnablingState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/HandleState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/IlluminanceState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/InventoryState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/MotionState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/PresenceState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/SmokeState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/StandbyState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/TamperState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/TemperatureState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/UserTransitState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/WindowState.proto"
           }
         ]
       }
@@ -3456,6 +3700,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -3471,6 +3721,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -3540,6 +3805,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -3555,6 +3826,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -3625,6 +3911,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -3640,6 +3932,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -3710,6 +4017,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -3725,6 +4038,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -3844,6 +4172,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -3859,6 +4193,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -3970,6 +4319,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -3985,6 +4340,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -4046,6 +4416,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -4061,6 +4437,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -4126,6 +4517,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -4141,6 +4538,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -4247,6 +4659,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -4262,6 +4680,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -4474,6 +4907,12 @@
                 "id": 400,
                 "name": "borrower_id",
                 "type": "string"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -4489,6 +4928,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -4591,6 +5045,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -4606,6 +5066,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -4839,6 +5314,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -4854,6 +5335,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -4964,6 +5460,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -4979,6 +5481,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -5040,6 +5557,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -5055,6 +5578,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -5151,6 +5689,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -5166,6 +5710,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
@@ -5286,12 +5845,6 @@
             "name": "UserTransitState",
             "fields": [
               {
-                "id": 500,
-                "name": "average",
-                "type": "UserTransitStateAverage",
-                "is_repeated": true
-              },
-              {
                 "id": 100,
                 "name": "value",
                 "type": "State"
@@ -5311,54 +5864,15 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
-              {
-                "name": "UserTransitStateAverage",
-                "fields": [
-                  {
-                    "id": 1,
-                    "name": "UNKNOWN",
-                    "type": "double"
-                  },
-                  {
-                    "id": 2,
-                    "name": "SOON_ABSENT",
-                    "type": "double"
-                  },
-                  {
-                    "id": 3,
-                    "name": "SHORT_TERM_ABSENT",
-                    "type": "double"
-                  },
-                  {
-                    "id": 4,
-                    "name": "LONG_TERM_ABSENT",
-                    "type": "double"
-                  },
-                  {
-                    "id": 5,
-                    "name": "SOON_PRESENT",
-                    "type": "double"
-                  },
-                  {
-                    "id": 6,
-                    "name": "SHORT_TERM_PRESENT",
-                    "type": "double"
-                  },
-                  {
-                    "id": 7,
-                    "name": "LONG_TERM_PRESENT",
-                    "type": "double"
-                  },
-                  {
-                    "id": 400,
-                    "name": "query",
-                    "type": ".openbase.type.domotic.database.DatabaseQuery"
-                  }
-                ]
-              },
               {
                 "name": "MapFieldEntry",
                 "fields": [
@@ -5373,6 +5887,21 @@
                     "type": ".openbase.type.timing.Timestamp"
                   }
                 ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
+                  }
+                ]
               }
             ]
           }
@@ -5383,9 +5912,6 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
-          },
-          {
-            "path": "openbase/type/domotic/database/DatabaseQuery.proto"
           }
         ]
       }
@@ -5439,6 +5965,12 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
               }
             ],
             "messages": [
@@ -5454,6 +5986,21 @@
                     "id": 2,
                     "name": "value",
                     "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
                   }
                 ]
               }
