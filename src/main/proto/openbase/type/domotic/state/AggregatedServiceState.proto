@@ -1,0 +1,82 @@
+syntax = "proto2";
+
+package openbase.type.domotic.state;
+
+import "openbase/type/domotic/service/ServiceTemplate.proto";
+import "openbase/type/domotic/database/DatabaseQuery.proto";
+import "openbase/type/domotic/state/PowerConsumptionState.proto";
+import "openbase/type/domotic/state/PowerState.proto";
+import "openbase/type/domotic/state/ActivationState.proto";
+import "openbase/type/domotic/state/AlarmState.proto";
+import "openbase/type/domotic/state/ActionState.proto";
+import "openbase/type/domotic/state/AvailabilityState.proto";
+import "openbase/type/domotic/state/BatteryState.proto";
+import "openbase/type/domotic/state/BlindState.proto";
+import "openbase/type/domotic/state/BrightnessState.proto";
+import "openbase/type/domotic/state/ButtonState.proto";
+import "openbase/type/domotic/state/ConnectionState.proto";
+import "openbase/type/domotic/state/ContactState.proto";
+import "openbase/type/domotic/state/DoorState.proto";
+import "openbase/type/domotic/state/EmphasisState.proto";
+import "openbase/type/domotic/state/EnablingState.proto";
+import "openbase/type/domotic/state/HandleState.proto";
+import "openbase/type/domotic/state/IlluminanceState.proto";
+import "openbase/type/domotic/state/InventoryState.proto";
+import "openbase/type/domotic/state/MotionState.proto";
+import "openbase/type/domotic/state/PresenceState.proto";
+import "openbase/type/domotic/state/SmokeState.proto";
+import "openbase/type/domotic/state/StandbyState.proto";
+import "openbase/type/domotic/state/TamperState.proto";
+import "openbase/type/domotic/state/TemperatureState.proto";
+import "openbase/type/domotic/state/UserTransitState.proto";
+import "openbase/type/domotic/state/WindowState.proto";
+
+
+option java_package = "org.openbase.type.domotic.state";
+option java_outer_classname = "AggregatedServiceStateType";
+
+
+message AggregatedServiceState {
+
+    /**
+    * The related Service type.
+    */
+    optional .openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 100;
+
+    /**
+     * The query that produced the data.
+     */
+    optional .openbase.type.domotic.database.DatabaseQuery query = 200;
+
+    oneof aggregated_service_type {
+        .openbase.type.domotic.state.PowerConsumptionState power_consumption_state = 1;
+        .openbase.type.domotic.state.PowerState power_state = 2;
+        .openbase.type.domotic.state.ActivationState activation_state = 3;
+        .openbase.type.domotic.state.AlarmState alarm_state = 4;
+        .openbase.type.domotic.state.ActionState action_state = 5;
+        .openbase.type.domotic.state.AvailabilityState availability_state = 6;
+        .openbase.type.domotic.state.BatteryState battery_state = 7;
+        .openbase.type.domotic.state.BlindState blind_state = 8;
+        .openbase.type.domotic.state.BrightnessState brightness_state = 9;
+        .openbase.type.domotic.state.ButtonState button_state = 10;
+        .openbase.type.domotic.state.ConnectionState connection_state = 11;
+        .openbase.type.domotic.state.ContactState contact_state = 12;
+        .openbase.type.domotic.state.DoorState door_state = 13;
+        .openbase.type.domotic.state.EmphasisState emphasis_state = 14;
+        .openbase.type.domotic.state.EnablingState enabling_state = 15;
+        .openbase.type.domotic.state.HandleState handle_state = 16;
+        .openbase.type.domotic.state.IlluminanceState illuminance_state = 17;
+        .openbase.type.domotic.state.InventoryState inventory_state = 18;
+        .openbase.type.domotic.state.MotionState motion_state = 19;
+        .openbase.type.domotic.state.PresenceState presence_state = 20;
+        .openbase.type.domotic.state.SmokeState smoke_state = 21;
+        .openbase.type.domotic.state.StandbyState standby_state = 22;
+        .openbase.type.domotic.state.TamperState tamper_state = 23;
+        .openbase.type.domotic.state.TemperatureState temperature_state = 24;
+        .openbase.type.domotic.state.UserTransitState user_transit_state = 25;
+        .openbase.type.domotic.state.WindowState window_state = 26;
+        .openbase.type.domotic.state.TemperatureState target_temperature_state = 27;
+        .openbase.type.domotic.state.AlarmState temperature_alarm_state = 28;
+    }
+}
+

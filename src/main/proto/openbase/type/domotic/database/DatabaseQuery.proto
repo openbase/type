@@ -1,0 +1,54 @@
+syntax = "proto2";
+
+package openbase.type.domotic.database;
+
+import "openbase/type/timing/Timestamp.proto";
+import "openbase/type/domotic/service/ServiceTemplate.proto";
+import "openbase/type/configuration/Entry.proto";
+
+option java_package = "org.openbase.type.domotic.database";
+option java_outer_classname = "DatabaseQueryType";
+
+message DatabaseQuery {
+
+    /**
+     * The measurement which should be filtered.
+     */
+    optional string measurement = 100;
+
+    /**
+     * The time window which should be queried.
+     */
+    optional string aggregated_window = 200;
+
+    /**
+     * The start time of the query.
+     */
+    optional .openbase.type.timing.Timestamp time_range_start = 300;
+
+    /**
+     * The stop time of the query.
+     */
+    optional .openbase.type.timing.Timestamp time_range_stop = 400;
+
+    /**
+     * The requested field.
+     */
+    optional string field = 500;
+
+    /**
+     * Additional filters for the query.
+     */
+    repeated .openbase.type.configuration.Entry filter = 600;
+
+    /**
+     * The id of the related unit.
+     */
+    optional string unit_id = 700;
+
+    /**
+     * The related Service type.
+     */
+    optional .openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 800;
+}
+

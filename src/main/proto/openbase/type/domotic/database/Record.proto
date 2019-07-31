@@ -1,0 +1,46 @@
+syntax = "proto2";
+
+package openbase.type.domotic.database;
+import "openbase/type/timing/Timestamp.proto";
+
+option java_package = "org.openbase.type.domotic.database";
+option java_outer_classname = "RecordType";
+
+message Record {
+
+    /**
+     * Table where the entry comes from.
+     */
+    optional int32 table = 100;
+
+    /**
+     * List of all values of the record like alias, unit_type etc.
+     */
+    map<string, string> values = 200;
+
+    /**
+     * The start time of the record.
+     */
+    optional .openbase.type.timing.Timestamp time_range_start = 300;
+    
+    /**
+      * The stop time of the record.
+      */
+    optional .openbase.type.timing.Timestamp time_range_stop = 400;
+
+    /**
+     * The value of the requested field from the measurement..
+     */
+    optional int64 value = 500;
+
+    /**
+    * The measurement which was filtered.
+    */
+    optional string measurement = 700;
+
+    /**
+     * The requested field.
+     */
+    optional string field = 800;
+}
+

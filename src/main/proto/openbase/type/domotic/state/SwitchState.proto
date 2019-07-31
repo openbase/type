@@ -32,5 +32,7 @@ message SwitchState {
      * This field contains the description of the action which is responsible for this service state.
      */
     optional .openbase.type.domotic.action.ActionDescription responsible_action = 400;
+
+
 }
 

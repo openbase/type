@@ -9,7 +9,6 @@ import "openbase/type/domotic/action/ActionDescription.proto";
 option java_package = "org.openbase.type.domotic.state";
 option java_outer_classname = "PowerConsumptionStateType";
 
-
 /**
  * Power consumption state containing current, voltage and power.
  *
@@ -33,7 +32,7 @@ message PowerConsumptionState {
     optional double voltage = 300;
 
     /**
-     * Timestamp of the occurency of this event.
+     * Timestamp of the occurrence of this event.
      */
     optional .openbase.type.timing.Timestamp timestamp = 400;
 

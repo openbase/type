@@ -9,7 +9,6 @@ import "openbase/type/domotic/action/ActionDescription.proto";
 option java_package = "org.openbase.type.domotic.state";
 option java_outer_classname = "TemperatureStateType";
 
-
 /**
  * Basic sensor or object state.
  * Used by units like a temperature sensor.
@@ -63,5 +62,7 @@ message TemperatureState {
      * This field contains the description of the action which is responsible for this service state.
      */
     optional .openbase.type.domotic.action.ActionDescription responsible_action = 400;
+
+
 }
 

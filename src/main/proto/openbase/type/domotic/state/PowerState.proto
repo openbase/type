@@ -23,7 +23,7 @@ message PowerState {
     enum State {
 
         /**
-         * Unknwon state.
+         * Unknown state.
          */
         UNKNOWN = 0;
 
@@ -60,6 +60,19 @@ message PowerState {
         optional .openbase.type.timing.Timestamp value = 2;
     }
 
+    message AggregatedValueCoverageMapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional State key = 1;
+
+        /**
+         * The coverage of the state.
+         */
+        optional double coverage = 2;
+    }
+
     /**
      * A mapping of all state values onto there last occurrence.
      * This mapping can be used for detecting state transitions.
@@ -67,7 +80,7 @@ message PowerState {
     repeated MapFieldEntry last_value_occurrence = 1000;
 
     /**
-     * Timestamp of the occurency of this event.
+     * Timestamp of the occurrence of this event.
      */
     optional .openbase.type.timing.Timestamp timestamp = 200;
 
@@ -75,4 +88,9 @@ message PowerState {
      * This field contains the description of the action which is responsible for this service state.
      */
     optional .openbase.type.domotic.action.ActionDescription responsible_action = 400;
+
+    /**
+     * All aggregated average values.
+     */
+    repeated AggregatedValueCoverageMapFieldEntry aggregated_value_coverage = 500;
 }

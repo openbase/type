@@ -9,7 +9,6 @@ import "openbase/type/domotic/action/ActionDescription.proto";
 option java_package = "org.openbase.type.domotic.state";
 option java_outer_classname = "TamperStateType";
 
-
 /**
  * Basic sensor or object state.
  * Used by devices that have a tamper function.
@@ -76,5 +75,20 @@ message TamperState {
      * This field contains the description of the action which is responsible for this service state.
      */
     optional .openbase.type.domotic.action.ActionDescription responsible_action = 400;
+
+    message AggregatedValueCoverageMapFieldEntry {
+
+        /**
+         * The state value.
+         */
+        optional State key = 1;
+
+        /**
+         * The coverage of the state.
+         */
+        optional double coverage = 2;
+    }
+    repeated AggregatedValueCoverageMapFieldEntry aggregated_value_coverage = 500;
+
 }
 
