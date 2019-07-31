@@ -22,6 +22,7 @@ message Record {
      * The start time of the record.
      */
     optional .openbase.type.timing.Timestamp time_range_start = 300;
+    
     /**
       * The stop time of the record.
       */
