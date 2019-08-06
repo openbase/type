@@ -1870,21 +1870,16 @@
               },
               {
                 "id": 300,
-                "name": "start",
-                "type": "int64"
+                "name": "time_range_start",
+                "type": ".openbase.type.timing.Timestamp"
               },
               {
                 "id": 400,
-                "name": "stop",
-                "type": "int64"
+                "name": "time_range_stop",
+                "type": ".openbase.type.timing.Timestamp"
               },
               {
                 "id": 500,
-                "name": "time",
-                "type": "int64"
-              },
-              {
-                "id": 600,
                 "name": "value",
                 "type": "int64"
               },
@@ -1909,6 +1904,11 @@
                 }
               }
             ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "openbase/type/timing/Timestamp.proto"
           }
         ]
       }
@@ -3550,7 +3550,7 @@
                 "type": ".openbase.type.domotic.state.UserTransitState"
               },
               {
-                "id": 30,
+                "id": 26,
                 "name": "window_state",
                 "type": ".openbase.type.domotic.state.WindowState"
               },
