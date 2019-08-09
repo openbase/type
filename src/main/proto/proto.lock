@@ -1741,6 +1741,11 @@
             "name": "UserMessage",
             "fields": [
               {
+                "id": 50,
+                "name": "id",
+                "type": "string"
+              },
+              {
                 "id": 100,
                 "name": "text",
                 "type": ".openbase.type.language.MultiLanguageText"
@@ -2245,6 +2250,44 @@
           },
           {
             "path": "openbase/type/domotic/unit/device/DeviceClass.proto"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "openbase:/:type:/:domotic:/:registry:/:MessageRegistryData.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "MessageRegistryData",
+            "fields": [
+              {
+                "id": 100,
+                "name": "user_message",
+                "type": ".openbase.type.domotic.communication.UserMessage",
+                "is_repeated": true
+              },
+              {
+                "id": 1300,
+                "name": "dal_unit_config_registry_read_only",
+                "type": "bool"
+              },
+              {
+                "id": 2400,
+                "name": "dal_unit_config_registry_consistent",
+                "type": "bool"
+              },
+              {
+                "id": 3800,
+                "name": "transaction_id",
+                "type": "uint64"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "openbase/type/domotic/communication/UserMessage.proto"
           }
         ]
       }

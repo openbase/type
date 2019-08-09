@@ -48,6 +48,14 @@ message UserMessage {
 
     }
 
+    /**
+     * The id of the message.
+     */
+    optional string id = 50;
+
+    /**
+     * The message text as multi language field.
+     */
     optional .openbase.type.language.MultiLanguageText text = 100;
 
     /**

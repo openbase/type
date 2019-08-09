@@ -1,0 +1,38 @@
+syntax = "proto2";
+
+package openbase.type.domotic.registry;
+
+option java_package = "org.openbase.type.domotic.registry";
+option java_outer_classname = "MessageRegistryDataType";
+
+import "openbase/type/domotic/communication/UserMessage.proto";
+
+/**
+ * Description of a message registry data type.
+ *
+ * @author Divine Threepwood <divine@openbase.org>
+ */
+message MessageRegistryData {
+
+    /**
+     * The list of registered dal unit configs.
+     */
+    repeated .openbase.type.domotic.communication.UserMessage user_message = 100;
+
+    /**
+     * Read only flag for the user message registry.
+     */
+    optional bool dal_unit_config_registry_read_only = 1300;
+
+    /**
+     * Consistent flag for the user message registry.
+     */
+    optional bool dal_unit_config_registry_consistent = 2400;
+
+    /**
+     * A transaction id indicating which action was the last one executed. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 3800;
+}
+
