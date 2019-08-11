@@ -2269,12 +2269,12 @@
               },
               {
                 "id": 1300,
-                "name": "dal_unit_config_registry_read_only",
+                "name": "user_message_registry_read_only",
                 "type": "bool"
               },
               {
                 "id": 2400,
-                "name": "dal_unit_config_registry_consistent",
+                "name": "user_message_registry_consistent",
                 "type": "bool"
               },
               {
