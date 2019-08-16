@@ -7,9 +7,51 @@ import "openbase/type/domotic/service/ServiceTemplate.proto";
 import "openbase/type/configuration/Entry.proto";
 
 option java_package = "org.openbase.type.domotic.database";
-option java_outer_classname = "DatabaseQueryType";
+option java_outer_classname = "QueryType";
 
-message DatabaseQuery {
+message Query {
+
+    enum AggregateFunction {
+
+        MEAN = 0;
+
+        MEDIAN = 10;
+
+        MAX = 20;
+
+        MIN = 40;
+
+        SUM = 50;
+
+        DERIVATIVE = 60;
+
+        NONNEGATIVE_DERIVATIVE = 70;
+
+        DISTINCT = 80;
+
+        COUNT = 90;
+
+        INCREASE = 100;
+
+        SKEW = 110;
+
+        SPREAD = 120;
+
+        STDDEV = 130;
+
+        FIRST = 140;
+
+        LAST = 150;
+
+        UNIQUE = 160;
+
+        SORT = 170;
+    }
+
+    /**
+     * Can be used to define the query as raw type. Once set, only this raw query is used and all other fields are ignored.
+     */
+    optional string raw_query = 1;
 
     /**
      * The measurement which should be filtered.
@@ -50,5 +92,10 @@ message DatabaseQuery {
      * The related Service type.
      */
     optional .openbase.type.domotic.service.ServiceTemplate.ServiceType service_type = 800;
+
+    /**
+     * List of aggregate functions to apply.
+     */
+    repeated AggregateFunction aggregate_function = 900;
 }
 

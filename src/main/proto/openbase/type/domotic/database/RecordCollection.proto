@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package openbase.type.domotic.database;
+
+import "openbase/type/domotic/database/Record.proto";
+
+option java_package = "org.openbase.type.domotic.database";
+option java_outer_classname = "RecordCollectionType";
+
+message RecordCollection {
+
+    /**
+     * A collection of database records.
+     */
+    repeated .openbase.type.domotic.database.Record record = 100;
+}
+

@@ -3,7 +3,7 @@ syntax = "proto2";
 package openbase.type.domotic.state;
 
 import "openbase/type/domotic/service/ServiceTemplate.proto";
-import "openbase/type/domotic/database/DatabaseQuery.proto";
+import "openbase/type/domotic/database/Query.proto";
 import "openbase/type/domotic/state/PowerConsumptionState.proto";
 import "openbase/type/domotic/state/PowerState.proto";
 import "openbase/type/domotic/state/ActivationState.proto";
@@ -46,7 +46,7 @@ message AggregatedServiceState {
     /**
      * The query that produced the data.
      */
-    optional .openbase.type.domotic.database.DatabaseQuery query = 200;
+    optional .openbase.type.domotic.database.Query query = 200;
 
     oneof aggregated_service_type {
         .openbase.type.domotic.state.PowerConsumptionState power_consumption_state = 1;

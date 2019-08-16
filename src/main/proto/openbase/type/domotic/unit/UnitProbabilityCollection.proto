@@ -21,5 +21,4 @@ message UnitProbabilityCollection {
      * entries etc. are use case specific.
      */
     repeated UnitProbability element = 1;
-
 }

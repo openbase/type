@@ -14,9 +14,9 @@ message Record {
     optional int32 table = 100;
 
     /**
-     * List of all values of the record like alias, unit_type etc.
+     * List of all entries of the record like alias, unit_type etc.
      */
-    map<string, string> values = 200;
+    repeated KeyValueMapFieldEntry entry = 200;
 
     /**
      * The start time of the record.
@@ -42,5 +42,18 @@ message Record {
      * The requested field.
      */
     optional string field = 800;
+
+    message KeyValueMapFieldEntry {
+
+        /**
+         * Tag or field of the dataset to query.
+         */
+        optional string key = 1;
+
+        /**
+         * The related value.
+         */
+        optional string value = 2;
+    }
 }
 

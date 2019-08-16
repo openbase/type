@@ -1798,12 +1798,91 @@
       }
     },
     {
-      "protopath": "openbase:/:type:/:domotic:/:database:/:DatabaseQuery.proto",
+      "protopath": "openbase:/:type:/:domotic:/:database:/:Query.proto",
       "def": {
+        "enums": [
+          {
+            "name": "Query.AggregateFunction",
+            "enum_fields": [
+              {
+                "name": "MEAN"
+              },
+              {
+                "name": "MEDIAN",
+                "integer": 10
+              },
+              {
+                "name": "MAX",
+                "integer": 20
+              },
+              {
+                "name": "MIN",
+                "integer": 40
+              },
+              {
+                "name": "SUM",
+                "integer": 50
+              },
+              {
+                "name": "DERIVATIVE",
+                "integer": 60
+              },
+              {
+                "name": "NONNEGATIVE_DERIVATIVE",
+                "integer": 70
+              },
+              {
+                "name": "DISTINCT",
+                "integer": 80
+              },
+              {
+                "name": "COUNT",
+                "integer": 90
+              },
+              {
+                "name": "INCREASE",
+                "integer": 100
+              },
+              {
+                "name": "SKEW",
+                "integer": 110
+              },
+              {
+                "name": "SPREAD",
+                "integer": 120
+              },
+              {
+                "name": "STDDEV",
+                "integer": 130
+              },
+              {
+                "name": "FIRST",
+                "integer": 140
+              },
+              {
+                "name": "LAST",
+                "integer": 150
+              },
+              {
+                "name": "UNIQUE",
+                "integer": 160
+              },
+              {
+                "name": "SORT",
+                "integer": 170
+              }
+            ]
+          }
+        ],
         "messages": [
           {
-            "name": "DatabaseQuery",
+            "name": "Query",
             "fields": [
+              {
+                "id": 1,
+                "name": "raw_query",
+                "type": "string"
+              },
               {
                 "id": 100,
                 "name": "measurement",
@@ -1844,6 +1923,12 @@
                 "id": 800,
                 "name": "service_type",
                 "type": ".openbase.type.domotic.service.ServiceTemplate.ServiceType"
+              },
+              {
+                "id": 900,
+                "name": "aggregate_function",
+                "type": "AggregateFunction",
+                "is_repeated": true
               }
             ]
           }
@@ -1874,6 +1959,12 @@
                 "type": "int32"
               },
               {
+                "id": 200,
+                "name": "entry",
+                "type": "KeyValueMapFieldEntry",
+                "is_repeated": true
+              },
+              {
                 "id": 300,
                 "name": "time_range_start",
                 "type": ".openbase.type.timing.Timestamp"
@@ -1899,14 +1990,21 @@
                 "type": "string"
               }
             ],
-            "maps": [
+            "messages": [
               {
-                "key_type": "string",
-                "field": {
-                  "id": 200,
-                  "name": "values",
-                  "type": "string"
-                }
+                "name": "KeyValueMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "string"
+                  },
+                  {
+                    "id": 2,
+                    "name": "value",
+                    "type": "string"
+                  }
+                ]
               }
             ]
           }
@@ -1914,6 +2012,29 @@
         "imports": [
           {
             "path": "openbase/type/timing/Timestamp.proto"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "openbase:/:type:/:domotic:/:database:/:RecordCollection.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "RecordCollection",
+            "fields": [
+              {
+                "id": 100,
+                "name": "record",
+                "type": ".openbase.type.domotic.database.Record",
+                "is_repeated": true
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "openbase/type/domotic/database/Record.proto"
           }
         ]
       }
@@ -3465,7 +3586,7 @@
               {
                 "id": 200,
                 "name": "query",
-                "type": ".openbase.type.domotic.database.DatabaseQuery"
+                "type": ".openbase.type.domotic.database.Query"
               },
               {
                 "id": 1,
@@ -3615,7 +3736,7 @@
             "path": "openbase/type/domotic/service/ServiceTemplate.proto"
           },
           {
-            "path": "openbase/type/domotic/database/DatabaseQuery.proto"
+            "path": "openbase/type/domotic/database/Query.proto"
           },
           {
             "path": "openbase/type/domotic/state/PowerConsumptionState.proto"
