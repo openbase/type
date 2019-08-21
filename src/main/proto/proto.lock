@@ -1977,7 +1977,7 @@
               {
                 "id": 500,
                 "name": "value",
-                "type": "int64"
+                "type": "double"
               },
               {
                 "id": 700,
@@ -1988,6 +1988,11 @@
                 "id": 800,
                 "name": "field",
                 "type": "string"
+              },
+              {
+                "id": 900,
+                "name": "time",
+                "type": ".openbase.type.timing.Timestamp"
               }
             ],
             "messages": [

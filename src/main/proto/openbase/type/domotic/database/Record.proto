@@ -31,7 +31,7 @@ message Record {
     /**
      * The value of the requested field from the measurement..
      */
-    optional int64 value = 500;
+    optional double value = 500;
 
     /**
     * The measurement which was filtered.
@@ -42,6 +42,11 @@ message Record {
      * The requested field.
      */
     optional string field = 800;
+
+    /**
+     * The time when the record was taken (for aggregated values like mean).
+     */
+    optional .openbase.type.timing.Timestamp time = 900;
 
     message KeyValueMapFieldEntry {
 
