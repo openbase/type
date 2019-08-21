@@ -1991,7 +1991,7 @@
               },
               {
                 "id": 900,
-                "name": "time",
+                "name": "timestamp",
                 "type": ".openbase.type.timing.Timestamp"
               }
             ],

@@ -46,7 +46,7 @@ message Record {
     /**
      * The time when the record was taken (for aggregated values like mean).
      */
-    optional .openbase.type.timing.Timestamp time = 900;
+    optional .openbase.type.timing.Timestamp timestamp = 900;
 
     message KeyValueMapFieldEntry {
 
