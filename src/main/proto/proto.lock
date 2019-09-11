@@ -4965,11 +4965,32 @@
       "def": {
         "enums": [
           {
-            "name": "IlluminanceState.DataUnit",
+            "name": "IlluminanceState.State",
             "enum_fields": [
               {
                 "name": "UNKNOWN"
               },
+              {
+                "name": "SUNNY",
+                "integer": 1
+              },
+              {
+                "name": "SHADY",
+                "integer": 2
+              },
+              {
+                "name": "DUSKY",
+                "integer": 3
+              },
+              {
+                "name": "DARK",
+                "integer": 4
+              }
+            ]
+          },
+          {
+            "name": "IlluminanceState.DataUnit",
+            "enum_fields": [
               {
                 "name": "LUX",
                 "integer": 1
@@ -4981,6 +5002,11 @@
           {
             "name": "IlluminanceState",
             "fields": [
+              {
+                "id": 50,
+                "name": "value",
+                "type": "State"
+              },
               {
                 "id": 100,
                 "name": "illuminance",

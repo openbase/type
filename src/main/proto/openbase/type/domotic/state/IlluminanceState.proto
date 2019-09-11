@@ -19,14 +19,40 @@ option java_outer_classname = "IlluminanceStateType";
 message IlluminanceState {
 
     /**
+    * The state definitions.
+    */
+    enum State {
+
+        /**
+         * Unknwon state.
+         */
+        UNKNOWN = 0;
+
+        /**
+         * Ok state.
+         */
+        SUNNY = 1;
+
+        /**
+         * Critical state.
+         */
+        SHADY = 2;
+
+        /**
+         * Critical state.
+         */
+        DUSKY = 3;
+
+        /**
+         * Critical state.
+         */
+        DARK = 4;
+    }
+
+    /**
      * The date unit of the illuminance value.
      */
     enum DataUnit {
-
-        /**
-         * Unkown data unit.
-         */
-        UNKNOWN = 0;
 
         /**
          * Physical unit lux.
@@ -35,7 +61,12 @@ message IlluminanceState {
     }
 
     /**
-     * The measured brighntess in lux for sensors.
+     * The discrete illuminance state.
+     */
+    optional State value = 50;
+
+    /**
+     * The measured brightness in lux for sensors.
      */
     optional double illuminance = 100;
 
@@ -45,7 +76,7 @@ message IlluminanceState {
     optional DataUnit illuminance_data_unit = 200 [default = LUX];
 
     /**
-     * Timestamp of the occurency of this event.
+     * Timestamp of the occurrence of this event.
      */
     optional .openbase.type.timing.Timestamp timestamp = 300;
 
