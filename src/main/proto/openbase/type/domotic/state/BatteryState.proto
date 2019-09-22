@@ -23,7 +23,7 @@ message BatteryState {
     enum State {
 
         /**
-         * Unknwon state.
+         * Unknown state.
          */
         UNKNOWN = 0;
 
@@ -33,14 +33,19 @@ message BatteryState {
         OK = 1;
 
         /**
+         * Low state.
+         */
+        LOW = 2;
+
+        /**
          * Critical state.
          */
-        CRITICAL = 2;
+        CRITICAL = 3;
 
         /**
          * Insufficient energy state.
          */
-        INSUFFICIENT = 3;
+        INSUFFICIENT = 4;
     }
 
     /**

@@ -4041,12 +4041,16 @@
                 "integer": 1
               },
               {
-                "name": "CRITICAL",
+                "name": "LOW",
                 "integer": 2
               },
               {
-                "name": "INSUFFICIENT",
+                "name": "CRITICAL",
                 "integer": 3
+              },
+              {
+                "name": "INSUFFICIENT",
+                "integer": 4
               }
             ]
           }
