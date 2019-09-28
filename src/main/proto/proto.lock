@@ -5030,6 +5030,50 @@
                 "id": 400,
                 "name": "responsible_action",
                 "type": ".openbase.type.domotic.action.ActionDescription"
+              },
+              {
+                "id": 1000,
+                "name": "last_value_occurrence",
+                "type": "MapFieldEntry",
+                "is_repeated": true
+              },
+              {
+                "id": 500,
+                "name": "aggregated_value_coverage",
+                "type": "AggregatedValueCoverageMapFieldEntry",
+                "is_repeated": true
+              }
+            ],
+            "messages": [
+              {
+                "name": "MapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "value",
+                    "type": ".openbase.type.timing.Timestamp"
+                  }
+                ]
+              },
+              {
+                "name": "AggregatedValueCoverageMapFieldEntry",
+                "fields": [
+                  {
+                    "id": 1,
+                    "name": "key",
+                    "type": "State"
+                  },
+                  {
+                    "id": 2,
+                    "name": "coverage",
+                    "type": "double"
+                  }
+                ]
               }
             ]
           }
