@@ -4,6 +4,7 @@ package openbase.type.vision;
 
 import "openbase/type/vision/HSBColor.proto";
 import "openbase/type/vision/RGBColor.proto";
+import "openbase/type/vision/RGB24Color.proto";
 
 option java_package = "org.openbase.type.vision";
 option java_outer_classname = "ColorType";
@@ -33,6 +34,11 @@ message Color {
          * RGB type.
          */
         RGB = 1;
+
+        /**
+         * RGB type.
+         */
+        RGB24 = 3;
     }
 
     /**
@@ -49,6 +55,11 @@ message Color {
      * The hsb color type.
      */
     optional .openbase.type.vision.HSBColor hsb_color = 3;
+
+    /**
+     * The rgb 24-bit color type.
+     */
+    optional .openbase.type.vision.RGB24Color rgb_24_color = 4;
 
 //==========================================================
 

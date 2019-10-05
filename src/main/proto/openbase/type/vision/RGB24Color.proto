@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+package openbase.type.vision;
+
+option java_package = "org.openbase.type.vision";
+option java_outer_classname = "RGB24ColorType";
+
+
+/**
+ * Basic 24-bit RGB color type.
+ *
+ * @author Christian Leichsenring <cleichsenring@techfak.uni-bielefeld.de>
+ */
+message RGB24Color {
+
+    /**
+     * Red component. Range: [0..255].
+     */
+    optional uint32 red = 1;
+
+    /**
+     * Green component. Range: [0..255].
+     */
+    optional uint32 green = 2;
+
+    /**
+     * Blue component. Range: [0..255].
+     */
+    optional uint32 blue = 3;
+
+}
+

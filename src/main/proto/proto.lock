@@ -11266,6 +11266,10 @@
               {
                 "name": "RGB",
                 "integer": 1
+              },
+              {
+                "name": "RGB24",
+                "integer": 3
               }
             ]
           }
@@ -11288,6 +11292,11 @@
                 "id": 3,
                 "name": "hsb_color",
                 "type": ".openbase.type.vision.HSBColor"
+              },
+              {
+                "id": 4,
+                "name": "rgb_24_color",
+                "type": ".openbase.type.vision.RGB24Color"
               }
             ]
           }
@@ -11298,6 +11307,9 @@
           },
           {
             "path": "openbase/type/vision/RGBColor.proto"
+          },
+          {
+            "path": "openbase/type/vision/RGB24Color.proto"
           }
         ]
       }
@@ -11376,11 +11388,11 @@
       }
     },
     {
-      "protopath": "openbase:/:type:/:vision:/:RGBColor.proto",
+      "protopath": "openbase:/:type:/:vision:/:RGB24Color.proto",
       "def": {
         "messages": [
           {
-            "name": "RGBColor",
+            "name": "RGB24Color",
             "fields": [
               {
                 "id": 1,
@@ -11396,6 +11408,33 @@
                 "id": 3,
                 "name": "blue",
                 "type": "uint32"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "openbase:/:type:/:vision:/:RGBColor.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "RGBColor",
+            "fields": [
+              {
+                "id": 1,
+                "name": "red",
+                "type": "double"
+              },
+              {
+                "id": 2,
+                "name": "green",
+                "type": "double"
+              },
+              {
+                "id": 3,
+                "name": "blue",
+                "type": "double"
               }
             ]
           }

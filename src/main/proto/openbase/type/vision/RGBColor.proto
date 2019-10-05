@@ -7,26 +7,26 @@ option java_outer_classname = "RGBColorType";
 
 
 /**
- * Basic 24-bit RGB color type.
+ * RGB color type.
  *
- * @author Christian Leichsenring <cleichsenring@techfak.uni-bielefeld.de>
+ * @author Divine Threepwood <divine@openbase.org>
  */
 message RGBColor {
 
     /**
-     * Red component. Range: [0..255].
+     * Red component. Range: [0..1].
      */
-    optional uint32 red = 1;
+    optional double red = 1;
 
     /**
-     * Green component. Range: [0..255].
+     * Green component. Range: [0..1].
      */
-    optional uint32 green = 2;
+    optional double green = 2;
 
     /**
-     * Blue component. Range: [0..255].
+     * Blue component. Range: [0..1].
      */
-    optional uint32 blue = 3;
+    optional double blue = 3;
 
 }
 
