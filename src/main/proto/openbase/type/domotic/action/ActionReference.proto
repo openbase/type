@@ -36,6 +36,13 @@ message ActionReference {
     optional .openbase.type.domotic.service.ServiceStateDescription service_state_description = 30;
 
     /**
+     * Flag defines if this action is an intermediary element in the action chain.
+     * If the action is intermediary, they will never be scheduled or its action state updated.
+     * The actions on the action_impact list can be observed to determine the process of an intermediary action.
+     */
+    optional bool intermediary = 35;
+
+    /**
      * The runtime period of the referenced action in microseconds. If an action has not specified a runtime
      * the action causes will be searched for this value.
      */

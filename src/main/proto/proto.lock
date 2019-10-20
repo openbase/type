@@ -514,6 +514,11 @@
                 "type": ".openbase.type.domotic.service.ServiceStateDescription"
               },
               {
+                "id": 35,
+                "name": "intermediary",
+                "type": "bool"
+              },
+              {
                 "id": 40,
                 "name": "execution_time_period",
                 "type": "uint64"
