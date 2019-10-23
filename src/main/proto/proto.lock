@@ -2792,7 +2792,7 @@
                 "integer": 160
               },
               {
-                "name": "RFID_STATE",
+                "name": "R_F_I_D_STATE",
                 "integer": 170
               },
               {
@@ -3129,7 +3129,7 @@
                 "integer": 280
               },
               {
-                "name": "RFID_STATE_SERVICE",
+                "name": "R_F_I_D_STATE_SERVICE",
                 "integer": 290
               },
               {
@@ -6654,7 +6654,7 @@
                 "integer": 340
               },
               {
-                "name": "RFID",
+                "name": "R_F_I_D_Terminal",
                 "integer": 350
               }
             ]
@@ -8185,11 +8185,11 @@
       }
     },
     {
-      "protopath": "openbase:/:type:/:domotic:/:unit:/:dal:/:RFIDData.proto",
+      "protopath": "openbase:/:type:/:domotic:/:unit:/:dal:/:RFIDTerminalData.proto",
       "def": {
         "messages": [
           {
-            "name": "RFIDData",
+            "name": "RFIDTerminalData",
             "fields": [
               {
                 "id": 100,
@@ -8210,12 +8210,12 @@
               },
               {
                 "id": 300,
-                "name": "rfid_state",
+                "name": "r_f_i_d_state",
                 "type": ".openbase.type.domotic.state.RFIDState"
               },
               {
                 "id": 310,
-                "name": "rfid_state_last",
+                "name": "r_f_i_d_state_last",
                 "type": ".openbase.type.domotic.state.RFIDState"
               },
               {
@@ -8963,156 +8963,6 @@
                 "is_repeated": true
               },
               {
-                "id": 200,
-                "name": "unit_colorable_light_data",
-                "type": ".openbase.type.domotic.unit.dal.ColorableLightData",
-                "is_repeated": true
-              },
-              {
-                "id": 300,
-                "name": "unit_battery_data",
-                "type": ".openbase.type.domotic.unit.dal.BatteryData",
-                "is_repeated": true
-              },
-              {
-                "id": 500,
-                "name": "unit_button_data",
-                "type": ".openbase.type.domotic.unit.dal.ButtonData",
-                "is_repeated": true
-              },
-              {
-                "id": 600,
-                "name": "unit_dimmer_data",
-                "type": ".openbase.type.domotic.unit.dal.DimmerData",
-                "is_repeated": true
-              },
-              {
-                "id": 700,
-                "name": "unit_handle_data",
-                "type": ".openbase.type.domotic.unit.dal.HandleData",
-                "is_repeated": true
-              },
-              {
-                "id": 800,
-                "name": "unit_light_data",
-                "type": ".openbase.type.domotic.unit.dal.LightData",
-                "is_repeated": true
-              },
-              {
-                "id": 900,
-                "name": "unit_motion_detector_data",
-                "type": ".openbase.type.domotic.unit.dal.MotionDetectorData",
-                "is_repeated": true
-              },
-              {
-                "id": 1000,
-                "name": "unit_power_consumption_sensor_data",
-                "type": ".openbase.type.domotic.unit.dal.PowerConsumptionSensorData",
-                "is_repeated": true
-              },
-              {
-                "id": 1100,
-                "name": "unit_power_switch_data",
-                "type": ".openbase.type.domotic.unit.dal.PowerSwitchData",
-                "is_repeated": true
-              },
-              {
-                "id": 1200,
-                "name": "unit_reed_contact_data",
-                "type": ".openbase.type.domotic.unit.dal.ReedContactData",
-                "is_repeated": true
-              },
-              {
-                "id": 1300,
-                "name": "unit_roller_shutter_data",
-                "type": ".openbase.type.domotic.unit.dal.RollerShutterData",
-                "is_repeated": true
-              },
-              {
-                "id": 1400,
-                "name": "unit_monitor_data",
-                "type": ".openbase.type.domotic.unit.dal.MonitorData",
-                "is_repeated": true
-              },
-              {
-                "id": 1500,
-                "name": "unit_smoke_detector_data",
-                "type": ".openbase.type.domotic.unit.dal.SmokeDetectorData",
-                "is_repeated": true
-              },
-              {
-                "id": 1600,
-                "name": "unit_tamper_detector_data",
-                "type": ".openbase.type.domotic.unit.dal.TamperDetectorData",
-                "is_repeated": true
-              },
-              {
-                "id": 1700,
-                "name": "unit_television_data",
-                "type": ".openbase.type.domotic.unit.dal.TelevisionData",
-                "is_repeated": true
-              },
-              {
-                "id": 1800,
-                "name": "unit_temperature_controller_data",
-                "type": ".openbase.type.domotic.unit.dal.TemperatureControllerData",
-                "is_repeated": true
-              },
-              {
-                "id": 1900,
-                "name": "unit_temperature_sensor_data",
-                "type": ".openbase.type.domotic.unit.dal.TemperatureSensorData",
-                "is_repeated": true
-              },
-              {
-                "id": 2000,
-                "name": "unit_dimmable_light_data",
-                "type": ".openbase.type.domotic.unit.dal.DimmableLightData",
-                "is_repeated": true
-              },
-              {
-                "id": 2100,
-                "name": "unit_switch_data",
-                "type": ".openbase.type.domotic.unit.dal.SwitchData",
-                "is_repeated": true
-              },
-              {
-                "id": 2200,
-                "name": "unit_display_data",
-                "type": ".openbase.type.domotic.unit.dal.DisplayData",
-                "is_repeated": true
-              },
-              {
-                "id": 2210,
-                "name": "unit_video_rgb_source_data",
-                "type": ".openbase.type.domotic.unit.dal.VideoRgbSourceData",
-                "is_repeated": true
-              },
-              {
-                "id": 2220,
-                "name": "unit_rfid_data",
-                "type": ".openbase.type.domotic.unit.dal.RFIDData",
-                "is_repeated": true
-              },
-              {
-                "id": 2230,
-                "name": "unit_video_depth_source_data",
-                "type": ".openbase.type.domotic.unit.dal.VideoDepthSourceData",
-                "is_repeated": true
-              },
-              {
-                "id": 2240,
-                "name": "unit_audio_source_data",
-                "type": ".openbase.type.domotic.unit.dal.AudioSourceData",
-                "is_repeated": true
-              },
-              {
-                "id": 2250,
-                "name": "unit_light_sensor_data",
-                "type": ".openbase.type.domotic.unit.dal.LightSensorData",
-                "is_repeated": true
-              },
-              {
                 "id": 2300,
                 "name": "transaction_id",
                 "type": "uint64"
@@ -9194,7 +9044,7 @@
             "path": "openbase/type/domotic/unit/dal/AudioSourceData.proto"
           },
           {
-            "path": "openbase/type/domotic/unit/dal/RFIDData.proto"
+            "path": "openbase/type/domotic/unit/dal/RFIDTerminalData.proto"
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"

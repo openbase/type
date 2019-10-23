@@ -201,7 +201,7 @@ message UnitTemplate {
         /**
          * An RFID.
          */
-        RFID = 350;
+        R_F_I_D_Terminal = 350;
 }
 
     /**

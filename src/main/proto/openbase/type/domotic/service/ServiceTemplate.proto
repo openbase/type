@@ -195,7 +195,7 @@ message ServiceTemplate {
         /**
          * Service used by RFIDs.
          */
-        RFID_STATE_SERVICE = 290;
+        R_F_I_D_STATE_SERVICE = 290;
 
         /**
          * Presence state e.g. used for locations to give feedback about human presence.

@@ -111,7 +111,7 @@ message ServiceCommunicationType {
         /**
          * Type representing the rfid state.
          */
-        RFID_STATE = 170;
+        R_F_I_D_STATE = 170;
 
         /**
          * Type representing the smoke state.
