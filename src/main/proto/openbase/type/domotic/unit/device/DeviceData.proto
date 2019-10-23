@@ -2,31 +2,6 @@ syntax = "proto2";
 
 package openbase.type.domotic.unit.device;
 
-import "openbase/type/domotic/unit/dal/ColorableLightData.proto";
-import "openbase/type/domotic/unit/dal/BatteryData.proto";
-import "openbase/type/domotic/unit/dal/ButtonData.proto";
-import "openbase/type/domotic/unit/dal/DimmerData.proto";
-import "openbase/type/domotic/unit/dal/DimmableLightData.proto";
-import "openbase/type/domotic/unit/dal/HandleData.proto";
-import "openbase/type/domotic/unit/dal/LightData.proto";
-import "openbase/type/domotic/unit/dal/LightSensorData.proto";
-import "openbase/type/domotic/unit/dal/MotionDetectorData.proto";
-import "openbase/type/domotic/unit/dal/PowerConsumptionSensorData.proto";
-import "openbase/type/domotic/unit/dal/PowerSwitchData.proto";
-import "openbase/type/domotic/unit/dal/ReedContactData.proto";
-import "openbase/type/domotic/unit/dal/RollerShutterData.proto";
-import "openbase/type/domotic/unit/dal/MonitorData.proto";
-import "openbase/type/domotic/unit/dal/DisplayData.proto";
-import "openbase/type/domotic/unit/dal/SwitchData.proto";
-import "openbase/type/domotic/unit/dal/SmokeDetectorData.proto";
-import "openbase/type/domotic/unit/dal/TamperDetectorData.proto";
-import "openbase/type/domotic/unit/dal/TelevisionData.proto";
-import "openbase/type/domotic/unit/dal/TemperatureControllerData.proto";
-import "openbase/type/domotic/unit/dal/TemperatureSensorData.proto";
-import "openbase/type/domotic/unit/dal/VideoRgbSourceData.proto";
-import "openbase/type/domotic/unit/dal/VideoDepthSourceData.proto";
-import "openbase/type/domotic/unit/dal/AudioSourceData.proto";
-import "openbase/type/domotic/unit/dal/RFIDData.proto";
 import "openbase/type/domotic/action/ActionDescription.proto";
 
 option java_package = "org.openbase.type.domotic.unit.device";
@@ -54,131 +29,131 @@ message DeviceData {
      * The action at index 0 is the currently executing action while the other ones are scheduled.
      */
     repeated .openbase.type.domotic.action.ActionDescription action = 150;
-
-    /**
-     * The colorable light unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.ColorableLightData unit_colorable_light_data = 200;
-
-    /**
-     * The battery unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.BatteryData unit_battery_data = 300;
-
-    /**
-     * The button unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.ButtonData unit_button_data = 500;
-
-    /**
-     * The dimmer unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.DimmerData unit_dimmer_data = 600;
-
-    /**
-     * The handle unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.HandleData unit_handle_data = 700;
-
-    /**
-     * The light unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.LightData unit_light_data = 800;
-
-    /**
-     * The motion detector unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.MotionDetectorData unit_motion_detector_data = 900;
-
-    /**
-     * The power consumption sensor unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.PowerConsumptionSensorData unit_power_consumption_sensor_data = 1000;
-
-    /**
-     * The power switch unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.PowerSwitchData unit_power_switch_data = 1100;
-
-    /**
-     * The reed contact unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.ReedContactData unit_reed_contact_data = 1200;
-
-    /**
-     * The rollershutter unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.RollerShutterData unit_roller_shutter_data = 1300;
-
-    /**
-     * The monitor unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.MonitorData unit_monitor_data = 1400;
-
-    /**
-     * The smoke detector unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.SmokeDetectorData unit_smoke_detector_data = 1500;
-
-    /**
-     * The tamper detector unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.TamperDetectorData unit_tamper_detector_data = 1600;
-
-    /**
-     * The television unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.TelevisionData unit_television_data = 1700;
-
-    /**
-     * The temperature controller unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.TemperatureControllerData unit_temperature_controller_data = 1800;
-
-    /**
-     * The temperature sensor unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.TemperatureSensorData unit_temperature_sensor_data = 1900;
-
-    /**
-     * The dimmable light unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.DimmableLightData unit_dimmable_light_data = 2000;
-
-    /**
-     * The switch unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.SwitchData unit_switch_data = 2100;
-
-    /**
-     * The display unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.DisplayData unit_display_data = 2200;
-
-    /**
-     * The video rgb source unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.VideoRgbSourceData unit_video_rgb_source_data = 2210;
-
-    /**
-     * The RFID unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.RFIDData unit_rfid_data = 2220;
-
-    /**
-     * The video depth source unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.VideoDepthSourceData unit_video_depth_source_data = 2230;
-
-    /**
-     * The audio source unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.AudioSourceData unit_audio_source_data = 2240;
-
-    /**
-     * The light sensor unit data of this device.
-     */
-    repeated .openbase.type.domotic.unit.dal.LightSensorData unit_light_sensor_data = 2250;
+//
+//    /**
+//     * The colorable light unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.ColorableLightData unit_colorable_light_data = 200;
+//
+//    /**
+//     * The battery unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.BatteryData unit_battery_data = 300;
+//
+//    /**
+//     * The button unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.ButtonData unit_button_data = 500;
+//
+//    /**
+//     * The dimmer unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.DimmerData unit_dimmer_data = 600;
+//
+//    /**
+//     * The handle unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.HandleData unit_handle_data = 700;
+//
+//    /**
+//     * The light unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.LightData unit_light_data = 800;
+//
+//    /**
+//     * The motion detector unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.MotionDetectorData unit_motion_detector_data = 900;
+//
+//    /**
+//     * The power consumption sensor unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.PowerConsumptionSensorData unit_power_consumption_sensor_data = 1000;
+//
+//    /**
+//     * The power switch unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.PowerSwitchData unit_power_switch_data = 1100;
+//
+//    /**
+//     * The reed contact unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.ReedContactData unit_reed_contact_data = 1200;
+//
+//    /**
+//     * The rollershutter unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.RollerShutterData unit_roller_shutter_data = 1300;
+//
+//    /**
+//     * The monitor unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.MonitorData unit_monitor_data = 1400;
+//
+//    /**
+//     * The smoke detector unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.SmokeDetectorData unit_smoke_detector_data = 1500;
+//
+//    /**
+//     * The tamper detector unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.TamperDetectorData unit_tamper_detector_data = 1600;
+//
+//    /**
+//     * The television unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.TelevisionData unit_television_data = 1700;
+//
+//    /**
+//     * The temperature controller unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.TemperatureControllerData unit_temperature_controller_data = 1800;
+//
+//    /**
+//     * The temperature sensor unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.TemperatureSensorData unit_temperature_sensor_data = 1900;
+//
+//    /**
+//     * The dimmable light unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.DimmableLightData unit_dimmable_light_data = 2000;
+//
+//    /**
+//     * The switch unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.SwitchData unit_switch_data = 2100;
+//
+//    /**
+//     * The display unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.DisplayData unit_display_data = 2200;
+//
+//    /**
+//     * The video rgb source unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.VideoRgbSourceData unit_video_rgb_source_data = 2210;
+//
+//    /**
+//     * The RFID unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.RFIDTerminalData unit_rfid_data = 2220;
+//
+//    /**
+//     * The video depth source unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.VideoDepthSourceData unit_video_depth_source_data = 2230;
+//
+//    /**
+//     * The audio source unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.AudioSourceData unit_audio_source_data = 2240;
+//
+//    /**
+//     * The light sensor unit data of this device.
+//     */
+//    repeated .openbase.type.domotic.unit.dal.LightSensorData unit_light_sensor_data = 2250;
 
     /**
      * A transaction id indicating which action was the last one executed by the unit. The id increases

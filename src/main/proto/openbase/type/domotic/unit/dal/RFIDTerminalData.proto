@@ -6,14 +6,14 @@ import "openbase/type/domotic/state/RFIDState.proto";
 import "openbase/type/domotic/action/ActionDescription.proto";
 
 option java_package = "org.openbase.type.domotic.unit.dal";
-option java_outer_classname = "RFIDDataType";
+option java_outer_classname = "RFIDTerminalDataType";
 
 /**
  * Generic description of an RFID.
  *
  * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
  */
-message RFIDData {
+message RFIDTerminalData {
 
     /**
      * A unique object identifier.
@@ -34,12 +34,12 @@ message RFIDData {
     /**
      * Field which represents the current state of the RFID.
      */
-    optional .openbase.type.domotic.state.RFIDState rfid_state = 300;
+    optional .openbase.type.domotic.state.RFIDState r_f_i_d_state = 300;
 
     /**
      * Field which represents the last state of the RFID.
      */
-    optional .openbase.type.domotic.state.RFIDState rfid_state_last = 310;
+    optional .openbase.type.domotic.state.RFIDState r_f_i_d_state_last = 310;
 
     /**
      * A transaction id indicating which action was the last one executed by the unit. The id increases
