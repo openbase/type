@@ -130,6 +130,13 @@ message ActionDescription {
     optional bool schedulable = 130 [default = true];
 
     /**
+     * This flag defines if the action should be auto extended with a lower priority as soon as its max execution_time_period is reached.
+     * This flag is only interpreted for human action and has no effect for system actions. System action need to be periodically extended by the responsible
+     * instance as kind of heartbeat verification process.
+     */
+    optional bool auto_continue_with_low_priority = 135 [default = false];
+
+    /**
      * The time when this action was created.
      */
     optional .openbase.type.timing.Timestamp timestamp = 140;
