@@ -145,7 +145,7 @@
             "fields": [
               {
                 "id": 10,
-                "name": "id",
+                "name": "action_id",
                 "type": "string"
               },
               {
@@ -224,6 +224,11 @@
               {
                 "id": 130,
                 "name": "schedulable",
+                "type": "bool"
+              },
+              {
+                "id": 135,
+                "name": "auto_continue_with_low_priority",
                 "type": "bool"
               },
               {
@@ -415,6 +420,11 @@
                 "type": "bool"
               },
               {
+                "id": 135,
+                "name": "auto_continue_with_low_priority",
+                "type": "bool"
+              },
+              {
                 "id": 140,
                 "name": "auth_token",
                 "type": ".openbase.type.domotic.authentication.AuthToken"
@@ -542,6 +552,11 @@
               {
                 "id": 80,
                 "name": "schedulable",
+                "type": "bool"
+              },
+              {
+                "id": 85,
+                "name": "auto_continue_with_low_priority",
                 "type": "bool"
               },
               {
