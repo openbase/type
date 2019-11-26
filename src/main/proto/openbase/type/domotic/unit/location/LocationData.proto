@@ -62,6 +62,16 @@ message LocationData {
     optional .openbase.type.domotic.state.AlarmState smoke_alarm_state_last = 1210;
 
     /**
+     * The fire alarm state of the location.
+     */
+    optional .openbase.type.domotic.state.AlarmState fire_alarm_state = 1201;
+
+    /**
+     * The last fire alarm state of the location.
+     */
+    optional .openbase.type.domotic.state.AlarmState fire_alarm_state_last = 1211;
+
+    /**
      * The temperature alarm state of the location.
      */
     optional .openbase.type.domotic.state.AlarmState temperature_alarm_state = 1500;
