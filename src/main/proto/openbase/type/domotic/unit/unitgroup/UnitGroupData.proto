@@ -2,6 +2,7 @@ syntax = "proto2";
 
 package openbase.type.domotic.unit.unitgroup;
 
+import "openbase/type/domotic/state/ActivityState.proto";
 import "openbase/type/domotic/state/AlarmState.proto";
 import "openbase/type/domotic/state/BlindState.proto";
 import "openbase/type/domotic/state/BrightnessState.proto";
@@ -15,6 +16,7 @@ import "openbase/type/domotic/state/SmokeState.proto";
 import "openbase/type/domotic/state/StandbyState.proto";
 import "openbase/type/domotic/state/TamperState.proto";
 import "openbase/type/domotic/state/TemperatureState.proto";
+import "openbase/type/domotic/state/EmphasisState.proto";
 import "openbase/type/domotic/action/ActionDescription.proto";
 
 option java_package = "org.openbase.type.domotic.unit.unitgroup";
@@ -44,6 +46,12 @@ message UnitGroupData {
     repeated .openbase.type.domotic.action.ActionDescription action = 150;
 
     /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 2300;
+
+    /**
      * The smoke alarm state of the location.
      */
     optional .openbase.type.domotic.state.AlarmState smoke_alarm_state = 1200;
@@ -52,6 +60,16 @@ message UnitGroupData {
      * The last smoke alarm state of the location.
      */
     optional .openbase.type.domotic.state.AlarmState smoke_alarm_state_last = 1210;
+
+    /**
+     * The fire alarm state of the location.
+     */
+    optional .openbase.type.domotic.state.AlarmState fire_alarm_state = 1201;
+
+    /**
+     * The last fire alarm state of the location.
+     */
+    optional .openbase.type.domotic.state.AlarmState fire_alarm_state_last = 1211;
 
     /**
      * The temperature alarm state of the location.
@@ -144,6 +162,11 @@ message UnitGroupData {
     optional .openbase.type.domotic.state.PowerConsumptionState power_consumption_state = 1600;
 
     /**
+     * The last power consumption state of the location.
+     */
+    optional .openbase.type.domotic.state.PowerConsumptionState power_consumption_state_last = 1610;
+
+    /**
      * The power state of the location.
      */
     optional .openbase.type.domotic.state.PowerState power_state = 700;
@@ -224,9 +247,35 @@ message UnitGroupData {
     optional .openbase.type.domotic.state.TemperatureState temperature_state_requested = 1420;
 
     /**
-     * A transaction id indicating which action was the last one executed by the unit. The id increases
-     * with every action.
+     * The emphasis state of this location.
      */
-    optional uint64 transaction_id = 2300;
+    optional .openbase.type.domotic.state.EmphasisState emphasis_state = 1800;
+
+    /**
+     * The last emphasis state of this location.
+     */
+    optional .openbase.type.domotic.state.EmphasisState emphasis_state_last = 1810;
+
+    /**
+     * The requested emphasis state of this location.
+     */
+    optional .openbase.type.domotic.state.EmphasisState emphasis_state_requested = 1820;
+
+    /**
+     * A list of the current activities wihtin this location.
+     */
+    repeated .openbase.type.domotic.state.ActivityState activity_state = 1900;
+
+    /**
+     * A list of the last performed activities wihtin this location. Passed activities can be removed any time by the unit controller.
+     */
+    repeated .openbase.type.domotic.state.ActivityState activity_state_last = 1910;
+
+    /**
+     * The requested current activities performed wihtin this location.
+     */
+    repeated .openbase.type.domotic.state.ActivityState activity_state_requested = 1920;
+
+
 }
 
