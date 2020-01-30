@@ -3318,11 +3318,11 @@
                 "integer": 4
               },
               {
-                "name": "EXECUTION_FAILED",
+                "name": "SUBMISSION_FAILED",
                 "integer": 5
               },
               {
-                "name": "FINISHING",
+                "name": "SUBMISSION",
                 "integer": 6
               },
               {
@@ -3332,14 +3332,6 @@
               {
                 "name": "ABORTING",
                 "integer": 8
-              },
-              {
-                "name": "ABORTED",
-                "integer": 9
-              },
-              {
-                "name": "ABORTING_FAILED",
-                "integer": 10
               },
               {
                 "name": "REJECTED",

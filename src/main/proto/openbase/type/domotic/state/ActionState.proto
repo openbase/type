@@ -35,47 +35,37 @@ message ActionState {
         SCHEDULED = 2;
 
         /**
-         * The action execution is initiated so EXECUTING will probably the next state..
+         * The action execution is initiated and ready for submission.
          */
         INITIATING = 3;
 
         /**
-         * The action is currently performing.
+         * The action is currently applied.
          */
         EXECUTING = 4;
 
         /**
-         * An error occurred during action execution and a recovering strategy was initiated..
+         * An error occurred during the submission and a recovering strategy was initiated.
          */
-        EXECUTION_FAILED = 5;
+        SUBMISSION_FAILED = 5;
 
         /**
-         * Action is successfully executed and needed resources are cleaned up.
+         * The actions service state is currently applied.
          */
-        FINISHING = 6;
+        SUBMISSION = 6;
 
         /**
-         * Execution is successfully executed and now finished.
+         * Execution was successfully but the execution time has passed.
          */
         FINISHED = 7;
 
         /**
-         * Action was externally canceled and is now aborting the execution phrase and than rescheduled.
+         * Action was suppressed by another action and will be scheduled for later execution.
          */
         ABORTING = 8;
 
         /**
-         * Action is successfully aborted.
-         */
-        ABORTED = 9;
-
-        /**
-         * Action Abording failed and execution will continued.
-         */
-        ABORTING_FAILED = 10;
-
-        /**
-         * Action was removed from the scheduling queue because its action description is not valid anymore.
+         * Action is rejected because its not valid anymore.
          */
         REJECTED = 11;
 
