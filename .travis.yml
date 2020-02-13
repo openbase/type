@@ -62,13 +62,13 @@ jobs:
       deploy:
       - provider: script
         script: .travis/deploy.sh
-        skip_cleanup: true
+        cleanup: false
         on:
             repo: ${REPO_ID}
             branch: master
       - provider: script
         script: .travis/deploy.sh
-        skip_cleanup: true
+        cleanup: false
         on:
             repo: ${REPO_ID}
             tags: true
