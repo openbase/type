@@ -23,12 +23,18 @@ message ActionPriority {
         UNKNOWN = 0;
 
         /**
+         * This is the lowest priority that is only used to terminate an unit state.
+         * Please do not set this priority manually.
+         */
+        TERMINATION = 10;
+
+        /**
          * No priority or unspecified.
          *
          * Example usage:
          * - system self tests
          */
-        NO = 1;
+        NO = 20;
 
         /**
          * Low priority.
@@ -36,7 +42,7 @@ message ActionPriority {
          *
          * - background behaviours
          */
-        LOW = 2;
+        LOW = 30;
 
         /**
          * Normal priority.
@@ -46,7 +52,7 @@ message ActionPriority {
          * - user assistance and scenario control (apps)
          * - long term user notifications
          */
-        NORMAL = 3;
+        NORMAL = 40;
 
         /**
          * High priority.
@@ -56,7 +62,7 @@ message ActionPriority {
          * - user assistance and scenario control (apps)
          * - short term user notifications e.g. door bell
          */
-        HIGH = 4;
+        HIGH = 50;
 
         /**
          * Critical priority.
@@ -66,7 +72,7 @@ message ActionPriority {
          * - panic button actions
          * - security alerts
          */
-        URGENT = 5;
+        URGENT = 60;
 
         /**
          * Emergency priority.
@@ -77,7 +83,7 @@ message ActionPriority {
          * - safety notification
          * - emergency actions
          */
-        EMERGENCY = 6;
+        EMERGENCY = 70;
     }
 }
 
