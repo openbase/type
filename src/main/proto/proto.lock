@@ -468,28 +468,32 @@
                 "name": "UNKNOWN"
               },
               {
+                "name": "TERMINATION",
+                "integer": 10
+              },
+              {
                 "name": "NO",
-                "integer": 1
+                "integer": 20
               },
               {
                 "name": "LOW",
-                "integer": 2
+                "integer": 30
               },
               {
                 "name": "NORMAL",
-                "integer": 3
+                "integer": 40
               },
               {
                 "name": "HIGH",
-                "integer": 4
+                "integer": 50
               },
               {
                 "name": "URGENT",
-                "integer": 5
+                "integer": 60
               },
               {
                 "name": "EMERGENCY",
-                "integer": 6
+                "integer": 70
               }
             ]
           }
