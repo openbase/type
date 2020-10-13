@@ -3426,10 +3426,6 @@
                 "name": "UNKNOWN"
               },
               {
-                "name": "DEACTIVE",
-                "integer": 1
-              },
-              {
                 "name": "INACTIVE",
                 "integer": 1
               },

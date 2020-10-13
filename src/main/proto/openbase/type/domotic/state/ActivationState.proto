@@ -19,7 +19,7 @@ message ActivationState {
      * The state definitions.
      */
     enum State {
-        option allow_alias = true;
+    
         /**
          * Unknown state.
          */
@@ -28,7 +28,6 @@ message ActivationState {
         /**
          * Deactive state.
          */
-        DEACTIVE = 1;
         INACTIVE = 1;
 
         /**
