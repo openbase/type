@@ -13,7 +13,9 @@ option java_outer_classname = "ActionReferenceType";
 
 
 /**
- * Description of a reference to another action which is a cause of this one.
+ * Description of a action reference. It can be used to link between different action that are related to each other.
+ * Two actions A and B are related to each other if Action A is executed because of Action B.
+ * In this case A is linked as impact of action B while B is set as cause of action A. 
  *
  * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
  * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
@@ -22,6 +24,8 @@ message ActionReference {
 
     /**
      * The id of the action referenced.
+     * This field can possibly be empty in case the action has not yet been executed,
+     * but in this case the execution is managed by another instance that shadows the execution which means it will take care of the action extension and cancelation. 
      */
     optional string action_id = 10;
 
@@ -71,6 +75,15 @@ message ActionReference {
      * If not than the action will directly rejected in case a currently higher ranked action is blocking the unit.
      */
     optional bool schedulable = 80 [default = true];
+
+    /**
+     * Flag defines if this action is replaced by another action of the same user.
+     * By default an individual unit can only schedule one action of each system user and one additional executed by a humans.
+     * If this flag is set to false an individual unit can hold this action in addition to another human action on stack.
+     * However, in this case the unit action chain has to alternate as well to avoid the replacement.
+     * Only this guarantees no overflow of the action stack.
+     */
+    optional bool replaceable = 81 [default = true];
 
     /**
      * This flag defines if the action should be auto extended with a lower priority as soon as its max execution_time_period is reached.

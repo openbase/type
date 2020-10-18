@@ -87,6 +87,15 @@ message ActionParameter {
     optional bool schedulable = 130 [default = true];
 
     /**
+     * Flag defines if this action is replaced by another action of the same user.
+     * By default an individual unit can only schedule one action of each system user and one additional executed by a humans.
+     * If this flag is set to false an individual unit can hold this action in addition to another human action on stack.
+     * However, in this case the unit action chain has to alternate as well to avoid the replacement.
+     * Only this guarantees no overflow of the action stack.
+     */
+    optional bool replaceable = 131 [default = true];
+
+    /**
      * This flag defines if the action should be auto extended with a lower priority as soon as its max execution_time_period is reached.
      * This flag is only interpreted for human action and has no effect for system actions. System action need to be periodically extended by the responsible
      * instance as kind of heartbeat verification process.

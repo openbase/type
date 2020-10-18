@@ -227,6 +227,11 @@
                 "type": "bool"
               },
               {
+                "id": 131,
+                "name": "replaceable",
+                "type": "bool"
+              },
+              {
                 "id": 135,
                 "name": "auto_continue_with_low_priority",
                 "type": "bool"
@@ -420,6 +425,11 @@
                 "type": "bool"
               },
               {
+                "id": 131,
+                "name": "replaceable",
+                "type": "bool"
+              },
+              {
                 "id": 135,
                 "name": "auto_continue_with_low_priority",
                 "type": "bool"
@@ -556,6 +566,11 @@
               {
                 "id": 80,
                 "name": "schedulable",
+                "type": "bool"
+              },
+              {
+                "id": 81,
+                "name": "replaceable",
                 "type": "bool"
               },
               {
