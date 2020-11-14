@@ -6481,6 +6481,43 @@
       }
     },
     {
+      "protopath": "openbase:/:type:/:domotic:/:unit:/:UnitFilter.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "UnitFilter",
+            "fields": [
+              {
+                "id": 1000,
+                "name": "properties",
+                "type": "UnitConfig"
+              },
+              {
+                "id": 2000,
+                "name": "and",
+                "type": "UnitFilter"
+              },
+              {
+                "id": 2100,
+                "name": "or",
+                "type": "UnitFilter"
+              },
+              {
+                "id": 2200,
+                "name": "not",
+                "type": "bool"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "openbase/type/domotic/unit/UnitConfig.proto"
+          }
+        ]
+      }
+    },
+    {
       "protopath": "openbase:/:type:/:domotic:/:unit:/:UnitProbability.proto",
       "def": {
         "messages": [
