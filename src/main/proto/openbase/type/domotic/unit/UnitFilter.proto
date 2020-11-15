@@ -1,0 +1,38 @@
+syntax = "proto2";
+
+package openbase.type.domotic.unit;
+
+option java_package = "org.openbase.type.domotic.unit";
+option java_outer_classname = "UnitFilterType";
+
+import "openbase/type/domotic/unit/UnitConfig.proto";
+
+
+/**
+ * A description that can be used to filter units by their attributes or a logical combination of it.
+ *
+ * @author Divine Threepwood <divine@openbase.org>
+ */
+message UnitFilter {
+
+    /**
+     * Unit properties used as filter operation.
+     */
+    optional UnitConfig properties = 1000;
+
+    /**
+     * Field can be used to create a conjunction with another filter.
+     */
+    optional UnitFilter and = 2000;
+
+    /**
+     * Field can be used to create a disjunction with another filter.
+     */
+    optional UnitFilter or = 2100;
+
+    /**
+     * Field can be used to negate this filter operation.
+     */
+    optional bool not = 2200;
+}
+
