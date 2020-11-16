@@ -9072,6 +9072,11 @@
                 "type": ".openbase.type.domotic.state.AvailabilityState"
               },
               {
+                "id": 130,
+                "name": "availability_state_last",
+                "type": ".openbase.type.domotic.state.AvailabilityState"
+              },
+              {
                 "id": 150,
                 "name": "action",
                 "type": ".openbase.type.domotic.action.ActionDescription",

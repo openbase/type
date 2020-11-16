@@ -56,6 +56,11 @@ message DeviceData {
     optional .openbase.type.domotic.state.AvailabilityState availability_state = 120;
 
     /**
+     * The last availability state of this device.
+     */
+    optional .openbase.type.domotic.state.AvailabilityState availability_state_last = 130;
+
+    /**
      * A list of all operating actions.
      * The action at index 0 is the currently executing action while the other ones are scheduled.
      */
