@@ -154,52 +154,57 @@ message UnitTemplate {
         VIDEO_DEPTH_SOURCE = 250;
 
         /**
-         * A sytem unit of type location.
+         * A base unit of type location.
          */
         LOCATION = 260;
 
         /**
-         * A sytem unit of type connection.
+         * A base unit of type connection.
          */
         CONNECTION = 270;
 
         /**
-         * A sytem unit of type scene.
+         * A base unit of type scene.
          */
         SCENE = 280;
 
         /**
-         * A sytem unit of typen agent.
+         * A base unit of type agent.
          */
         AGENT = 290;
 
         /**
-         * A sytem unit of typen app.
+         * A base unit of type app.
          */
         APP = 300;
 
         /**
-         * A sytem unit of type Device.
+         * A base unit of type Device.
          */
         DEVICE = 310;
 
         /**
-         * A sytem unit of type user.
+         * A base unit of type user.
          */
         USER = 320;
 
         /**
-         * A sytem unit of type authorization group.
+         * A base unit of type authorization group.
          */
         AUTHORIZATION_GROUP = 330;
 
         /**
-         * A sytem unit of type unit group.
+         * A base unit of type unit group.
          */
         UNIT_GROUP = 340;
 
         /**
-         * An RFID.
+         * A base unit of type gateway that connects bco with external services.
+         */
+        GATEWAY = 345;
+
+        /**
+         * A RFID Terminal Unit.
          */
         R_F_I_D_Terminal = 350;
 }

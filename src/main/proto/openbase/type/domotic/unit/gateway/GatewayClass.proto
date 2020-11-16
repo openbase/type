@@ -1,0 +1,62 @@
+syntax = "proto2";
+
+package openbase.type.domotic.unit.gateway;
+
+option java_package = "org.openbase.type.domotic.unit.gateway";
+option java_outer_classname = "GatewayClassType";
+
+import "openbase/type/language/Label.proto";
+import "openbase/type/language/MultiLanguageText.proto";
+import "openbase/type/configuration/MetaConfig.proto";
+import "openbase/type/domotic/binding/BindingConfig.proto";
+import "openbase/type/domotic/unit/UnitTemplateConfig.proto";
+import "openbase/type/spatial/Shape.proto";
+
+/**
+ * Description of a gateway class.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message GatewayClass {
+
+    /**
+     * Id for the gateway class.
+     */
+    optional string id = 50;
+
+    /**
+     * The label of the gateway.
+     */
+    optional .openbase.type.language.Label label = 100;
+
+    /**
+     * The product number of the gateway class.
+     */
+    optional string product_number = 200;
+
+    /**
+     * The description of the gateway class.
+     */
+    optional .openbase.type.language.MultiLanguageText description = 300;
+
+    /**
+     * The company that produces the gateways of this gateway class.
+     */
+    optional string company = 450;
+
+    /**
+     * The binding configuration of the gateway class.
+     */
+    optional .openbase.type.domotic.binding.BindingConfig binding_config = 400;
+
+    /**
+     * A list of unit template configs.
+     */
+    repeated .openbase.type.domotic.unit.UnitTemplateConfig unit_template_config = 500;
+
+    /**
+     * A field for storing meta configurations.
+     */
+    optional .openbase.type.configuration.MetaConfig meta_config = 700;
+}
+

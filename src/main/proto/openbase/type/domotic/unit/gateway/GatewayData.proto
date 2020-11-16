@@ -1,0 +1,61 @@
+syntax = "proto2";
+
+package openbase.type.domotic.unit.gateway;
+
+import "openbase/type/domotic/action/ActionDescription.proto";
+import "openbase/type/domotic/state/AvailabilityState.proto";
+import "openbase/type/domotic/state/ActivationState.proto";
+
+option java_package = "org.openbase.type.domotic.unit.gateway";
+option java_outer_classname = "GatewayDataType";
+
+/**
+ * Description of a generic gateway type.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message GatewayData {
+
+    /**
+     * The gateway id.
+     **/
+    optional string id = 50;
+
+    /**
+     * A list of aliases of this unit.
+     */
+    repeated string alias = 110;
+
+    /**
+     * The availability state of this gateway.
+     */
+    optional .openbase.type.domotic.state.AvailabilityState availability_state = 120;
+
+    /**
+     * The last availability state of this gateway.
+     */
+    optional .openbase.type.domotic.state.AvailabilityState availability_state_last = 130;
+
+    /**
+     * A list of all operating actions.
+     * The action at index 0 is the currently executing action while the other ones are scheduled.
+     */
+    repeated .openbase.type.domotic.action.ActionDescription action = 150;
+
+    /**
+     * State to indicate whether the service discovery is active.
+     */
+    optional .openbase.type.domotic.state.ActivationState discovery_state = 400;
+
+    /**
+     * State to indicate whether the service discovery was activated last.
+     */
+    optional .openbase.type.domotic.state.ActivationState discovery_state_last = 410;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 2300;
+}
+

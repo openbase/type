@@ -75,6 +75,11 @@ message UnitRegistryData {
     repeated .openbase.type.domotic.unit.UnitConfig object_unit_config = 3900;
 
     /**
+     * The list of registered gateway unit configs.
+     */
+    repeated .openbase.type.domotic.unit.UnitConfig gateway_unit_config = 4200;
+
+    /**
      * Read only flag for the dal unit config registry.
      */
     optional bool dal_unit_config_registry_read_only = 1300;
@@ -128,6 +133,11 @@ message UnitRegistryData {
      * Read-only flag for the object unit config registry.
      */
     optional bool object_unit_config_registry_read_only = 4000;
+
+    /*
+     * Global read-only flag for the gateway unit config registry.
+     */
+    optional bool gateway_unit_config_registry_read_only = 4300;
 
     /*
      * Global read-only flag for the unit config registry.
@@ -188,6 +198,11 @@ message UnitRegistryData {
      * Consistent flag for the object unit config registry.
      */
     optional bool object_unit_config_registry_consistent = 4100;
+
+    /**
+     * Global consistent flag for the gateway unit config registry.
+     */
+    optional bool gateway_unit_config_registry_consistent = 4400;
 
     /**
      * Global consistent flag for the unit config registry.

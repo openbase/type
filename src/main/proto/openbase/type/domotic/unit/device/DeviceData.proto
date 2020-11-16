@@ -28,6 +28,7 @@ import "openbase/type/domotic/unit/dal/VideoDepthSourceData.proto";
 import "openbase/type/domotic/unit/dal/AudioSourceData.proto";
 import "openbase/type/domotic/unit/dal/RFIDTerminalData.proto";
 import "openbase/type/domotic/action/ActionDescription.proto";
+import "openbase/type/domotic/state/AvailabilityState.proto";
 
 option java_package = "org.openbase.type.domotic.unit.device";
 option java_outer_classname = "DeviceDataType";
@@ -48,6 +49,11 @@ message DeviceData {
      * A list of aliases of this unit.
      */
     repeated string alias = 110;
+
+    /**
+     * The availability state of this device.
+     */
+    optional .openbase.type.domotic.state.AvailabilityState availability_state = 120;
 
     /**
      * A list of all operating actions.

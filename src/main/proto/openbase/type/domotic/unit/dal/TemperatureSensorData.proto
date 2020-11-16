@@ -43,12 +43,12 @@ message TemperatureSensorData {
     optional .openbase.type.domotic.state.TemperatureState temperature_state_last = 310;
 
     /**
-     * State to indicate wether this sensor has currently detected an alarm.
+     * State to indicate whether this sensor has currently detected an alarm.
      */
     optional .openbase.type.domotic.state.AlarmState temperature_alarm_state = 400;
 
     /**
-     * State to indicate wether this sensor has last detected an alarm.
+     * State to indicate whether this sensor has last detected an alarm.
      */
     optional .openbase.type.domotic.state.AlarmState temperature_alarm_state_last = 410;
 

@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+package openbase.type.domotic.unit.gateway;
+
+option java_package = "org.openbase.type.domotic.unit.gateway";
+option java_outer_classname = "GatewayConfigType";
+
+/**
+ * Description of a gateway configuration.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message GatewayConfig {
+
+    /**
+     * The serial number of the gateway.
+     */
+    optional string serial_number = 400;
+
+    /**
+     * The id of the gateway class of the gateway.
+     */
+    optional string gateway_class_id = 700;
+
+    /**
+     * A list of ids of unit introduced by this gateway.
+     */
+    repeated string unit_id = 800;
+}

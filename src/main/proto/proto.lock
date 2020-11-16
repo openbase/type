@@ -2399,6 +2399,22 @@
                 "type": "bool"
               },
               {
+                "id": 1200,
+                "name": "gateway_class",
+                "type": ".openbase.type.domotic.unit.gateway.GatewayClass",
+                "is_repeated": true
+              },
+              {
+                "id": 1300,
+                "name": "gateway_class_registry_read_only",
+                "type": "bool"
+              },
+              {
+                "id": 1400,
+                "name": "gateway_class_registry_consistent",
+                "type": "bool"
+              },
+              {
                 "id": 1100,
                 "name": "transaction_id",
                 "type": "uint64"
@@ -2415,6 +2431,9 @@
           },
           {
             "path": "openbase/type/domotic/unit/device/DeviceClass.proto"
+          },
+          {
+            "path": "openbase/type/domotic/unit/gateway/GatewayClass.proto"
           }
         ]
       }
@@ -2617,6 +2636,12 @@
                 "is_repeated": true
               },
               {
+                "id": 4200,
+                "name": "gateway_unit_config",
+                "type": ".openbase.type.domotic.unit.UnitConfig",
+                "is_repeated": true
+              },
+              {
                 "id": 1300,
                 "name": "dal_unit_config_registry_read_only",
                 "type": "bool"
@@ -2669,6 +2694,11 @@
               {
                 "id": 4000,
                 "name": "object_unit_config_registry_read_only",
+                "type": "bool"
+              },
+              {
+                "id": 4300,
+                "name": "gateway_unit_config_registry_read_only",
                 "type": "bool"
               },
               {
@@ -2729,6 +2759,11 @@
               {
                 "id": 4100,
                 "name": "object_unit_config_registry_consistent",
+                "type": "bool"
+              },
+              {
+                "id": 4400,
+                "name": "gateway_unit_config_registry_consistent",
                 "type": "bool"
               },
               {
@@ -3193,6 +3228,10 @@
               {
                 "name": "GLOBAL_POSITION_STATE_SERVICE",
                 "integer": 360
+              },
+              {
+                "name": "DISCOVERY_STATE_SERVICE",
+                "integer": 370
               }
             ]
           }
@@ -6412,6 +6451,11 @@
                 "type": ".openbase.type.domotic.unit.object.ObjectConfig"
               },
               {
+                "id": 1900,
+                "name": "gateway_config",
+                "type": ".openbase.type.domotic.unit.gateway.GatewayConfig"
+              },
+              {
                 "id": 1700,
                 "name": "permission_config",
                 "type": ".openbase.type.domotic.authentication.PermissionConfig"
@@ -6467,6 +6511,9 @@
           },
           {
             "path": "openbase/type/domotic/unit/object/ObjectConfig.proto"
+          },
+          {
+            "path": "openbase/type/domotic/unit/gateway/GatewayConfig.proto"
           },
           {
             "path": "openbase/type/domotic/unit/authorizationgroup/AuthorizationGroupConfig.proto"
@@ -6711,6 +6758,10 @@
               {
                 "name": "UNIT_GROUP",
                 "integer": 340
+              },
+              {
+                "name": "GATEWAY",
+                "integer": 345
               },
               {
                 "name": "R_F_I_D_Terminal",
@@ -9016,6 +9067,11 @@
                 "is_repeated": true
               },
               {
+                "id": 120,
+                "name": "availability_state",
+                "type": ".openbase.type.domotic.state.AvailabilityState"
+              },
+              {
                 "id": 150,
                 "name": "action",
                 "type": ".openbase.type.domotic.action.ActionDescription",
@@ -9257,6 +9313,175 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/AvailabilityState.proto"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "openbase:/:type:/:domotic:/:unit:/:gateway:/:GatewayClass.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "GatewayClass",
+            "fields": [
+              {
+                "id": 50,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 100,
+                "name": "label",
+                "type": ".openbase.type.language.Label"
+              },
+              {
+                "id": 200,
+                "name": "product_number",
+                "type": "string"
+              },
+              {
+                "id": 300,
+                "name": "description",
+                "type": ".openbase.type.language.MultiLanguageText"
+              },
+              {
+                "id": 450,
+                "name": "company",
+                "type": "string"
+              },
+              {
+                "id": 400,
+                "name": "binding_config",
+                "type": ".openbase.type.domotic.binding.BindingConfig"
+              },
+              {
+                "id": 500,
+                "name": "unit_template_config",
+                "type": ".openbase.type.domotic.unit.UnitTemplateConfig",
+                "is_repeated": true
+              },
+              {
+                "id": 700,
+                "name": "meta_config",
+                "type": ".openbase.type.configuration.MetaConfig"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "openbase/type/language/Label.proto"
+          },
+          {
+            "path": "openbase/type/language/MultiLanguageText.proto"
+          },
+          {
+            "path": "openbase/type/configuration/MetaConfig.proto"
+          },
+          {
+            "path": "openbase/type/domotic/binding/BindingConfig.proto"
+          },
+          {
+            "path": "openbase/type/domotic/unit/UnitTemplateConfig.proto"
+          },
+          {
+            "path": "openbase/type/spatial/Shape.proto"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "openbase:/:type:/:domotic:/:unit:/:gateway:/:GatewayConfig.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "GatewayConfig",
+            "fields": [
+              {
+                "id": 400,
+                "name": "serial_number",
+                "type": "string"
+              },
+              {
+                "id": 700,
+                "name": "gateway_class_id",
+                "type": "string"
+              },
+              {
+                "id": 800,
+                "name": "unit_id",
+                "type": "string",
+                "is_repeated": true
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "openbase:/:type:/:domotic:/:unit:/:gateway:/:GatewayData.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "GatewayData",
+            "fields": [
+              {
+                "id": 50,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 110,
+                "name": "alias",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 120,
+                "name": "availability_state",
+                "type": ".openbase.type.domotic.state.AvailabilityState"
+              },
+              {
+                "id": 130,
+                "name": "availability_state_last",
+                "type": ".openbase.type.domotic.state.AvailabilityState"
+              },
+              {
+                "id": 150,
+                "name": "action",
+                "type": ".openbase.type.domotic.action.ActionDescription",
+                "is_repeated": true
+              },
+              {
+                "id": 400,
+                "name": "discovery_state",
+                "type": ".openbase.type.domotic.state.ActivationState"
+              },
+              {
+                "id": 410,
+                "name": "discovery_state_last",
+                "type": ".openbase.type.domotic.state.ActivationState"
+              },
+              {
+                "id": 2300,
+                "name": "transaction_id",
+                "type": "uint64"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "openbase/type/domotic/action/ActionDescription.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/AvailabilityState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/ActivationState.proto"
           }
         ]
       }

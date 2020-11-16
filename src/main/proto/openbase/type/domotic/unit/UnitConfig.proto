@@ -21,6 +21,7 @@ import "openbase/type/domotic/unit/location/LocationConfig.proto";
 import "openbase/type/domotic/unit/connection/ConnectionConfig.proto";
 import "openbase/type/domotic/unit/user/UserConfig.proto";
 import "openbase/type/domotic/unit/object/ObjectConfig.proto";
+import "openbase/type/domotic/unit/gateway/GatewayConfig.proto";
 import "openbase/type/domotic/unit/authorizationgroup/AuthorizationGroupConfig.proto";
 import "openbase/type/communication/Scope.proto";
 import "openbase/type/spatial/PlacementConfig.proto";
@@ -54,7 +55,7 @@ message UnitConfig {
     repeated string alias = 110;
 
     /**
-     * The id of the unit that intoduced this unit.
+     * The id of the unit that introduced this unit.
      * Is the id of the unit itself if it is the unit host.
      */
     optional string unit_host_id = 120;
@@ -148,6 +149,11 @@ message UnitConfig {
      * Additional configuration field. Is only set if the type is OBJECT.
      */
     optional .openbase.type.domotic.unit.object.ObjectConfig object_config = 1800;
+
+    /**
+     * Additional configuration field. Is only set if the type is GATEWAY.
+     */
+    optional .openbase.type.domotic.unit.gateway.GatewayConfig gateway_config = 1900;
 
     /**
      * Permission configuration for setting user rights for the unit.

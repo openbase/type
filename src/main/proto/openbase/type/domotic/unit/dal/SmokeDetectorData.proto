@@ -34,12 +34,12 @@ message SmokeDetectorData {
     repeated .openbase.type.domotic.action.ActionDescription action = 150;
 
     /**
-     * State to indicate wether this sensor has sent an alarm.
+     * State to indicate whether this sensor has sent an alarm.
      */
     optional .openbase.type.domotic.state.AlarmState smoke_alarm_state = 300;
 
     /**
-     * State to indicate wether this sensor has last sent an alarm.
+     * State to indicate whether this sensor has last sent an alarm.
      */
     optional .openbase.type.domotic.state.AlarmState smoke_alarm_state_last = 310;
 

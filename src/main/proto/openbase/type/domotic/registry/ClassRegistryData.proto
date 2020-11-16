@@ -8,6 +8,7 @@ option java_outer_classname = "ClassRegistryDataType";
 import "openbase/type/domotic/unit/agent/AgentClass.proto";
 import "openbase/type/domotic/unit/app/AppClass.proto";
 import "openbase/type/domotic/unit/device/DeviceClass.proto";
+import "openbase/type/domotic/unit/gateway/GatewayClass.proto";
 
 /**
  * Description of a class registry.
@@ -37,7 +38,7 @@ message ClassRegistryData {
     optional bool device_class_registry_consistent = 400;
 
     /**
-     * The list of registerd agent classes.
+     * The list of registered agent classes.
      */
     repeated .openbase.type.domotic.unit.agent.AgentClass agent_class = 500;
 
@@ -52,7 +53,7 @@ message ClassRegistryData {
     optional bool agent_class_registry_consistent = 700;
 
     /**
-     * The list of registerd app classes.
+     * The list of registered app classes.
      */
     repeated .openbase.type.domotic.unit.app.AppClass app_class = 800;
 
@@ -65,6 +66,21 @@ message ClassRegistryData {
      * Consistent flag for the app class registry.
      */
     optional bool app_class_registry_consistent = 1000;
+
+    /**
+     * The list of registered gateway classes.
+     */
+    repeated .openbase.type.domotic.unit.gateway.GatewayClass gateway_class = 1200;
+
+    /**
+     * Read only flag for the gateway class registry.
+     */
+    optional bool gateway_class_registry_read_only = 1300;
+
+    /**
+     * Consistent flag for the gateway class registry.
+     */
+    optional bool gateway_class_registry_consistent = 1400;
 
     /**
      * A transaction id indicating which action was the last one executed. The id increases

@@ -231,6 +231,11 @@ message ServiceTemplate {
          * Service for the position of a unit on the earth.
          */
         GLOBAL_POSITION_STATE_SERVICE = 360;
+
+        /**
+         * Service for discovering new services.
+         */
+        DISCOVERY_STATE_SERVICE = 370;
     }
 
     /**
