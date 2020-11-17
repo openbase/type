@@ -45,9 +45,9 @@ message GatewayClass {
     optional string company = 450;
 
     /**
-     * Further gateways that are introduced by this gateway.
+     * Further gateway classes that are introduced by this gateway.
      */
-    repeated string nested_gateway_id = 400;
+    repeated string nested_gateway_class_id = 400;
 
     /**
      * A field for storing meta configurations.

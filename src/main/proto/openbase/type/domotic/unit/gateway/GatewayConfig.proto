@@ -23,6 +23,11 @@ message GatewayConfig {
     optional string gateway_class_id = 700;
 
     /**
+     * Further gateways that are introduced by this gateway.
+     */
+    repeated string nested_gateway_id = 750;
+
+    /**
      * A list of ids of unit introduced by this gateway.
      */
     repeated string unit_id = 800;

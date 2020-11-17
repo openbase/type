@@ -9367,7 +9367,7 @@
               },
               {
                 "id": 400,
-                "name": "nested_gateway_id",
+                "name": "nested_gateway_class_id",
                 "type": "string",
                 "is_repeated": true
               },
@@ -9417,6 +9417,12 @@
                 "id": 700,
                 "name": "gateway_class_id",
                 "type": "string"
+              },
+              {
+                "id": 750,
+                "name": "nested_gateway_id",
+                "type": "string",
+                "is_repeated": true
               },
               {
                 "id": 800,
