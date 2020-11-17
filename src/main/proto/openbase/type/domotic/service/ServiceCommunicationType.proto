@@ -169,9 +169,14 @@ message ServiceCommunicationType {
         LOCAL_POSITION_STATE = 270;
 
         /**
-         * State describing the posision on the earth.
+         * State describing the position on the earth.
          */
         GLOBAL_POSITION_STATE = 280;
+
+        /**
+         * State describing the availability of things.
+         */
+        AVAILABILITY_STATE = 300;
     }
 }
 

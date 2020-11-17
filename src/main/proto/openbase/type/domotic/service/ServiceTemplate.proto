@@ -47,6 +47,8 @@ message ServiceTemplate {
      */
     enum ServiceType {
 
+        // todo next release: maybe we should remove the "STATE" within the type name, because these are not the communication types any more.
+
         /**
          * Unknown service type.
          */
@@ -236,6 +238,11 @@ message ServiceTemplate {
          * Service for discovering new services.
          */
         DISCOVERY_STATE_SERVICE = 370;
+
+        /**
+         * Service for discovering new services.
+         */
+        AVAILABILITY_STATE_SERVICE = 380;
     }
 
     /**

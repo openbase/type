@@ -2911,6 +2911,10 @@
               {
                 "name": "GLOBAL_POSITION_STATE",
                 "integer": 280
+              },
+              {
+                "name": "AVAILABILITY_STATE",
+                "integer": 300
               }
             ]
           }
@@ -3232,6 +3236,10 @@
               {
                 "name": "DISCOVERY_STATE_SERVICE",
                 "integer": 370
+              },
+              {
+                "name": "AVAILABILITY_STATE_SERVICE",
+                "integer": 380
               }
             ]
           }
@@ -9359,13 +9367,8 @@
               },
               {
                 "id": 400,
-                "name": "binding_config",
-                "type": ".openbase.type.domotic.binding.BindingConfig"
-              },
-              {
-                "id": 500,
-                "name": "unit_template_config",
-                "type": ".openbase.type.domotic.unit.UnitTemplateConfig",
+                "name": "nested_gateway_id",
+                "type": "string",
                 "is_repeated": true
               },
               {

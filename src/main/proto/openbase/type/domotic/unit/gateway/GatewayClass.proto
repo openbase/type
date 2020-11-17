@@ -45,14 +45,9 @@ message GatewayClass {
     optional string company = 450;
 
     /**
-     * The binding configuration of the gateway class.
+     * Further gateways that are introduced by this gateway.
      */
-    optional .openbase.type.domotic.binding.BindingConfig binding_config = 400;
-
-    /**
-     * A list of unit template configs.
-     */
-    repeated .openbase.type.domotic.unit.UnitTemplateConfig unit_template_config = 500;
+    repeated string nested_gateway_id = 400;
 
     /**
      * A field for storing meta configurations.
