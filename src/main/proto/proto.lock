@@ -10185,6 +10185,11 @@
                 "type": ".openbase.type.domotic.state.ActivationState"
               },
               {
+                "id": 420,
+                "name": "discovery_state_requested",
+                "type": ".openbase.type.domotic.state.ActivationState"
+              },
+              {
                 "id": 2300,
                 "name": "transaction_id",
                 "type": "uint64"
