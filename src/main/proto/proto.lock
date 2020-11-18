@@ -6536,6 +6536,711 @@
       }
     },
     {
+      "protopath": "openbase:/:type:/:domotic:/:unit:/:UnitData.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "UnitData",
+            "fields": [
+              {
+                "id": 100,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 110,
+                "name": "alias",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 120,
+                "name": "action",
+                "type": ".openbase.type.domotic.action.ActionDescription",
+                "is_repeated": true
+              },
+              {
+                "id": 130,
+                "name": "triggered_action",
+                "type": ".openbase.type.domotic.action.ActionDescription",
+                "is_repeated": true
+              },
+              {
+                "id": 1,
+                "name": "transaction_id",
+                "type": "uint64"
+              },
+              {
+                "id": 210,
+                "name": "activation_state",
+                "type": ".openbase.type.domotic.state.ActivationState"
+              },
+              {
+                "id": 220,
+                "name": "activation_state_last",
+                "type": ".openbase.type.domotic.state.ActivationState"
+              },
+              {
+                "id": 230,
+                "name": "activation_state_requested",
+                "type": ".openbase.type.domotic.state.ActivationState"
+              },
+              {
+                "id": 300,
+                "name": "activity_multi_state",
+                "type": ".openbase.type.domotic.state.ActivityMultiState"
+              },
+              {
+                "id": 310,
+                "name": "activity_multi_state_last",
+                "type": ".openbase.type.domotic.state.ActivityMultiState"
+              },
+              {
+                "id": 320,
+                "name": "activity_multi_state_requested",
+                "type": ".openbase.type.domotic.state.ActivityMultiState"
+              },
+              {
+                "id": 400,
+                "name": "availability_state",
+                "type": ".openbase.type.domotic.state.AvailabilityState"
+              },
+              {
+                "id": 410,
+                "name": "availability_state_last",
+                "type": ".openbase.type.domotic.state.AvailabilityState"
+              },
+              {
+                "id": 420,
+                "name": "availability_state_requested",
+                "type": ".openbase.type.domotic.state.AvailabilityState"
+              },
+              {
+                "id": 500,
+                "name": "battery_state",
+                "type": ".openbase.type.domotic.state.BatteryState"
+              },
+              {
+                "id": 510,
+                "name": "battery_state_last",
+                "type": ".openbase.type.domotic.state.BatteryState"
+              },
+              {
+                "id": 520,
+                "name": "battery_state_requested",
+                "type": ".openbase.type.domotic.state.BatteryState"
+              },
+              {
+                "id": 600,
+                "name": "blind_state",
+                "type": ".openbase.type.domotic.state.BlindState"
+              },
+              {
+                "id": 610,
+                "name": "blind_state_last",
+                "type": ".openbase.type.domotic.state.BlindState"
+              },
+              {
+                "id": 620,
+                "name": "blind_state_requested",
+                "type": ".openbase.type.domotic.state.BlindState"
+              },
+              {
+                "id": 700,
+                "name": "brightness_state",
+                "type": ".openbase.type.domotic.state.BrightnessState"
+              },
+              {
+                "id": 710,
+                "name": "brightness_state_last",
+                "type": ".openbase.type.domotic.state.BrightnessState"
+              },
+              {
+                "id": 720,
+                "name": "brightness_state_requested",
+                "type": ".openbase.type.domotic.state.BrightnessState"
+              },
+              {
+                "id": 800,
+                "name": "button_state",
+                "type": ".openbase.type.domotic.state.ButtonState"
+              },
+              {
+                "id": 810,
+                "name": "button_state_last",
+                "type": ".openbase.type.domotic.state.ButtonState"
+              },
+              {
+                "id": 820,
+                "name": "button_state_requested",
+                "type": ".openbase.type.domotic.state.ButtonState"
+              },
+              {
+                "id": 900,
+                "name": "color_state",
+                "type": ".openbase.type.domotic.state.ColorState"
+              },
+              {
+                "id": 910,
+                "name": "color_state_last",
+                "type": ".openbase.type.domotic.state.ColorState"
+              },
+              {
+                "id": 920,
+                "name": "color_state_requested",
+                "type": ".openbase.type.domotic.state.ColorState"
+              },
+              {
+                "id": 1000,
+                "name": "contact_state",
+                "type": ".openbase.type.domotic.state.ContactState"
+              },
+              {
+                "id": 1010,
+                "name": "contact_state_last",
+                "type": ".openbase.type.domotic.state.ContactState"
+              },
+              {
+                "id": 1020,
+                "name": "contact_state_requested",
+                "type": ".openbase.type.domotic.state.ContactState"
+              },
+              {
+                "id": 1100,
+                "name": "discovery_state",
+                "type": ".openbase.type.domotic.state.ActivationState"
+              },
+              {
+                "id": 1110,
+                "name": "discovery_state_last",
+                "type": ".openbase.type.domotic.state.ActivationState"
+              },
+              {
+                "id": 1120,
+                "name": "discovery_state_requested",
+                "type": ".openbase.type.domotic.state.ActivationState"
+              },
+              {
+                "id": 1200,
+                "name": "door_state",
+                "type": ".openbase.type.domotic.state.DoorState"
+              },
+              {
+                "id": 1210,
+                "name": "door_state_last",
+                "type": ".openbase.type.domotic.state.DoorState"
+              },
+              {
+                "id": 1220,
+                "name": "door_state_requested",
+                "type": ".openbase.type.domotic.state.DoorState"
+              },
+              {
+                "id": 1300,
+                "name": "earthquake_alarm_state",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 1310,
+                "name": "earthquake_alarm_state_last",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 1320,
+                "name": "earthquake_alarm_state_requested",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 1400,
+                "name": "emphasis_state",
+                "type": ".openbase.type.domotic.state.EmphasisState"
+              },
+              {
+                "id": 1410,
+                "name": "emphasis_state_last",
+                "type": ".openbase.type.domotic.state.EmphasisState"
+              },
+              {
+                "id": 1420,
+                "name": "emphasis_state_requested",
+                "type": ".openbase.type.domotic.state.EmphasisState"
+              },
+              {
+                "id": 1500,
+                "name": "fire_alarm_state",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 1510,
+                "name": "fire_alarm_state_last",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 1520,
+                "name": "fire_alarm_state_requested",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 1600,
+                "name": "global_position_state",
+                "type": ".openbase.type.domotic.state.GlobalPositionState"
+              },
+              {
+                "id": 1610,
+                "name": "global_position_state_last",
+                "type": ".openbase.type.domotic.state.GlobalPositionState"
+              },
+              {
+                "id": 1620,
+                "name": "global_position_state_requested",
+                "type": ".openbase.type.domotic.state.GlobalPositionState"
+              },
+              {
+                "id": 1700,
+                "name": "handle_state",
+                "type": ".openbase.type.domotic.state.HandleState"
+              },
+              {
+                "id": 1710,
+                "name": "handle_state_last",
+                "type": ".openbase.type.domotic.state.HandleState"
+              },
+              {
+                "id": 1720,
+                "name": "handle_state_requested",
+                "type": ".openbase.type.domotic.state.HandleState"
+              },
+              {
+                "id": 1800,
+                "name": "illuminance_state",
+                "type": ".openbase.type.domotic.state.IlluminanceState"
+              },
+              {
+                "id": 1810,
+                "name": "illuminance_state_last",
+                "type": ".openbase.type.domotic.state.IlluminanceState"
+              },
+              {
+                "id": 1820,
+                "name": "illuminance_state_requested",
+                "type": ".openbase.type.domotic.state.IlluminanceState"
+              },
+              {
+                "id": 1900,
+                "name": "intrusion_alarm_state",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 1910,
+                "name": "intrusion_alarm_state_last",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 1920,
+                "name": "intrusion_alarm_state_requested",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 2000,
+                "name": "local_position_state",
+                "type": ".openbase.type.domotic.state.LocalPositionState"
+              },
+              {
+                "id": 2010,
+                "name": "local_position_state_last",
+                "type": ".openbase.type.domotic.state.LocalPositionState"
+              },
+              {
+                "id": 2020,
+                "name": "local_position_state_requested",
+                "type": ".openbase.type.domotic.state.LocalPositionState"
+              },
+              {
+                "id": 2100,
+                "name": "medical_alarm_state",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 2110,
+                "name": "medical_alarm_state_last",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 2120,
+                "name": "medical_alarm_state_requested",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 2200,
+                "name": "motion_state",
+                "type": ".openbase.type.domotic.state.MotionState"
+              },
+              {
+                "id": 2210,
+                "name": "motion_state_last",
+                "type": ".openbase.type.domotic.state.MotionState"
+              },
+              {
+                "id": 2220,
+                "name": "motion_state_requested",
+                "type": ".openbase.type.domotic.state.MotionState"
+              },
+              {
+                "id": 2300,
+                "name": "passage_state",
+                "type": ".openbase.type.domotic.state.PassageState"
+              },
+              {
+                "id": 2310,
+                "name": "passage_state_last",
+                "type": ".openbase.type.domotic.state.PassageState"
+              },
+              {
+                "id": 2320,
+                "name": "passage_state_requested",
+                "type": ".openbase.type.domotic.state.PassageState"
+              },
+              {
+                "id": 2400,
+                "name": "power_consumption_state",
+                "type": ".openbase.type.domotic.state.PowerConsumptionState"
+              },
+              {
+                "id": 2410,
+                "name": "power_consumption_state_last",
+                "type": ".openbase.type.domotic.state.PowerConsumptionState"
+              },
+              {
+                "id": 2420,
+                "name": "power_consumption_state_requested",
+                "type": ".openbase.type.domotic.state.PowerConsumptionState"
+              },
+              {
+                "id": 2500,
+                "name": "power_state",
+                "type": ".openbase.type.domotic.state.PowerState"
+              },
+              {
+                "id": 2510,
+                "name": "power_state_last",
+                "type": ".openbase.type.domotic.state.PowerState"
+              },
+              {
+                "id": 2520,
+                "name": "power_state_requested",
+                "type": ".openbase.type.domotic.state.PowerState"
+              },
+              {
+                "id": 2600,
+                "name": "presence_state",
+                "type": ".openbase.type.domotic.state.PresenceState"
+              },
+              {
+                "id": 2610,
+                "name": "presence_state_last",
+                "type": ".openbase.type.domotic.state.PresenceState"
+              },
+              {
+                "id": 2620,
+                "name": "presence_state_requested",
+                "type": ".openbase.type.domotic.state.PresenceState"
+              },
+              {
+                "id": 2700,
+                "name": "rfid_state",
+                "type": ".openbase.type.domotic.state.RFIDState"
+              },
+              {
+                "id": 2710,
+                "name": "rfid_state_last",
+                "type": ".openbase.type.domotic.state.RFIDState"
+              },
+              {
+                "id": 2720,
+                "name": "rfid_state_requested",
+                "type": ".openbase.type.domotic.state.RFIDState"
+              },
+              {
+                "id": 2800,
+                "name": "smoke_alarm_state",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 2810,
+                "name": "smoke_alarm_state_last",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 2820,
+                "name": "smoke_alarm_state_requested",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 2900,
+                "name": "smoke_state",
+                "type": ".openbase.type.domotic.state.SmokeState"
+              },
+              {
+                "id": 2910,
+                "name": "smoke_state_last",
+                "type": ".openbase.type.domotic.state.SmokeState"
+              },
+              {
+                "id": 2920,
+                "name": "smoke_state_requested",
+                "type": ".openbase.type.domotic.state.SmokeState"
+              },
+              {
+                "id": 3000,
+                "name": "standby_state",
+                "type": ".openbase.type.domotic.state.StandbyState"
+              },
+              {
+                "id": 3010,
+                "name": "standby_state_last",
+                "type": ".openbase.type.domotic.state.StandbyState"
+              },
+              {
+                "id": 3020,
+                "name": "standby_state_requested",
+                "type": ".openbase.type.domotic.state.StandbyState"
+              },
+              {
+                "id": 3100,
+                "name": "switch_state",
+                "type": ".openbase.type.domotic.state.SwitchState"
+              },
+              {
+                "id": 3110,
+                "name": "switch_state_last",
+                "type": ".openbase.type.domotic.state.SwitchState"
+              },
+              {
+                "id": 3120,
+                "name": "switch_state_requested",
+                "type": ".openbase.type.domotic.state.SwitchState"
+              },
+              {
+                "id": 3200,
+                "name": "tamper_state",
+                "type": ".openbase.type.domotic.state.TamperState"
+              },
+              {
+                "id": 3210,
+                "name": "tamper_state_last",
+                "type": ".openbase.type.domotic.state.TamperState"
+              },
+              {
+                "id": 3220,
+                "name": "tamper_state_requested",
+                "type": ".openbase.type.domotic.state.TamperState"
+              },
+              {
+                "id": 3300,
+                "name": "target_temperature_state",
+                "type": ".openbase.type.domotic.state.TemperatureState"
+              },
+              {
+                "id": 3310,
+                "name": "target_temperature_state_last",
+                "type": ".openbase.type.domotic.state.TemperatureState"
+              },
+              {
+                "id": 3320,
+                "name": "target_temperature_state_requested",
+                "type": ".openbase.type.domotic.state.TemperatureState"
+              },
+              {
+                "id": 3400,
+                "name": "temperature_alarm_state",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 3410,
+                "name": "temperature_alarm_state_last",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 3420,
+                "name": "temperature_alarm_state_requested",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 3500,
+                "name": "temperature_state",
+                "type": ".openbase.type.domotic.state.TemperatureState"
+              },
+              {
+                "id": 3510,
+                "name": "temperature_state_last",
+                "type": ".openbase.type.domotic.state.TemperatureState"
+              },
+              {
+                "id": 3520,
+                "name": "temperature_state_requested",
+                "type": ".openbase.type.domotic.state.TemperatureState"
+              },
+              {
+                "id": 3600,
+                "name": "tempest_alarm_state",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 3610,
+                "name": "tempest_alarm_state_last",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 3620,
+                "name": "tempest_alarm_state_requested",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 3700,
+                "name": "user_transit_state",
+                "type": ".openbase.type.domotic.state.UserTransitState"
+              },
+              {
+                "id": 3710,
+                "name": "user_transit_state_last",
+                "type": ".openbase.type.domotic.state.UserTransitState"
+              },
+              {
+                "id": 3720,
+                "name": "user_transit_state_requested",
+                "type": ".openbase.type.domotic.state.UserTransitState"
+              },
+              {
+                "id": 3800,
+                "name": "water_alarm_state",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 3810,
+                "name": "water_alarm_state_last",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 3820,
+                "name": "water_alarm_state_requested",
+                "type": ".openbase.type.domotic.state.AlarmState"
+              },
+              {
+                "id": 3900,
+                "name": "window_state",
+                "type": ".openbase.type.domotic.state.WindowState"
+              },
+              {
+                "id": 3910,
+                "name": "window_state_last",
+                "type": ".openbase.type.domotic.state.WindowState"
+              },
+              {
+                "id": 3920,
+                "name": "window_state_requested",
+                "type": ".openbase.type.domotic.state.WindowState"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "openbase/type/domotic/state/ActivationState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/ActivityMultiState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/ActivityState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/AlarmState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/AvailabilityState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/BatteryState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/BlindState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/BrightnessState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/ButtonState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/ColorState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/ContactState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/DoorState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/EmphasisState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/GlobalPositionState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/HandleState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/IlluminanceState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/LocalPositionState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/MotionState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/PassageState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/PowerConsumptionState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/PowerState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/PresenceState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/RFIDState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/SmokeState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/StandbyState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/SwitchState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/TamperState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/TemperatureState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/UserTransitState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/state/WindowState.proto"
+          },
+          {
+            "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ]
+      }
+    },
+    {
       "protopath": "openbase:/:type:/:domotic:/:unit:/:UnitFilter.proto",
       "def": {
         "messages": [

@@ -1,0 +1,267 @@
+syntax = "proto2";
+
+package openbase.type.domotic.unit;
+
+option java_package = "org.openbase.type.domotic.unit";
+option java_outer_classname = "UnitDataType";
+
+import "openbase/type/domotic/state/ActivationState.proto";
+import "openbase/type/domotic/state/ActivityMultiState.proto";
+import "openbase/type/domotic/state/ActivityState.proto";
+import "openbase/type/domotic/state/AlarmState.proto";
+import "openbase/type/domotic/state/AvailabilityState.proto";
+import "openbase/type/domotic/state/BatteryState.proto";
+import "openbase/type/domotic/state/BlindState.proto";
+import "openbase/type/domotic/state/BrightnessState.proto";
+import "openbase/type/domotic/state/ButtonState.proto";
+import "openbase/type/domotic/state/ColorState.proto";
+import "openbase/type/domotic/state/ContactState.proto";
+import "openbase/type/domotic/state/DoorState.proto";
+import "openbase/type/domotic/state/EmphasisState.proto";
+import "openbase/type/domotic/state/GlobalPositionState.proto";
+import "openbase/type/domotic/state/HandleState.proto";
+import "openbase/type/domotic/state/IlluminanceState.proto";
+import "openbase/type/domotic/state/LocalPositionState.proto";
+import "openbase/type/domotic/state/MotionState.proto";
+import "openbase/type/domotic/state/PassageState.proto";
+import "openbase/type/domotic/state/PowerConsumptionState.proto";
+import "openbase/type/domotic/state/PowerState.proto";
+import "openbase/type/domotic/state/PresenceState.proto";
+import "openbase/type/domotic/state/RFIDState.proto";
+import "openbase/type/domotic/state/SmokeState.proto";
+import "openbase/type/domotic/state/StandbyState.proto";
+import "openbase/type/domotic/state/SwitchState.proto";
+import "openbase/type/domotic/state/TamperState.proto";
+import "openbase/type/domotic/state/TemperatureState.proto";
+import "openbase/type/domotic/state/UserTransitState.proto";
+import "openbase/type/domotic/state/WindowState.proto";
+
+import "openbase/type/domotic/action/ActionDescription.proto";
+
+
+/**
+ * Description of a generic unit data.
+ * It bundles all services and thus can be used as a general way
+ * to provide or set the state of all units.
+ *
+ * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
+ */
+message UnitData {
+
+    /**
+     * The id of the unit.
+     */
+    optional string id = 100;
+
+    /**
+     * A list of aliases of this unit.
+     */
+    repeated string alias = 110;
+
+    /**
+     * A list of all operating actions.
+     * The action at index 0 is the currently executing action while the other ones are scheduled.
+     */
+    repeated .openbase.type.domotic.action.ActionDescription action = 120;
+
+    /**
+     * The action description of the currently triggered action.
+     */
+    repeated .openbase.type.domotic.action.ActionDescription triggered_action = 130;
+
+    /**
+     * A transaction id indicating which action was the last one executed by the unit. The id increases
+     * with every action.
+     */
+    optional uint64 transaction_id = 1;
+
+    // Activation State
+    optional .openbase.type.domotic.state.ActivationState activation_state = 210;
+    optional .openbase.type.domotic.state.ActivationState activation_state_last = 220;
+    optional .openbase.type.domotic.state.ActivationState activation_state_requested = 230;
+
+    // Activity Multi State
+    optional .openbase.type.domotic.state.ActivityMultiState activity_multi_state = 300;
+    optional .openbase.type.domotic.state.ActivityMultiState activity_multi_state_last = 310;
+    optional .openbase.type.domotic.state.ActivityMultiState activity_multi_state_requested = 320;
+
+    // Availability State
+    optional .openbase.type.domotic.state.AvailabilityState availability_state = 400;
+    optional .openbase.type.domotic.state.AvailabilityState availability_state_last = 410;
+    optional .openbase.type.domotic.state.AvailabilityState availability_state_requested = 420;
+
+    // Battery State
+    optional .openbase.type.domotic.state.BatteryState battery_state = 500;
+    optional .openbase.type.domotic.state.BatteryState battery_state_last = 510;
+    optional .openbase.type.domotic.state.BatteryState battery_state_requested = 520;
+
+    // Blind State
+    optional .openbase.type.domotic.state.BlindState blind_state = 600;
+    optional .openbase.type.domotic.state.BlindState blind_state_last = 610;
+    optional .openbase.type.domotic.state.BlindState blind_state_requested = 620;
+
+    // Brightness State
+    optional .openbase.type.domotic.state.BrightnessState brightness_state = 700;
+    optional .openbase.type.domotic.state.BrightnessState brightness_state_last = 710;
+    optional .openbase.type.domotic.state.BrightnessState brightness_state_requested = 720;
+
+    // Button State
+    optional .openbase.type.domotic.state.ButtonState button_state = 800;
+    optional .openbase.type.domotic.state.ButtonState button_state_last = 810;
+    optional .openbase.type.domotic.state.ButtonState button_state_requested = 820;
+
+    // Color State
+    optional .openbase.type.domotic.state.ColorState color_state = 900;
+    optional .openbase.type.domotic.state.ColorState color_state_last = 910;
+    optional .openbase.type.domotic.state.ColorState color_state_requested = 920;
+
+    // Contact State
+    optional .openbase.type.domotic.state.ContactState contact_state = 1000;
+    optional .openbase.type.domotic.state.ContactState contact_state_last = 1010;
+    optional .openbase.type.domotic.state.ContactState contact_state_requested = 1020;
+
+    // Discovery State
+    optional .openbase.type.domotic.state.ActivationState discovery_state = 1100;
+    optional .openbase.type.domotic.state.ActivationState discovery_state_last = 1110;
+    optional .openbase.type.domotic.state.ActivationState discovery_state_requested = 1120;
+
+    // Door State
+    optional .openbase.type.domotic.state.DoorState door_state = 1200;
+    optional .openbase.type.domotic.state.DoorState door_state_last = 1210;
+    optional .openbase.type.domotic.state.DoorState door_state_requested = 1220;
+
+    // Earthquake Alarm State
+    optional .openbase.type.domotic.state.AlarmState earthquake_alarm_state = 1300;
+    optional .openbase.type.domotic.state.AlarmState earthquake_alarm_state_last = 1310;
+    optional .openbase.type.domotic.state.AlarmState earthquake_alarm_state_requested = 1320;
+
+    // Emphasis State
+    optional .openbase.type.domotic.state.EmphasisState emphasis_state = 1400;
+    optional .openbase.type.domotic.state.EmphasisState emphasis_state_last = 1410;
+    optional .openbase.type.domotic.state.EmphasisState emphasis_state_requested = 1420;
+
+    // Fire Alarm State
+    optional .openbase.type.domotic.state.AlarmState fire_alarm_state = 1500;
+    optional .openbase.type.domotic.state.AlarmState fire_alarm_state_last = 1510;
+    optional .openbase.type.domotic.state.AlarmState fire_alarm_state_requested = 1520;
+
+    // Global Position State
+    optional .openbase.type.domotic.state.GlobalPositionState global_position_state = 1600;
+    optional .openbase.type.domotic.state.GlobalPositionState global_position_state_last = 1610;
+    optional .openbase.type.domotic.state.GlobalPositionState global_position_state_requested = 1620;
+
+    // Handle State
+    optional .openbase.type.domotic.state.HandleState handle_state = 1700;
+    optional .openbase.type.domotic.state.HandleState handle_state_last = 1710;
+    optional .openbase.type.domotic.state.HandleState handle_state_requested = 1720;
+
+    // Illuminance State
+    optional .openbase.type.domotic.state.IlluminanceState illuminance_state = 1800;
+    optional .openbase.type.domotic.state.IlluminanceState illuminance_state_last = 1810;
+    optional .openbase.type.domotic.state.IlluminanceState illuminance_state_requested = 1820;
+
+    // Intrusion Alarm State
+    optional .openbase.type.domotic.state.AlarmState intrusion_alarm_state = 1900;
+    optional .openbase.type.domotic.state.AlarmState intrusion_alarm_state_last = 1910;
+    optional .openbase.type.domotic.state.AlarmState intrusion_alarm_state_requested = 1920;
+
+    // Local Position State
+    optional .openbase.type.domotic.state.LocalPositionState local_position_state = 2000;
+    optional .openbase.type.domotic.state.LocalPositionState local_position_state_last = 2010;
+    optional .openbase.type.domotic.state.LocalPositionState local_position_state_requested = 2020;
+
+    // Medical Alarm State
+    optional .openbase.type.domotic.state.AlarmState medical_alarm_state = 2100;
+    optional .openbase.type.domotic.state.AlarmState medical_alarm_state_last = 2110;
+    optional .openbase.type.domotic.state.AlarmState medical_alarm_state_requested = 2120;
+
+    // Motion State
+    optional .openbase.type.domotic.state.MotionState motion_state = 2200;
+    optional .openbase.type.domotic.state.MotionState motion_state_last = 2210;
+    optional .openbase.type.domotic.state.MotionState motion_state_requested = 2220;
+
+    // Passage State
+    optional .openbase.type.domotic.state.PassageState passage_state = 2300;
+    optional .openbase.type.domotic.state.PassageState passage_state_last = 2310;
+    optional .openbase.type.domotic.state.PassageState passage_state_requested = 2320;
+
+    // Power Consumption State
+    optional .openbase.type.domotic.state.PowerConsumptionState power_consumption_state = 2400;
+    optional .openbase.type.domotic.state.PowerConsumptionState power_consumption_state_last = 2410;
+    optional .openbase.type.domotic.state.PowerConsumptionState power_consumption_state_requested = 2420;
+
+    // Power State
+    optional .openbase.type.domotic.state.PowerState power_state = 2500;
+    optional .openbase.type.domotic.state.PowerState power_state_last = 2510;
+    optional .openbase.type.domotic.state.PowerState power_state_requested = 2520;
+
+    // Presence State
+    optional .openbase.type.domotic.state.PresenceState presence_state = 2600;
+    optional .openbase.type.domotic.state.PresenceState presence_state_last = 2610;
+    optional .openbase.type.domotic.state.PresenceState presence_state_requested = 2620;
+
+    // RFID State
+    optional .openbase.type.domotic.state.RFIDState rfid_state = 2700;
+    optional .openbase.type.domotic.state.RFIDState rfid_state_last = 2710;
+    optional .openbase.type.domotic.state.RFIDState rfid_state_requested = 2720;
+
+    // Smoke Alarm State
+    optional .openbase.type.domotic.state.AlarmState smoke_alarm_state = 2800;
+    optional .openbase.type.domotic.state.AlarmState smoke_alarm_state_last = 2810;
+    optional .openbase.type.domotic.state.AlarmState smoke_alarm_state_requested = 2820;
+
+    // Smoke State
+    optional .openbase.type.domotic.state.SmokeState smoke_state = 2900;
+    optional .openbase.type.domotic.state.SmokeState smoke_state_last = 2910;
+    optional .openbase.type.domotic.state.SmokeState smoke_state_requested = 2920;
+
+    // Standby State
+    optional .openbase.type.domotic.state.StandbyState standby_state = 3000;
+    optional .openbase.type.domotic.state.StandbyState standby_state_last = 3010;
+    optional .openbase.type.domotic.state.StandbyState standby_state_requested = 3020;
+
+    // Switch State
+    optional .openbase.type.domotic.state.SwitchState switch_state = 3100;
+    optional .openbase.type.domotic.state.SwitchState switch_state_last = 3110;
+    optional .openbase.type.domotic.state.SwitchState switch_state_requested = 3120;
+
+    // Tamper State
+    optional .openbase.type.domotic.state.TamperState tamper_state = 3200;
+    optional .openbase.type.domotic.state.TamperState tamper_state_last = 3210;
+    optional .openbase.type.domotic.state.TamperState tamper_state_requested = 3220;
+
+    // Target Temperature State
+    optional .openbase.type.domotic.state.TemperatureState target_temperature_state = 3300;
+    optional .openbase.type.domotic.state.TemperatureState target_temperature_state_last = 3310;
+    optional .openbase.type.domotic.state.TemperatureState target_temperature_state_requested = 3320;
+
+    // Temperature Alarm State
+    optional .openbase.type.domotic.state.AlarmState temperature_alarm_state = 3400;
+    optional .openbase.type.domotic.state.AlarmState temperature_alarm_state_last = 3410;
+    optional .openbase.type.domotic.state.AlarmState temperature_alarm_state_requested = 3420;
+
+    // Temperature State
+    optional .openbase.type.domotic.state.TemperatureState temperature_state = 3500;
+    optional .openbase.type.domotic.state.TemperatureState temperature_state_last = 3510;
+    optional .openbase.type.domotic.state.TemperatureState temperature_state_requested = 3520;
+
+    // Tempest Alarm State
+    optional .openbase.type.domotic.state.AlarmState tempest_alarm_state = 3600;
+    optional .openbase.type.domotic.state.AlarmState tempest_alarm_state_last = 3610;
+    optional .openbase.type.domotic.state.AlarmState tempest_alarm_state_requested = 3620;
+
+    // User Transit State
+    optional .openbase.type.domotic.state.UserTransitState user_transit_state = 3700;
+    optional .openbase.type.domotic.state.UserTransitState user_transit_state_last = 3710;
+    optional .openbase.type.domotic.state.UserTransitState user_transit_state_requested = 3720;
+
+    // Water Alarm State
+    optional .openbase.type.domotic.state.AlarmState water_alarm_state = 3800;
+    optional .openbase.type.domotic.state.AlarmState water_alarm_state_last = 3810;
+    optional .openbase.type.domotic.state.AlarmState water_alarm_state_requested = 3820;
+
+    // Window State
+    optional .openbase.type.domotic.state.WindowState window_state = 3900;
+    optional .openbase.type.domotic.state.WindowState window_state_last = 3910;
+    optional .openbase.type.domotic.state.WindowState window_state_requested = 3920;
+}
