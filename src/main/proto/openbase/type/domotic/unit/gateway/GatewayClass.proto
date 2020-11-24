@@ -8,9 +8,6 @@ option java_outer_classname = "GatewayClassType";
 import "openbase/type/language/Label.proto";
 import "openbase/type/language/MultiLanguageText.proto";
 import "openbase/type/configuration/MetaConfig.proto";
-import "openbase/type/domotic/binding/BindingConfig.proto";
-import "openbase/type/domotic/unit/UnitTemplateConfig.proto";
-import "openbase/type/spatial/Shape.proto";
 
 /**
  * Description of a gateway class.

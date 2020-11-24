@@ -30,12 +30,12 @@ message ClassRegistryData {
     /**
      * Read only flag for the device class registry.
      */
-    optional bool device_class_registry_read_only = 300;
+    optional bool device_class_registry_read_only = 300 [default = true];
 
     /**
      * Consistent flag for the device class registry.
      */
-    optional bool device_class_registry_consistent = 400;
+    optional bool device_class_registry_consistent = 400 [default = true];
 
     /**
      * The list of registered agent classes.
@@ -45,12 +45,12 @@ message ClassRegistryData {
     /**
      * Read only flag for the agent class registry.
      */
-    optional bool agent_class_registry_read_only = 600;
+    optional bool agent_class_registry_read_only = 600 [default = true];
 
     /**
      * Consistent flag for the agent class registry.
      */
-    optional bool agent_class_registry_consistent = 700;
+    optional bool agent_class_registry_consistent = 700 [default = true];
 
     /**
      * The list of registered app classes.
@@ -60,12 +60,12 @@ message ClassRegistryData {
     /**
      * Read only flag for the app class registry.
      */
-    optional bool app_class_registry_read_only = 900;
+    optional bool app_class_registry_read_only = 900 [default = true];
 
     /**
      * Consistent flag for the app class registry.
      */
-    optional bool app_class_registry_consistent = 1000;
+    optional bool app_class_registry_consistent = 1000 [default = true];
 
     /**
      * The list of registered gateway classes.
@@ -75,12 +75,12 @@ message ClassRegistryData {
     /**
      * Read only flag for the gateway class registry.
      */
-    optional bool gateway_class_registry_read_only = 1300;
+    optional bool gateway_class_registry_read_only = 1300 [default = true];
 
     /**
      * Consistent flag for the gateway class registry.
      */
-    optional bool gateway_class_registry_consistent = 1400;
+    optional bool gateway_class_registry_consistent = 1400 [default = true];
 
     /**
      * A transaction id indicating which action was the last one executed. The id increases

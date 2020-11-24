@@ -22,12 +22,12 @@ message MessageRegistryData {
     /**
      * Read only flag for the user message registry.
      */
-    optional bool user_message_registry_read_only = 1300;
+    optional bool user_message_registry_read_only = 1300 [default = true];
 
     /**
      * Consistent flag for the user message registry.
      */
-    optional bool user_message_registry_consistent = 2400;
+    optional bool user_message_registry_consistent = 2400 [default = true];
 
     /**
      * A transaction id indicating which action was the last one executed. The id increases

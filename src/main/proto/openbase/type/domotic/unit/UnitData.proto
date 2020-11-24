@@ -7,7 +7,6 @@ option java_outer_classname = "UnitDataType";
 
 import "openbase/type/domotic/state/ActivationState.proto";
 import "openbase/type/domotic/state/ActivityMultiState.proto";
-import "openbase/type/domotic/state/ActivityState.proto";
 import "openbase/type/domotic/state/AlarmState.proto";
 import "openbase/type/domotic/state/AvailabilityState.proto";
 import "openbase/type/domotic/state/BatteryState.proto";

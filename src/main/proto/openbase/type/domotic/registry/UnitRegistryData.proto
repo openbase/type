@@ -82,132 +82,132 @@ message UnitRegistryData {
     /**
      * Read only flag for the dal unit config registry.
      */
-    optional bool dal_unit_config_registry_read_only = 1300;
+    optional bool dal_unit_config_registry_read_only = 1300 [default = true];
 
     /**
      * Read only flag for the device unit config registry.
      */
-    optional bool device_unit_config_registry_read_only = 1400;
+    optional bool device_unit_config_registry_read_only = 1400 [default = true];
 
     /**
      * Read only flag for the unit group unit config registry.
      */
-    optional bool unit_group_unit_config_registry_read_only = 1500;
+    optional bool unit_group_unit_config_registry_read_only = 1500 [default = true];
 
     /**
      * Read only flag for the scene unit config registry.
      */
-    optional bool scene_unit_config_registry_read_only = 1600;
+    optional bool scene_unit_config_registry_read_only = 1600 [default = true];
 
     /**
      * Read only flag for the agent unit config registry.
      */
-    optional bool agent_unit_config_registry_read_only = 1700;
+    optional bool agent_unit_config_registry_read_only = 1700 [default = true];
 
     /**
      * Read only flag for the app unit config registry.
      */
-    optional bool app_unit_config_registry_read_only = 1800;
+    optional bool app_unit_config_registry_read_only = 1800 [default = true];
 
     /**
      * Read only flag for the user unit config registry.
      */
-    optional bool user_unit_config_registry_read_only = 1900;
+    optional bool user_unit_config_registry_read_only = 1900 [default = true];
 
     /**
      * Read only flag for the authorization group unit config registry.
      */
-    optional bool authorization_group_unit_config_registry_read_only = 2000;
+    optional bool authorization_group_unit_config_registry_read_only = 2000 [default = true];
 
     /**
      * Read only flag for the location unit config registry.
      */
-    optional bool location_unit_config_registry_read_only = 2100;
+    optional bool location_unit_config_registry_read_only = 2100 [default = true];
 
     /**
      * Read only flag for the connection unit config registry.
      */
-    optional bool connection_unit_config_registry_read_only = 2200;
+    optional bool connection_unit_config_registry_read_only = 2200 [default = true];
 
     /*
      * Read-only flag for the object unit config registry.
      */
-    optional bool object_unit_config_registry_read_only = 4000;
+    optional bool object_unit_config_registry_read_only = 4000 [default = true];
 
     /*
      * Global read-only flag for the gateway unit config registry.
      */
-    optional bool gateway_unit_config_registry_read_only = 4300;
+    optional bool gateway_unit_config_registry_read_only = 4300 [default = true];
 
     /*
      * Global read-only flag for the unit config registry.
      */
-    optional bool unit_config_registry_read_only = 3600;
+    optional bool unit_config_registry_read_only = 3600 [default = true];
 
     /**
      * Consistent flag for the dal unit config registry.
      */
-    optional bool dal_unit_config_registry_consistent = 2400;
+    optional bool dal_unit_config_registry_consistent = 2400 [default = true];
 
     /**
      * Consistent flag for the device unit config registry.
      */
-    optional bool device_unit_config_registry_consistent = 2500;
+    optional bool device_unit_config_registry_consistent = 2500 [default = true];
 
     /**
      * Consistent flag for the unit group unit config registry.
      */
-    optional bool unit_group_unit_config_registry_consistent = 2600;
+    optional bool unit_group_unit_config_registry_consistent = 2600 [default = true];
 
     /**
      * Consistent flag for the scene unit config registry.
      */
-    optional bool scene_unit_config_registry_consistent = 2700;
+    optional bool scene_unit_config_registry_consistent = 2700 [default = true];
 
     /**
      * Consistent flag for the agent unit config registry.
      */
-    optional bool agent_unit_config_registry_consistent = 2800;
+    optional bool agent_unit_config_registry_consistent = 2800 [default = true];
 
     /**
      * Consistent flag for the app unit config registry.
      */
-    optional bool app_unit_config_registry_consistent = 2900;
+    optional bool app_unit_config_registry_consistent = 2900 [default = true];
 
     /**
      * Consistent flag for the user unit config registry.
      */
-    optional bool user_unit_config_registry_consistent = 3000;
+    optional bool user_unit_config_registry_consistent = 3000 [default = true];
 
     /**
      * Consistent flag for the authorization group unit config registry.
      */
-    optional bool authorization_group_unit_config_registry_consistent = 3100;
+    optional bool authorization_group_unit_config_registry_consistent = 3100 [default = true];
 
     /**
      * Consistent flag for the location unit config registry.
      */
-    optional bool location_unit_config_registry_consistent = 3200;
+    optional bool location_unit_config_registry_consistent = 3200 [default = true];
 
     /**
      * Consistent flag for the connection unit config registry.
      */
-    optional bool connection_unit_config_registry_consistent = 3300;
+    optional bool connection_unit_config_registry_consistent = 3300 [default = true];
 
     /**
      * Consistent flag for the object unit config registry.
      */
-    optional bool object_unit_config_registry_consistent = 4100;
+    optional bool object_unit_config_registry_consistent = 4100 [default = true];
 
     /**
      * Global consistent flag for the gateway unit config registry.
      */
-    optional bool gateway_unit_config_registry_consistent = 4400;
+    optional bool gateway_unit_config_registry_consistent = 4400 [default = true];
 
     /**
      * Global consistent flag for the unit config registry.
      */
-    optional bool unit_config_registry_consistent = 3500;
+    optional bool unit_config_registry_consistent = 3500 [default = true];
 
     /**
      * A transaction id indicating which action was the last one executed. The id increases

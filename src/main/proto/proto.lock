@@ -7151,9 +7151,6 @@
             "path": "openbase/type/domotic/state/ActivityMultiState.proto"
           },
           {
-            "path": "openbase/type/domotic/state/ActivityState.proto"
-          },
-          {
             "path": "openbase/type/domotic/state/AlarmState.proto"
           },
           {
@@ -10093,15 +10090,6 @@
           },
           {
             "path": "openbase/type/configuration/MetaConfig.proto"
-          },
-          {
-            "path": "openbase/type/domotic/binding/BindingConfig.proto"
-          },
-          {
-            "path": "openbase/type/domotic/unit/UnitTemplateConfig.proto"
-          },
-          {
-            "path": "openbase/type/spatial/Shape.proto"
           }
         ]
       }
