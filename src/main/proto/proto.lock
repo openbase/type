@@ -15,6 +15,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.communication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.communication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ScopeType"
+          }
         ]
       }
     },
@@ -36,6 +49,19 @@
                 "type": "string"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.configuration"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.configuration"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "EntryType"
           }
         ]
       }
@@ -59,6 +85,19 @@
         "imports": [
           {
             "path": "openbase/type/configuration/Entry.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.configuration"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.configuration"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "MetaConfigType"
           }
         ]
       }
@@ -105,6 +144,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.device.sensfloor"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.device.sensfloor"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "FloorModuleStateType"
+          }
         ]
       }
     },
@@ -132,6 +184,19 @@
         "imports": [
           {
             "path": "openbase/type/device/sensfloor/FloorModuleState.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.device.sensfloor"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.device.sensfloor"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "FloorStateType"
           }
         ]
       }
@@ -193,7 +258,13 @@
               {
                 "id": 80,
                 "name": "priority",
-                "type": ".openbase.type.domotic.action.ActionPriority.Priority"
+                "type": ".openbase.type.domotic.action.ActionPriority.Priority",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "NORMAL"
+                  }
+                ]
               },
               {
                 "id": 90,
@@ -204,37 +275,79 @@
               {
                 "id": 100,
                 "name": "execution_time_period",
-                "type": "uint64"
+                "type": "uint64",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "900000000"
+                  }
+                ]
               },
               {
                 "id": 110,
                 "name": "cancel",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
               },
               {
                 "id": 115,
                 "name": "extend",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
               },
               {
                 "id": 120,
                 "name": "interruptible",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 130,
                 "name": "schedulable",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 131,
                 "name": "replaceable",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 135,
                 "name": "auto_continue_with_low_priority",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
               },
               {
                 "id": 140,
@@ -282,6 +395,19 @@
           {
             "path": "openbase/type/timing/Timestamp.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.action"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.action"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActionDescriptionType"
+          }
         ]
       }
     },
@@ -317,6 +443,19 @@
         "messages": [
           {
             "name": "ActionEmphasis"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.action"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.action"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActionEmphasisType"
           }
         ]
       }
@@ -354,7 +493,13 @@
               {
                 "id": 200,
                 "name": "initiator_type",
-                "type": "InitiatorType"
+                "type": "InitiatorType",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "SYSTEM"
+                  }
+                ]
               },
               {
                 "id": 300,
@@ -367,6 +512,19 @@
                 "type": "string"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.action"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.action"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActionInitiatorType"
           }
         ]
       }
@@ -396,7 +554,13 @@
               {
                 "id": 80,
                 "name": "priority",
-                "type": ".openbase.type.domotic.action.ActionPriority.Priority"
+                "type": ".openbase.type.domotic.action.ActionPriority.Priority",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "NORMAL"
+                  }
+                ]
               },
               {
                 "id": 90,
@@ -407,7 +571,13 @@
               {
                 "id": 100,
                 "name": "execution_time_period",
-                "type": "uint64"
+                "type": "uint64",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "900000000"
+                  }
+                ]
               },
               {
                 "id": 110,
@@ -417,22 +587,46 @@
               {
                 "id": 120,
                 "name": "interruptible",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 130,
                 "name": "schedulable",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 131,
                 "name": "replaceable",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 135,
                 "name": "auto_continue_with_low_priority",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
               },
               {
                 "id": 140,
@@ -463,6 +657,19 @@
           },
           {
             "path": "openbase/type/domotic/authentication/AuthToken.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.action"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.action"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActionParameterType"
           }
         ]
       }
@@ -512,6 +719,19 @@
           {
             "name": "ActionPriority"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.action"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.action"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActionPriorityType"
+          }
         ]
       }
     },
@@ -550,7 +770,13 @@
               {
                 "id": 50,
                 "name": "priority",
-                "type": ".openbase.type.domotic.action.ActionPriority.Priority"
+                "type": ".openbase.type.domotic.action.ActionPriority.Priority",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "NORMAL"
+                  }
+                ]
               },
               {
                 "id": 60,
@@ -561,22 +787,46 @@
               {
                 "id": 70,
                 "name": "interruptible",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 80,
                 "name": "schedulable",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 81,
                 "name": "replaceable",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 85,
                 "name": "auto_continue_with_low_priority",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "false"
+                  }
+                ]
               },
               {
                 "id": 90,
@@ -601,6 +851,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionEmphasis.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.action"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.action"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActionReferenceType"
           }
         ]
       }
@@ -629,9 +892,28 @@
               {
                 "id": 100,
                 "name": "strategy",
-                "type": "Strategy"
+                "type": "Strategy",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "AT_LEAST_ONE"
+                  }
+                ]
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.action"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.action"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "MultiResourceAllocationStrategyType"
           }
         ]
       }
@@ -663,6 +945,19 @@
           },
           {
             "path": "openbase/type/timing/Timestamp.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.action"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.action"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "SnapshotType"
           }
         ]
       }
@@ -744,6 +1039,19 @@
           },
           {
             "path": "openbase/type/domotic/service/ServiceStateDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.activity"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.activity"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActivityConfigType"
           }
         ]
       }
@@ -835,6 +1143,19 @@
           {
             "path": "openbase/type/configuration/MetaConfig.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.activity"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.activity"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActivityTemplateType"
+          }
         ]
       }
     },
@@ -856,6 +1177,19 @@
                 "type": "string"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AuthTokenType"
           }
         ]
       }
@@ -899,6 +1233,19 @@
           {
             "path": "openbase/type/domotic/authentication/TicketAuthenticatorWrapper.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AuthenticatedValueType"
+          }
         ]
       }
     },
@@ -915,6 +1262,19 @@
                 "type": "string"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AuthenticationTokenType"
           }
         ]
       }
@@ -945,6 +1305,19 @@
           },
           {
             "path": "openbase/type/timing/Timestamp.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AuthenticatorType"
           }
         ]
       }
@@ -1006,6 +1379,19 @@
           {
             "path": "openbase/type/domotic/authentication/Permission.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AuthorizationTokenType"
+          }
         ]
       }
     },
@@ -1037,6 +1423,19 @@
                 "type": "bool"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LoginCredentialsType"
           }
         ]
       }
@@ -1070,6 +1469,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LoginCredentialsChangeType"
+          }
         ]
       }
     },
@@ -1092,6 +1504,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/authentication/LoginCredentials.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LoginCredentialsCollectionType"
           }
         ]
       }
@@ -1125,6 +1550,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LoginCredentialsEncodedType"
+          }
         ]
       }
     },
@@ -1147,6 +1585,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/authentication/LoginCredentialsEncoded.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LoginCredentialsEncodedCollectionType"
           }
         ]
       }
@@ -1174,6 +1625,19 @@
                 "type": "bool"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PermissionType"
           }
         ]
       }
@@ -1230,6 +1694,19 @@
           {
             "path": "openbase/type/domotic/authentication/Permission.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PermissionConfigType"
+          }
         ]
       }
     },
@@ -1265,6 +1742,19 @@
           {
             "path": "openbase/type/timing/Interval.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TicketType"
+          }
         ]
       }
     },
@@ -1286,6 +1776,19 @@
                 "type": "bytes"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TicketAuthenticatorWrapperType"
           }
         ]
       }
@@ -1309,6 +1812,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TicketSessionKeyWrapperType"
+          }
         ]
       }
     },
@@ -1330,6 +1846,19 @@
                 "type": "string"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.authentication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.authentication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UserClientPairType"
           }
         ]
       }
@@ -1358,6 +1887,19 @@
           {
             "path": "openbase/type/configuration/MetaConfig.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.binding"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.binding"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "BindingConfigType"
+          }
         ]
       }
     },
@@ -1384,6 +1926,19 @@
                 "type": "double"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.binding.openhab"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.binding.openhab"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "HSBType"
           }
         ]
       }
@@ -1416,6 +1971,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.binding.openhab"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.binding.openhab"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "IncreaseDecreaseHolderType"
+          }
         ]
       }
     },
@@ -1447,6 +2015,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.binding.openhab"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.binding.openhab"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "OnOffHolderType"
+          }
         ]
       }
     },
@@ -1477,6 +2058,19 @@
                 "type": "OpenClosed"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.binding.openhab"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.binding.openhab"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "OpenClosedHolderType"
           }
         ]
       }
@@ -1632,6 +2226,19 @@
           {
             "path": "openbase/type/timing/Timestamp.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.binding.openhab"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.binding.openhab"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "OpenhabCommandType"
+          }
         ]
       }
     },
@@ -1641,6 +2248,19 @@
         "messages": [
           {
             "name": "OpenhabState"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.binding.openhab"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.binding.openhab"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "OpenhabStateType"
           }
         ]
       }
@@ -1658,6 +2278,19 @@
                 "type": "double"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.binding.openhab"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.binding.openhab"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PercentType"
           }
         ]
       }
@@ -1690,6 +2323,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.binding.openhab"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.binding.openhab"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "StopMoveHolderType"
+          }
         ]
       }
     },
@@ -1721,6 +2367,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.binding.openhab"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.binding.openhab"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UpDownHolderType"
+          }
         ]
       }
     },
@@ -1742,6 +2401,19 @@
                 "type": "uint64"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.communication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.communication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TransactionValueType"
           }
         ]
       }
@@ -1832,6 +2504,19 @@
           },
           {
             "path": "openbase/type/domotic/service/ServiceStateDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.communication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.communication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UserMessageType"
           }
         ]
       }
@@ -1982,6 +2667,19 @@
           {
             "path": "openbase/type/configuration/Entry.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.database"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.database"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "QueryType"
+          }
         ]
       }
     },
@@ -2057,6 +2755,19 @@
           {
             "path": "openbase/type/timing/Timestamp.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.database"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.database"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "RecordType"
+          }
         ]
       }
     },
@@ -2079,6 +2790,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/database/Record.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.database"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.database"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "RecordCollectionType"
           }
         ]
       }
@@ -2159,6 +2883,19 @@
           {
             "path": "openbase/type/timing/Timestamp.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.execution"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.execution"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LauncherDataType"
+          }
         ]
       }
     },
@@ -2207,6 +2944,19 @@
         "imports": [
           {
             "path": "openbase/type/timing/Timestamp.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.mode"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.mode"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "OperationModeType"
           }
         ]
       }
@@ -2260,6 +3010,19 @@
           {
             "path": "openbase/type/domotic/service/ServiceTemplate.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.ontology"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.ontology"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "OntologyChangeType"
+          }
         ]
       }
     },
@@ -2292,6 +3055,19 @@
           {
             "path": "openbase/type/domotic/ontology/OntologyChange.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.ontology"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.ontology"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TriggerConfigType"
+          }
         ]
       }
     },
@@ -2305,7 +3081,13 @@
               {
                 "id": 100,
                 "name": "label",
-                "type": "string"
+                "type": "string",
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 200,
@@ -2316,12 +3098,24 @@
               {
                 "id": 300,
                 "name": "activity_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 400,
                 "name": "activity_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 500,
@@ -2334,6 +3128,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/activity/ActivityConfig.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.registry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.registry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActivityRegistryDataType"
           }
         ]
       }
@@ -2348,7 +3155,13 @@
               {
                 "id": 100,
                 "name": "label",
-                "type": "string"
+                "type": "string",
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 200,
@@ -2359,12 +3172,24 @@
               {
                 "id": 300,
                 "name": "device_class_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 400,
                 "name": "device_class_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 500,
@@ -2375,12 +3200,24 @@
               {
                 "id": 600,
                 "name": "agent_class_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 700,
                 "name": "agent_class_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 800,
@@ -2391,12 +3228,24 @@
               {
                 "id": 900,
                 "name": "app_class_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 1000,
                 "name": "app_class_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 1200,
@@ -2407,12 +3256,24 @@
               {
                 "id": 1300,
                 "name": "gateway_class_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 1400,
                 "name": "gateway_class_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 1100,
@@ -2435,6 +3296,19 @@
           {
             "path": "openbase/type/domotic/unit/gateway/GatewayClass.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.registry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.registry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ClassRegistryDataType"
+          }
         ]
       }
     },
@@ -2454,12 +3328,24 @@
               {
                 "id": 1300,
                 "name": "user_message_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 2400,
                 "name": "user_message_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 3800,
@@ -2472,6 +3358,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/communication/UserMessage.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.registry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.registry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "MessageRegistryDataType"
           }
         ]
       }
@@ -2486,7 +3385,13 @@
               {
                 "id": 100,
                 "name": "label",
-                "type": "string"
+                "type": "string",
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 200,
@@ -2497,12 +3402,24 @@
               {
                 "id": 300,
                 "name": "unit_template_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 400,
                 "name": "unit_template_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 500,
@@ -2513,12 +3430,24 @@
               {
                 "id": 600,
                 "name": "service_template_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 700,
                 "name": "service_template_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 800,
@@ -2529,12 +3458,24 @@
               {
                 "id": 900,
                 "name": "activity_template_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 1000,
                 "name": "activity_template_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 3800,
@@ -2554,6 +3495,19 @@
           {
             "path": "openbase/type/domotic/unit/UnitTemplate.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.registry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.registry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TemplateRegistryDataType"
+          }
         ]
       }
     },
@@ -2567,7 +3521,13 @@
               {
                 "id": 100,
                 "name": "label",
-                "type": "string"
+                "type": "string",
+                "options": [
+                  {
+                    "name": "deprecated",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 300,
@@ -2644,132 +3604,288 @@
               {
                 "id": 1300,
                 "name": "dal_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 1400,
                 "name": "device_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 1500,
                 "name": "unit_group_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 1600,
                 "name": "scene_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 1700,
                 "name": "agent_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 1800,
                 "name": "app_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 1900,
                 "name": "user_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 2000,
                 "name": "authorization_group_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 2100,
                 "name": "location_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 2200,
                 "name": "connection_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 4000,
                 "name": "object_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 4300,
                 "name": "gateway_unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 3600,
                 "name": "unit_config_registry_read_only",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 2400,
                 "name": "dal_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 2500,
                 "name": "device_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 2600,
                 "name": "unit_group_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 2700,
                 "name": "scene_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 2800,
                 "name": "agent_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 2900,
                 "name": "app_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 3000,
                 "name": "user_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 3100,
                 "name": "authorization_group_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 3200,
                 "name": "location_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 3300,
                 "name": "connection_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 4100,
                 "name": "object_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 4400,
                 "name": "gateway_unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 3500,
                 "name": "unit_config_registry_consistent",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 3800,
@@ -2782,6 +3898,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/unit/UnitConfig.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.registry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.registry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UnitRegistryDataType"
           }
         ]
       }
@@ -2923,6 +4052,19 @@
           {
             "name": "ServiceCommunicationType"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.service"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.service"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ServiceCommunicationTypeType"
+          }
         ]
       }
     },
@@ -2965,6 +4107,19 @@
           },
           {
             "path": "openbase/type/configuration/MetaConfig.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.service"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.service"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ServiceConfigType"
           }
         ]
       }
@@ -3011,6 +4166,19 @@
           {
             "path": "openbase/type/configuration/MetaConfig.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.service"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.service"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ServiceDescriptionType"
+          }
         ]
       }
     },
@@ -3055,6 +4223,19 @@
           },
           {
             "path": "openbase/type/domotic/unit/UnitTemplate.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.service"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.service"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ServiceStateDescriptionType"
           }
         ]
       }
@@ -3292,6 +4473,19 @@
           {
             "path": "openbase/type/domotic/service/ServiceCommunicationType.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.service"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.service"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ServiceTemplateType"
+          }
         ]
       }
     },
@@ -3321,6 +4515,19 @@
           },
           {
             "path": "openbase/type/configuration/MetaConfig.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.service"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.service"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ServiceTemplateConfigType"
           }
         ]
       }
@@ -3353,6 +4560,19 @@
         "messages": [
           {
             "name": "ServiceTempusType"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.service"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.service"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ServiceTempusTypeType"
           }
         ]
       }
@@ -3474,6 +4694,19 @@
           {
             "path": "openbase/type/timing/Timestamp.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActionStateType"
+          }
         ]
       }
     },
@@ -3571,6 +4804,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActivationStateType"
+          }
         ]
       }
     },
@@ -3612,6 +4858,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActivityMultiStateType"
+          }
         ]
       }
     },
@@ -3646,6 +4905,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ActivityStateType"
           }
         ]
       }
@@ -3895,6 +5167,19 @@
           {
             "path": "openbase/type/domotic/state/WindowState.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AggregatedServiceStateType"
+          }
         ]
       }
     },
@@ -3991,6 +5276,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AlarmStateType"
           }
         ]
       }
@@ -4096,6 +5394,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AvailabilityStateType"
           }
         ]
       }
@@ -4207,6 +5518,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "BatteryStateType"
+          }
         ]
       }
     },
@@ -4313,6 +5637,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "BlindStateType"
+          }
         ]
       }
     },
@@ -4345,7 +5682,13 @@
               {
                 "id": 200,
                 "name": "brightness_data_unit",
-                "type": "DataUnit"
+                "type": "DataUnit",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "PERCENT"
+                  }
+                ]
               },
               {
                 "id": 300,
@@ -4366,6 +5709,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "BrightnessStateType"
           }
         ]
       }
@@ -4468,6 +5824,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ButtonStateType"
+          }
         ]
       }
     },
@@ -4505,6 +5874,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ColorStateType"
           }
         ]
       }
@@ -4615,6 +5997,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ConnectionStateType"
+          }
         ]
       }
     },
@@ -4711,6 +6106,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ContactStateType"
           }
         ]
       }
@@ -4813,6 +6221,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "DoorStateType"
+          }
         ]
       }
     },
@@ -4826,17 +6247,35 @@
               {
                 "id": 100,
                 "name": "comfort",
-                "type": "double"
+                "type": "double",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0.32"
+                  }
+                ]
               },
               {
                 "id": 200,
                 "name": "economy",
-                "type": "double"
+                "type": "double",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0.33"
+                  }
+                ]
               },
               {
                 "id": 300,
                 "name": "security",
-                "type": "double"
+                "type": "double",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0.35"
+                  }
+                ]
               },
               {
                 "id": 400,
@@ -4857,6 +6296,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "EmphasisStateType"
           }
         ]
       }
@@ -4955,6 +6407,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "EnablingStateType"
+          }
         ]
       }
     },
@@ -5000,6 +6465,19 @@
           {
             "path": "openbase/type/timing/Timestamp.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "GlobalPositionStateType"
+          }
         ]
       }
     },
@@ -5034,6 +6512,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "HandleStateType"
           }
         ]
       }
@@ -5093,7 +6584,13 @@
               {
                 "id": 200,
                 "name": "illuminance_data_unit",
-                "type": "DataUnit"
+                "type": "DataUnit",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "LUX"
+                  }
+                ]
               },
               {
                 "id": 300,
@@ -5159,6 +6656,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "IlluminanceStateType"
+          }
         ]
       }
     },
@@ -5202,7 +6712,13 @@
               {
                 "id": 100,
                 "name": "value",
-                "type": "State"
+                "type": "State",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "INSTALLED"
+                  }
+                ]
               },
               {
                 "id": 1000,
@@ -5270,6 +6786,19 @@
           {
             "path": "openbase/type/timing/Timestamp.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "InventoryStateType"
+          }
         ]
       }
     },
@@ -5313,6 +6842,19 @@
           },
           {
             "path": "openbase/type/timing/Timestamp.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LocalPositionStateType"
           }
         ]
       }
@@ -5411,6 +6953,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "MotionStateType"
+          }
         ]
       }
     },
@@ -5440,6 +6995,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PassageStateType"
           }
         ]
       }
@@ -5485,6 +7053,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PowerConsumptionStateType"
           }
         ]
       }
@@ -5583,6 +7164,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PowerStateType"
+          }
         ]
       }
     },
@@ -5680,6 +7274,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PresenceStateType"
+          }
         ]
       }
     },
@@ -5719,6 +7326,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "RFIDStateType"
           }
         ]
       }
@@ -5826,6 +7446,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "SmokeStateType"
+          }
         ]
       }
     },
@@ -5923,6 +7556,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "StandbyStateType"
+          }
         ]
       }
     },
@@ -5957,6 +7603,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "SwitchStateType"
           }
         ]
       }
@@ -6055,6 +7714,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TamperStateType"
+          }
         ]
       }
     },
@@ -6095,7 +7767,13 @@
               {
                 "id": 200,
                 "name": "temperature_data_unit",
-                "type": "DataUnit"
+                "type": "DataUnit",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "CELSIUS"
+                  }
+                ]
               },
               {
                 "id": 300,
@@ -6116,6 +7794,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TemperatureStateType"
           }
         ]
       }
@@ -6230,6 +7921,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UserTransitStateType"
+          }
         ]
       }
     },
@@ -6330,6 +8034,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.state"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.state"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "WindowStateType"
           }
         ]
       }
@@ -6531,6 +8248,19 @@
           },
           {
             "path": "openbase/type/spatial/PlacementConfig.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UnitConfigType"
           }
         ]
       }
@@ -7234,6 +8964,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UnitDataType"
+          }
         ]
       }
     },
@@ -7271,6 +9014,19 @@
           {
             "path": "openbase/type/domotic/unit/UnitConfig.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UnitFilterType"
+          }
         ]
       }
     },
@@ -7292,6 +9048,19 @@
                 "type": "float"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UnitProbabilityType"
           }
         ]
       }
@@ -7315,6 +9084,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/unit/UnitProbability.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UnitProbabilityCollectionType"
           }
         ]
       }
@@ -7529,6 +9311,19 @@
           {
             "path": "openbase/type/domotic/service/ServiceDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UnitTemplateType"
+          }
         ]
       }
     },
@@ -7581,6 +9376,19 @@
           {
             "path": "openbase/type/domotic/unit/UnitTemplate.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UnitTemplateConfigType"
+          }
         ]
       }
     },
@@ -7614,7 +9422,13 @@
               {
                 "id": 500,
                 "name": "priority",
-                "type": ".openbase.type.domotic.action.ActionPriority.Priority"
+                "type": ".openbase.type.domotic.action.ActionPriority.Priority",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "NORMAL"
+                  }
+                ]
               },
               {
                 "id": 600,
@@ -7625,12 +9439,24 @@
               {
                 "id": 700,
                 "name": "interruptible",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               },
               {
                 "id": 800,
                 "name": "schedulable",
-                "type": "bool"
+                "type": "bool",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "true"
+                  }
+                ]
               }
             ]
           }
@@ -7650,6 +9476,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionEmphasis.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.agent"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.agent"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AgentClassType"
           }
         ]
       }
@@ -7672,6 +9511,19 @@
                 "type": "bool"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.agent"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.agent"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AgentConfigType"
           }
         ]
       }
@@ -7748,6 +9600,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.agent"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.agent"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AgentDataType"
+          }
         ]
       }
     },
@@ -7792,7 +9657,13 @@
               {
                 "id": 700,
                 "name": "priority",
-                "type": ".openbase.type.domotic.action.ActionPriority.Priority"
+                "type": ".openbase.type.domotic.action.ActionPriority.Priority",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "NORMAL"
+                  }
+                ]
               },
               {
                 "id": 800,
@@ -7825,6 +9696,19 @@
           {
             "path": "openbase/type/domotic/action/ActionEmphasis.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.app"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.app"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AppClassType"
+          }
         ]
       }
     },
@@ -7852,6 +9736,19 @@
                 "is_repeated": true
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.app"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.app"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AppConfigType"
           }
         ]
       }
@@ -7910,6 +9807,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.app"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.app"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AppDataType"
+          }
         ]
       }
     },
@@ -7927,6 +9837,19 @@
                 "is_repeated": true
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.authorizationgroup"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.authorizationgroup"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AuthorizationGroupConfigType"
           }
         ]
       }
@@ -8001,6 +9924,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.authorizationgroup"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.authorizationgroup"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AuthorizationGroupDataType"
+          }
         ]
       }
     },
@@ -8051,6 +9987,19 @@
                 "is_repeated": true
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.connection"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.connection"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ConnectionConfigType"
           }
         ]
       }
@@ -8130,6 +10079,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.connection"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.connection"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ConnectionDataType"
+          }
         ]
       }
     },
@@ -8168,6 +10130,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AudioSourceDataType"
           }
         ]
       }
@@ -8221,6 +10196,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "BatteryDataType"
+          }
         ]
       }
     },
@@ -8272,6 +10260,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ButtonDataType"
           }
         ]
       }
@@ -8366,6 +10367,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ColorableLightDataType"
+          }
         ]
       }
     },
@@ -8440,6 +10454,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "DimmableLightDataType"
           }
         ]
       }
@@ -8516,6 +10543,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "DimmerDataType"
+          }
         ]
       }
     },
@@ -8554,6 +10594,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "DisplayDataType"
           }
         ]
       }
@@ -8612,6 +10665,19 @@
           {
             "path": "openbase/type/domotic/state/HandleState.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "HandleDataType"
+          }
         ]
       }
     },
@@ -8669,6 +10735,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LightDataType"
+          }
         ]
       }
     },
@@ -8725,6 +10804,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LightSensorDataType"
           }
         ]
       }
@@ -8801,6 +10893,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "MonitorDataType"
+          }
         ]
       }
     },
@@ -8853,6 +10958,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "MotionDetectorDataType"
+          }
         ]
       }
     },
@@ -8891,6 +11009,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ObjectDataType"
           }
         ]
       }
@@ -8943,6 +11074,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PowerConsumptionSensorDataType"
           }
         ]
       }
@@ -9001,6 +11145,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PowerSwitchDataType"
+          }
         ]
       }
     },
@@ -9053,6 +11210,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "RFIDTerminalDataType"
+          }
         ]
       }
     },
@@ -9104,6 +11274,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ReedContactDataType"
           }
         ]
       }
@@ -9161,6 +11344,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "RollerShutterDataType"
           }
         ]
       }
@@ -9227,6 +11423,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "SmokeDetectorDataType"
+          }
         ]
       }
     },
@@ -9279,6 +11488,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "SwitchDataType"
+          }
         ]
       }
     },
@@ -9330,6 +11552,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TamperDetectorDataType"
           }
         ]
       }
@@ -9405,6 +11640,19 @@
           },
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TelevisionDataType"
           }
         ]
       }
@@ -9496,6 +11744,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TemperatureControllerDataType"
+          }
         ]
       }
     },
@@ -9561,6 +11822,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TemperatureSensorDataType"
+          }
         ]
       }
     },
@@ -9600,6 +11874,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "VideoDepthSourceDataType"
+          }
         ]
       }
     },
@@ -9638,6 +11925,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.dal"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.dal"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "VideoRgbSourceDataType"
           }
         ]
       }
@@ -9717,6 +12017,19 @@
           {
             "path": "openbase/type/spatial/Shape.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.device"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.device"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "DeviceClassType"
+          }
         ]
       }
     },
@@ -9754,6 +12067,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/state/InventoryState.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.device"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.device"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "DeviceConfigType"
           }
         ]
       }
@@ -10032,6 +12358,19 @@
           {
             "path": "openbase/type/domotic/state/AvailabilityState.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.device"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.device"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "DeviceDataType"
+          }
         ]
       }
     },
@@ -10091,6 +12430,19 @@
           {
             "path": "openbase/type/configuration/MetaConfig.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.gateway"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.gateway"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "GatewayClassType"
+          }
         ]
       }
     },
@@ -10124,6 +12476,19 @@
                 "is_repeated": true
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.gateway"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.gateway"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "GatewayConfigType"
           }
         ]
       }
@@ -10194,6 +12559,19 @@
           },
           {
             "path": "openbase/type/domotic/state/ActivationState.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.gateway"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.gateway"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "GatewayDataType"
           }
         ]
       }
@@ -10268,6 +12646,19 @@
           },
           {
             "path": "openbase/type/domotic/unit/location/TileConfig.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.location"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.location"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LocationConfigType"
           }
         ]
       }
@@ -10581,6 +12972,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.location"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.location"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LocationDataType"
+          }
         ]
       }
     },
@@ -10632,6 +13036,19 @@
           {
             "path": "openbase/type/configuration/MetaConfig.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.location"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.location"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TileConfigType"
+          }
         ]
       }
     },
@@ -10653,6 +13070,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/state/InventoryState.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.object"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.object"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ObjectConfigType"
           }
         ]
       }
@@ -10682,6 +13112,19 @@
         "imports": [
           {
             "path": "openbase/type/domotic/service/ServiceStateDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.scene"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.scene"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "SceneConfigType"
           }
         ]
       }
@@ -10740,6 +13183,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.scene"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.scene"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "SceneDataType"
+          }
         ]
       }
     },
@@ -10776,6 +13232,19 @@
           },
           {
             "path": "openbase/type/domotic/service/ServiceDescription.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.unitgroup"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.unitgroup"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UnitGroupConfigType"
           }
         ]
       }
@@ -11089,6 +13558,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.unitgroup"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.unitgroup"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UnitGroupDataType"
+          }
         ]
       }
     },
@@ -11140,6 +13622,19 @@
                 "type": "string"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.user"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.user"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UserConfigType"
           }
         ]
       }
@@ -11270,6 +13765,19 @@
           {
             "path": "openbase/type/domotic/action/ActionDescription.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.domotic.unit.user"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.domotic.unit.user"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "UserDataType"
+          }
         ]
       }
     },
@@ -11306,6 +13814,19 @@
         "imports": [
           {
             "path": "openbase/type/geometry/Translation.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.geometry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.geometry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "AxisAlignedBoundingBox3DFloatType"
           }
         ]
       }
@@ -11347,6 +13868,19 @@
           {
             "path": "openbase/type/timing/Timestamp.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.geometry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.geometry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "FrameTransformType"
+          }
         ]
       }
     },
@@ -11369,6 +13903,19 @@
         "imports": [
           {
             "path": "openbase/type/geometry/FrameTransform.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.geometry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.geometry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "FrameTransformCollectionType"
           }
         ]
       }
@@ -11400,6 +13947,19 @@
           {
             "path": "openbase/type/geometry/Rotation.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.geometry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.geometry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PoseType"
+          }
         ]
       }
     },
@@ -11427,6 +13987,19 @@
           {
             "path": "openbase/type/math/Vec3DFloat.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.geometry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.geometry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "Ray3DFloatType"
+          }
         ]
       }
     },
@@ -11440,22 +14013,46 @@
               {
                 "id": 4,
                 "name": "qw",
-                "type": "double"
+                "type": "double",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "1"
+                  }
+                ]
               },
               {
                 "id": 5,
                 "name": "qx",
-                "type": "double"
+                "type": "double",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0"
+                  }
+                ]
               },
               {
                 "id": 6,
                 "name": "qy",
-                "type": "double"
+                "type": "double",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0"
+                  }
+                ]
               },
               {
                 "id": 7,
                 "name": "qz",
-                "type": "double"
+                "type": "double",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0"
+                  }
+                ]
               },
               {
                 "id": 8,
@@ -11463,6 +14060,19 @@
                 "type": "string"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.geometry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.geometry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "RotationType"
           }
         ]
       }
@@ -11495,6 +14105,19 @@
                 "type": "string"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.geometry"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.geometry"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TranslationType"
           }
         ]
       }
@@ -11534,6 +14157,19 @@
           {
             "path": "openbase/type/geometry/Translation.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.kinematics"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.kinematics"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "Posture3DFloatType"
+          }
         ]
       }
     },
@@ -11570,6 +14206,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.language"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.language"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LabelType"
+          }
         ]
       }
     },
@@ -11605,6 +14254,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.language"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.language"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "MultiLanguageTextType"
+          }
         ]
       }
     },
@@ -11618,19 +14280,50 @@
               {
                 "id": 1,
                 "name": "x",
-                "type": "double"
+                "type": "double",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0"
+                  }
+                ]
               },
               {
                 "id": 2,
                 "name": "y",
-                "type": "double"
+                "type": "double",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0"
+                  }
+                ]
               },
               {
                 "id": 3,
                 "name": "z",
-                "type": "double"
+                "type": "double",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0"
+                  }
+                ]
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.math"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.math"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "Vec3DDoubleType"
           }
         ]
       }
@@ -11645,19 +14338,50 @@
               {
                 "id": 1,
                 "name": "x",
-                "type": "float"
+                "type": "float",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0"
+                  }
+                ]
               },
               {
                 "id": 2,
                 "name": "y",
-                "type": "float"
+                "type": "float",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0"
+                  }
+                ]
               },
               {
                 "id": 3,
                 "name": "z",
-                "type": "float"
+                "type": "float",
+                "options": [
+                  {
+                    "name": "default",
+                    "value": "0"
+                  }
+                ]
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.math"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.math"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "Vec3DFloatType"
           }
         ]
       }
@@ -11681,6 +14405,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.spatial"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.spatial"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "FloorCeilingEdgeIndicesType"
+          }
         ]
       }
     },
@@ -11702,6 +14439,19 @@
                 "type": "float"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.spatial"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.spatial"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PanTiltAngleType"
           }
         ]
       }
@@ -11742,6 +14492,19 @@
           },
           {
             "path": "openbase/type/spatial/Shape.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.spatial"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.spatial"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PlacementConfigType"
           }
         ]
       }
@@ -11789,6 +14552,19 @@
           {
             "path": "openbase/type/spatial/FloorCeilingEdgeIndices.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.spatial"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.spatial"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ShapeType"
+          }
         ]
       }
     },
@@ -11816,6 +14592,19 @@
           {
             "path": "openbase/type/timing/Timestamp.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.timing"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.timing"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "IntervalType"
+          }
         ]
       }
     },
@@ -11832,6 +14621,19 @@
                 "type": "uint64"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.timing"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.timing"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TimestampType"
           }
         ]
       }
@@ -11956,6 +14758,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "KinectPostureJointType"
+          }
         ]
       }
     },
@@ -11983,6 +14798,19 @@
           {
             "path": "openbase/type/tracking/KinectPostureJoint.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "KinectPostureJointPairType"
+          }
         ]
       }
     },
@@ -12004,6 +14832,19 @@
                 "type": "string"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ObjectIDType"
           }
         ]
       }
@@ -12072,6 +14913,19 @@
           {
             "path": "openbase/type/geometry/Ray3DFloat.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PointingRay3DFloatType"
+          }
         ]
       }
     },
@@ -12094,6 +14948,19 @@
         "imports": [
           {
             "path": "openbase/type/tracking/PointingRay3DFloat.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PointingRay3DFloatCollectionType"
           }
         ]
       }
@@ -12118,6 +14985,19 @@
           {
             "path": "openbase/type/tracking/PointingRay3DFloat.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PointingRay3DFloatDistributionType"
+          }
         ]
       }
     },
@@ -12140,6 +15020,19 @@
         "imports": [
           {
             "path": "openbase/type/tracking/PointingRay3DFloatDistribution.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PointingRay3DFloatDistributionCollectionType"
           }
         ]
       }
@@ -12202,7 +15095,13 @@
                 "id": 2,
                 "name": "aspect",
                 "type": "Aspect",
-                "is_repeated": true
+                "is_repeated": true,
+                "options": [
+                  {
+                    "name": "packed",
+                    "value": "true"
+                  }
+                ]
               }
             ]
           }
@@ -12210,6 +15109,19 @@
         "imports": [
           {
             "path": "openbase/type/tracking/TrackingInfo.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "StateType"
           }
         ]
       }
@@ -12233,6 +15145,19 @@
         "imports": [
           {
             "path": "openbase/type/tracking/State.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "StatesType"
           }
         ]
       }
@@ -12270,6 +15195,19 @@
           {
             "path": "openbase/type/kinematics/Posture3DFloat.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TrackedPosture3DFloatType"
+          }
         ]
       }
     },
@@ -12293,6 +15231,19 @@
           {
             "path": "openbase/type/tracking/TrackedPosture3DFloat.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TrackedPostures3DFloatType"
+          }
         ]
       }
     },
@@ -12314,6 +15265,19 @@
                 "type": "bytes"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.tracking"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.tracking"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "TrackingInfoType"
           }
         ]
       }
@@ -12376,6 +15340,19 @@
           {
             "path": "openbase/type/vision/RGB24Color.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.vision"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.vision"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ColorType"
+          }
         ]
       }
     },
@@ -12422,6 +15399,19 @@
           {
             "path": "openbase/type/timing/Timestamp.proto"
           }
+        ],
+        "package": {
+          "name": "openbase.type.vision"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.vision"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "FourierDescriptorType"
+          }
         ]
       }
     },
@@ -12448,6 +15438,19 @@
                 "type": "double"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.vision"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.vision"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "HSBColorType"
           }
         ]
       }
@@ -12476,6 +15479,19 @@
               }
             ]
           }
+        ],
+        "package": {
+          "name": "openbase.type.vision"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.vision"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "RGB24ColorType"
+          }
         ]
       }
     },
@@ -12502,6 +15518,19 @@
                 "type": "double"
               }
             ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.vision"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.vision"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "RGBColorType"
           }
         ]
       }
