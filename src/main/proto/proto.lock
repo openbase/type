@@ -32,6 +32,175 @@
       }
     },
     {
+      "protopath": "openbase:/:type:/:communication:/:mqtt:/:Primitive.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "Primitive",
+            "fields": [
+              {
+                "id": 1,
+                "name": "string",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "double",
+                "type": "double"
+              },
+              {
+                "id": 3,
+                "name": "float",
+                "type": "float"
+              },
+              {
+                "id": 4,
+                "name": "int",
+                "type": "int32"
+              },
+              {
+                "id": 5,
+                "name": "long",
+                "type": "int64"
+              },
+              {
+                "id": 6,
+                "name": "boolean",
+                "type": "bool"
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "openbase.type.communication.mqtt"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.communication.mqtt"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "PrimitiveType"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "openbase:/:type:/:communication:/:mqtt:/:Request.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "Request",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "method_name",
+                "type": "string"
+              },
+              {
+                "id": 3,
+                "name": "params",
+                "type": "google.protobuf.Any",
+                "is_repeated": true
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/any.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.communication.mqtt"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.communication.mqtt"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "RequestType"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "openbase:/:type:/:communication:/:mqtt:/:Response.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "Response.Status",
+            "enum_fields": [
+              {
+                "name": "ACKNOWLEDGED"
+              },
+              {
+                "name": "PROGRESSING",
+                "integer": 1
+              },
+              {
+                "name": "FINISHED",
+                "integer": 2
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "Response",
+            "fields": [
+              {
+                "id": 1,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 2,
+                "name": "status",
+                "type": "Status"
+              },
+              {
+                "id": 3,
+                "name": "result",
+                "type": "google.protobuf.Any"
+              },
+              {
+                "id": 4,
+                "name": "error",
+                "type": "string"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/any.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.communication.mqtt"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.communication.mqtt"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "ResponseType"
+          }
+        ]
+      }
+    },
+    {
       "protopath": "openbase:/:type:/:configuration:/:Entry.proto",
       "def": {
         "messages": [

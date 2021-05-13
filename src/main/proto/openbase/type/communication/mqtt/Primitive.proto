@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package openbase.type.communication.mqtt;
+
+option java_package = "org.openbase.type.communication.mqtt";
+option java_outer_classname = "PrimitiveType";
+
+/**
+ * Descriptions of a wrapper for primitive types
+ * in MQTT RPC.
+ */
+message Primitive {
+
+  oneof value {
+    string string = 1;
+    double double = 2;
+    float float = 3;
+    int32 int = 4;
+    int64 long = 5;
+    bool boolean = 6;
+  }
+
+}
+
