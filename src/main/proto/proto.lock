@@ -1,6 +1,51 @@
 {
   "definitions": [
     {
+      "protopath": "openbase:/:type:/:communication:/:Event.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "Event",
+            "fields": [
+              {
+                "id": 2,
+                "name": "payload",
+                "type": "google.protobuf.Any"
+              }
+            ],
+            "maps": [
+              {
+                "key_type": "string",
+                "field": {
+                  "id": 1,
+                  "name": "header",
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "google/protobuf/any.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.communication"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.communication"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "EventType"
+          }
+        ]
+      }
+    },
+    {
       "protopath": "openbase:/:type:/:communication:/:Scope.proto",
       "def": {
         "messages": [
