@@ -15,7 +15,7 @@ message Event {
   /**
    * The header of the event.
    */
-  map<string, string> header = 1;
+  map<string, google.protobuf.Any> header = 1;
 
   /**
    * The payload of the event.

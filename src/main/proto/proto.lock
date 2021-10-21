@@ -19,7 +19,7 @@
                 "field": {
                   "id": 1,
                   "name": "header",
-                  "type": "string"
+                  "type": "google.protobuf.Any"
                 }
               }
             ]
