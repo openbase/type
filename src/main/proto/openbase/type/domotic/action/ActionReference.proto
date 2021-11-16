@@ -17,7 +17,7 @@ option java_outer_classname = "ActionReferenceType";
  * Two actions A and B are related to each other if Action A is executed because of Action B.
  * In this case A is linked as impact of action B while B is set as cause of action A. 
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
  */
 message ActionReference {

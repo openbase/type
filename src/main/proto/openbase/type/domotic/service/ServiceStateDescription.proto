@@ -11,7 +11,7 @@ option java_outer_classname = "ServiceStateDescriptionType";
 /**
  * Description of a service state.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
  */
 message ServiceStateDescription {

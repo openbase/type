@@ -10,7 +10,7 @@ option java_outer_classname = "AudioSourceDataType";
 /**
  * Generic description of a audio source.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message AudioSourceData {
 

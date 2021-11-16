@@ -9,7 +9,7 @@ option java_outer_classname = "UnitProbabilityType";
  * Description of a unit configuration.
  *
  * @author Julian Daberkow <jdaberkow@techfak.uni-bielefeld.de>
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 // @create_collection
 message UnitProbability {

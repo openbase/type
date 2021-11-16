@@ -14,7 +14,7 @@ option java_outer_classname = "MotionStateType";
  * Basic motion state used by devices
  * like motion detectors.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message MotionState {
 

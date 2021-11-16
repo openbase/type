@@ -11,7 +11,7 @@ option java_outer_classname = "PowerConsumptionSensorDataType";
 /**
  * Generic description of a power consumption sensor.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message PowerConsumptionSensorData {
 

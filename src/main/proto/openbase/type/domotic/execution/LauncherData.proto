@@ -11,7 +11,7 @@ option java_outer_classname = "LauncherDataType";
 /**
  * Description of a launcher data type.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message LauncherData {
 

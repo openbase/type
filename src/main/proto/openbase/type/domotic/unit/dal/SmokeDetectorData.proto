@@ -12,7 +12,7 @@ option java_outer_classname = "SmokeDetectorDataType";
 /**
  * Generic description of a smoke detector.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
  */
 message SmokeDetectorData {

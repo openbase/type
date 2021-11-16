@@ -16,7 +16,7 @@ import "openbase/type/domotic/authentication/AuthToken.proto";
 /**
  * Description of possible paramters to define an action.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  * @author Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
  */
 message ActionParameter {

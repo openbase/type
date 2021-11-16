@@ -13,7 +13,7 @@ option java_outer_classname = "EnablingStateType";
 /**
  * Basic state that indicates if an instance is currently enabled or disabled.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message EnablingState {
 

@@ -11,7 +11,7 @@ import "openbase/type/domotic/ontology/OntologyChange.proto";
 /**
  * This configuration describes a trigger configuration and can be used to initialize those ones.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message TriggerConfig {
 

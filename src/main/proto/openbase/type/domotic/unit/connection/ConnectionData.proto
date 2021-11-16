@@ -13,7 +13,7 @@ option java_outer_classname = "ConnectionDataType";
 /**
  * Description of a connection data type.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message ConnectionData {
 

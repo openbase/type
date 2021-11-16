@@ -12,7 +12,7 @@ option java_outer_classname = "AgentDataType";
 /**
  * Generic description of an agent data type.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message AgentData {
 

@@ -16,7 +16,7 @@ import "openbase/type/domotic/action/ActionEmphasis.proto";
 /**
  * Description of an app class.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message AppClass {
 

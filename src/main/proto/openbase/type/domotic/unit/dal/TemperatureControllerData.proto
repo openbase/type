@@ -12,7 +12,7 @@ option java_outer_classname = "TemperatureControllerDataType";
 /**
  * Generic description of a temperature controller.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message TemperatureControllerData {
 

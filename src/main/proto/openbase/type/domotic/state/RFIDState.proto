@@ -13,7 +13,7 @@ option java_outer_classname = "RFIDStateType";
 /**
  * Basic object state used by RFIDs.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message RFIDState {
 

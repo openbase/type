@@ -8,7 +8,7 @@ option java_outer_classname = "AppConfigType";
 /**
  * Description of a app configuration.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message AppConfig {
 

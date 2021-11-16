@@ -8,7 +8,7 @@ option java_outer_classname = "ActionPriorityType";
 /**
  * A type which defines the priority of an action execution.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message ActionPriority {
 

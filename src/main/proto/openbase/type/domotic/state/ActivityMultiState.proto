@@ -12,7 +12,7 @@ option java_outer_classname = "ActivityMultiStateType";
 /**
  * Description of the activity type.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message ActivityMultiState {
 

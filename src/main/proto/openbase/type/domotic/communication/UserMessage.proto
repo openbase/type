@@ -12,7 +12,7 @@ import "openbase/type/domotic/service/ServiceStateDescription.proto";
 /**
  * Description of a multi language user message type.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message UserMessage {
 

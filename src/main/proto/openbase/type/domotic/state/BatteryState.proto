@@ -13,7 +13,7 @@ option java_outer_classname = "BatteryStateType";
  * Basic object state used by battery devices
  * to display their energy level.
  *
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message BatteryState {
 

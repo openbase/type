@@ -9,7 +9,7 @@ option java_outer_classname = "ActionInitiatorType";
  * A type which defines the initiator which is responsible for an action initiation.
  *
  * @auther Tamino Huxohl <thuxohl@techfak.uni-bielefeld.de>
- * @author Marian Pohling <mpohling@cit-ec.uni-bielefeld.de>
+ * @author Marian Pohling <a href="mailto:divine@openbase.org">Divine Threepwood</a>
  */
 message ActionInitiator {
 
