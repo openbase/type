@@ -19,7 +19,7 @@ set(CMAKE_CONFIG_FILE_PATH "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CONFIG_FILE_NAME
 set(CMAKE_CONFIG_VERSION_FILE_PATH "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CONFIG_VERSION_FILE_NAME}")
 
 ### declare deps
-find_package(Protobuf 3.0.2 REQUIRED)
+find_package(Protobuf 3.19.2 REQUIRED)
 
 
 ### prepare generated type code
