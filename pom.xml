@@ -4,7 +4,7 @@
 
     <groupId>org.openbase</groupId>
     <artifactId>type</artifactId>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
 
     <name>Openbase Type Lib</name>
     <inceptionYear>2018</inceptionYear>
@@ -92,7 +92,7 @@
             <extension>
                 <groupId>kr.motd.maven</groupId>
                 <artifactId>os-maven-plugin</artifactId>
-                <version>1.6.2</version>
+                <version>1.7.0</version>
             </extension>
         </extensions>
         <plugins>
@@ -151,7 +151,7 @@
             <plugin>
                 <groupId>com.salesforce.servicelibs</groupId>
                 <artifactId>proto-backwards-compatibility</artifactId>
-                <version>1.0.5</version>
+                <version>1.0.7</version>
                 <configuration>
                     <!-- Optional alternative protos location -->
                     <protoSourceRoot>src/main/proto</protoSourceRoot>
@@ -180,7 +180,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.4.1</version>
                 <configuration>
                     <source>${java.source.version}</source>
                     <detectJavaApiLink>false</detectJavaApiLink>
@@ -205,7 +205,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-release-plugin</artifactId>
-                        <version>2.5.3</version>
+                        <version>3.0.0-M6</version>
                         <configuration>
                             <autoVersionSubmodules>true</autoVersionSubmodules>
                             <useReleaseProfile>true</useReleaseProfile>
@@ -223,7 +223,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+                        <version>3.0.1</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -237,7 +237,7 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.8</version>
+                        <version>1.6.13</version>
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>ossrh</serverId>
@@ -252,12 +252,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.source.version>8</java.source.version>
-        <java.target.version>8</java.target.version>
+        <java.source.version>17</java.source.version>
+        <java.target.version>17</java.target.version>
         <!--  this duplicated entry is required for the protobuf compiler -->
         <maven.compiler.source>${java.source.version}</maven.compiler.source>
         <maven.compiler.target>${java.target.version}</maven.compiler.target>
-        <dependency.com.google.protobuf.proto>3.19.2</dependency.com.google.protobuf.proto>
+        <dependency.com.google.protobuf.proto>3.21.5</dependency.com.google.protobuf.proto>
     </properties>
 
     <dependencies>

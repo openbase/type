@@ -23,12 +23,12 @@ echo -e "=== ${APP_NAME} project ${WHITE}installation${NC}"
 cd ${PYTHON_DIST}
 
 # generate package files
-python package-gen.py
+python3 package-gen.py
 
 # generate source distribution
-python setup.py sdist
-python setup.py bdist_wheel
+python3 setup.py sdist
+python3 setup.py bdist_wheel
 
 # install to default or given prefix
-python setup.py install $@
+python3 setup.py install $@
 echo -e "=== ${APP_NAME} was ${GREEN}successfully${NC} installed to ${WHITE}${prefix}${NC}"
