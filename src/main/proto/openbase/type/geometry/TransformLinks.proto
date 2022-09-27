@@ -3,20 +3,20 @@ syntax = "proto2";
 package openbase.type.geometry;
 
 option java_package = "org.openbase.type.geometry";
-option java_outer_classname = "FrameTransformCollectionType";
+option java_outer_classname = "TransformLinksType";
 
-import "openbase/type/geometry/FrameTransform.proto";
+import "openbase/type/geometry/TransformLink.proto";
 
 /**
- * A Collection of FrameTransform types.
+ * A Collection of TransformLink types.
  *
  * @author Divine Threepwood <divine@openbase.org>
  * @author Leon Ziegler <lziegler@techfak.uni-bielefeld.de>
  */
-message FrameTransformCollection {
+message TransformLinks {
 
     /**
      * A collection of transformation frames.
      */
-    repeated .openbase.type.geometry.FrameTransform transforms = 1;
+    repeated .openbase.type.geometry.TransformLink transforms = 1;
 }
