@@ -4,7 +4,7 @@
 
     <groupId>org.openbase</groupId>
     <artifactId>type</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.4-SNAPSHOT</version>
 
     <name>Openbase Type Lib</name>
     <inceptionYear>2018</inceptionYear>
