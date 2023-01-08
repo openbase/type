@@ -1,11 +1,11 @@
 syntax = "proto2";
 
-package openbase.type.domotic.execution;
+package openbase.type.execution;
 
 import "openbase/type/language/Label.proto";
 import "openbase/type/timing/Timestamp.proto";
 
-option java_package = "org.openbase.type.domotic.execution";
+option java_package = "org.openbase.type.execution";
 option java_outer_classname = "LauncherDataType";
 
 /**
@@ -21,45 +21,55 @@ message LauncherData {
     enum LauncherState {
 
         /**
-         * Unknown state.
-         */
+        * Unknown state.
+        */
         UNKNOWN = 0;
 
         /**
-         * Initializing state.
-         */
-        INITALIZING = 1;
+        * Initializing state.
+        */
+        INITIALIZING = 1;
 
         /**
-         * State if the launcher is currently starting.
-         */
+        * State if the launcher is currently starting.
+        */
         LAUNCHING = 2;
 
         /**
-         * State if the launcher is currently running.
-         */
+        * State if the launcher is currently running.
+        */
         RUNNING = 3;
 
         /**
-         * State if the launcher is currently stopping.
-         */
+        * State if the launcher is currently stopping.
+        */
         STOPPING = 4;
 
         /**
-         * State if the launcher was stopped.
-         */
+        * State if the launcher was stopped.
+        */
         STOPPED = 5;
 
         /**
-         * State if the launcher failed during execution.
-         */
+        * State if the launcher failed during execution.
+        */
         ERROR = 6;
     }
+
+    /**
+     * This transaction id is an increasing number indicating the latest data updated of a launcher.
+     */
+    optional uint64 transaction_id = 1;
 
     /**
      * A unique launcher identifier.
      */
     optional string id = 100;
+
+    /**
+     * A list of aliases of this unit.
+     */
+    repeated string alias = 110;
 
     /**
      * Label of the related launcher.
@@ -83,4 +93,3 @@ message LauncherData {
      */
     optional .openbase.type.timing.Timestamp launch_time = 500;
 }
-

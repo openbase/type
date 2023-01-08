@@ -3022,98 +3022,6 @@
       }
     },
     {
-      "protopath": "openbase:/:type:/:domotic:/:execution:/:LauncherData.proto",
-      "def": {
-        "enums": [
-          {
-            "name": "LauncherData.LauncherState",
-            "enum_fields": [
-              {
-                "name": "UNKNOWN"
-              },
-              {
-                "name": "INITALIZING",
-                "integer": 1
-              },
-              {
-                "name": "LAUNCHING",
-                "integer": 2
-              },
-              {
-                "name": "RUNNING",
-                "integer": 3
-              },
-              {
-                "name": "STOPPING",
-                "integer": 4
-              },
-              {
-                "name": "STOPPED",
-                "integer": 5
-              },
-              {
-                "name": "ERROR",
-                "integer": 6
-              }
-            ]
-          }
-        ],
-        "messages": [
-          {
-            "name": "LauncherData",
-            "fields": [
-              {
-                "id": 100,
-                "name": "id",
-                "type": "string"
-              },
-              {
-                "id": 200,
-                "name": "label",
-                "type": ".openbase.type.language.Label"
-              },
-              {
-                "id": 300,
-                "name": "launcher_state",
-                "type": "LauncherState"
-              },
-              {
-                "id": 400,
-                "name": "verified",
-                "type": "bool"
-              },
-              {
-                "id": 500,
-                "name": "launch_time",
-                "type": ".openbase.type.timing.Timestamp"
-              }
-            ]
-          }
-        ],
-        "imports": [
-          {
-            "path": "openbase/type/language/Label.proto"
-          },
-          {
-            "path": "openbase/type/timing/Timestamp.proto"
-          }
-        ],
-        "package": {
-          "name": "openbase.type.domotic.execution"
-        },
-        "options": [
-          {
-            "name": "java_package",
-            "value": "org.openbase.type.domotic.execution"
-          },
-          {
-            "name": "java_outer_classname",
-            "value": "LauncherDataType"
-          }
-        ]
-      }
-    },
-    {
       "protopath": "openbase:/:type:/:domotic:/:mode:/:OperationMode.proto",
       "def": {
         "enums": [
@@ -13991,6 +13899,109 @@
           {
             "name": "java_outer_classname",
             "value": "UserDataType"
+          }
+        ]
+      }
+    },
+    {
+      "protopath": "openbase:/:type:/:execution:/:LauncherData.proto",
+      "def": {
+        "enums": [
+          {
+            "name": "LauncherData.LauncherState",
+            "enum_fields": [
+              {
+                "name": "UNKNOWN"
+              },
+              {
+                "name": "INITIALIZING",
+                "integer": 1
+              },
+              {
+                "name": "LAUNCHING",
+                "integer": 2
+              },
+              {
+                "name": "RUNNING",
+                "integer": 3
+              },
+              {
+                "name": "STOPPING",
+                "integer": 4
+              },
+              {
+                "name": "STOPPED",
+                "integer": 5
+              },
+              {
+                "name": "ERROR",
+                "integer": 6
+              }
+            ]
+          }
+        ],
+        "messages": [
+          {
+            "name": "LauncherData",
+            "fields": [
+              {
+                "id": 1,
+                "name": "transaction_id",
+                "type": "uint64"
+              },
+              {
+                "id": 100,
+                "name": "id",
+                "type": "string"
+              },
+              {
+                "id": 110,
+                "name": "alias",
+                "type": "string",
+                "is_repeated": true
+              },
+              {
+                "id": 200,
+                "name": "label",
+                "type": ".openbase.type.language.Label"
+              },
+              {
+                "id": 300,
+                "name": "launcher_state",
+                "type": "LauncherState"
+              },
+              {
+                "id": 400,
+                "name": "verified",
+                "type": "bool"
+              },
+              {
+                "id": 500,
+                "name": "launch_time",
+                "type": ".openbase.type.timing.Timestamp"
+              }
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "openbase/type/language/Label.proto"
+          },
+          {
+            "path": "openbase/type/timing/Timestamp.proto"
+          }
+        ],
+        "package": {
+          "name": "openbase.type.execution"
+        },
+        "options": [
+          {
+            "name": "java_package",
+            "value": "org.openbase.type.execution"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "LauncherDataType"
           }
         ]
       }
