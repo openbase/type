@@ -55,6 +55,11 @@ message UnitConfig {
     repeated string alias = 110;
 
     /**
+     * A list of unit ids that are bind to these unit.
+     */
+    repeated string binding_id = 111;
+
+    /**
      * The id of the unit that introduced this unit.
      * Is the id of the unit itself if it is the unit host.
      */
@@ -160,4 +165,3 @@ message UnitConfig {
      */
     optional .openbase.type.domotic.authentication.PermissionConfig permission_config = 1700;
 }
-
