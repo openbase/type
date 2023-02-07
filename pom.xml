@@ -4,7 +4,7 @@
 
     <groupId>org.openbase</groupId>
     <artifactId>type</artifactId>
-    <version>1.4.1-SNAPSHOT</version>
+    <version>1.4.1</version>
 
     <name>Openbase Type Lib</name>
     <inceptionYear>2018</inceptionYear>
@@ -85,7 +85,7 @@
         <connection>scm:git:https://github.com/openbase/type.git</connection>
         <developerConnection>scm:git:https://github.com/openbase/type.git</developerConnection>
         <url>https://github.com/openbase/type.git</url>
-      <tag>HEAD</tag>
+      <tag>v1.4.1</tag>
   </scm>
 
     <build>
