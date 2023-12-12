@@ -85,9 +85,9 @@ message UserMessage {
 
     /**
      * A list of service states used as condition for this message.
-     * In case one of the conditions is not fullfilled which means the referred unit is not in the described state than this message in not valid anymore and will be deleted.
-     * If no condition is defined, the message is valide until deletion.
+     * Once any condition is not fulfilled (the unit is not in the described state) then
+     * this message in not valid anymore and will be deleted.
+     * If no condition is defined, the message is valid until deletion.
      */
     repeated .openbase.type.domotic.service.ServiceStateDescription condition = 700;
 }
-
